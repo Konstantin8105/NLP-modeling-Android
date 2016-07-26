@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary"      >#9C27B0</color> <!-- 500 -->
+    <color name="colorPrimaryDark"  >#7B1FA2</color> <!-- 700 -->
+    <color name="colorAccent"       >#FF6E40</color> <!-- A200 -->
+
+    <color name="selected_overlay"  >#88673AB7</color>
+
+
+    <color name="model_color"      >#FFD063</color>
+    <color name="model_color_text" >#000000</color>
+
+    <color name="strategy_color"      >#65FF00</color>
+    <color name="strategy_color_text" >#000000</color>
+
+    <color name="dark_color"      >#BE4BC8</color>
+    <color name="dark_color_text" >#FFFFFF</color>
+</resources>

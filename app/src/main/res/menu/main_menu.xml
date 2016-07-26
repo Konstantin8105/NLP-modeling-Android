@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_menu_sort"
+        app:showAsAction="always"
+        android:title="@string/action_sort" />
+    <item
+        android:id="@+id/action_open_models"
+        android:icon="@drawable/ic_menu_folder"
+        android:orderInCategory="100"
+        android:title="@string/action_open_models"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_save_models"
+        android:icon="@drawable/ic_menu_save"
+        android:orderInCategory="100"
+        android:title="@string/action_save_models"
+        app:showAsAction="never" />
+
+    <!--TODO Add connect to my group Google+-->
+</menu>

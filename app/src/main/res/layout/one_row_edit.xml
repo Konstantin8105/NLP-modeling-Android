@@ -1,0 +1,19 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:id="@+id/llOneRow"
+    android:layout_marginBottom="10dp">
+
+    <MultiAutoCompleteTextView
+        android:id="@+id/editOneRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:completionThreshold="1"
+        android:gravity="center|left"
+        android:inputType="textMultiLine" />
+
+</LinearLayout>

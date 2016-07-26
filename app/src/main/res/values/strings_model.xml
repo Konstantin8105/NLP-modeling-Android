@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="toast_archive">Archive(Read-Only)</string>
+    <string name="toast_folder">General folder</string>
+    <string name="toast_dearchived">From archive to folder</string>
+    <string name="toast_archived">From folder to archive</string>
+    <!-- ENGLISH VERSION -->
+    <string name="model_name">Name:</string>
+
+    <string name="test_procent">Result: </string>
+    <string name="test_time">Time:</string>
+
+    <string name="test_testing">Check</string>
+    <string name="test_see_answer">See answers</string>
+
+    <string name="test_your_result">Your result: </string>
+
+    <string name="activity_testing">Testing</string>
+
+    <string name="right_hand">Right-Hander</string>
+    <string name="left_hand">Left-Handed</string>
+
+    <string name="sort_by_name">Sort by name</string>
+    <string name="sort_by_type">Sort by type of model</string>
+    <string name="sort_by_date">Sort by date</string>
+    <string name="state_edit">Edit state</string>
+    <string name="state_view">View state</string>
+    <string name="open_model">Open file with models</string>
+    <string name="save_model">Save model</string>
+    <string name="delete_model">Delete</string>
+    <string name="extend_version">Full version</string>
+    <string name="about_program">About program</string>
+    <string name="share_all">Share all models</string>
+
+    <string name="result_of_modeling">Results of modeling</string>
+    <string name="name_of_model_">Name of model: </string>
+
+
+    <string name="name_model">Model</string>
+    <string name="name_strategy">Strategy</string>
+    <string name="name_dark">Dark strategy</string>
+    <string name="name_other">Other</string>
+
+    <string name="you_delete">You delete: </string>
+    <string name="delete_element"> element</string>
+    <string name="will_create">Developed</string>
+    <string name="you_share">Share: </string>
+
+    <string-array name="str_Left_Science">
+                 <item>Scientific model</item>
+                 <item>Formulation of a question.\nThe question can refer to the explanation of a specific observation</item>
+                 <item>Hypothesis.\nAn hypothesis is a conjecture, based on the knowledge obtained while formulating the question, that may explain the observed behavior of a part of our universe. The hypothesis might be very specific</item>
+                 <item>Prediction.\nThis step involves determining the logical consequences of the hypothesis. One or more predictions are then selected for further testing. The less likely that the prediction would be correct simply by coincidence, the stronger evidence it would be if the prediction were fulfilled</item>
+                 <item>Testing.\nThis is an investigation of whether the real world behaves as predicted by the hypothesis. Scientists (and other people) test hypotheses by conducting experiments. The purpose of an experiment is to determine whether observations of the real world agree with or conflict with the predictions derived from an hypothesis. If they agree, confidence in the hypothesis increases; otherwise, it decreases</item>
+                 <item>Analysis.\nThis involves determining what the results of the experiment show and deciding on the next actions to take. The predictions of the hypothesis are compared to those of the null hypothesis, to determine which is better able to explain the data</item>
+             </string-array>
+
+    <string-array name="str_Left_SCORE">
+                 <item>Model SCORE</item>
+                 <item>S - Symptoms.\nThis is the most visible(by "external" calibration) and perceived as submitted by the Client aspects of the situation/experience; state existing on the date</item>
+                 <item>C - Cause.\nExperience in the past, gave rise to the present state</item>
+                 <item>O - Outcome.\nThe purpose of the changes or the state, which should replace the present state</item>
+                 <item>R - Resources.\nElements of User Experience, the presence of which can solve the current situation; they make possible the transition from the present state to the desired</item>
+                 <item>E - Effects.\nResponses/impact on the achievement of the results, for the client and for his significant environment, state in the future, when the result has already been achieved</item>
+             </string-array>
+
+    <string-array name="str_Left_SMART">
+                 <item>Business model specification of goals. SMART</item>
+                 <item>S - Specific.\nThe first criterion stresses the need for a specific goal rather than a more general one. This means the goal is clear and unambiguous; without vagaries and platitudes</item>
+                 <item>M - Measurable.\nThe second criterion stresses the need for concrete criteria for measuring progress toward the attainment of the goal. The thought behind this is that if a goal is not measurable, it is not possible to know whether a team is making progress toward successful completion</item>
+                 <item>A - Attainable.\nThe third criterion stresses the importance of goals that are realistic and attainable. While an attainable goal may stretch a team in order to achieve it, the goal is not extreme. That is, the goals are neither out of reach nor below standard performance, as these may be considered meaningless</item>
+                 <item>R - Relevant.\nThe fourth criterion stresses the importance of choosing goals that matter</item>
+                 <item>T - Time-bound.\nThe fifth criterion stresses the importance of grounding goals within a time frame, giving them a target date. A commitment to a deadline helps a team focus their efforts on completion of the goal on or before the due date</item>
+             </string-array>
+
+    <string-array name="str_Left_TOTE">
+                 <item>Model T.O.T.E.</item>
+                 <item>T1 - Test 1.\nTest to obtain some representation of the problem state</item>
+                 <item>O  - Operate.\nOperate intervene in some way</item>
+                 <item>T2 - Test 2.\nTest again to see if the desired result has been achieved. If it has not, loop back to operate. Compare T1 (desired) with T2 (current)</item>
+                 <item>E  - Exit.\nExit - problem solved. T1 = T2</item>
+             </string-array>
+
+    <string-array name="str_Left_TricksOfLanguage">
+                <item>Sleight of Mouth</item>
+                <item>1. Intention:\nWhat could be the positive intention?</item>
+                <item>2. Redefine:\nUse words that are similar but may infer something different. e.g. replace “irresponsible” with “careless” and “lay-offs” with “unable to adjust”</item>
+                <item>3. Consequences:\nFocus a consequence that leads to challenging the belief</item>
+                <item>4. Chunk down:\nLook at a specific element that challenges the belief.</item>
+                <item>5. Chunk Up:\nGeneralize in order to change the relationship defined by the belief.</item>
+                <item>6. Analogy:\nUse an analogy or metaphor that challenges the generalization defined by the belief.</item>
+                <item>7. Change Frame Size:\nRe-evaluate the implication of the belief in the context of a longer (or shorter) time frame, a larger number of people (or from an individual point of view) or a bigger or smaller perspective</item>
+                <item>8. Another Outcome:\nPropose a different outcome that challenges the relevancy of the belief.</item>
+                <item>9. Model of the World:\nLook at the belief from a different perspective (model of the world)</item>
+                <item>10. Reality Strategy:\nRe-assess the belief based on the fact that beliefs are based on specific perceptions</item>
+                <item>11. Another Outcome:\nPropose a different outcome that challenges the relevancy of the belief</item>
+                <item>12. Hierarchy of Criteria:\nRe-assess the belief based on a more important criterion</item>
+                <item>13. Apply to Self:\nUse key aspects of the belief to challenge the belief</item>
+                <item>14. Meta Frame:\nChallenge the basis for the belief. E.g. formulate a belief as to the origin of the belief</item>
+            </string-array>
+
+    <string-array name="str_Left_MiltonModel">
+            </string-array>
+
+    <string-array name="str_Left_AIDA">
+                 <item>Marketing business model AIDA</item>
+                 <item>A - Attention (Awareness): attract the attention of the customer</item>
+                 <item>I - Interest: raise customer interest by focusing on and demonstrating advantages and benefits (instead of focusing on features, as in traditional advertising)</item>
+                 <item>D - Desire: convince customers that they want and desire the product or service and that it will satisfy their needs</item>
+                 <item>A - Action: lead customers towards taking action and/or purchasing</item>
+             </string-array>
+
+    <string-array name="str_Left_Eye">
+                 <item>Eye movement strategies</item>
+                 <item>Eye movement to the left or right for many people seems to indicate if a memory was recalled or constructed.</item>
+             </string-array>
+
+    <string-array name="str_Left_Polar">
+                 <item>Analysis strategy quadrants (polarity)</item>
+                 <item>Axe + X</item>
+                 <item>Axe -X</item>
+                 <item>Axe +Y</item>
+                 <item>Axe -Y</item>
+                 <item>Quadrant (+X, +Y)</item>
+                 <item>Quadrant (-X, +Y)</item>
+                 <item>Quadrant (+X, -Y)</item>
+                 <item>Quadrant (-X, -Y)</item>
+             </string-array>
+
+    <string-array name="str_Left_VAK">
+                 <item>Representational systems</item>
+                 <item>Visual thoughts(V) - sight, mental imagery, spatial awareness</item>
+                 <item>Auditory (or linguistic) thoughts(A) - sound, speech, dialog, white noise</item>
+                 <item>Kinesthetic (or proprioceptive) sense(K) - somatic feelings in the body, temperature, pressure, and also emotion</item>
+             </string-array>
+
+    <string-array name="str_Left_FrameOfProposal">
+             </string-array>
+
+
+    <string-array name="str_Left_ElementsOfAnchors">
+            </string-array>
+
+    <string-array name="str_Left_UoltDisney">
+             </string-array>
+
+    <string-array name="str_Left_Note">
+                 <item>Name</item>
+                 <item>Note</item>
+             </string-array>
+
+
+    <!--
+    	PROFILE
+    -->
+
+
+    <string-array name="str_Left_PROFILE2">
+                 <item>Profile</item>
+                 <item>The preferable representational system(s):\nAuto Complete</item>
+                 <item>The preferable submodality:\nAuto Complete</item>
+                 <item>Strategy:</item>
+                 <item>The preferable position of Walt Disney:\nAuto Complete</item>
+                 <item>The preferable meta-program (meta-programs):\nAuto Complete</item>
+                 <item>Convincible:\nAuto Complete</item>
+                 <item>Valuables (knowledge, skills): </item>
+                 <item>Additional Notes:</item>
+             </string-array>
+
+    <string-array name="str_Left_PROFILE3">
+                 <item>Profile</item>
+                 <item>The preferable representational system(s):\nAuto Complete</item>
+                 <item>The preferable submodality:\nAuto Complete</item>
+                 <item>Strategy:</item>
+                 <item>The preferable position of Walt Disney:\nAuto Complete</item>
+                 <item>The preferable meta-program (meta-programs):\nAuto Complete</item>
+                 <item>Convincible:\nAuto Complete</item>
+                 <item>Valuables (knowledge, skills): </item>
+                 <item>Sleight of mouth:</item>
+                 <item>Perceptual position:</item>
+                 <item>Additional Notes:</item>
+             </string-array>
+
+
+    <string-array name="str_Position">
+        <item >1st (Self)</item>
+        <item >2nd (Other)</item>
+        <item >3rd (Observer)</item>
+    </string-array>
+
+    <string-array name="str_TricksOfLanguage">
+                <item>Intention</item>
+                <item>Redefine</item>
+                <item>Consequences</item>
+                <item>Chunk down</item>
+                <item>Chunk Up</item>
+                <item>Analogy</item>
+                <item>Change Frame Size</item>
+                <item>Another Outcome</item>
+                <item>Model of the World</item>
+                <item>Reality Strategy</item>
+                <item>Another Outcome</item>
+                <item>Hierarchy of Criteria</item>
+                <item>Apply to Self</item>
+                <item>Meta Frame</item>
+    </string-array>
+
+    <string-array name="str_REP_SYSTEM">
+                 <item>V - Visual</item>
+                 <item>A - Auditory</item>
+                 <item>K - Kinesthetic</item>
+             </string-array>
+
+    <string-array name="str_sub_REP_SYSTEM">
+                <!-- Visual -->
+                <item>Color (V)</item>
+                <item>Black and White (V)</item>
+                <item>Brightness (V)</item>
+                <item>Contrast (V)</item>
+                <item>Focus (V)</item>
+                <item>Background (V)</item>
+                <item>The detail (V)</item>
+                <item>Smooth (V)</item>
+                <item>Size (V)</item>
+                <item>Distance (V)</item>
+                <item>Form (V)</item>
+                <item>Borders (V)</item>
+                <item>Position (V)</item>
+                <item>Movement - Inside the Image (V)</item>
+                <item>Movement - Outside of the image (V)</item>
+                <item>Speed ​​(V)</item>
+                <item>Orientation/angle of view (V)</item>
+                <item>Associates-dissociated (V)</item>
+                <item>Perspective/position (V)</item>
+                <item>Proportions (V)</item>
+                <item>Uniqueness, Multiplicity (V)</item>
+                <!-- Audial -->
+                <item>Position (A)</item>
+                <item>Direction (A)</item>
+                <item>Frequency (A)</item>
+                <item>High-frequency(A)</item>
+                <item>Mode (A)</item>
+                <item>Sounds/words (A)</item>
+                <item>Melody (A)</item>
+                <item>The variability of the voice modulation (A)</item>
+                <item>Volume (A)</item>
+                <item>Tempo (A)</item>
+                <item>Rhythm (A)</item>
+                <item>Duration (A)</item>
+                <item>Mono/Stereo (A)</item>
+                <!-- Kinestetic -->
+                <item>Quality (K)</item>
+                <item>Size (K)</item>
+                <item>Form (K)</item>
+                <item>Concentration feeling inside (K)</item>
+                <item>Temperature (K)</item>
+                <item>Intensity (K)</item>
+                <item>Location (K)</item>
+                <item>Movement (K)</item>
+                <item>Direction (K)</item>
+                <item>Speed​​/Acceleration (K)</item>
+                <item>Texture (K)</item>
+                <item>Humidity (K)</item>
+                <item>Duration (K)</item>
+                <item>Weight (K)</item>
+            </string-array>
+
+    <string-array name="str_dishey">
+                 <item>Dreamer</item>
+                 <item>Realist</item>
+                 <item>Critic</item>
+             </string-array>
+
+    <string-array name="str_MetaProgramm">
+        <!-- Direction Filter -->
+                 <item>Motivation Towards</item>
+                 <item>Motivation Away</item>
+        <!-- Modal Operator Filter (Reason Filter) -->
+                 <item>Possibility</item>
+                 <item>Necessity</item>
+        <!-- Frame of Reference Filter -->
+                 <item>Internal Frame of Reference</item>
+                 <item>External Frame of Reference</item>
+                 <item>Balanced</item>
+                 <item>Internal with an External Check</item>
+                 <item>External with an Internal Check</item>
+        <!-- Convincer Representational Filter -->
+                 <item>See it</item>
+                 <item>Hear it</item>
+                 <item>Deal with them</item>
+                 <item>Read about it</item>
+        <!-- Convincer Demonstration Filter -->
+                 <item>Automatic</item>
+                 <item>Number of Times</item>
+                 <item>Period of Time</item>
+                 <item>Consistent</item>
+        <!-- Action Filter -->
+                 <item>Active</item>
+                 <item>Reflective</item>
+                 <item>Inactive</item>
+        <!-- The Work Preference Filter -->
+                 <item>Things</item>
+                 <item>Systems</item>
+                 <item>People</item>
+        <!-- Primary Interest Filter -->
+                 <item>People</item>
+                 <item>Place</item>
+                 <item>Things</item>
+                 <item>Activity</item>
+                 <item>Information</item>
+        <!-- Chunk Size Filter -->
+                 <item>Specific</item>
+                 <item>Global</item>
+                 <item>Specific to Global</item>
+                 <item>Global to Specific</item>
+        <!-- Relationship Filter (Matching/Mismatching) -->
+                 <item>Matcher</item>
+                 <item>Mismatcher</item>
+        <!-- Emotional Stress Filter -->
+                 <item>Dissociated</item>
+                 <item>Associated</item>
+                 <item>Choice</item>
+        <!-- Time Filter -->
+                 <item>Past</item>
+                 <item>Present</item>
+                 <item>Future</item>
+        <!-- Modal Operator Sequence -->
+                 <item>I can’t</item>
+                 <item>I should</item>
+                 <item>I have to</item>
+                 <item>I mustn’t</item>
+        <!-- Goal Filter -->
+                 <item>Perfection</item>
+                 <item>Optimization</item>
+             </string-array>
+
+    <string-array name="str_MetaProgramm_ubeditel">
+                 <item>Amplitude</item>
+                 <item>Frequency</item>
+                 <item>Time</item>
+             </string-array>
+
+
+    <string-array name="str_Left_Strategy_VKDiss">
+    </string-array>
+
+    <string-array name="str_Left_Strategy_ConflictParts">
+    </string-array>
+
+    <string-array name="str_Left_Strategy_XCP">
+    </string-array>
+
+    <string-array name="str_Left_Strategy_Anchor">
+    </string-array>
+
+    <string name="save_all">Save all on device</string>
+    <string name="select_all">Select all</string>
+    <string name="google_plus">Connect to GOOGLE+</string>
+
+    <string-array name="str_Left_Three_Position">
+    </string-array>
+
+    <string-array name="str_Left_Karpman">
+        <item >Karpman s Drama Triangle</item>
+        <item >Rescuer</item>
+        <item >Persecutor</item>
+        <item >Victim</item>
+    </string-array>
+
+
+    <!-- NEW WORDS
+    <string name=""></string>
+
+    <string-array name="">
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+    </string-array>
+    -->
+
+    <string-array name="str_Left_Modeling_Gordon">
+    </string-array>
+
+    <string-array name="str_Left_Modeling_Gordon_Short">
+    </string-array>
+
+    <string-array name="str_Left_State">
+    </string-array>
+
+    <string-array name="str_Left_Rules">
+    </string-array>
+
+
+    <string name="str_HELP">Manual</string>
+
+    <string-array name="str_array_HELP">
+        <item >This is a icon of that program</item>
+        <item >This is a icon for sharing of model.
+After pushing on that button, software create specific file \"DBmodelFile.xml\" in folder \Downloads.
+Also, If you want upload new models, then please put file \"DBmodelFile.xml\" in folder \Downloads and push \"Menu->Open file with moldels\" </item>
+        <item >This is a icon for edit models</item>
+        <item >This is a icon just for view models</item>
+        <item >This is a icon for view models inside archive</item>
+        <item >Create a new model</item>
+        <item >This is a icon for putting model in archive</item>
+        <item >This is a icon for putting model in edit mode</item>
+        <item >Sorting by date of models</item>
+        <item >Sorting by name of models</item>
+        <item >Sorting by type of models</item>
+    </string-array>
+
+    <string name="str_link">Links</string>
+
+
+
+    <string-array name="test_trenings_ru_Association">
+    </string-array>
+
+    <string-array name="test_trenings_ru_Anchor">
+    </string-array>
+
+    <string-array name="test_trenings_ru_Motivations">
+    </string-array>
+
+    <string-array name="test_Representational_Systems">
+        <item >Name TEST</item>
+        <item >Representational Systems</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Blue sky thinking</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Flash of inspiration</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Find my rhythm</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Flow state</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Making a splash</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Pulling together</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >In the dark</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Get a grip</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Booming economy</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Tell-tale</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Scratch that</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >None</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Bicycle</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Visual</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Auditory</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Kinesthetic</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >None</item>
+    </string-array>
+
+</resources>

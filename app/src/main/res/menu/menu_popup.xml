@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_sort_alpha"
+        android:title="@string/menu_popup_alphabet"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sort_alpha_invert"
+        android:title="@string/menu_popup_alphabet_invert"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sort_name"
+        android:title="@string/menu_popup_name_model"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sort_name_invert"
+        android:title="@string/menu_popup_name_model_invert"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sort_date"
+        android:title="@string/menu_popup_name_date"
+        android:visible="true" />
+    <item
+        android:id="@+id/item_sort_date_invert"
+        android:title="@string/menu_popup_name_date_invert"
+        android:visible="true" />
+
+</menu>

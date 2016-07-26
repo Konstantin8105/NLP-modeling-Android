@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_sort">Sort</string>
+    <string name="action_open_models">Open models</string>
+    <string name="action_save_models">Save models</string>
+
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_open">OpenActivity</string>
+    <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_setting">SettingActivity</string>
+
+    <string name="remove_models">Remove %d models</string>
+    <string name="remove_model">Remove %d model</string>
+
+    <string name="archived_models">Move to archive %d models</string>
+    <string name="archived_model">Move to archive %d model</string>
+
+    <string name="normaled_models">Move to folder %d models</string>
+    <string name="normaled_model">Move to folder %d model</string>
+
+    <string name="share_models">Share %d models</string>
+    <string name="share_model">Share %d model</string>
+
+    <string name="share">Share</string>
+    <string name="to_archive">To archive</string>
+    <string name="delete_models">Delete models</string>
+
+    <string name="task_start_saving">Start saving&#8230;</string>
+    <string name="task_file_created">File created</string>
+
+    <string name="task_start_opening">Start opening&#8230;</string>
+    <string name="task_amount_models">Found %d models in file</string>
+
+    <string name="task_analyzing">Analyzing&#8230;</string>
+    <string name="task_finish_analyze">Finish anlyze</string>
+    <string name="task_find_same_in_file">Find same models in File</string>
+    <string name="task_find_same_in_db">Find same models in File with database</string>
+    <string name="task_unique_models">Unique models %2d</string>
+    <string name="task_amount_models_add">%2d models will add to database</string>
+    <string name="task_added_in_db">Models added in database</string>
+
+    <string name="nav_folder">Folder</string>
+    <string name="nav_archive">Archive</string>
+    <string name="nav_help">Help</string>
+
+    <string name="menu_unarchive">Unarchive</string>
+
+    <string name="menu_popup_alphabet">by alphabet</string>
+    <string name="menu_popup_alphabet_invert">by alphabet(inversion)</string>
+    <string name="menu_popup_name_model">by name of model</string>
+    <string name="menu_popup_name_model_invert">by name of model(inversion)</string>
+    <string name="menu_popup_name_date">by date</string>
+    <string name="menu_popup_name_date_invert">by date(inversion)</string>
+
+</resources>
