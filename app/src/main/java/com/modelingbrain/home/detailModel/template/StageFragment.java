@@ -20,6 +20,9 @@ public class StageFragment extends Fragment {
     protected LinearLayout linLayout;
 
     public void send(Model model) {
+        if(model == null){
+            throw new NullPointerException("Model is null");
+        }
         this.model = model;
     }
 
