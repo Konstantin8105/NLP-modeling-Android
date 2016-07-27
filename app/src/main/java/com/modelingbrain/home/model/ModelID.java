@@ -59,7 +59,6 @@ public enum ModelID {
     }
 
     public int getSize(){
-        checking();
         return arrModelLine[getPositionArrayModelLine()].modelSize;
     }
 
@@ -84,15 +83,7 @@ public enum ModelID {
         return i;
     }
 
-    private static void checking(){
-        if(BuildConfig.DEBUG){
-            if(arrModelLine.length != ModelID.values().length)
-                // TODO: 1/28/16 create another solution
-                throw new RuntimeException("Not correct amount of ModelID");
-        }
-    }
-
-    private static class ModelLine
+    public static final class ModelLine
     {
         public ModelID modelID;
         public int resourceQuestions;
@@ -122,7 +113,7 @@ public enum ModelID {
 
     // TODO: 2/5/16 Классифицировать модели по SOAR
     //TODO check all icons
-    private static ModelLine arrModelLine[] = {
+    public static final ModelLine arrModelLine[] = {
 
 // TODO: 1/28/16 wrong icon
             new ModelLine(ModelID.ID_Modeling_Gordon,
