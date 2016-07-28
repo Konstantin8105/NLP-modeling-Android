@@ -1,6 +1,4 @@
-package com.modelingbrain.home;
-
-import com.modelingbrain.home.model.ModelID;
+package com.modelingbrain.home.model;
 
 import org.junit.Test;
 
