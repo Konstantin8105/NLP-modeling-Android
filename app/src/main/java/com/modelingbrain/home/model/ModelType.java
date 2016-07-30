@@ -36,6 +36,7 @@ public enum ModelType {
         return 3;
     }
 
+    // TODO: 7/30/16 remove infinite loop
     public int getGeneralColor(){
         switch(this)
         {
@@ -50,6 +51,7 @@ public enum ModelType {
         return MODEL.getGeneralColor();
     }
 
+    // TODO: 7/30/16 remove infinite loop
     public int getTextColor(){
         switch(this)
         {

@@ -22,6 +22,8 @@ import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
+
+    // TODO: 7/30/16 create automatic test for all version of android
     @Rule
     public final ActivityTestRule<MainActivity> main = new ActivityTestRule<>(MainActivity.class);
 

@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent,REQUEST_FRAGMENT);
                 break;
             }
+            // TODO: 7/30/16 create good list view with indication of present sort state
             case (R.id.action_sort):{
                 final PopupMenu popupMenu = new PopupMenu(this, this.findViewById(R.id.action_sort));
                 popupMenu.inflate(R.menu.menu_popup);

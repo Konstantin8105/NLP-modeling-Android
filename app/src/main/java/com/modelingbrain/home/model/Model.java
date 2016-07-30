@@ -103,11 +103,7 @@ public class Model {
     }
 
 
-
-
-
-
-
+// TODO: 7/30/16 remove comments
 //    public boolean isOldModel() {
 //        return modelID.isOldModel();
 //    }
@@ -124,6 +120,7 @@ public class Model {
 //        return modelID.getSize();
 //    }
 
+    // TODO: 7/30/16 rename to correct name
     public boolean compareTo(Model model) {
         if(this.modelID != model.modelID)
             return false;

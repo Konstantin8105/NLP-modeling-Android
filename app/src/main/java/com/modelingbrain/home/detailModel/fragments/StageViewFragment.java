@@ -10,6 +10,7 @@ import com.modelingbrain.home.detailModel.template.StageFragment;
 
 public class StageViewFragment extends StageFragment {
 
+    // TODO: 7/30/16 change view for depends of Model
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,

@@ -89,6 +89,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initColors() {
         Log.d(TAG, "initColors - start");
+        // TODO: 7/30/16 function getColor() is old - use new version
         generalModelColor = this.getResources().getColor(model.getModelType().getGeneralColor());
 //        generalModelTextColor   = this.getResources().getColor(model.getModelType().getTextColor());
 

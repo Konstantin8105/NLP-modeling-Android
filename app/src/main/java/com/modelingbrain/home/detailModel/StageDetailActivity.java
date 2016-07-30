@@ -9,6 +9,7 @@ public enum StageDetailActivity {
 
     private static final String TAG = "myLogs";
 
+    // TODO: 7/30/16 use base function avoid that converting
     static public StageDetailActivity Convert(String string) {
         Log.d(TAG, "StageDetailActivity input = " + string);
         StageDetailActivity stage = STATE_READ_ONLY;

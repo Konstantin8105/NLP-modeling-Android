@@ -17,6 +17,7 @@ public class StageEditFragment extends StageFragment {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
+    // TODO: 7/30/16 avoid taking id by hand
     private static final int ID_TEXT_VIEW = 10000;
 
     private int [] ids;

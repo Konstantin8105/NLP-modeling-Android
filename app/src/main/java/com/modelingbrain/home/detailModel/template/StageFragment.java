@@ -35,6 +35,7 @@ public class StageFragment extends Fragment {
         if(model == null){
             throw new NullPointerException("Model is null");
         }
+        // TODO: 7/30/16 old function getColor
         generalModelColor       = this.getResources().getColor(model.getModelType().getGeneralColor());
         generalModelTextColor   = this.getResources().getColor(model.getModelType().getTextColor());
     }

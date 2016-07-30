@@ -12,6 +12,7 @@ public enum ModelState {
         return value;
     }
 
+    // TODO: 7/30/16 use base function, avoid that convecrting
     public static ModelState convert(int value) {
         for(int i = 0 ; i < ModelState.values().length; i++){
             if(value == ModelState.values()[i].getValue())
