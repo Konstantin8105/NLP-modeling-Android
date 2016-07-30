@@ -216,7 +216,9 @@ public class MainActivity extends AppCompatActivity
                 break;
         }
         if(createFragment){
-            transaction.addToBackStack(null);
+
+            // TODO: 7/30/16 why I add next line
+            //transaction.addToBackStack(null);
             transaction.commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
