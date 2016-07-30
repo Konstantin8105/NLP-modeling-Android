@@ -11,7 +11,7 @@ public class ReaderAmount extends Reader{
 
     private int amount;
 
-    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) throws IOException {
+    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) {
         super(task, activity);
     }
 

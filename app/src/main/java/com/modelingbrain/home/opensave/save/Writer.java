@@ -73,6 +73,7 @@ public class Writer {
         try {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.FILENAME;
+            // TODO: 7/30/16 why inspection write next line is not good
             sdPath.mkdirs();
             FileWriter file = new FileWriter(full_path);
             file.write(jsonArrayGlobal.toString());

@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity
 
 //    static public final String CHOOSE_MODEL_RESULT = "CHOOSE_MODEL_RESULT";
 
-    private ContentManagerModel contentManager = new ContentManagerModel(this);
+//    private ContentManagerModel contentManager = new ContentManagerModel(this);
 
     private FloatingActionButton fab;
 
@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity
 
     public static final int REQUEST_FRAGMENT = 800;
 
+    // TODO: 7/30/16 status games is not used
     private enum PageStatus{
         Folder,
         Archive,

@@ -78,6 +78,7 @@ public class OpenActivity extends SaveOpenActivity {
 
                 GlobalFunction.pause();
 
+                // TODO: 7/30/16 simplify catches
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

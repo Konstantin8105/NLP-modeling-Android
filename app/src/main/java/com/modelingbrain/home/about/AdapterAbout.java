@@ -28,6 +28,7 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
         this.items = items;
     }
 
+    // TODO: 7/30/16 not used in code About
     public ModelAbout get(int position){
         return items.get(position);
     }

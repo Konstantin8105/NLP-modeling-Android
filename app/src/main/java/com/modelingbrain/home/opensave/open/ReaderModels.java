@@ -11,13 +11,14 @@ import com.modelingbrain.home.opensave.ValuesIO;
 import java.io.IOException;
 import java.util.ArrayList;
 
+// TODO: 7/30/16 remove logs or create good logs
 public class ReaderModels extends Reader {
 
     private ArrayList<Model> models;
     private int amount;
     private int position;
 
-    public ReaderModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, int amount) throws IOException {
+    public ReaderModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, int amount) {
         super(task, activity);
         this.amount = amount;
     }

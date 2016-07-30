@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 public class Model {
 
+    // TODO: 7/30/16 add logs
     private static final String TAG = "myLogs";
 
     // DataBase id

@@ -5,6 +5,7 @@ import java.util.Date;
 
 public class GlobalFunction {
     // TODO: 7/30/16 remove strange functions in comments
+    // TODO: 7/30/16 add logs
     private static final String TAG = "myLogs";
 
 //    public static int random(int value){

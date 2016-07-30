@@ -25,7 +25,7 @@ public class TestModelId {
         for (int i = 0; i < parameters.size(); i++) {
             for (int j = 0; j < parameters.size(); j++) {
                 if (i != j) {
-                    if (parameters.get(i) == parameters.get(j)) {
+                    if (parameters.get(i).equals(parameters.get(j))) {
                         isAllDiff = false;
                     }
                 }

@@ -2,8 +2,6 @@ package com.modelingbrain.home.db;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.PorterDuff;
-import android.util.Log;
 
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
@@ -15,6 +13,7 @@ public class DBUpdater00 implements IDBUpdater {
 
     private String log = new String();
 
+    // TODO: 7/30/16 add inspection attribute for avoid checking next line
     public static final String prefixTable = "TABLEOFMODEL";
 
     //TODO create converting from old version database
@@ -109,6 +108,7 @@ public class DBUpdater00 implements IDBUpdater {
                         log += "line = " + line + "\n";
                         listRight.add(i, line);
                         i++;
+                        // TODO: 7/30/16 remove infinite loop
                     } while (true);
                 } catch (Exception e) {
                     e.printStackTrace();

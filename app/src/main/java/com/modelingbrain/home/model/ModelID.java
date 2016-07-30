@@ -1,7 +1,5 @@
 package com.modelingbrain.home.model;
 
-import com.modelingbrain.home.BuildConfig;
-
 import com.modelingbrain.home.R;
 
 // TODO create strategy for easy changing the models and
