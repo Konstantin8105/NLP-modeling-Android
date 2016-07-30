@@ -136,7 +136,9 @@ public class DetailActivity extends AppCompatActivity {
             default:
                 throw new RuntimeException("Add new view");
         }
-        transaction.addToBackStack(null);
+        //todo why I add that line?
+        //transaction.addToBackStack(null);
+
         transaction.commit();
     }
 
