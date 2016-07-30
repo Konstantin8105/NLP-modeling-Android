@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity
 
 //    static public final String CHOOSE_MODEL_RESULT = "CHOOSE_MODEL_RESULT";
 
-//    private ContentManagerModel contentManager = new ContentManagerModel(this);
+    // TODO: 7/30/16 remove this inialization
+    private ContentManagerModel contentManager = new ContentManagerModel(this);
 
     private FloatingActionButton fab;
 

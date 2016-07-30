@@ -20,6 +20,7 @@ public class ContentManagerModel {
     private static DBHelperModel dbHelperModel;
     private static ContentManagerModel contentManager;
 
+    // TODO: 7/30/16  remove that constructor
     public ContentManagerModel(Context context) {
         if (contentManager == null) {
             ContentManagerModel.context = context;
@@ -37,6 +38,9 @@ public class ContentManagerModel {
     }
 
     private static ArrayList<ElementList> getListModel(ModelSort modelSort, ModelState state) {
+        if(dbHelperModel  == null){
+            throw new NullPointerException("dbHelperModel cannot be null");
+        }
         ArrayList<Model> models = dbHelperModel.openHeader(state);
         boolean again;
         do {

@@ -145,6 +145,9 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     public ArrayList<Model> openHeader(ModelState modelState) {
         Log.d(TAG, "openHeader - start");
+        if(modelState == null){
+            throw new NullPointerException("modelState cannot be null");
+        }
         ArrayList<Model> outputModel = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         String selectQuery = "SELECT  * FROM " + DB.MODEL_TABLE + " WHERE "
