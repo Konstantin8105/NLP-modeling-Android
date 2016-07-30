@@ -37,8 +37,7 @@ public enum ModelType {
     }
 
     public int getGeneralColor(){
-        return R.color.model_color;
-        /*switch(this)
+        switch(this)
         {
             case MODEL:
                 return R.color.model_color;
@@ -48,12 +47,11 @@ public enum ModelType {
                 return R.color.dark_color;
             default:
         }
-        return MODEL.getGeneralColor();*/
+        return MODEL.getGeneralColor();
     }
 
     public int getTextColor(){
-        return R.color.model_color_text;
-        /*switch(this)
+        switch(this)
         {
             case MODEL:
                 return R.color.model_color_text;
@@ -63,6 +61,6 @@ public enum ModelType {
                 return R.color.dark_color_text;
             default:
         }
-        return MODEL.getTextColor();*/
+        return MODEL.getTextColor();
     }
 }
