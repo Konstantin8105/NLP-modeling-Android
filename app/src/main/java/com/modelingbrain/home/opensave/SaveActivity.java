@@ -33,8 +33,6 @@ public class SaveActivity extends SaveOpenActivity {
                 Writer writer = new Writer(this,activity);
                 writer.write();
                 publishProgress(getResources().getString(R.string.task_file_created));
-            } catch (IllegalStateException e){
-                e.printStackTrace();
             } catch (RuntimeException e){
                 e.printStackTrace();
             }

@@ -1,6 +1,7 @@
 package com.modelingbrain.home.model;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
 import com.modelingbrain.home.GlobalFunction;
@@ -13,7 +14,6 @@ import java.util.Collections;
 import java.util.Comparator;
 
 public class ContentManagerModel {
-    @SuppressWarnings("unused")
     static private final String TAG = " ContentManager ";
 
     private static Context context;

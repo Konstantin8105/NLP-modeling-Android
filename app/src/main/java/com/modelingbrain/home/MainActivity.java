@@ -26,8 +26,7 @@ import com.modelingbrain.home.opensave.OpenActivity;
 import com.modelingbrain.home.opensave.SaveActivity;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener
-{
+        implements NavigationView.OnNavigationItemSelectedListener {
 
     @SuppressWarnings("unused")
     protected final String TAG = this.getClass().toString();
@@ -46,11 +45,12 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_FRAGMENT = 800;
 
     // TODO: 7/30/16 status games is not used
-    private enum PageStatus{
+    private enum PageStatus {
         Folder,
         Archive,
         Games
     }
+
     private PageStatus pageStatus;
 
     @Override
@@ -111,47 +111,47 @@ public class MainActivity extends AppCompatActivity
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        switch (id){
-            case (R.id.action_save_models):{
+        switch (id) {
+            case (R.id.action_save_models): {
                 Intent intent = new Intent(this, SaveActivity.class);
                 startActivity(intent);
                 break;
             }
-            case (R.id.action_open_models):{
+            case (R.id.action_open_models): {
                 Intent intent = new Intent(this, OpenActivity.class);
-                startActivityForResult(intent,REQUEST_FRAGMENT);
+                startActivityForResult(intent, REQUEST_FRAGMENT);
                 break;
             }
             // TODO: 7/30/16 create good list view with indication of present sort state
-            case (R.id.action_sort):{
+            case (R.id.action_sort): {
                 final PopupMenu popupMenu = new PopupMenu(this, this.findViewById(R.id.action_sort));
                 popupMenu.inflate(R.menu.menu_popup);
                 popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
                     public boolean onMenuItemClick(MenuItem item) {
                         ModelSort modelSort;
                         switch (item.getItemId()) {
-                            case(R.id.item_sort_alpha):
+                            case (R.id.item_sort_alpha):
                                 modelSort = ModelSort.SortAlphabet;
                                 break;
-                            case(R.id.item_sort_alpha_invert):
+                            case (R.id.item_sort_alpha_invert):
                                 modelSort = ModelSort.SortAlphabetInverse;
                                 break;
-                            case(R.id.item_sort_name):
+                            case (R.id.item_sort_name):
                                 modelSort = ModelSort.SortName;
                                 break;
-                            case(R.id.item_sort_name_invert):
+                            case (R.id.item_sort_name_invert):
                                 modelSort = ModelSort.SortNameInverse;
                                 break;
-                            case(R.id.item_sort_date):
+                            case (R.id.item_sort_date):
                                 modelSort = ModelSort.SortDate;
                                 break;
-                            case(R.id.item_sort_date_invert):
+                            case (R.id.item_sort_date_invert):
                                 modelSort = ModelSort.SortDateInverse;
                                 break;
                             default:
                                 return false;
                         }
-                        switch (pageStatus){
+                        switch (pageStatus) {
                             case Folder:
                                 fragmentFolder.changeSort(modelSort);
                                 break;
@@ -185,7 +185,7 @@ public class MainActivity extends AppCompatActivity
                 fab.show();
                 pageStatus = PageStatus.Folder;
 
-                if(currentFragment != null)
+                if (currentFragment != null)
                     transaction.remove(currentFragment);
                 transaction.replace(R.id.detail_fragment, fragmentFolder);
                 createFragment = true;
@@ -195,7 +195,7 @@ public class MainActivity extends AppCompatActivity
                 fab.hide();
                 pageStatus = PageStatus.Archive;
 
-                if(currentFragment != null)
+                if (currentFragment != null)
                     transaction.remove(currentFragment);
                 transaction.replace(R.id.detail_fragment, fragmentArchive);
                 createFragment = true;
@@ -215,7 +215,7 @@ public class MainActivity extends AppCompatActivity
             default:
                 break;
         }
-        if(createFragment){
+        if (createFragment) {
 
             // TODO: 7/30/16 why I add next line
             //transaction.addToBackStack(null);
@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Fragment fragment = getFragmentManager().findFragmentById(R.id.detail_fragment);
-        if(fragment != null){
+        if (fragment != null) {
             fragment.onActivityResult(requestCode, resultCode, data);
         }
     }
