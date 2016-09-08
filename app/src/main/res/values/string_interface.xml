@@ -15,17 +15,25 @@
     <string name="title_activity_save">SaveActivity</string>
     <string name="title_activity_setting">SettingActivity</string>
 
-    <string name="remove_models">Remove %d models</string>
-    <string name="remove_model">Remove %d model</string>
+    <plurals name="remove_models">
+        <item quantity="one">Remove %d model</item>
+        <item quantity="other">Remove %d models</item>
+    </plurals>
 
-    <string name="archived_models">Move to archive %d models</string>
-    <string name="archived_model">Move to archive %d model</string>
+    <plurals name="archived_models">
+        <item quantity="one">Move to archive %d model</item>
+        <item quantity="other">Move to archive %d models</item>
+    </plurals>
 
-    <string name="normaled_models">Move to folder %d models</string>
-    <string name="normaled_model">Move to folder %d model</string>
+    <plurals name="normaled_models">
+        <item quantity="one">Move to folder %d model</item>
+        <item quantity="other">Move to folder %d models</item>
+    </plurals>
 
-    <string name="share_models">Share %d models</string>
-    <string name="share_model">Share %d model</string>
+    <plurals name="share_models">
+        <item quantity="one">Share %d model</item>
+        <item quantity="other">Share %d models</item>
+    </plurals>
 
     <string name="share">Share</string>
     <string name="to_archive">To archive</string>
@@ -35,7 +43,12 @@
     <string name="task_file_created">File created</string>
 
     <string name="task_start_opening">Start opening&#8230;</string>
-    <string name="task_amount_models">Found %d models in file</string>
+
+
+    <plurals name="task_amount_models">
+        <item quantity="one">Found %d model in file</item>
+        <item quantity="other">Found %d models in file</item>
+    </plurals>
 
     <string name="task_analyzing">Analyzing&#8230;</string>
     <string name="task_finish_analyze">Finish anlyze</string>

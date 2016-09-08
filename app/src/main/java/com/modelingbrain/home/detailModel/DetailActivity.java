@@ -116,8 +116,8 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
-    StageViewFragment stageViewFragment;
-    StageEditFragment stageEditFragment;
+    private StageViewFragment stageViewFragment;
+    private StageEditFragment stageEditFragment;
 
     private void createView() {
         transaction = getFragmentManager().beginTransaction();

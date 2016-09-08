@@ -21,7 +21,6 @@ import com.modelingbrain.home.archiveModel.FragmentArchive;
 import com.modelingbrain.home.chooseModel.ActivityChooseModel;
 import com.modelingbrain.home.folderModel.FragmentFolder;
 import com.modelingbrain.home.main.ModelSort;
-import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.opensave.OpenActivity;
 import com.modelingbrain.home.opensave.SaveActivity;
 
@@ -32,9 +31,6 @@ public class MainActivity extends AppCompatActivity
     protected final String TAG = this.getClass().toString();
 
 //    static public final String CHOOSE_MODEL_RESULT = "CHOOSE_MODEL_RESULT";
-
-    // TODO: 7/30/16 remove this inialization
-    private ContentManagerModel contentManager = new ContentManagerModel(this);
 
     private FloatingActionButton fab;
 

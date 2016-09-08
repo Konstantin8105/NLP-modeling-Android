@@ -37,11 +37,7 @@ public class ShareModels {
     public void showToast() {
         int count = models.size();
         if(count > 0){
-            String text;
-            if(count == 1)
-                text = String.format(context.getResources().getString(R.string.share_model),count);
-            else
-                text = String.format(context.getResources().getString(R.string.share_models),count);
+            String text = context.getResources().getQuantityString(R.plurals.share_models,count,count);
             Toast.makeText(context, text, Toast.LENGTH_SHORT).show();
         }
     }

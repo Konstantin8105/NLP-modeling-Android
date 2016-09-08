@@ -1,10 +1,7 @@
 package com.modelingbrain.home;
 
-import android.support.test.espresso.contrib.RecyclerViewActions;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
-
-import com.modelingbrain.home.model.ContentManagerModel;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -18,7 +15,6 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.Matchers.allOf;
 
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
@@ -72,18 +68,18 @@ public class MainActivityTest {
         onView(withId(R.id.recycler_view)).perform(pressBack());
     }
 
-    @Test
-    public void sizeOfModels() {
-        onView(withId(R.id.fab)).perform(click());
-        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
-        onView(withId(R.id.recycler_view)).check(matches(allOf(
-                isDisplayed()
-        )));
-        onView(withId(R.id.recycler_view))
-                .perform( RecyclerViewActions
-                        .actionOnItemAtPosition(ContentManagerModel.getListChooseModel().size()-1, click()));
-        onView(withText("Name:")).perform(pressBack());
-    }
+//    @Test
+//    public void sizeOfModels() {
+//        onView(withId(R.id.fab)).perform(click());
+//        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
+//        onView(withId(R.id.recycler_view)).check(matches(allOf(
+//                isDisplayed()
+//        )));
+//        onView(withId(R.id.recycler_view))
+//                .perform( RecyclerViewActions
+//                        .actionOnItemAtPosition(ContentManagerModel.getListChooseModel().size()-1, click()));
+//        onView(withText("Name:")).perform(pressBack());
+//    }
 
     @Test
     public void checkButtonBackFromModel() {

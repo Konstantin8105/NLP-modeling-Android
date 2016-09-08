@@ -15,7 +15,6 @@ import com.modelingbrain.home.opensave.open.PrepareModelsWithDB;
 import com.modelingbrain.home.opensave.open.ReaderAmount;
 import com.modelingbrain.home.opensave.open.ReaderModels;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -41,34 +40,34 @@ public class OpenActivity extends SaveOpenActivity {
             Log.d(TAG, "doInBackground - start");
             try {
                 publishProgress(getResources().getString(R.string.task_start_opening));
-                ReaderAmount readerAmount = new ReaderAmount(this,activity);
+                ReaderAmount readerAmount = new ReaderAmount(this, activity);
                 readerAmount.reading();
                 int amountModels = readerAmount.getAmount();
                 readerAmount.close();
-                if(amountModels == 0)
+                if (amountModels == 0)
                     return null;
 
-                publishProgress(String.format(getResources().getString(R.string.task_amount_models), amountModels));
+                publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
                 publishProgress(getResources().getString(R.string.task_analyzing));
-                ReaderModels readerModels = new ReaderModels(this,activity,amountModels);
+                ReaderModels readerModels = new ReaderModels(this, activity, amountModels);
                 readerModels.reading();
                 ArrayList<Model> models = readerModels.getModels();
                 readerModels.close();
-                if(models.size() == 0)
+                if (models.size() == 0)
                     return null;
                 publishProgress(getResources().getString(R.string.task_finish_analyze));
 
                 publishProgress(getResources().getString(R.string.task_find_same_in_file));
-                PrepareModelsToDB prepareModels = new PrepareModelsToDB(this,activity,models);
+                PrepareModelsToDB prepareModels = new PrepareModelsToDB(this, activity, models);
                 prepareModels.prepare();
                 models = prepareModels.getModels();
                 publishProgress(String.format(getResources().getString(R.string.task_unique_models), models.size()));
 
                 publishProgress(getResources().getString(R.string.task_find_same_in_db));
-                PrepareModelsWithDB prepareWithModels = new PrepareModelsWithDB(this,activity,models);
+                PrepareModelsWithDB prepareWithModels = new PrepareModelsWithDB(this, activity, models);
                 prepareWithModels.prepare();
                 models = prepareWithModels.getModels();
-                publishProgress(String.format(getResources().getString(R.string.task_amount_models_add),models.size()));
+                publishProgress(String.format(getResources().getString(R.string.task_amount_models_add), models.size()));
 
                 GlobalFunction.pause();
 
@@ -79,13 +78,7 @@ public class OpenActivity extends SaveOpenActivity {
                 GlobalFunction.pause();
 
                 // TODO: 7/30/16 simplify catches
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            } catch (IllegalStateException e){
-                e.printStackTrace();
-            } catch (RuntimeException e){
+            } catch (IOException | RuntimeException e) {
                 e.printStackTrace();
             }
 

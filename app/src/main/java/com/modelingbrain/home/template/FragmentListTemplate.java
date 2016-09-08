@@ -24,7 +24,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     public AdapterSelectableTemplate getAdapter(){
         return adapter;
     }
-    protected RecyclerView recyclerView;
+    private RecyclerView recyclerView;
 
     protected Context context;
 

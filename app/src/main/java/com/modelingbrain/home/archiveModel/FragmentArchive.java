@@ -26,7 +26,7 @@ public class FragmentArchive extends FragmentListWithActionBarTemplate {
     protected ArrayList<ElementList> getList() {
         if(modelSort == null)
             modelSort = ModelSort.SortAlphabet;
-        return ContentManagerModel.getListArchiveModel(modelSort);
+        return ContentManagerModel.getListArchiveModel(getActivity().getApplicationContext(),modelSort);
     }
 
     @Override

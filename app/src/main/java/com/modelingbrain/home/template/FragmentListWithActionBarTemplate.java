@@ -9,7 +9,7 @@ abstract public class FragmentListWithActionBarTemplate extends FragmentListTemp
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    protected ActionMode actionMode;
+    private ActionMode actionMode;
 
     public void nullableActionMode() {
         actionMode = null;

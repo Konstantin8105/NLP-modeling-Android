@@ -1,5 +1,6 @@
 package com.modelingbrain.home.opensave.save;
 
+import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.util.Log;
@@ -33,7 +34,7 @@ public class Writer {
         this.activity = activity;
     }
 
-    public void write() {
+    public void write(Context context) {
         Log.d(TAG, "prepare - start");
 
         ArrayList<Model> modelsDB = new ArrayList<>();
@@ -48,7 +49,7 @@ public class Writer {
         JSONArray jsonArrayGlobal = new JSONArray();
         for (int i=0;i<modelsDB.size();i++) {
             Model model = modelsDB.get(i);
-            if(ContentManagerModel.isIgnore(model.getModelID()))
+            if(ContentManagerModel.isIgnore(context,model.getModelID()))
                 continue;
             if(task.isCancelled()) {
                 return;

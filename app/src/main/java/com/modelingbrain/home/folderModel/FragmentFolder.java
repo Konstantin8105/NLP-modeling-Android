@@ -20,7 +20,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    FloatingActionButton fab;
+    private FloatingActionButton fab;
     public void setFab(FloatingActionButton fab) {
         this.fab = fab;
     }
@@ -36,7 +36,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
     protected ArrayList<ElementList> getList() {
         if(modelSort == null)
             modelSort = ModelSort.SortAlphabet;
-        return ContentManagerModel.getListNormalModel(modelSort);
+        return ContentManagerModel.getListNormalModel(getActivity().getApplicationContext(),modelSort);
     }
 
     @Override

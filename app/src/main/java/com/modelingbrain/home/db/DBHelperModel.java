@@ -28,6 +28,8 @@ public class DBHelperModel extends SQLiteOpenHelper {
     //	private static final String prefixTable = "TABLEOFMODEL";
     private static int DB_Version = 20160716;
 
+    private Context context;
+
     private final static String DB_ID = "id";
     private final static String DB_MODEL_ID = "modelID";
     private final static String DB_NAME = "name";
@@ -94,7 +96,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         int ColJsonArray = cursor.getColumnIndex(DB_JSON_ARRAY);
 
         ModelID modelID = ModelID.convert(cursor.getString(ColModelID));
-        if (ContentManagerModel.isIgnore(modelID))
+        if (ContentManagerModel.isIgnore(context,modelID))
             return null;
 
         Model element = new Model(modelID);
@@ -237,7 +239,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         super(context, DATABASE_MODEL, null, DB_Version);
         if (context == null)
             throw new RuntimeException("Context == null in DB");
-        //this.context = context;
+        this.context = context;
     }
 
     @Override

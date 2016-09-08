@@ -31,7 +31,7 @@ public class SaveActivity extends SaveOpenActivity {
             try {
                 publishProgress(getResources().getString(R.string.task_start_saving));
                 Writer writer = new Writer(this,activity);
-                writer.write();
+                writer.write(getApplicationContext());
                 publishProgress(getResources().getString(R.string.task_file_created));
             } catch (RuntimeException e){
                 e.printStackTrace();

@@ -60,11 +60,7 @@ public class ActionModeCallbackArchive implements ActionMode.Callback  {
                 }
                 int count = fragment.getAdapter().getSelectedItems().size();
                 if(count > 0){
-                    String text;
-                    if(count == 1)
-                        text = String.format(fragment.getFragmentContext().getResources().getString(R.string.normaled_model),count);
-                    else
-                        text = String.format(fragment.getFragmentContext().getResources().getString(R.string.normaled_models),count);
+                    String text = fragment.getFragmentContext().getResources().getQuantityString(R.plurals.normaled_models,count,count);
                     Toast.makeText(fragment.getFragmentContext(), text, Toast.LENGTH_SHORT).show();
                 }
                 fragment.getAdapter().removeItems(fragment.getAdapter().getSelectedItems());

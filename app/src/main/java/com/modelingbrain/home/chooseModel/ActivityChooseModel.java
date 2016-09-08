@@ -38,7 +38,7 @@ public class ActivityChooseModel extends AppCompatActivity implements
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose);
 
-		listModels = ContentManagerModel.getListChooseModel();
+		listModels = ContentManagerModel.getListChooseModel(getApplicationContext());
 
 		adapter = new AdapterTemplate(this,listModels);
 		recyclerView = (RecyclerView) findViewById(R.id.recycler_view);

@@ -16,29 +16,17 @@ import java.util.Comparator;
 public class ContentManagerModel {
     static private final String TAG = " ContentManager ";
 
-    private static Context context;
-    private static DBHelperModel dbHelperModel;
-    private static ContentManagerModel contentManager;
-
-    // TODO: 7/30/16  remove that constructor
-    public ContentManagerModel(Context context) {
-        if (contentManager == null) {
-            ContentManagerModel.context = context;
-            dbHelperModel = new DBHelperModel(context);
-            contentManager = this;
-        }
+    public static ArrayList<ElementList> getListNormalModel(Context context, ModelSort modelSort) {
+        return getListModel(context, modelSort, ModelState.NORMAL);
     }
 
-    public static ArrayList<ElementList> getListNormalModel(ModelSort modelSort) {
-        return getListModel(modelSort, ModelState.NORMAL);
+    public static ArrayList<ElementList> getListArchiveModel(Context context, ModelSort modelSort) {
+        return getListModel(context, modelSort, ModelState.ARCHIVE);
     }
 
-    public static ArrayList<ElementList> getListArchiveModel(ModelSort modelSort) {
-        return getListModel(modelSort, ModelState.ARCHIVE);
-    }
-
-    private static ArrayList<ElementList> getListModel(ModelSort modelSort, ModelState state) {
-        if(dbHelperModel  == null){
+    private static ArrayList<ElementList> getListModel(Context context, ModelSort modelSort, ModelState state) {
+        DBHelperModel dbHelperModel = new DBHelperModel(context);
+        if (dbHelperModel == null) {
             throw new NullPointerException("dbHelperModel cannot be null");
         }
         ArrayList<Model> models = dbHelperModel.openHeader(state);
@@ -46,40 +34,40 @@ public class ContentManagerModel {
         do {
             again = false;
             for (int i = 0; i < models.size(); i++) {
-                if (isIgnore(models.get(i).getModelID())) {
+                if (isIgnore(context, models.get(i).getModelID())) {
                     models.remove(i);
                     again = true;
                 }
             }
         } while (again);
-        return sort(models, modelSort);
+        return sort(context, models, modelSort);
     }
 
-    private static ArrayList<ElementList> convert(ArrayList<Model> result) {
+    private static ArrayList<ElementList> convert(Context context, ArrayList<Model> result) {
         ArrayList<ElementList> elements = new ArrayList<>();
         for (Model model : result) {
-            elements.add(convert(model));
+            elements.add(convert(context, model));
         }
         return elements;
     }
 
-    private static ElementList convert(Model model) {
+    private static ElementList convert(Context context, Model model) {
         return new ElementList(
                 model.getModelID().getResourceIcon(),
                 model.getName(),
-                String.format("%s. %s",context.getResources().getString(model.getModelType().getStringResource()),
+                String.format("%s. %s", context.getResources().getString(model.getModelType().getStringResource()),
                         context.getResources().getStringArray(model.getModelID().getResourceQuestion())[0]),
                 GlobalFunction.ConvertMillisecondToDate(model.getMillisecond_Date()),
-                context.getResources().getColor(model.getModelType().getGeneralColor()),
+                ContextCompat.getColor(context, model.getModelType().getGeneralColor()),
                 model.getDbId()
         );
     }
 
-    public static ArrayList<ElementList> getListChooseModel() {
+    public static ArrayList<ElementList> getListChooseModel(Context context) {
         ArrayList<ModelID> elements = new ArrayList<>();
 
         for (int i = 0; i < ModelID.values().length; i++) {
-            if (!isIgnore(ModelID.values()[i])) {
+            if (!isIgnore(context, ModelID.values()[i])) {
                 elements.add(ModelID.values()[i]);
             }
         }
@@ -144,7 +132,7 @@ public class ContentManagerModel {
         return output;
     }
 
-    public static boolean isIgnore(ModelID modelID) {
+    public static boolean isIgnore(Context context, ModelID modelID) {
         boolean ignore = false;
 
         if (context.getResources().getStringArray(modelID.getResourceQuestion()).length != modelID.getSize() + 1) {
@@ -171,32 +159,32 @@ public class ContentManagerModel {
         return ignore;
     }
 
-    static void showLogArray(ArrayList<ElementList> array) {
+    private static void showLogArray(ArrayList<ElementList> array) {
         for (int i = 0; i < array.size(); i++) {
             Log.d(TAG, TAG + "i = " + i + " array = " + array.get(i).getID());
         }
     }
 
 
-    private static ArrayList<ElementList> sort(ArrayList<Model> result, ModelSort modelSort) {
+    private static ArrayList<ElementList> sort(Context context, ArrayList<Model> result, ModelSort modelSort) {
         long start = GlobalFunction.getTime();
 
         ArrayList<ElementList> output;
         switch (modelSort) {
             case SortName:
             case SortNameInverse:
-                output = SortName(result);
+                output = SortName(context, result);
                 break;
             case SortAlphabet:
             case SortAlphabetInverse:
-                output = SortAlphabet(result);
+                output = SortAlphabet(context, result);
                 break;
             case SortDate:
             case SortDateInverse:
-                output = SortDate(result);
+                output = SortDate(context, result);
                 break;
             default:
-                output = SortName(result);
+                output = SortName(context, result);
         }
         if (modelSort == ModelSort.SortNameInverse ||
                 modelSort == ModelSort.SortAlphabetInverse ||
@@ -208,7 +196,7 @@ public class ContentManagerModel {
         return output;
     }
 
-    private static ArrayList<ElementList> SortDate(ArrayList<Model> result) {
+    private static ArrayList<ElementList> SortDate(Context context, ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
@@ -218,11 +206,11 @@ public class ContentManagerModel {
                 }
             });
         }
-        return convert(result);
+        return convert(context, result);
     }
 
 
-    private static ArrayList<ElementList> SortAlphabet(ArrayList<Model> result) {
+    private static ArrayList<ElementList> SortAlphabet(Context context, ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
@@ -240,10 +228,10 @@ public class ContentManagerModel {
                 }
             });
         }
-        return convert(result);
+        return convert(context, result);
     }
 
-    private static ArrayList<ElementList> SortName(ArrayList<Model> result) {
+    private static ArrayList<ElementList> SortName(Context context, ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
@@ -271,7 +259,7 @@ public class ContentManagerModel {
                 }
             });
         }
-        return convert(result);
+        return convert(context, result);
     }
 
     private static ArrayList<ElementList> Inverse(ArrayList<ElementList> result) {
