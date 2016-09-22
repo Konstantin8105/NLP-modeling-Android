@@ -53,7 +53,7 @@ public class DetailActivity extends AppCompatActivity {
 
         initColors();
 
-        stageDetailActivity = StageDetailActivity.Convert(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
+        stageDetailActivity = StageDetailActivity.valueOf(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {

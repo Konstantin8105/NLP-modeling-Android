@@ -10,7 +10,7 @@ import com.modelingbrain.home.opensave.SaveOpenActivity;
 import java.util.ArrayList;
 
 public class PrepareModels {
-    @SuppressWarnings("unused")
+    @SuppressWarnings({"unused", "FieldCanBeLocal"})
     private final String TAG = this.getClass().toString();
 
     protected ArrayList<Model> models;

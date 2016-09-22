@@ -12,7 +12,7 @@
             android:title="@string/nav_archive" />
     </group>
 
-    <item android:title="Other">
+    <item android:title="@string/other">
         <menu>
             <!-- TODO add setting
             <item

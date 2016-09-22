@@ -1,5 +1,10 @@
 package com.modelingbrain.home;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.pm.ActivityInfo;
+import android.content.res.Configuration;
+import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -65,6 +70,38 @@ public class MainActivityTest {
         onView(withId(R.id.fab)).perform(click());
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
         onView(withId(R.id.recycler_view)).perform(pressBack());
+    }
+
+    @Test
+    public void rotate1() {
+        rotateScreen(Configuration.ORIENTATION_PORTRAIT);
+        onView(withId(R.id.fab)).perform(click());
+        rotateScreen(Configuration.ORIENTATION_LANDSCAPE);
+        onView(withId(R.id.recycler_view)).perform(pressBack());
+        rotateScreen(Configuration.ORIENTATION_PORTRAIT);
+    }
+
+    @Test
+    public void rotate2() {
+        rotateScreen(Configuration.ORIENTATION_PORTRAIT);
+        onView(withId(R.id.fab)).perform(click());
+        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
+        onView(withText("Model SCORE")).perform(click());
+        rotateScreen(Configuration.ORIENTATION_LANDSCAPE);
+        onView(withId(R.id.recycler_view)).perform(pressBack());
+        rotateScreen(Configuration.ORIENTATION_PORTRAIT);
+    }
+
+    private void rotateScreen(int orientationNext) {
+        Context context = InstrumentationRegistry.getTargetContext();
+        int orientation = context.getResources().getConfiguration().orientation;
+
+        if (orientation != orientationNext) {
+            Activity activity = main.getActivity();
+            activity.setRequestedOrientation(
+                    (orientationNext == Configuration.ORIENTATION_PORTRAIT) ?
+                            ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        }
     }
 
     @Test

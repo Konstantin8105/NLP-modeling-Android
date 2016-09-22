@@ -26,6 +26,7 @@ public class ContentManagerModel {
 
     private static ArrayList<ElementList> getListModel(Context context, ModelSort modelSort, ModelState state) {
         DBHelperModel dbHelperModel = new DBHelperModel(context);
+        //noinspection ConstantConditions
         if (dbHelperModel == null) {
             throw new NullPointerException("dbHelperModel cannot be null");
         }

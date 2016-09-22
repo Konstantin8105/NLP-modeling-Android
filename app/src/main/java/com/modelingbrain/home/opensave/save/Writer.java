@@ -47,15 +47,15 @@ public class Writer {
         Log.d(TAG, "SaveModel: IN");
         Log.d(TAG, "Saving models by JSON type");
         JSONArray jsonArrayGlobal = new JSONArray();
-        for (int i=0;i<modelsDB.size();i++) {
+        for (int i = 0; i < modelsDB.size(); i++) {
             Model model = modelsDB.get(i);
-            if(ContentManagerModel.isIgnore(context,model.getModelID()))
+            if (ContentManagerModel.isIgnore(context, model.getModelID()))
                 continue;
-            if(task.isCancelled()) {
+            if (task.isCancelled()) {
                 return;
             }
             GlobalFunction.pause();
-            publishProgress((int)((float)i/(float)modelsDB.size()*100));
+            publishProgress((int) ((float) i / (float) modelsDB.size() * 100));
             try {
                 JSONObject obj = new JSONObject();
                 obj.put(ValuesIO.TYPE, model.getModelID().toString());
@@ -74,8 +74,8 @@ public class Writer {
         try {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.FILENAME;
-            // TODO: 7/30/16 why inspection write next line is not good
-            sdPath.mkdirs();
+            boolean createFolder = sdPath.mkdirs();
+            Log.d(TAG, "SaveModel: createFolder = " + createFolder);
             FileWriter file = new FileWriter(full_path);
             file.write(jsonArrayGlobal.toString());
             file.flush();
@@ -88,10 +88,10 @@ public class Writer {
     }
 
 
-    protected void publishProgress(int values){
-        if(values < 0)
+    protected void publishProgress(int values) {
+        if (values < 0)
             values = 0;
-        if(values > 100)
+        if (values > 100)
             values = 100;
         activity.getProgressBar().setProgress(values);
     }

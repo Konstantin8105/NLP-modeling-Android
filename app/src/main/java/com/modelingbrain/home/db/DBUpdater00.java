@@ -109,7 +109,7 @@ public class DBUpdater00 implements IDBUpdater {
                         listRight.add(i, line);
                         i++;
                         // TODO: 7/30/16 remove infinite loop
-                    } while (true);
+                    } while (i < 200);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

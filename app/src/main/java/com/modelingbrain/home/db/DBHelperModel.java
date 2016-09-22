@@ -204,6 +204,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
     public void updateModel(Model model) {
         Log.d(TAG, "updateModel - start");
         Log.d(TAG, "updateModel - " + model.toString());
+        //noinspection ConstantConditions
         if (model == null) return;
         Model modelDB = this.openModel(model.getDbId());
         if (modelDB == null) return;

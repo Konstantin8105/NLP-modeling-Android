@@ -28,8 +28,6 @@ public class ActivityChooseModel extends AppCompatActivity implements
 	private final String TAG = this.getClass().toString();
 
 	private ArrayList<ElementList> listModels;
-	private AdapterTemplate adapter;
-	private RecyclerView recyclerView;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +37,8 @@ public class ActivityChooseModel extends AppCompatActivity implements
 
 		listModels = ContentManagerModel.getListChooseModel(getApplicationContext());
 
-		adapter = new AdapterTemplate(this,listModels);
-		recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+		AdapterTemplate adapter = new AdapterTemplate(this, listModels);
+		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
 		recyclerView.setAdapter(adapter);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		recyclerView.setLayoutManager(new LinearLayoutManager(this));
