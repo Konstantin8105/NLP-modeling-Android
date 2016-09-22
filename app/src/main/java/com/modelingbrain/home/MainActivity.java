@@ -49,11 +49,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     private PageStatus pageStatus;
+    private String pageStatusKey = "PageStatus";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.
+        outState.putString(pageStatusKey, pageStatus.toString());
     }
 
     @Override
@@ -74,7 +75,20 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        pageStatus = PageStatus.Folder;
+        if (savedInstanceState != null) {
+            pageStatus = PageStatus.valueOf(savedInstanceState.getString(pageStatusKey));
+            switch (pageStatus){
+                case Folder:
+                    navigationView.getMenu().getItem(0).setChecked(true);
+                    break;
+                case Archive:
+                    navigationView.getMenu().getItem(1).setChecked(true);
+                    break;
+            }
+        } else {
+            pageStatus = PageStatus.Folder;
+            navigationView.getMenu().getItem(0).setChecked(true);
+        }
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -84,6 +98,8 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent, REQUEST_FRAGMENT);
             }
         });
+
+
         createView();
     }
 

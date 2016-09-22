@@ -2,6 +2,7 @@ package com.modelingbrain.home;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 public class GlobalFunction {
     public static void pause() {
@@ -16,10 +17,11 @@ public class GlobalFunction {
         return (new Date()).getTime();
     }
 
+    private static final SimpleDateFormat format = new SimpleDateFormat(
+            "hh:mm:ss dd.MM.yyyy", Locale.getDefault());
     public static String ConvertMillisecondToDate(long date) {
         Date d = new Date(date);
         d.setTime(date);
-        SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss dd.MM.yyyy");
         return format.format(d);
     }
 }

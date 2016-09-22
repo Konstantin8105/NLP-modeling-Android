@@ -42,9 +42,6 @@ public class ShareModels {
         }
     }
 
-    // TODO: 1/28/16  share createHTML
-    // TODO: 1/28/16  share createPoster
-
     public void createEmail() {
         Intent email = new Intent(Intent.ACTION_SEND);
         email.putExtra(Intent.EXTRA_EMAIL, new String[]{""});

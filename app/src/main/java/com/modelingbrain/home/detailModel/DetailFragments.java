@@ -9,8 +9,8 @@ import com.modelingbrain.home.detailModel.template.StageFragment;
 public enum DetailFragments {
     // TODO: add correct strings
     // TODO: switch icon in fab
-    STATE_VIEW_READ(new StageViewFragment(), R.string.about_program, R.drawable.ic_menu_archive),
-    STATE_VIEW_WRITE(new StageEditFragment(), R.string.about_program, R.drawable.ic_menu_folder);
+    STATE_VIEW_READ(new StageViewFragment(), R.string.about_program, R.drawable.ic_lock),
+    STATE_VIEW_WRITE(new StageEditFragment(), R.string.about_program, R.drawable.ic_unlock);
 
     StageFragment fragment;
     int stringResource;

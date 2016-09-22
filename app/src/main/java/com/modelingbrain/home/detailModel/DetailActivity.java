@@ -30,12 +30,15 @@ public class DetailActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private StageDetailActivity stageDetailActivity;
+    private String stageDetailActivityKey = "StageDetailActivity";
     private DetailFragments fragment;
+    private String detailFragmentsKey = "DetailFragments";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.
+        outState.putString(detailFragmentsKey, fragment.toString());
+        outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
     }
 
     @Override
@@ -69,12 +72,17 @@ public class DetailActivity extends AppCompatActivity {
             fab.hide();
         }
 
-        switch (stageDetailActivity) {
-            case STATE_NEW_FROM_WRITE:
-                fragment = DetailFragments.STATE_VIEW_WRITE;
-                break;
-            default:
-                fragment = DetailFragments.STATE_VIEW_READ;
+        if (savedInstanceState != null) {
+            fragment = DetailFragments.valueOf(savedInstanceState.getString(detailFragmentsKey));
+            stageDetailActivity = StageDetailActivity.valueOf(savedInstanceState.getString(stageDetailActivityKey));
+        } else {
+            switch (stageDetailActivity) {
+                case STATE_NEW_FROM_WRITE:
+                    fragment = DetailFragments.STATE_VIEW_WRITE;
+                    break;
+                default:
+                    fragment = DetailFragments.STATE_VIEW_READ;
+            }
         }
 
         createView();

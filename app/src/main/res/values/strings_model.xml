@@ -1,37 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="toast_archive">Archive(Read-Only)</string>
-    <string name="toast_folder">General folder</string>
-    <string name="toast_dearchived">From archive to folder</string>
-    <string name="toast_archived">From folder to archive</string>
     <!-- ENGLISH VERSION -->
     <string name="model_name">Name:</string>
 
-    <string name="test_procent">Result: </string>
-    <string name="test_time">Time:</string>
-
-    <string name="test_testing">Check</string>
-    <string name="test_see_answer">See answers</string>
-
-    <string name="test_your_result">Your result: </string>
-
-    <string name="activity_testing">Testing</string>
-
-    <string name="right_hand">Right-Hander</string>
-    <string name="left_hand">Left-Handed</string>
-
-    <string name="sort_by_name">Sort by name</string>
-    <string name="sort_by_type">Sort by type of model</string>
-    <string name="sort_by_date">Sort by date</string>
-    <string name="state_edit">Edit state</string>
-    <string name="state_view">View state</string>
-    <string name="open_model">Open file with models</string>
-    <string name="save_model">Save model</string>
-    <string name="delete_model">Delete</string>
-    <string name="extend_version">Full version</string>
     <string name="about_program">About program</string>
-    <string name="share_all">Share all models</string>
 
     <string name="result_of_modeling">Results of modeling</string>
     <string name="name_of_model_">Name of model: </string>
@@ -41,11 +14,6 @@
     <string name="name_strategy">Strategy</string>
     <string name="name_dark">Dark strategy</string>
     <string name="name_other">Other</string>
-
-    <string name="you_delete">You delete: </string>
-    <string name="delete_element"> element</string>
-    <string name="will_create">Developed</string>
-    <string name="you_share">Share: </string>
 
     <string-array name="str_Left_Science">
                  <item>Scientific model</item>
@@ -353,10 +321,6 @@
 
     <string-array name="str_Left_Strategy_Anchor">
     </string-array>
-
-    <string name="save_all">Save all on device</string>
-    <string name="select_all">Select all</string>
-    <string name="google_plus">Connect to GOOGLE+</string>
 
     <string-array name="str_Left_Three_Position">
     </string-array>

@@ -85,7 +85,6 @@ public class MainActivityTest {
         rotateScreen(Configuration.ORIENTATION_PORTRAIT);
     }
 
-    // TODO: 22.09.2016 solve the bug
     @Test
     public void rotate2() {
         rotateScreen(Configuration.ORIENTATION_PORTRAIT);
@@ -93,8 +92,9 @@ public class MainActivityTest {
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
         onView(withText("Model SCORE")).perform(click());
         rotateScreen(Configuration.ORIENTATION_LANDSCAPE);
-        onView(withId(R.id.recycler_view)).perform(pressBack());
+        onView(withText("Name:")).check(matches(isDisplayed()));
         rotateScreen(Configuration.ORIENTATION_PORTRAIT);
+        onView(withText("Name:")).perform(pressBack());
     }
 
     private void rotateScreen(int orientationNext) {
