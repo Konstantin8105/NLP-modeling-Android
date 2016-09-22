@@ -29,10 +29,14 @@ public class DetailActivity extends AppCompatActivity {
     private Model model;
 
     private FloatingActionButton fab;
-    private int generalModelColor;
     private StageDetailActivity stageDetailActivity;
     private DetailFragments fragment;
-    private FragmentTransaction transaction;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,7 +84,7 @@ public class DetailActivity extends AppCompatActivity {
     private void initColors() {
         Log.d(TAG, "initColors - start");
 
-        generalModelColor = ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor());
+        int generalModelColor = ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor());
 
         CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         ctl.setTitle(getResources().getStringArray(model.getModelID().getResourceQuestion())[0]);
@@ -107,7 +111,7 @@ public class DetailActivity extends AppCompatActivity {
 
 
     private void createView() {
-        transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         switch (fragment) {
             case STATE_VIEW_READ: {
                 transaction.remove(fragment.getFragment());

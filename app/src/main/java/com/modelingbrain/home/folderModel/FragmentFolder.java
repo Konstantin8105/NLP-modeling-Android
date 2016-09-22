@@ -43,12 +43,6 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate  implement
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup, Bundle savedInstanceState) {
-        View result = super.onCreateView(inflater, parentViewGroup, savedInstanceState);
-        return result;
-    }
-
-    @Override
     public Fragment getFragment() {
         return this;
     }

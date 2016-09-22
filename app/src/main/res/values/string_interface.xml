@@ -4,6 +4,8 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
+    <string name="navigation_drawer_other">Other</string>
+
     <string name="action_settings">Settings</string>
     <string name="action_sort">Sort</string>
     <string name="action_open_models">Open models</string>

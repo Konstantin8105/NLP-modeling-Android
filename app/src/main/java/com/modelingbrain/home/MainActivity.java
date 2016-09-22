@@ -30,8 +30,6 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("unused")
     protected final String TAG = this.getClass().toString();
 
-    private FragmentTransaction transaction;
-
     private FloatingActionButton fab;
     public static final int REQUEST_FRAGMENT = 800;
 
@@ -51,6 +49,12 @@ public class MainActivity extends AppCompatActivity
     }
 
     private PageStatus pageStatus;
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -160,7 +164,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void createView() {
-        transaction = getFragmentManager().beginTransaction();
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
         switch (pageStatus) {
             case Folder: {
                 transaction.remove(pageStatus.getMainFragment().getFragment());

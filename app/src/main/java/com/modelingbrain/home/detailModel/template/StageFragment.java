@@ -10,11 +10,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.R;
 
 public class StageFragment extends Fragment {
     protected Model model;
+    protected String modelID = "ModelDbId";
     protected int generalModelColor;
     protected int generalModelTextColor;
 
@@ -44,13 +46,21 @@ public class StageFragment extends Fragment {
                 model.getModelType().getTextColor());
     }
 
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(modelID, model.getDbId());
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
-
+        if (savedInstanceState != null) {
+            model = (new DBHelperModel(getActivity().getBaseContext()))
+                    .openModel(savedInstanceState.getInt(modelID));
+        }
         initColors();
 
         linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);

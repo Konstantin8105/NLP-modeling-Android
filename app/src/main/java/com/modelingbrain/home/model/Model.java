@@ -7,9 +7,6 @@ import java.util.Arrays;
 
 public class Model {
 
-    // TODO: 7/30/16 add logs
-    private static final String TAG = "myLogs";
-
     // DataBase id
     private int dbId;
     public int getDbId() {
@@ -70,7 +67,6 @@ public class Model {
     public void setAnswer(int i, String message){
         if(answer == null)
             answer = new String[getModelID().getSize()];
-        answer[i] = new String();
         answer[i] = message;
     }
     public void setAnswer(JSONArray jsonArray){
@@ -89,7 +85,6 @@ public class Model {
         state = ModelState.NORMAL;
         for(int i=0;i< answer.length;i++)
         {
-            //answer[i] = new String();
             answer[i] = "";
         }
     }
@@ -104,24 +99,6 @@ public class Model {
     }
 
 
-// TODO: 7/30/16 remove comments
-//    public boolean isOldModel() {
-//        return modelID.isOldModel();
-//    }
-//
-//    public int getResourceIcon() {
-//        return modelID.getResourceIcon();
-//    }
-//
-//    public int getResourceQuestion() {
-//        return modelID.getResourceQuestion();
-//    }
-//
-//    public int getSize() {
-//        return modelID.getSize();
-//    }
-
-    // TODO: 7/30/16 rename to correct name
     public boolean compareTo(Model model) {
         if(this.modelID != model.modelID)
             return false;

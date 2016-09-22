@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import com.modelingbrain.home.R;
+import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.template.StageFragment;
 
 public class StageViewFragment extends StageFragment {
@@ -16,6 +17,11 @@ public class StageViewFragment extends StageFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
+
+        if (savedInstanceState != null) {
+            model = (new DBHelperModel(getActivity().getBaseContext()))
+                    .openModel(savedInstanceState.getInt(modelID));
+        }
 
         initColors();
 

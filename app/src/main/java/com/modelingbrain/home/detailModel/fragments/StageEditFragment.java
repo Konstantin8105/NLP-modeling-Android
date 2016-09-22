@@ -10,6 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 
 import com.modelingbrain.home.R;
+import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.template.StageFragment;
 
 public class StageEditFragment extends StageFragment {
@@ -20,7 +21,6 @@ public class StageEditFragment extends StageFragment {
     // TODO: 7/30/16 avoid taking id by hand
     private static final int ID_TEXT_VIEW = 10000;
 
-    private int [] ids;
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
 //TODO edit model and saving
     // TODO return changed model
@@ -30,9 +30,15 @@ public class StageEditFragment extends StageFragment {
                              Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
+
+        if (savedInstanceState != null) {
+            model = (new DBHelperModel(getActivity().getBaseContext()))
+                    .openModel(savedInstanceState.getInt(modelID));
+        }
+
         initColors();
 
-        ids = new int[model.getModelID().getSize()+1];
+        int[] ids = new int[model.getModelID().getSize() + 1];
         for (int i = 0; i < ids.length; i++) {
             ids[i] = ID_TEXT_VIEW + i;
         }

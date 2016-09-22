@@ -12,13 +12,8 @@
             android:title="@string/nav_archive" />
     </group>
 
-    <item android:title="@string/other">
+    <item android:title="@string/navigation_drawer_other">
         <menu>
-            <!-- TODO add setting
-            <item
-                android:id="@+id/nav_settings"
-                android:icon="@drawable/ic_settings_applications_24dp"
-                android:title="Settings" /> -->
             <item
                 android:id="@+id/nav_help"
                 android:icon="@drawable/ic_nav_help"
