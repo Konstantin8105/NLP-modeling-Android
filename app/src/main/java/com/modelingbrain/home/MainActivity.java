@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity
 //    private FragmentArchive fragmentArchive;
     private FragmentTransaction transaction;
 
+    private FloatingActionButton fab;
     public static final int REQUEST_FRAGMENT = 800;
 
     // TODO: 7/30/16 status games is not used
@@ -75,11 +76,16 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Default NavigationView position
-//        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_folder));
-//        navigationView.getMenu().getItem(0).setChecked(true);
-
         pageStatus = PageStatus.Folder;
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getBaseContext(), ActivityChooseModel.class);
+                startActivityForResult(intent, REQUEST_FRAGMENT);
+            }
+        });
         createView();
     }
 
@@ -166,11 +172,15 @@ public class MainActivity extends AppCompatActivity
             case Folder: {
                 transaction.remove(pageStatus.getMainFragment().getFragment());
                 transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                fab.show();
+                FragmentFolder folder = (FragmentFolder) pageStatus.getMainFragment().getFragment();
+                folder.setFab(fab);
                 break;
             }
             case Archive: {
                 transaction.remove(pageStatus.getMainFragment().getFragment());
                 transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                fab.hide();
                 break;
             }
         }

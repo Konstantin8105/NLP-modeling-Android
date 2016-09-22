@@ -30,12 +30,11 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate  implement
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
+    FloatingActionButton fab;
+    public void setFab(FloatingActionButton fab) {
+        this.fab = fab;
+    }
 
-//    public void setFab(FloatingActionButton fab) {
-//        this.fab = fab;
-////    }
-
-    private FloatingActionButton fab;
     private ModelSort modelSort;
 
     public void changeSort(ModelSort modelSort) {
@@ -46,16 +45,6 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate  implement
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup, Bundle savedInstanceState) {
         View result = super.onCreateView(inflater, parentViewGroup, savedInstanceState);
-
-        fab = (FloatingActionButton) getActivity().findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getFragmentContext(), ActivityChooseModel.class);
-                startActivityForResult(intent, REQUEST_FRAGMENT);
-            }
-        });
-
         return result;
     }
 
