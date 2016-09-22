@@ -32,19 +32,27 @@ public class MainActivity extends AppCompatActivity
 
 //    static public final String CHOOSE_MODEL_RESULT = "CHOOSE_MODEL_RESULT";
 
-    private FloatingActionButton fab;
 
-    private FragmentFolder fragmentFolder;
-    private FragmentArchive fragmentArchive;
+    //    private FragmentFolder fragmentFolder;
+//    private FragmentArchive fragmentArchive;
     private FragmentTransaction transaction;
 
     public static final int REQUEST_FRAGMENT = 800;
 
     // TODO: 7/30/16 status games is not used
     private enum PageStatus {
-        Folder,
-        Archive,
-        Games
+        Folder(new FragmentFolder()),
+        Archive(new FragmentArchive());
+
+        private MainFragments fragment;
+
+        PageStatus(MainFragments fragment) {
+            this.fragment = fragment;
+        }
+
+        public MainFragments getMainFragment() {
+            return fragment;
+        }
     }
 
     private PageStatus pageStatus;
@@ -57,18 +65,6 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, ActivityChooseModel.class);
-                startActivityForResult(intent, REQUEST_FRAGMENT);
-            }
-        });
-
-        fragmentFolder = new FragmentFolder();
-        fragmentFolder.setFab(fab);
-        fragmentArchive = new FragmentArchive();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -80,9 +76,13 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         //Default NavigationView position
-        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_folder));
-        navigationView.getMenu().getItem(0).setChecked(true);
+//        onNavigationItemSelected(navigationView.getMenu().findItem(R.id.nav_folder));
+//        navigationView.getMenu().getItem(0).setChecked(true);
+
+        pageStatus = PageStatus.Folder;
+        createView();
     }
+
 
     @Override
     public void onBackPressed() {
@@ -147,15 +147,7 @@ public class MainActivity extends AppCompatActivity
                             default:
                                 return false;
                         }
-                        switch (pageStatus) {
-                            case Folder:
-                                fragmentFolder.changeSort(modelSort);
-                                break;
-                            case Archive:
-                                fragmentArchive.changeSort(modelSort);
-                                break;
-                            default:
-                        }
+                        pageStatus.getMainFragment().changeSort(modelSort);
                         return true;
                     }
                 });
@@ -168,41 +160,42 @@ public class MainActivity extends AppCompatActivity
         return super.onOptionsItemSelected(item);
     }
 
+    private void createView() {
+        transaction = getFragmentManager().beginTransaction();
+        switch (pageStatus) {
+            case Folder: {
+                transaction.remove(pageStatus.getMainFragment().getFragment());
+                transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                break;
+            }
+            case Archive: {
+                transaction.remove(pageStatus.getMainFragment().getFragment());
+                transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                break;
+            }
+        }
+        transaction.commit();
+    }
+
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
-        transaction = getFragmentManager().beginTransaction();
-        Fragment currentFragment = getFragmentManager().findFragmentById(R.id.detail_fragment);
-        boolean createFragment = false;
-        // Handle navigation view item clicks here.
         int id = item.getItemId();
         switch (id) {
             case R.id.nav_folder: {
-                fab.show();
-                pageStatus = PageStatus.Folder;
-
-                if (currentFragment != null)
-                    transaction.remove(currentFragment);
-                transaction.replace(R.id.detail_fragment, fragmentFolder);
-                createFragment = true;
+                if (pageStatus != PageStatus.Folder) {
+                    pageStatus = PageStatus.Folder;
+                    createView();
+                }
                 break;
             }
             case R.id.nav_archive: {
-                fab.hide();
-                pageStatus = PageStatus.Archive;
-
-                if (currentFragment != null)
-                    transaction.remove(currentFragment);
-                transaction.replace(R.id.detail_fragment, fragmentArchive);
-                createFragment = true;
+                if (pageStatus != PageStatus.Archive) {
+                    pageStatus = PageStatus.Archive;
+                    createView();
+                }
                 break;
             }
-            // TODO: 1/28/16 add setting
-            /*case R.id.nav_settings: {
-                Intent intent = new Intent(this, ActivitySetting.class);
-                startActivity(intent);
-                break;
-            }*/
             case R.id.nav_help: {
                 Intent intent = new Intent(this, ActivityAbout.class);
                 startActivity(intent);
@@ -210,12 +203,6 @@ public class MainActivity extends AppCompatActivity
             }
             default:
                 break;
-        }
-        if (createFragment) {
-
-            // TODO: 7/30/16 why I add next line
-            //transaction.addToBackStack(null);
-            transaction.commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

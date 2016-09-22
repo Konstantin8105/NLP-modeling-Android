@@ -109,11 +109,8 @@ public class MainActivityTest {
         }
     }
 
-    // TODO: 22.09.2016 solve that bug
     @Test
     public void navigation() {
-        openDrawer(R.id.drawer_layout);
-        onView(withText(R.string.nav_folder)).perform(click());
         openDrawer(R.id.drawer_layout);
         onView(withText(R.string.nav_folder)).perform(click());
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));

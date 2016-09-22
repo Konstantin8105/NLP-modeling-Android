@@ -1,9 +1,11 @@
 package com.modelingbrain.home.archive;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.view.ActionMode;
 
 import com.modelingbrain.home.MainActivity;
+import com.modelingbrain.home.MainFragments;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.detailModel.StageDetailActivity;
@@ -13,13 +15,18 @@ import com.modelingbrain.home.template.FragmentListWithActionBarTemplate;
 
 import java.util.ArrayList;
 
-public class FragmentArchive extends FragmentListWithActionBarTemplate {
+public class FragmentArchive extends FragmentListWithActionBarTemplate implements MainFragments{
 
     private ModelSort modelSort;
 
     public void changeSort(ModelSort modelSort) {
         this.modelSort = modelSort;
         updateScreen();
+    }
+
+    @Override
+    public Fragment getFragment() {
+        return this;
     }
 
     @Override
