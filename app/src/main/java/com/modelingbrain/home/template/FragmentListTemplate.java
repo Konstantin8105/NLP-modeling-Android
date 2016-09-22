@@ -17,6 +17,8 @@ import com.modelingbrain.home.R;
 
 import java.util.ArrayList;
 
+import static android.app.Activity.RESULT_OK;
+
 abstract public class FragmentListTemplate extends Fragment implements
         AdapterSelectableTemplate.ViewHolder.ClickListener {
 
@@ -81,7 +83,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG, "onActivityResult - start");
-        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == getActivity().RESULT_OK){
+        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == RESULT_OK){
             updateScreen();
         }
         Log.d(TAG, "onActivityResult - finish");

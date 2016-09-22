@@ -88,7 +88,7 @@ public class Writer {
     }
 
 
-    protected void publishProgress(int values) {
+    private void publishProgress(int values) {
         if (values < 0)
             values = 0;
         if (values > 100)

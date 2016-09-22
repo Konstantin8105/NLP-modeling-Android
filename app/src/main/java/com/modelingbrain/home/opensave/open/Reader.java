@@ -18,8 +18,8 @@ public abstract class Reader {
     protected final String TAG = this.getClass().toString();
 
     protected JsonReader reader;
-    protected AsyncTask<Void, String, Void> task;
-    protected SaveOpenActivity activity;
+    private AsyncTask<Void, String, Void> task;
+    private SaveOpenActivity activity;
 //    throws IOException
     public Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) {
         this.activity = activity;
@@ -32,7 +32,7 @@ public abstract class Reader {
         readingFile();
     }
 
-    protected void openFile() throws FileNotFoundException {
+    private void openFile() throws FileNotFoundException {
         Log.d(TAG, "openFile - start");
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.FILENAME;
@@ -42,7 +42,7 @@ public abstract class Reader {
 //        return;
     }
 
-    protected void readingFile() throws IOException {
+    private void readingFile() throws IOException {
 //        Log.d(TAG, "readingFile - start");
         reader.beginArray();
         while (reader.hasNext()) {
@@ -66,7 +66,7 @@ public abstract class Reader {
     abstract void init();
     abstract void action() throws IOException;
     abstract int getPositionProgress();
-    protected void publishProgress(int values){
+    private void publishProgress(int values){
         if(values < 0)
             values = 0;
         if(values > 100)

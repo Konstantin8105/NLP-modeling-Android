@@ -15,6 +15,8 @@ import com.modelingbrain.home.template.FragmentListWithActionBarTemplate;
 
 import java.util.ArrayList;
 
+import static android.app.Activity.RESULT_OK;
+
 public class FragmentArchive extends FragmentListWithActionBarTemplate implements MainFragments{
 
     private ModelSort modelSort;
@@ -51,7 +53,7 @@ public class FragmentArchive extends FragmentListWithActionBarTemplate implement
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == getActivity().RESULT_OK){
+        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == RESULT_OK){
             updateScreen();
         }
         super.onActivityResult(requestCode, resultCode, data);

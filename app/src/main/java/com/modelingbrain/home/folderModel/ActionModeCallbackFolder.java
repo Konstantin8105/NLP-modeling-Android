@@ -19,8 +19,8 @@ public class ActionModeCallbackFolder implements ActionMode.Callback  {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    FloatingActionButton fab;
-    FragmentListWithActionBarTemplate fragment;
+    private FloatingActionButton fab;
+    private FragmentListWithActionBarTemplate fragment;
 
     public ActionModeCallbackFolder(FloatingActionButton fab,
                                     FragmentListWithActionBarTemplate fragment) {

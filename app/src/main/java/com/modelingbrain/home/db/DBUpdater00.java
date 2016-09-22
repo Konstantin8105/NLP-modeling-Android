@@ -14,7 +14,7 @@ public class DBUpdater00 implements IDBUpdater {
     private String log = new String();
 
     // TODO: 7/30/16 add inspection attribute for avoid checking next line
-    public static final String prefixTable = "TABLEOFMODEL";
+    private static final String prefixTable = "TABLEOFMODEL";
 
     //TODO create converting from old version database
     @Override

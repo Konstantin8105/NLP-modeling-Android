@@ -2,35 +2,30 @@ package com.modelingbrain.home.folderModel;
 
 import android.app.Fragment;
 import android.content.Intent;
-import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.ActionMode;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
-import com.modelingbrain.home.MainActivity;
 import com.modelingbrain.home.MainFragments;
-import com.modelingbrain.home.R;
-import com.modelingbrain.home.chooseModel.ActivityChooseModel;
-import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.detailModel.StageDetailActivity;
 import com.modelingbrain.home.main.ModelSort;
+import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.template.ElementList;
 import com.modelingbrain.home.template.FragmentListWithActionBarTemplate;
 
 import java.util.ArrayList;
 
+import static android.app.Activity.RESULT_OK;
 import static com.modelingbrain.home.MainActivity.REQUEST_FRAGMENT;
 
-public class FragmentFolder extends FragmentListWithActionBarTemplate  implements MainFragments {
+public class FragmentFolder extends FragmentListWithActionBarTemplate implements MainFragments {
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    FloatingActionButton fab;
+    private FloatingActionButton fab;
+
     public void setFab(FloatingActionButton fab) {
         this.fab = fab;
     }
@@ -72,7 +67,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate  implement
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "REQUEST_FRAGMENT = " + requestCode);
         Log.d(TAG, "resultCode = " + requestCode);
-        if (requestCode == REQUEST_FRAGMENT && resultCode == getActivity().RESULT_OK) {
+        if (requestCode == REQUEST_FRAGMENT && resultCode == RESULT_OK) {
             updateScreen();
         }
         super.onActivityResult(requestCode, resultCode, data);

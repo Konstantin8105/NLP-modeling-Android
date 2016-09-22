@@ -11,7 +11,7 @@ public class ModelAbout {
     @SuppressWarnings("unused")
     private static final String TAG = "ModelAbout";
 
-    public ModelAbout(){
+    private ModelAbout(){
         title = new String();
         link  = new String();
     }

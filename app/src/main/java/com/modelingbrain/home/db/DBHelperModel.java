@@ -46,7 +46,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         Log.d(TAG, "DBHelperModel : addModelNormal - finish");
     }
 
-    public void addModelNormal(SQLiteDatabase sqLiteDatabase, List<Model> models) {
+    private void addModelNormal(SQLiteDatabase sqLiteDatabase, List<Model> models) {
         Log.d(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
@@ -64,7 +64,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         return id;
     }
 
-    public int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
+    private int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
         Log.d(TAG, "DBHelperModel : addModelWithoutClose - start");
         Log.d(TAG, "model = "+model.toString());
         ContentValues contentValues = new ContentValues();

@@ -57,7 +57,7 @@ public class StageEditFragment extends StageFragment {
         return rootView;
     }
 
-    protected void createEditElement(String str, int position) {
+    private void createEditElement(String str, int position) {
         // TODO add array for easy edit
         // TODO not correct editable
         // TODO not good view of edit line

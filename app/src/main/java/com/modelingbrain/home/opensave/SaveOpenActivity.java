@@ -17,7 +17,7 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    protected LinearLayout linLayout;
+    private LinearLayout linLayout;
     protected SaveOpenActivity activity;
 
     protected AsyncTask<Void, String, Void> task;

@@ -12,11 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 
-import com.modelingbrain.home.detailModel.fragments.StageEditFragment;
-import com.modelingbrain.home.detailModel.fragments.StageViewFragment;
+import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.model.Model;
-import com.modelingbrain.home.R;
 
 public class DetailActivity extends AppCompatActivity {
 

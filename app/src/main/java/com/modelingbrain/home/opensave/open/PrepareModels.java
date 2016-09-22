@@ -14,7 +14,7 @@ public class PrepareModels {
     private final String TAG = this.getClass().toString();
 
     protected ArrayList<Model> models;
-    protected AsyncTask<Void, String, Void> task;
+    private AsyncTask<Void, String, Void> task;
     protected SaveOpenActivity activity;
 
     public PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, ArrayList<Model> models) {
@@ -118,7 +118,7 @@ public class PrepareModels {
         return output;
     }
 
-    protected void publishProgress(int values) {
+    private void publishProgress(int values) {
         if (values < 0)
             values = 0;
         if (values > 100)
