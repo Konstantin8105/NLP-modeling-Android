@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.content.res.Configuration;
 import android.support.test.InstrumentationRegistry;
+import android.support.test.espresso.Espresso;
+import android.support.test.espresso.ViewAssertion;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -17,6 +19,8 @@ import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.pressBack;
 import static android.support.test.espresso.action.ViewActions.swipeUp;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.contrib.DrawerActions.openDrawer;
+import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
@@ -103,6 +107,16 @@ public class MainActivityTest {
                     (orientationNext == Configuration.ORIENTATION_PORTRAIT) ?
                             ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE : ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
+    }
+
+    // TODO: 22.09.2016 solve that bug
+    @Test
+    public void navigation() {
+        openDrawer(R.id.drawer_layout);
+        onView(withText(R.string.nav_folder)).perform(click());
+        openDrawer(R.id.drawer_layout);
+        onView(withText(R.string.nav_folder)).perform(click());
+        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
     }
 
     @Test

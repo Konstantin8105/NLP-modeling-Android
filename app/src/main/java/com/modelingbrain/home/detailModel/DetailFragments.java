@@ -7,16 +7,19 @@ import com.modelingbrain.home.detailModel.fragments.StageViewFragment;
 import com.modelingbrain.home.detailModel.template.StageFragment;
 
 public enum DetailFragments {
-    // TODO: 22.09.2016 add correct strings
-    STATE_VIEW_READ(new StageViewFragment(), R.string.about_program),
-    STATE_VIEW_WRITE(new StageEditFragment(), R.string.about_program);
+    // TODO: add correct strings
+    // TODO: switch icon in fab
+    STATE_VIEW_READ(new StageViewFragment(), R.string.about_program, R.drawable.ic_menu_archive),
+    STATE_VIEW_WRITE(new StageEditFragment(), R.string.about_program, R.drawable.ic_menu_folder);
 
     StageFragment fragment;
     int stringResource;
+    int fabIconResource;
 
-    DetailFragments(StageFragment fragment, int stringResource) {
+    DetailFragments(StageFragment fragment, int stringResource, int fabIconResource) {
         this.fragment = fragment;
         this.stringResource = stringResource;
+        this.fabIconResource = fabIconResource;
     }
 
     public StageFragment getFragment() {
@@ -25,5 +28,9 @@ public enum DetailFragments {
 
     public int getStringResource() {
         return stringResource;
+    }
+
+    public int getFabIconResource() {
+        return fabIconResource;
     }
 }
