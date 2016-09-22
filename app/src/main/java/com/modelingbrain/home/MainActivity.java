@@ -30,17 +30,11 @@ public class MainActivity extends AppCompatActivity
     @SuppressWarnings("unused")
     protected final String TAG = this.getClass().toString();
 
-//    static public final String CHOOSE_MODEL_RESULT = "CHOOSE_MODEL_RESULT";
-
-
-    //    private FragmentFolder fragmentFolder;
-//    private FragmentArchive fragmentArchive;
     private FragmentTransaction transaction;
 
     private FloatingActionButton fab;
     public static final int REQUEST_FRAGMENT = 800;
 
-    // TODO: 7/30/16 status games is not used
     private enum PageStatus {
         Folder(new FragmentFolder()),
         Archive(new FragmentArchive());
@@ -124,7 +118,6 @@ public class MainActivity extends AppCompatActivity
                 startActivityForResult(intent, REQUEST_FRAGMENT);
                 break;
             }
-            // TODO: 7/30/16 create good list view with indication of present sort state
             case (R.id.action_sort): {
                 final PopupMenu popupMenu = new PopupMenu(this, this.findViewById(R.id.action_sort));
                 popupMenu.inflate(R.menu.menu_popup);
