@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -35,17 +36,23 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_FRAGMENT = 800;
 
     private enum PageStatus {
-        Folder(new FragmentFolder()),
-        Archive(new FragmentArchive());
+        Folder(new FragmentFolder(), R.string.nav_folder),
+        Archive(new FragmentArchive(), R.string.nav_archive);
 
         private MainFragments fragment;
+        private int stringResource;
 
-        PageStatus(MainFragments fragment) {
+        PageStatus(MainFragments fragment, int stringResource) {
             this.fragment = fragment;
+            this.stringResource = stringResource;
         }
 
         public MainFragments getMainFragment() {
             return fragment;
+        }
+
+        public int getStringResource() {
+            return stringResource;
         }
     }
 
@@ -78,7 +85,7 @@ public class MainActivity extends AppCompatActivity
 
         if (savedInstanceState != null) {
             pageStatus = PageStatus.valueOf(savedInstanceState.getString(pageStatusKey));
-            switch (pageStatus){
+            switch (pageStatus) {
                 case Folder:
                     navigationView.getMenu().getItem(0).setChecked(true);
                     break;

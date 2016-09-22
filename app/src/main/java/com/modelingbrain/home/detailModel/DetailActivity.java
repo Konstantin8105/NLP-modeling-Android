@@ -59,10 +59,10 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
                 changeStageDetail();
                 createView();
+                Snackbar.make(view, getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
         Log.d(TAG, "stageDetailActivity = " + stageDetailActivity.toString());
