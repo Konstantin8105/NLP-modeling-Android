@@ -122,7 +122,7 @@ public class ContentManagerModel {
                     context.getResources().getStringArray(modelID.getResourceQuestion())[0],
                     context.getResources().getString(modelID.getModelType().getStringResource()),
                     "",
-                    context.getResources().getColor(modelID.getModelType().getGeneralColor()),
+                    ContextCompat.getColor(context, modelID.getModelType().getGeneralColor()),
                     position
             );
             output.add(elementList);

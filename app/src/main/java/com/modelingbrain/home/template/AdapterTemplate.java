@@ -101,12 +101,12 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
         @Override
         public void onClick(View v) {
             if (listener != null) {
-                listener.onItemClicked(v,getPosition());
+                listener.onItemClicked(getAdapterPosition());
             }
         }
 
         public interface ClickListener {
-            void onItemClicked(View view, int position);
+            void onItemClicked(int position);
         }
     }
 }

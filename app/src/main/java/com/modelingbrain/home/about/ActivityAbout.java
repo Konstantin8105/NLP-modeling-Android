@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.View;
 
 import com.modelingbrain.home.R;
 
@@ -33,7 +32,7 @@ public class ActivityAbout extends AppCompatActivity implements
 	}
 
 	@Override
-	public void onItemClicked(View view, int position) {
+	public void onItemClicked(int position) {
 		Intent i = new Intent(Intent.ACTION_VIEW);
 		i.setData(Uri.parse(listModels.get(position).link));
 		startActivity(i);

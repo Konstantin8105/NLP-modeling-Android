@@ -2,6 +2,7 @@ package com.modelingbrain.home.detailModel.template;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,24 +21,27 @@ public class StageFragment extends Fragment {
     protected LinearLayout linLayout;
 
     public void send(Model model) {
-        if(model == null){
+        if (model == null) {
             throw new NullPointerException("Model is null");
         }
         this.model = model;
     }
 
-    protected enum QA{
+    protected enum QA {
         QUESTION,
         ANSWER
     }
 
     protected void initColors() {
-        if(model == null){
+        if (model == null) {
             throw new NullPointerException("Model is null");
         }
-        // TODO: 7/30/16 old function getColor
-        generalModelColor       = this.getResources().getColor(model.getModelType().getGeneralColor());
-        generalModelTextColor   = this.getResources().getColor(model.getModelType().getTextColor());
+        generalModelColor = ContextCompat.getColor(
+                getActivity().getBaseContext(),
+                model.getModelType().getGeneralColor());
+        generalModelTextColor = ContextCompat.getColor(
+                getActivity().getBaseContext(),
+                model.getModelType().getTextColor());
     }
 
 

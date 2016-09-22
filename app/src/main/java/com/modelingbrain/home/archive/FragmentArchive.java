@@ -1,4 +1,4 @@
-package com.modelingbrain.home.archiveModel;
+package com.modelingbrain.home.archive;
 
 import android.content.Intent;
 import android.view.ActionMode;

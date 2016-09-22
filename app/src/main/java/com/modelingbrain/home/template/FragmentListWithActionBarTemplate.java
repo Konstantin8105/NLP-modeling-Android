@@ -44,7 +44,7 @@ abstract public class FragmentListWithActionBarTemplate extends FragmentListTemp
     }
 
     @Override
-    public boolean onItemLongClicked(View view, int position) {
+    public boolean onItemLongClicked(int position) {
         Log.d(TAG, "onItemLongClicked - start");
         if (actionMode == null) {
             actionMode = getActivity().startActionMode(getActionModeCallback());

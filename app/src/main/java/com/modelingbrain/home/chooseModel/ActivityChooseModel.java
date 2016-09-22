@@ -17,7 +17,6 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.view.View;
 
 import java.util.ArrayList;
 
@@ -49,7 +48,7 @@ public class ActivityChooseModel extends AppCompatActivity implements
 	}
 
 	@Override
-	public void onItemClicked(View view, int position) {
+	public void onItemClicked(int position) {
 		Log.d(TAG,"onItemClicked - start");
 		Model model = new Model(ModelID.values()[listModels.get(position).getID()]);
 

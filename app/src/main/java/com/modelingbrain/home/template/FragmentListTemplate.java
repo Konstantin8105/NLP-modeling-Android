@@ -88,7 +88,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     }
 
     @Override
-    public boolean onItemLongClicked(View view, int position) {
+    public boolean onItemLongClicked(int position) {
         Log.d(TAG, "onItemLongClicked");
         return true;
     }

@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -90,7 +91,7 @@ public class DetailActivity extends AppCompatActivity {
     private void initColors() {
         Log.d(TAG, "initColors - start");
         // TODO: 7/30/16 function getColor() is old - use new version
-        generalModelColor = this.getResources().getColor(model.getModelType().getGeneralColor());
+        generalModelColor = ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor());
 //        generalModelTextColor   = this.getResources().getColor(model.getModelType().getTextColor());
 
         CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);

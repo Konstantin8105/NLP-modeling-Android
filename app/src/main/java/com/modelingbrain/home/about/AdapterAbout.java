@@ -28,11 +28,6 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
         this.items = items;
     }
 
-    // TODO: 7/30/16 not used in code About
-    public ModelAbout get(int position){
-        return items.get(position);
-    }
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         final int layout = R.layout.item_about;
@@ -80,12 +75,12 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
         @Override
         public void onClick(View v) {
             if (listener != null) {
-                listener.onItemClicked(v,getPosition());
+                listener.onItemClicked(getAdapterPosition());
             }
         }
 
         public interface ClickListener {
-            void onItemClicked(View view, int position);
+            void onItemClicked(int position);
         }
     }
 }

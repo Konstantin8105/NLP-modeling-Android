@@ -19,7 +19,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @RunWith(AndroidJUnit4.class)
 public class MainActivityTest {
 
-    // TODO: 7/30/16 create automatic test for all version of android
     @Rule
     public final ActivityTestRule<MainActivity> main = new ActivityTestRule<>(MainActivity.class);
 
@@ -67,19 +66,6 @@ public class MainActivityTest {
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
         onView(withId(R.id.recycler_view)).perform(pressBack());
     }
-
-//    @Test
-//    public void sizeOfModels() {
-//        onView(withId(R.id.fab)).perform(click());
-//        onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
-//        onView(withId(R.id.recycler_view)).check(matches(allOf(
-//                isDisplayed()
-//        )));
-//        onView(withId(R.id.recycler_view))
-//                .perform( RecyclerViewActions
-//                        .actionOnItemAtPosition(ContentManagerModel.getListChooseModel().size()-1, click()));
-//        onView(withText("Name:")).perform(pressBack());
-//    }
 
     @Test
     public void checkButtonBackFromModel() {

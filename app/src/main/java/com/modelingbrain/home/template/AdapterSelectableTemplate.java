@@ -155,14 +155,14 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         @Override
         public void onClick(View v) {
             if (listener != null) {
-                listener.onItemClicked(v,getPosition());
+                listener.onItemClicked(v,getAdapterPosition());
             }
         }
 
         @Override
         public boolean onLongClick(View v) {
             if (listener != null) {
-                return listener.onItemLongClicked(v,getPosition());
+                return listener.onItemLongClicked(getAdapterPosition());
             }
 
             return false;
@@ -170,7 +170,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
         public interface ClickListener {
             void onItemClicked(View view, int position);
-            boolean onItemLongClicked(View view, int position);
+            boolean onItemLongClicked(int position);
         }
     }
 }

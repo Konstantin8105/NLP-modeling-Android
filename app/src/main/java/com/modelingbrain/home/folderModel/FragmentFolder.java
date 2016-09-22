@@ -21,6 +21,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
     private final String TAG = this.getClass().toString();
 
     private FloatingActionButton fab;
+
     public void setFab(FloatingActionButton fab) {
         this.fab = fab;
     }
@@ -34,9 +35,9 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
 
     @Override
     protected ArrayList<ElementList> getList() {
-        if(modelSort == null)
+        if (modelSort == null)
             modelSort = ModelSort.SortAlphabet;
-        return ContentManagerModel.getListNormalModel(getActivity().getApplicationContext(),modelSort);
+        return ContentManagerModel.getListNormalModel(getActivity().getApplicationContext(), modelSort);
     }
 
     @Override
@@ -49,7 +50,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
 
     @Override
     protected ActionMode.Callback getActionModeCallback() {
-        return new ActionModeCallbackFolder(fab,this);
+        return new ActionModeCallbackFolder(fab, this);
     }
 
 
@@ -57,7 +58,7 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         Log.d(TAG, "REQUEST_FRAGMENT = " + requestCode);
         Log.d(TAG, "resultCode = " + requestCode);
-        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == getActivity().RESULT_OK){
+        if (requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == getActivity().RESULT_OK) {
             updateScreen();
         }
         super.onActivityResult(requestCode, resultCode, data);
