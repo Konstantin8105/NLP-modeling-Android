@@ -81,6 +81,7 @@ public class MainActivityTest {
         rotateScreen(Configuration.ORIENTATION_PORTRAIT);
     }
 
+    // TODO: 22.09.2016 solve the bug
     @Test
     public void rotate2() {
         rotateScreen(Configuration.ORIENTATION_PORTRAIT);

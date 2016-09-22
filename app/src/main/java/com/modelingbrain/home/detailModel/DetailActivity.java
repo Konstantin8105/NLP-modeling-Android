@@ -4,6 +4,7 @@ import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
@@ -25,18 +26,12 @@ public class DetailActivity extends AppCompatActivity {
     static public final String DATABASE_ID = "DATABASE_ID";
     static public final String STATE_DETAIL_ACTIVITY = "STATE_DETAIL_ACTIVITY";
 
-    private enum StateView {
-        STATE_VIEW_READ,
-        STATE_VIEW_WRITE
-        //TODO add exame mode for action - упражнения по-степенное
-    }
-
     private Model model;
 
     private FloatingActionButton fab;
     private int generalModelColor;
     private StageDetailActivity stageDetailActivity;
-    private StateView stateView;
+    private DetailFragments fragment;
     private FragmentTransaction transaction;
 
     @Override
@@ -60,8 +55,8 @@ public class DetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //TODO add text to Snackbar
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
+                Snackbar.make(view, getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
                 changeStageDetail();
                 createView();
                 //TODO switch icon in fab
@@ -74,15 +69,11 @@ public class DetailActivity extends AppCompatActivity {
 
         switch (stageDetailActivity) {
             case STATE_NEW_FROM_WRITE:
-                stateView = StateView.STATE_VIEW_WRITE;
+                fragment = DetailFragments.STATE_VIEW_WRITE;
                 break;
             default:
-                stateView = StateView.STATE_VIEW_READ;
+                fragment = DetailFragments.STATE_VIEW_READ;
         }
-
-
-        stageViewFragment = new StageViewFragment();
-        stageEditFragment = new StageEditFragment();
 
         createView();
         Log.d(TAG, "onCreate - finish");
@@ -90,9 +81,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void initColors() {
         Log.d(TAG, "initColors - start");
-        // TODO: 7/30/16 function getColor() is old - use new version
+
         generalModelColor = ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor());
-//        generalModelTextColor   = this.getResources().getColor(model.getModelType().getTextColor());
 
         CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
         ctl.setTitle(getResources().getStringArray(model.getModelID().getResourceQuestion())[0]);
@@ -105,34 +95,32 @@ public class DetailActivity extends AppCompatActivity {
     private void changeStageDetail() {
         if (stageDetailActivity == StageDetailActivity.STATE_READ_ONLY)
             return;
-        switch (stateView) {
+        switch (fragment) {
             case STATE_VIEW_READ:
-                stateView = StateView.STATE_VIEW_WRITE;
+                fragment = DetailFragments.STATE_VIEW_WRITE;
                 break;
             case STATE_VIEW_WRITE:
-                stateView = StateView.STATE_VIEW_READ;
+                fragment = DetailFragments.STATE_VIEW_READ;
                 break;
             default:
                 throw new RuntimeException("Add new view");
         }
     }
 
-    private StageViewFragment stageViewFragment;
-    private StageEditFragment stageEditFragment;
 
     private void createView() {
         transaction = getFragmentManager().beginTransaction();
-        switch (stateView) {
+        switch (fragment) {
             case STATE_VIEW_READ: {
-                transaction.remove(stageEditFragment);
-                stageViewFragment.send(model);
-                transaction.replace(R.id.detail_fragment, stageViewFragment);
+                transaction.remove(fragment.getFragment());
+                fragment.getFragment().send(model);
+                transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 break;
             }
             case STATE_VIEW_WRITE: {
-                transaction.remove(stageViewFragment);
-                stageEditFragment.send(model);
-                transaction.replace(R.id.detail_fragment, stageEditFragment);
+                transaction.remove(fragment.getFragment());
+                fragment.getFragment().send(model);
+                transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 break;
             }
             default:
