@@ -42,17 +42,6 @@ public enum ModelID {
         return parameter;
     }
 
-    // TODO: 7/30/16 use base function, avoid that converting
-    static public ModelID convert(String string){
-        ModelID modelID = ID_NOTE;
-        for(int i=0;i<ModelID.values().length;i++)
-            if(ModelID.values()[i].toString().compareTo(string) == 0){
-                modelID = ModelID.values()[i];
-                break;
-            }
-        return modelID;
-    }
-
     public ModelType getModelType(){
         return arrModelLine[getPositionArrayModelLine()].modelType;
     }

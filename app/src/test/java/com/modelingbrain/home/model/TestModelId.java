@@ -53,14 +53,6 @@ public class TestModelId {
     }
 
     @Test
-    public void checkConvert() {
-        for (int i = 0; i < ModelID.values().length; i++) {
-            String name = ModelID.values()[i].toString();
-            assertTrue(ModelID.convert(name) == ModelID.valueOf(name));
-        }
-    }
-
-    @Test
     public void sameLengthModelId() {
         assertTrue(ModelID.arrModelLine.length == ModelID.values().length);
     }

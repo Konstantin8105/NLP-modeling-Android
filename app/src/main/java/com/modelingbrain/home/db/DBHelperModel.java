@@ -95,7 +95,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         int StateColIndex = cursor.getColumnIndex(DB_STATE);
         int ColJsonArray = cursor.getColumnIndex(DB_JSON_ARRAY);
 
-        ModelID modelID = ModelID.convert(cursor.getString(ColModelID));
+        ModelID modelID = ModelID.valueOf(cursor.getString(ColModelID));
         if (ContentManagerModel.isIgnore(context,modelID))
             return null;
 
