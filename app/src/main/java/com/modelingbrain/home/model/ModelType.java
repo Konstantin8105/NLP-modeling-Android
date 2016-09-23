@@ -3,10 +3,16 @@ package com.modelingbrain.home.model;
 import com.modelingbrain.home.R;
 
 public enum ModelType {
-    MODEL,
-    NONE,
-    DARK,
-    STRATEGY;
+    MODEL(0),
+    STRATEGY(1),
+    DARK(2),
+    NONE(3);
+
+    private int parameter;
+
+    ModelType(int parameter) {
+        this.parameter = parameter;
+    }
 
     public int getStringResource(){
         switch(this)
@@ -23,17 +29,7 @@ public enum ModelType {
     }
 
     public int convert(){
-        switch(this)
-        {
-            case MODEL:
-                return 0;
-            case STRATEGY:
-                return 1;
-            case DARK:
-                return 2;
-            default:
-        }
-        return 3;
+        return parameter;
     }
 
     public int getGeneralColor(){

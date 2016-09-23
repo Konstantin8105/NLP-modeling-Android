@@ -211,7 +211,7 @@ public class ContentManagerModel {
     }
 
 
-    private static ArrayList<ElementList> SortAlphabet(Context context, ArrayList<Model> result) {
+    private static ArrayList<ElementList> SortAlphabet(Context context, final ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
@@ -225,7 +225,7 @@ public class ContentManagerModel {
                 public int compare(Model lhs, Model rhs) {
                     if (lhs.getName().compareTo(rhs.getName()) == 0)
                         return 0;
-                    return lhs.getModelType().convert() - rhs.getModelType().convert();
+                    return rhs.getModelType().convert() - lhs.getModelType().convert();
                 }
             });
         }
@@ -246,7 +246,7 @@ public class ContentManagerModel {
                 public int compare(Model lhs, Model rhs) {
                     if (lhs.getModelType() != rhs.getModelType())
                         return 0;
-                    return (lhs.getModelID().getParameter() - rhs.getModelID().getParameter());
+                    return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
                 }
             });
             Collections.sort(result, new Comparator<Model>() {
@@ -256,7 +256,7 @@ public class ContentManagerModel {
                         return 0;
                     if (lhs.getModelID().getParameter() != rhs.getModelID().getParameter())
                         return 0;
-                    return (lhs.getName().compareTo(rhs.getName()));
+                    return (rhs.getName().compareTo(lhs.getName()));
                 }
             });
         }
