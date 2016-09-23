@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity
         Folder(new FragmentFolder(), R.string.nav_folder),
         Archive(new FragmentArchive(), R.string.nav_archive);
 
-        private MainFragments fragment;
-        private int stringResource;
+        private final MainFragments fragment;
+        private final int stringResource;
 
         PageStatus(MainFragments fragment, int stringResource) {
             this.fragment = fragment;
@@ -206,6 +206,11 @@ public class MainActivity extends AppCompatActivity
             }
         }
         transaction.commit();
+
+        Snackbar.make(findViewById(R.id.nav_view),
+                getBaseContext().getString(pageStatus.getStringResource()),
+                Snackbar.LENGTH_SHORT).
+                setAction("Action", null).show();
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

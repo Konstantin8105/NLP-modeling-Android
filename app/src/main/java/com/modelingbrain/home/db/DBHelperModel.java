@@ -26,7 +26,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     private static final String DATABASE_MODEL = "DataBaseOfModels";
     //	private static final String prefixTable = "TABLEOFMODEL";
-    private static int DB_Version = 20160716;
+    private static final int DB_Version = 20160716;
 
     private Context context;
 

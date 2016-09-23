@@ -12,8 +12,8 @@ public class ModelAbout {
     private static final String TAG = "ModelAbout";
 
     private ModelAbout(){
-        title = new String();
-        link  = new String();
+//        title = new String();
+//        link  = new String();
     }
 
     public String title;

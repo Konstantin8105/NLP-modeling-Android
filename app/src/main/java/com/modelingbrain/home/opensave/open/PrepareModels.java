@@ -14,8 +14,8 @@ public class PrepareModels {
     private final String TAG = this.getClass().toString();
 
     protected ArrayList<Model> models;
-    private AsyncTask<Void, String, Void> task;
-    protected SaveOpenActivity activity;
+    private final AsyncTask<Void, String, Void> task;
+    protected final SaveOpenActivity activity;
 
     public PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, ArrayList<Model> models) {
         Log.d(TAG, "PrepareModels - start");
@@ -32,8 +32,8 @@ public class PrepareModels {
             insideDB = false;
         }
 
-        public boolean delete;
-        public Model model;
+        public final boolean delete;
+        public final Model model;
         public boolean insideDB;
     }
 

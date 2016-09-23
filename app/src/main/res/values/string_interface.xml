@@ -54,7 +54,7 @@
     </plurals>
 
     <string name="task_analyzing">Analyzing&#8230;</string>
-    <string name="task_finish_analyze">Finish anlyze</string>
+    <string name="task_finish_analyze">Finish analyze</string>
     <string name="task_find_same_in_file">Find same models in File</string>
     <string name="task_find_same_in_db">Find same models in File with database</string>
     <string name="task_unique_models">Unique models %2d</string>

@@ -16,9 +16,9 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
-    private List<ModelAbout> items;
+    private final List<ModelAbout> items;
 
-    private ViewHolder.ClickListener clickListener;
+    private final ViewHolder.ClickListener clickListener;
 
     public AdapterAbout(ViewHolder.ClickListener clickListener, ArrayList<ModelAbout> items) {
         super();
@@ -51,12 +51,12 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements
             View.OnClickListener{
-        ImageView imageView;
-        TextView titleAbout;
-        TextView titleLink;
-        View selectedOverlay;
+        final ImageView imageView;
+        final TextView titleAbout;
+        final TextView titleLink;
+        final View selectedOverlay;
 
-        private ClickListener listener;
+        private final ClickListener listener;
 
         public ViewHolder(View itemView, ClickListener listener){
             super(itemView);

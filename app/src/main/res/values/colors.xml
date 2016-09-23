@@ -6,9 +6,6 @@
 
     <color name="selected_overlay"  >#88673AB7</color>
 
-    <color name="main_background"  >#f5f5f5</color>
-
-
     <color name="model_color"      >#FFD063</color>
     <color name="model_color_text" >#000000</color>
 

@@ -10,9 +10,9 @@ public enum DetailFragments {
     STATE_VIEW_READ(new StageViewFragment(), R.string.detail_mode_read_only, R.drawable.ic_lock),
     STATE_VIEW_WRITE(new StageEditFragment(), R.string.detail_mode_write, R.drawable.ic_unlock);
 
-    StageFragment fragment;
-    int stringResource;
-    int fabIconResource;
+    final StageFragment fragment;
+    final int stringResource;
+    final int fabIconResource;
 
     DetailFragments(StageFragment fragment, int stringResource, int fabIconResource) {
         this.fragment = fragment;

@@ -18,8 +18,8 @@ public abstract class Reader {
     protected final String TAG = this.getClass().toString();
 
     protected JsonReader reader;
-    private AsyncTask<Void, String, Void> task;
-    private SaveOpenActivity activity;
+    private final AsyncTask<Void, String, Void> task;
+    private final SaveOpenActivity activity;
 //    throws IOException
     public Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) {
         this.activity = activity;

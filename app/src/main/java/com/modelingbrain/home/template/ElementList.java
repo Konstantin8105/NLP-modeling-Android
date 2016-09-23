@@ -1,12 +1,12 @@
 package com.modelingbrain.home.template;
 
 public class ElementList {
-    private int resourceImage;
-    private String title;
-    private String subTitle;
-    private String secondSubTitle;
-    private int resourceColorRectangle;
-    private int iD;
+    private final int resourceImage;
+    private final String title;
+    private final String subTitle;
+    private final String secondSubTitle;
+    private final int resourceColorRectangle;
+    private final int iD;
 
     public ElementList(int resourceImage, String title, String subTitle, String secondSubTitle, int resourceColorRectangle, int iD) {
         this.resourceColorRectangle = resourceColorRectangle;

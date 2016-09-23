@@ -19,9 +19,9 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
     @SuppressWarnings("unused")
     private static final String TAG = AdapterSelectableTemplate.class.getSimpleName();
-    private List<ElementList> items;
+    private final List<ElementList> items;
 
-    private ViewHolder.ClickListener clickListener;
+    private final ViewHolder.ClickListener clickListener;
 
     public AdapterSelectableTemplate(ViewHolder.ClickListener clickListener, ArrayList<ElementList> items) {
         super();
@@ -78,7 +78,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         notifyDataSetChanged();
     }
 
-    public void removeItem(int position) {
+    private void removeItem(int position) {
         items.remove(position);
         notifyItemRemoved(position);
     }
@@ -124,14 +124,14 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnLongClickListener{
-        ImageView   imageView;
-        TextView    title;
-        TextView    subTitle;
-        TextView    secondSubTitle;
-        View        selectedOverlay;
-        View        rectangle;
+        final ImageView   imageView;
+        final TextView    title;
+        final TextView    subTitle;
+        final TextView    secondSubTitle;
+        final View        selectedOverlay;
+        final View        rectangle;
 
-        private ClickListener listener;
+        private final ClickListener listener;
 
         public ViewHolder(View itemView, ClickListener listener) {
             super(itemView);

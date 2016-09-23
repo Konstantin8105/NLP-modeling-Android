@@ -16,7 +16,7 @@ import com.modelingbrain.home.R;
 
 public class StageFragment extends Fragment {
     protected Model model;
-    protected String modelID = "ModelDbId";
+    protected final String modelID = "ModelDbId";
     protected int generalModelColor;
     protected int generalModelTextColor;
 

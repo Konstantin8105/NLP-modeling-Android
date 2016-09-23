@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class ReaderModels extends Reader {
 
     private ArrayList<Model> models;
-    private int amount;
+    private final int amount;
     private int position;
 
     public ReaderModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, int amount) {

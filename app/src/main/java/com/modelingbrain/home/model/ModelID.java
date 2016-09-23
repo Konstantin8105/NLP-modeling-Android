@@ -84,12 +84,12 @@ public enum ModelID {
 
     public static final class ModelLine
     {
-        public ModelID modelID;
-        public int resourceQuestions;
-        public ModelType modelType;
-        public int resourceIcon;
-        public int modelSize;
-        public boolean oldModel;
+        public final ModelID modelID;
+        public final int resourceQuestions;
+        public final ModelType modelType;
+        public final int resourceIcon;
+        public final int modelSize;
+        public final boolean oldModel;
         protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel)
         {
             this.modelID = modelID;

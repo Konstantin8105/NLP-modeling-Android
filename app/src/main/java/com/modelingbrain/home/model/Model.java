@@ -24,7 +24,7 @@ public class Model {
     public void setModelID(ModelID iD){
         this.modelID = iD;
         createEmptyAnswer();
-        name = new String();
+//        name = new String();
         dbId = -1;
         millisecond_Date = 0;
     }

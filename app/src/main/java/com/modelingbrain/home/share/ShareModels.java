@@ -20,7 +20,7 @@ public class ShareModels {
     private final String TAG = this.getClass().toString();
 
     private ArrayList<Model> models;
-    private Context context;
+    private final Context context;
 
     public ShareModels(int[] modelId, Context context) {
         if(models == null)

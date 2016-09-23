@@ -18,9 +18,9 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
-    private List<ElementList> items;
+    private final List<ElementList> items;
 
-    private ViewHolder.ClickListener clickListener;
+    private final ViewHolder.ClickListener clickListener;
 
     public AdapterTemplate(ViewHolder.ClickListener clickListener, ArrayList<ElementList> items) {
         super();
@@ -69,14 +69,14 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
         @SuppressWarnings("unused")
         private final String TAG = this.getClass().toString();
 
-        ImageView   imageView;
-        TextView    title;
-        TextView    subTitle;
-        TextView    secondSubTitle;
-        View        selectedOverlay;
-        View        rectangle;
+        final ImageView   imageView;
+        final TextView    title;
+        final TextView    subTitle;
+        final TextView    secondSubTitle;
+        final View        selectedOverlay;
+        final View        rectangle;
 
-        private ClickListener listener;
+        private final ClickListener listener;
 
         public ViewHolder(View itemView, ClickListener listener){
             super(itemView);

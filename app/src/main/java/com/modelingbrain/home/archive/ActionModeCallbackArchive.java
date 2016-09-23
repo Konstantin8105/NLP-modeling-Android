@@ -18,7 +18,7 @@ public class ActionModeCallbackArchive implements ActionMode.Callback  {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    private FragmentListWithActionBarTemplate fragment;
+    private final FragmentListWithActionBarTemplate fragment;
 
     public ActionModeCallbackArchive(FragmentListWithActionBarTemplate fragment) {
         this.fragment = fragment;

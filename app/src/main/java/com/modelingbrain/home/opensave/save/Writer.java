@@ -26,8 +26,8 @@ public class Writer {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    private AsyncTask<Void, String, Void> task;
-    private SaveOpenActivity activity;
+    private final AsyncTask<Void, String, Void> task;
+    private final SaveOpenActivity activity;
 
     public Writer(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) {
         this.task = task;

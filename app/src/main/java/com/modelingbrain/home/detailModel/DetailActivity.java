@@ -28,9 +28,9 @@ public class DetailActivity extends AppCompatActivity {
 
     private FloatingActionButton fab;
     private StageDetailActivity stageDetailActivity;
-    private String stageDetailActivityKey = "StageDetailActivity";
+    private final String stageDetailActivityKey = "StageDetailActivity";
     private DetailFragments fragment;
-    private String detailFragmentsKey = "DetailFragments";
+    private final String detailFragmentsKey = "DetailFragments";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
