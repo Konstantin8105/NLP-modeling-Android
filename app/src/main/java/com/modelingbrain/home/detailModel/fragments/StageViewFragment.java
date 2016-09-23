@@ -5,14 +5,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.template.StageFragment;
 
 public class StageViewFragment extends StageFragment {
-
-    // TODO: 7/30/16 change view for depends of Model
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {

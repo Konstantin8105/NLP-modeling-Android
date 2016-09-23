@@ -64,6 +64,10 @@ public class StageEditFragment extends StageFragment {
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View view = ltInflater.inflate(R.layout.one_row_edit, linLayout, false);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        layoutParams.setMargins(15, 5, 0, 10);
+        linearLayout.setLayoutParams(layoutParams);
         multiAutoCompleteTextViews[position] = (MultiAutoCompleteTextView) view.findViewById(R.id.editOneRow);
         multiAutoCompleteTextViews[position].setTextColor(generalModelTextColor);
         multiAutoCompleteTextViews[position].setText(str);

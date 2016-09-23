@@ -77,14 +77,23 @@ public class StageFragment extends Fragment {
         textView.setTextColor(generalModelTextColor);
         textView.setText(str);
         switch (qa) {
-            case QUESTION:
+            case QUESTION: {
                 linearLayout.setGravity(Gravity.LEFT);
+                ViewGroup.MarginLayoutParams layoutParams =
+                        (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+                layoutParams.setMargins(0, 5, 15, 10);
                 textView.setBackgroundResource(R.drawable.drw_btn_left);
                 break;
-            case ANSWER:
+            }
+            case ANSWER: {
                 linearLayout.setGravity(Gravity.RIGHT);
+                ViewGroup.MarginLayoutParams layoutParams =
+                        (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+                layoutParams.setMargins(15, 5, 0, 10);
+                linearLayout.setLayoutParams(layoutParams);
                 textView.setBackgroundResource(R.drawable.drw_btn_right);
                 break;
+            }
         }
         linLayout.addView(view);
     }
