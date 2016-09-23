@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private PageStatus pageStatus;
-    private String pageStatusKey = "PageStatus";
+    private final String pageStatusKey = "PageStatus";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

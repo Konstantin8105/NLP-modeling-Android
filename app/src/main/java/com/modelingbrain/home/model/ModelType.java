@@ -8,7 +8,7 @@ public enum ModelType {
     DARK(2),
     NONE(3);
 
-    private int parameter;
+    private final int parameter;
 
     ModelType(int parameter) {
         this.parameter = parameter;
