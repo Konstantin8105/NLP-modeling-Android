@@ -11,6 +11,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
@@ -25,6 +28,7 @@ public class DetailActivity extends AppCompatActivity {
     static public final String STATE_DETAIL_ACTIVITY = "STATE_DETAIL_ACTIVITY";
 
     private Model model;
+    private final String modelKey = "Model";
 
     private FloatingActionButton fab;
     private StageDetailActivity stageDetailActivity;
@@ -35,25 +39,22 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+
+        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
+        dbHelperModel.updateModel(model);
+
         outState.putString(detailFragmentsKey, fragment.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
+        outState.putInt(modelKey, model.getDbId());
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Log.d(TAG, "onCreate - start");
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_detail);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        int idDb = getIntent().getIntExtra(DATABASE_ID, 0);
-        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
-        model = dbHelperModel.openModel(idDb);
-
-        initColors();
-
-        stageDetailActivity = StageDetailActivity.valueOf(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -65,15 +66,16 @@ public class DetailActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        Log.d(TAG, "stageDetailActivity = " + stageDetailActivity.toString());
-        if (stageDetailActivity == StageDetailActivity.STATE_READ_ONLY) {
-            fab.hide();
-        }
+
+        int idDb;
 
         if (savedInstanceState != null) {
-            fragment = DetailFragments.valueOf(savedInstanceState.getString(detailFragmentsKey));
+            idDb = savedInstanceState.getInt(modelKey);
             stageDetailActivity = StageDetailActivity.valueOf(savedInstanceState.getString(stageDetailActivityKey));
+            fragment = DetailFragments.valueOf(savedInstanceState.getString(detailFragmentsKey));
         } else {
+            idDb = getIntent().getIntExtra(DATABASE_ID, 0);
+            stageDetailActivity = StageDetailActivity.valueOf(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
             switch (stageDetailActivity) {
                 case STATE_NEW_FROM_WRITE:
                     fragment = DetailFragments.STATE_VIEW_WRITE;
@@ -82,22 +84,24 @@ public class DetailActivity extends AppCompatActivity {
                     fragment = DetailFragments.STATE_VIEW_READ;
             }
         }
+        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
+        model = dbHelperModel.openModel(idDb);
+
+        if (stageDetailActivity == StageDetailActivity.STATE_READ_ONLY) {
+            fab.hide();
+        }
+
+        TextView modelName = (TextView) findViewById(R.id.model_name);
+        modelName.setText(getResources().getTextArray(model.getModelID().getResourceQuestion())[0]);
+
+        LinearLayout header = (LinearLayout) findViewById(R.id.header);
+        header.setBackgroundColor(ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor()));
+
+        ImageView icon = (ImageView) findViewById(R.id.icon);
+        icon.setImageResource(model.getModelID().getResourceIcon());
 
         createView();
         Log.d(TAG, "onCreate - finish");
-    }
-
-    private void initColors() {
-        Log.d(TAG, "initColors - start");
-
-        int generalModelColor = ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor());
-
-        CollapsingToolbarLayout ctl = (CollapsingToolbarLayout) findViewById(R.id.toolbar_layout);
-        ctl.setTitle(getResources().getStringArray(model.getModelID().getResourceQuestion())[0]);
-
-        NestedScrollView nestedScrollView = (NestedScrollView) findViewById(R.id.nested_detail_scroll);
-        nestedScrollView.setBackgroundColor(generalModelColor);
-        Log.d(TAG, "initColors - finish");
     }
 
     private void changeStageDetail() {

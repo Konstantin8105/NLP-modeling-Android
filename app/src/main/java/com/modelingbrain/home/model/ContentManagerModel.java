@@ -35,7 +35,7 @@ public class ContentManagerModel {
         do {
             again = false;
             for (int i = 0; i < models.size(); i++) {
-                if (isIgnore(context, models.get(i).getModelID())) {
+                if (isIgnore(context, models.get(i).getModelID()) || models.get(i) == null) {
                     models.remove(i);
                     again = true;
                 }

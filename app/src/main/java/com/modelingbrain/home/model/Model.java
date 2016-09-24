@@ -23,8 +23,11 @@ public class Model {
     }
     public void setModelID(ModelID iD){
         this.modelID = iD;
-        createEmptyAnswer();
-//        name = new String();
+        answer = new String[getModelID().getSize()];
+        state = ModelState.NORMAL;
+        for(int i=0;i< answer.length;i++)
+            answer[i] = "";
+        name = "";//important init
         dbId = -1;
         millisecond_Date = 0;
     }
@@ -80,15 +83,6 @@ public class Model {
         }
     }
 
-    private void createEmptyAnswer(){
-        answer = new String[getModelID().getSize()];
-        state = ModelState.NORMAL;
-        for(int i=0;i< answer.length;i++)
-        {
-            answer[i] = "";
-        }
-    }
-
     public Model(ModelID iD){
         state = ModelState.NORMAL;
         setModelID(iD);
@@ -100,7 +94,15 @@ public class Model {
 
 
     public boolean compareTo(Model model) {
+        if(this == null && model != null)
+            return false;
+        if(this != null && model == null)
+            return false;
         if(this.modelID != model.modelID)
+            return false;
+        if(this.getName() == null && model.getName() != null)
+            return false;
+        if(this.getName() != null && model.getName() == null)
             return false;
         if(this.getName().compareTo(model.getName()) != 0)
             return false;
@@ -115,9 +117,16 @@ public class Model {
         for(int i=0;i<this.getModelID().getSize();i++)
             if(this.getAnswer(i).length() != model.getAnswer(i).length())
                 return false;
-        for(int i=0;i<this.getModelID().getSize();i++)
-            if(this.getAnswer(i).compareTo(model.getAnswer(i)) != 0)
+        for(int i=0;i<this.getModelID().getSize();i++) {
+            String s1 = this.getAnswer(i);
+            String s2 = model.getAnswer(i);
+            if(s1 == null && s2 != null)
                 return false;
+            if(s1 != null && s2 == null)
+                return false;
+            if (s1.compareTo(s2) != 0)
+                return false;
+        }
         return true;
     }
 
