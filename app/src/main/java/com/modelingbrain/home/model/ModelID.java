@@ -2,8 +2,6 @@ package com.modelingbrain.home.model;
 
 import com.modelingbrain.home.R;
 
-// TODO create strategy for easy changing the models and
-// TODO modify to string
 public enum ModelID {
     ID_Science(0),//OK
     ID_SCORE(10),//OK
@@ -34,87 +32,83 @@ public enum ModelID {
     ;
 
     private final int parameter;
-    ModelID(int parameter){
+
+    ModelID(int parameter) {
         this.parameter = parameter;
     }
 
-    public int getParameter(){
+    public int getParameter() {
         return parameter;
     }
 
-    public ModelType getModelType(){
+    public ModelType getModelType() {
         return arrModelLine[getPositionArrayModelLine()].modelType;
     }
 
-    public int getSize(){
+    public int getSize() {
         return arrModelLine[getPositionArrayModelLine()].modelSize;
     }
 
-    public int getResourceIcon(){
+    public int getResourceIcon() {
         return arrModelLine[getPositionArrayModelLine()].resourceIcon;
     }
 
-    public int getResourceQuestion(){
+    public int getResourceQuestion() {
         return arrModelLine[getPositionArrayModelLine()].resourceQuestions;
     }
 
-    public boolean isOldModel(){
+    public boolean isOldModel() {
         return arrModelLine[getPositionArrayModelLine()].oldModel;
     }
 
-    private int getPositionArrayModelLine(){
+    private int getPositionArrayModelLine() {
         int i = 0;
         for (; i < arrModelLine.length; i++) {
-            if(arrModelLine[i].modelID == this)
+            if (arrModelLine[i].modelID == this)
                 break;
         }
         return i;
     }
 
-    public static final class ModelLine
-    {
+    public static final class ModelLine {
         public final ModelID modelID;
         public final int resourceQuestions;
         public final ModelType modelType;
         public final int resourceIcon;
         public final int modelSize;
         public final boolean oldModel;
-        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel)
-        {
+
+        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;
-            this.modelType      = modelType;
-            this.resourceIcon   = resourceIcon;
-            this.modelSize      = modelSize;
-            this.oldModel       = oldModel;
+            this.modelType = modelType;
+            this.resourceIcon = resourceIcon;
+            this.modelSize = modelSize;
+            this.oldModel = oldModel;
         }
-        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize)
-        {
+
+        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;
-            this.modelType      = modelType;
-            this.resourceIcon   = resourceIcon;
-            this.modelSize      = modelSize;
-            this.oldModel       = false;
+            this.modelType = modelType;
+            this.resourceIcon = resourceIcon;
+            this.modelSize = modelSize;
+            this.oldModel = false;
         }
     }
 
-    // TODO: 2/5/16 Классифицировать модели по SOAR
-    //TODO check all icons
     public static final ModelLine arrModelLine[] = {
 
-// TODO: 1/28/16 wrong icon
             new ModelLine(ModelID.ID_Modeling_Gordon,
                     R.array.str_Left_Modeling_Gordon,
                     ModelType.MODEL,
-                    R.drawable.ic_launcher,
+                    R.drawable.ic_model_gordon,
                     12),
 
-// TODO: 1/28/16 wrong icon
             new ModelLine(ModelID.ID_Modeling_Gordon_Short,
                     R.array.str_Left_Modeling_Gordon_Short,
                     ModelType.DARK,
-                    R.drawable.ic_launcher,
+                    R.drawable.ic_model_gordon_short,
                     4),
 
             new ModelLine(ModelID.ID_Rules,
@@ -126,7 +120,7 @@ public enum ModelID {
             new ModelLine(ModelID.ID_Science,
                     R.array.str_Left_Science,
                     ModelType.MODEL,
-                    R.drawable.ic_launcher	,//// TODO: 2/5/16  
+                    R.drawable.ic_model_science,
                     5),
 
             new ModelLine(ModelID.ID_SCORE,
@@ -153,34 +147,34 @@ public enum ModelID {
                     R.drawable.ic_model_tricksoflanguage,
                     14),
 
-            new ModelLine(ModelID.ID_MiltonModel  ,
+            new ModelLine(ModelID.ID_MiltonModel,
                     R.array.str_Left_MiltonModel,
                     ModelType.MODEL,
                     R.drawable.ic_model_milton,
                     15),
 
-            new ModelLine(ModelID.ID_Eye ,
+            new ModelLine(ModelID.ID_Eye,
                     R.array.str_Left_Eye,
                     ModelType.STRATEGY,
                     R.drawable.ic_model_eye,
                     1),
 
-            new ModelLine(ModelID.ID_Polar ,
-                    R.array.str_Left_Polar ,
+            new ModelLine(ModelID.ID_Polar,
+                    R.array.str_Left_Polar,
                     ModelType.STRATEGY,
                     R.drawable.ic_model_polar,
                     8),
 
-            new ModelLine(ModelID.ID_AIDA ,
-                    R.array.str_Left_AIDA ,
+            new ModelLine(ModelID.ID_AIDA,
+                    R.array.str_Left_AIDA,
                     ModelType.MODEL,
                     R.drawable.ic_model_aida,
                     4),
 
-            new ModelLine(ModelID.ID_ElementsOfAnchors ,
-                    R.array.str_Left_ElementsOfAnchors ,
+            new ModelLine(ModelID.ID_ElementsOfAnchors,
+                    R.array.str_Left_ElementsOfAnchors,
                     ModelType.STRATEGY,
-                    R.drawable.ic_model_anchor,
+                    R.drawable.ic_model_anchor_elements,
                     7),
 
             new ModelLine(ModelID.ID_VAKOG,
@@ -192,19 +186,19 @@ public enum ModelID {
             new ModelLine(ModelID.ID_PROFILE2,
                     R.array.str_Left_PROFILE2,
                     ModelType.DARK,
-                    R.drawable.ic_model_profile,
+                    R.drawable.ic_model_profile2,
                     8, true),
 
             new ModelLine(ModelID.ID_PROFILE3,
                     R.array.str_Left_PROFILE3,
                     ModelType.DARK,
-                    R.drawable.ic_model_profile,
+                    R.drawable.ic_model_profile3,
                     10),
-// TODO: 1/28/16 wrong icon
+
             new ModelLine(ModelID.ID_NOTE,
                     R.array.str_Left_Note,
                     ModelType.STRATEGY,
-                    R.drawable.ic_launcher,// TODO: 2/5/16
+                    R.drawable.ic_model_note,
                     1),
 
             new ModelLine(ModelID.ID_Strategy_VKDiss,

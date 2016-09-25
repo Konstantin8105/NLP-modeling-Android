@@ -43,10 +43,10 @@ public class TestModelId {
                     System.out.println("===");
                     System.out.println(ModelID.arrModelLine[i].modelID.toString());
                     System.out.println(ModelID.arrModelLine[j].modelID.toString());
-                    System.out.println("Same");
                     assertNotEquals(ModelID.arrModelLine[i].modelID.getParameter(), ModelID.arrModelLine[j].modelID.getParameter());
                     assertNotEquals(ModelID.arrModelLine[i].resourceIcon, ModelID.arrModelLine[j].resourceIcon);
                     assertNotEquals(ModelID.arrModelLine[i].resourceQuestions, ModelID.arrModelLine[j].resourceQuestions);
+                    System.out.println("Same");
                 }
             }
         }

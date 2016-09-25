@@ -43,7 +43,7 @@ public enum ModelType {
                 return R.color.dark_color;
             default:
         }
-        return MODEL.getGeneralColor();
+        return R.color.other_color;
     }
 
     public int getTextColor(){
@@ -57,6 +57,6 @@ public enum ModelType {
                 return R.color.dark_color_text;
             default:
         }
-        return MODEL.getTextColor();
+        return R.color.other_color_text;
     }
 }
