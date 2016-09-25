@@ -15,7 +15,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:gravity="end"
             android:orientation="vertical">
 
@@ -25,6 +25,7 @@
                 android:gravity="end"
                 android:orientation="horizontal">
 
+                <!-- TODO not correct text lenght -->
                 <TextView
                     android:id="@+id/model_name"
                     style="@style/Base.TextAppearance.AppCompat.Headline"
@@ -34,7 +35,7 @@
                     android:layout_marginRight="20dp"
                     android:gravity="left|center_vertical"
                     android:maxLines="1"
-                    android:text="sdfsdfs dfsdf dfsfg dfg sdfg" />
+                    android:text="Hello my name is winky and let`s fun" />
 
                 <ImageView
                     android:id="@+id/icon"
@@ -43,11 +44,11 @@
                     android:layout_gravity="center"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:src="@drawable/ic_launcher" />
+                    android:src="@drawable/ic_launcher"/>
 
                 <android.support.design.widget.FloatingActionButton
                     android:id="@+id/fab"
-                    android:layout_width="48dp"
+                    android:layout_width="79dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center_vertical|end"
                     android:layout_margin="@dimen/fab_margin"
@@ -59,7 +60,7 @@
             <FrameLayout
                 android:id="@+id/detail_fragment"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></FrameLayout>
+                android:layout_height="wrap_content" />
 
         </LinearLayout>
     </ScrollView>
