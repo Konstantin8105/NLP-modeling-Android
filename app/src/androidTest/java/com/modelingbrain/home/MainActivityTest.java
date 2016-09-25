@@ -109,7 +109,7 @@ public class MainActivityTest {
     @Test
     public void navigation() {
         openDrawer(R.id.drawer_layout);
-        onView(withText(R.string.nav_folder)).perform(click());
+        onView(withId(R.id.nav_folder)).perform(click());
         onView(withId(R.id.recycler_view)).check(matches(isDisplayed()));
     }
 

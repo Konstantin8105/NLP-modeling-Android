@@ -22,7 +22,7 @@ public class StageEditFragment extends StageFragment {
     private static final int ID_TEXT_VIEW = 10000;
 
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
-//TODO edit model and saving
+    //TODO edit model and saving
     // TODO return changed model
 
     @Override
