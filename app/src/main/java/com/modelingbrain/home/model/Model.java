@@ -94,10 +94,10 @@ public class Model {
 
 
     public boolean compareTo(Model model) {
-        if(this == null && model != null)
-            return false;
-        if(this != null && model == null)
-            return false;
+//        if(this == null && model != null)
+//            return false;
+//        if(this != null && model == null)
+//            return false;
         if(this.modelID != model.modelID)
             return false;
         if(this.getName() == null && model.getName() != null)

@@ -4,8 +4,6 @@
     <!-- ENGLISH VERSION -->
     <string name="model_name">Name:</string>
 
-    <string name="about_program">About program</string>
-
     <string name="result_of_modeling">Results of modeling</string>
     <string name="name_of_model_">Name of model: </string>
 
@@ -371,36 +369,5 @@
     <string-array name="str_Left_Rules">
     </string-array>
 
-
-    <string name="str_HELP">Manual</string>
-
-    <string-array name="str_array_HELP">
-        <item >This is a icon of that program</item>
-        <item >This is a icon for sharing of model.
-After pushing on that button, software create specific file \"DBmodelFile.xml\" in folder \Downloads.
-Also, If you want upload new models, then please put file \"DBmodelFile.xml\" in folder \Downloads and push \"Menu->Open file with moldels\" </item>
-        <item >This is a icon for edit models</item>
-        <item >This is a icon just for view models</item>
-        <item >This is a icon for view models inside archive</item>
-        <item >Create a new model</item>
-        <item >This is a icon for putting model in archive</item>
-        <item >This is a icon for putting model in edit mode</item>
-        <item >Sorting by date of models</item>
-        <item >Sorting by name of models</item>
-        <item >Sorting by type of models</item>
-    </string-array>
-
-    <string name="str_link">Links</string>
-
-
-
-    <string-array name="test_trenings_ru_Association">
-    </string-array>
-
-    <string-array name="test_trenings_ru_Anchor">
-    </string-array>
-
-    <string-array name="test_trenings_ru_Motivations">
-    </string-array>
 
 </resources>
