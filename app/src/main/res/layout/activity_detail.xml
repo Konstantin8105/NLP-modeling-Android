@@ -8,69 +8,71 @@
     tools:context="com.modelingbrain.home.detailModel.DetailActivity">
 
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:orientation="vertical">
+
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="78dp"
             android:gravity="end"
-            android:orientation="vertical">
+            android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="78dp"
-                android:gravity="end"
-                android:orientation="horizontal">
+            <!-- TODO not correct text lenght -->
 
-                <!-- TODO not correct text lenght -->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@+id/fab"
+                android:layout_toStartOf="@+id/fab"
+                android:adjustViewBounds="false"
+                android:cropToPadding="false"
+                android:src="@drawable/ic_launcher" />
 
-                <ImageView
-                    android:id="@+id/icon"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:src="@drawable/ic_launcher"
-                    android:layout_alignParentTop="true"
-                    android:layout_toStartOf="@+id/fab"
-                    android:adjustViewBounds="false"
-                    android:cropToPadding="false"
-                    android:layout_toLeftOf="@+id/fab" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:layout_gravity="center_vertical|end"
+                android:layout_marginBottom="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_add" />
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/fab"
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="15dp"
-                    android:layout_gravity="center_vertical|end"
-                    android:src="@drawable/ic_add"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true" />
+            <TextView
+                android:id="@+id/model_name"
+                style="@style/Base.TextAppearance.AppCompat.Headline"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_toLeftOf="@+id/icon"
+                android:gravity="start|center_vertical"
+                android:maxLines="2"
+                android:text="@string/app_name" />
 
-                <TextView
-                    android:id="@+id/model_name"
-                    style="@style/Base.TextAppearance.AppCompat.Headline"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:gravity="start|center_vertical"
-                    android:maxLines="1"
-                    android:text="@string/app_name"
-                    android:layout_toLeftOf="@+id/icon"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-            </RelativeLayout>
+        </RelativeLayout>
 
 
-            <FrameLayout
-                android:id="@+id/detail_fragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+        <FrameLayout
+            android:id="@+id/detail_fragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-        </LinearLayout>
+    </LinearLayout>
 
 
 </ScrollView>
