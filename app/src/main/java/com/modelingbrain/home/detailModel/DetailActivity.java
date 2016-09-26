@@ -13,6 +13,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.modelingbrain.home.R;
@@ -94,7 +95,7 @@ public class DetailActivity extends AppCompatActivity {
         TextView modelName = (TextView) findViewById(R.id.model_name);
         modelName.setText(getResources().getTextArray(model.getModelID().getResourceQuestion())[0]);
 
-        LinearLayout header = (LinearLayout) findViewById(R.id.header);
+        ScrollView header = (ScrollView) findViewById(R.id.header);
         header.setBackgroundColor(ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor()));
 
         ImageView icon = (ImageView) findViewById(R.id.icon);
