@@ -24,8 +24,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    private static final String DATABASE_MODEL = "DataBaseOfModels";
-    //	private static final String prefixTable = "TABLEOFMODEL";
+    protected static final String DATABASE_MODEL = "DataBaseOfModels";
     private static final int DB_Version = 20160716;
 
     private Context context;
@@ -82,7 +81,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
             jsonArray.put(model.getAnswer(i));
         }
         contentValues.put(DB_JSON_ARRAY, jsonArray.toString());
-        long rowID = sqLiteDatabase.insert(DB.MODEL_TABLE, null, contentValues);
+        long rowID = sqLiteDatabase.insert(DATABASE_MODEL, null, contentValues);
         Log.d(TAG, "DBHelperModel : addModelWithoutClose - end");
         return (int) rowID;
     }
@@ -120,7 +119,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 //        Cursor cursor = db.query(MODEL_TABLE, null, null, null, null, null, null);
 
-        String selectQuery = "SELECT  * FROM " + DB.MODEL_TABLE + " WHERE "
+        String selectQuery = "SELECT  * FROM " + DATABASE_MODEL + " WHERE "
                 + DB_ID + " = " + inputID;
 
         Log.d(TAG, selectQuery);
@@ -152,7 +151,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         }
         ArrayList<Model> outputModel = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
-        String selectQuery = "SELECT  * FROM " + DB.MODEL_TABLE + " WHERE "
+        String selectQuery = "SELECT  * FROM " + DATABASE_MODEL + " WHERE "
                 + DB_STATE + " = " + modelState.getValue();
         Log.d(TAG, selectQuery);
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -230,7 +229,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
             jsonArray.put(model.getAnswer(i));
         }
         contentValues.put(DB_JSON_ARRAY, jsonArray.toString());
-        sqLiteDatabase.update(DB.MODEL_TABLE, contentValues, "id = ? ", new String[]{Integer.toString(model.getDbId())});
+        sqLiteDatabase.update(DATABASE_MODEL, contentValues, "id = ? ", new String[]{Integer.toString(model.getDbId())});
         Log.d(TAG, "updateModel - model.ID" + model.getDbId());
         Log.d(TAG, "updateModel - model.state" + model.getState());
         Log.d(TAG, "updateModel - finish");
@@ -252,7 +251,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     private void createDB(SQLiteDatabase db) {
         Log.d(TAG, "createDB - start");
-        String str = "create table  IF NOT EXISTS " + DB.MODEL_TABLE
+        String str = "create table  IF NOT EXISTS " + DATABASE_MODEL
                 + " ( " + DB_ID + " integer primary key autoincrement "
                 + " , " + DB_MODEL_ID + " text "
                 + " , " + DB_NAME + " text "
