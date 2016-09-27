@@ -1,5 +1,6 @@
 package com.modelingbrain.home.db;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -14,7 +15,7 @@ public class DBUpdaterManager {
     @SuppressWarnings("unused")
     private static final String TAG = "DBUpdaterManager";
 
-    public static List<Model> update(SQLiteDatabase db, int oldVersion, int newVersion) {
+    public static List<Model> update(Context context, SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.d(TAG, "DBUpdaterManager:update()");
         Log.d(TAG, "DBUpdaterManager:onUpgrade() {" + oldVersion + ";" + newVersion + "}" + "current version ->" + db.getVersion());
         List<Model> models = new ArrayList<>();
@@ -25,7 +26,7 @@ public class DBUpdaterManager {
                         new DBUpdaterDefault()
                 };
         for (IDBUpdater updater : updaters) {
-            List<Model> result = updater.update(db);
+            List<Model> result = updater.update(context, db);
             if (result != null) {
                 if (result.size() > 0)
                     models.addAll(result);

@@ -49,7 +49,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         Log.d(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
-            addModel(sqLiteDatabase,model);
+            addModel(sqLiteDatabase, model);
         }
         Log.d(TAG, "DBHelperModel : addModelNormal - finish");
     }
@@ -65,7 +65,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     private int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
         Log.d(TAG, "DBHelperModel : addModelWithoutClose - start");
-        Log.d(TAG, "model = "+model.toString());
+        Log.d(TAG, "model = " + model.toString());
         ContentValues contentValues = new ContentValues();
         contentValues.put(DB_MODEL_ID, model.getModelID().toString());
         contentValues.put(DB_NAME, model.getName());
@@ -95,7 +95,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         int ColJsonArray = cursor.getColumnIndex(DB_JSON_ARRAY);
 
         ModelID modelID = ModelID.valueOf(cursor.getString(ColModelID));
-        if (ContentManagerModel.isIgnore(context,modelID))
+        if (ContentManagerModel.isIgnore(context, modelID))
             return null;
 
         Model element = new Model(modelID);
@@ -146,7 +146,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     public ArrayList<Model> openHeader(ModelState modelState) {
         Log.d(TAG, "openHeader - start");
-        if(modelState == null){
+        if (modelState == null) {
             throw new NullPointerException("modelState cannot be null");
         }
         ArrayList<Model> outputModel = new ArrayList<>();
@@ -263,12 +263,11 @@ public class DBHelperModel extends SQLiteOpenHelper {
         Log.d(TAG, "createDB - finish");
     }
 
-
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         Log.d(TAG, "onUpgrade - start");
         createDB(db);
-        List<Model> models = DBUpdaterManager.update(db, oldVersion, newVersion);
+        List<Model> models = DBUpdaterManager.update(context, db, oldVersion, newVersion);
         addModelNormal(db, models);
         Log.d(TAG, "onUpgrade - finish");
     }

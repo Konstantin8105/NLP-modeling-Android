@@ -1,5 +1,6 @@
 package com.modelingbrain.home.db;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
@@ -16,7 +17,7 @@ public class DBUpdaterDefault implements IDBUpdater {
     private static final String TAG = DBUpdaterDefault.class.toString();
 
     @Override
-    public List<Model> update(SQLiteDatabase db) {
+    public List<Model> update(Context context, SQLiteDatabase db) {
         Log.d(TAG, "\nupdate");
         List<String> tableNames = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);

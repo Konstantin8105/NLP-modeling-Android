@@ -1,8 +1,10 @@
 package com.modelingbrain.home.db;
 
+import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
 
@@ -16,14 +18,14 @@ public class DBUpdater00 implements IDBUpdater {
     private static final String prefixTable = "TABLE" + "OF" + "MODEL";
 
     @Override
-    public List<Model> update(SQLiteDatabase db) {
+    public List<Model> update(Context context, SQLiteDatabase db) {
         List<ModelID> tables = getTablesWithPrefix(db, prefixTable);
         if (tables.size() == 0) {
             return new ArrayList<>();
         }
         List<Model> models = new ArrayList<>();
         for (int i = 0; i < tables.size(); i++) {
-            List<Model> tableModels = analyzeTable(db, tables.get(i));
+            List<Model> tableModels = analyzeTable(context, db, tables.get(i));
             if (tableModels != null) {
                 models.addAll(tableModels);
             }
@@ -85,7 +87,9 @@ public class DBUpdater00 implements IDBUpdater {
         return tables;
     }
 
-    private List<Model> analyzeTable(SQLiteDatabase db, ModelID tableId) {
+    private List<Model> analyzeTable(Context context, SQLiteDatabase db, ModelID tableId) {
+        if (!ContentManagerModel.isIgnore(context, tableId))
+            return null;
         List<Model> models = new ArrayList<>();
         String tableName = prefixTable + tableId.toString();
         log += "\n\n\n\nanalyzeTable table = " + tableName + "\n";
@@ -110,7 +114,6 @@ public class DBUpdater00 implements IDBUpdater {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                // TODO not state = delete
                 log += "\ncreateNewRecord"
                         + "name = " + name
                         + "time = " + time
