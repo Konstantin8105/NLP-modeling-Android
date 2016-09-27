@@ -19,12 +19,18 @@ public class DBUpdaterManager {
         Log.d(TAG, "DBUpdaterManager:onUpgrade() {" + oldVersion + ";" + newVersion + "}" + "current version ->" + db.getVersion());
         List<Model> models = new ArrayList<>();
         viewTableInLog(db);
-        //if (oldVersion <= -1000000 && newVersion <= 20160716) {
-            DBUpdater00 updater = new DBUpdater00();
-            models.addAll(updater.update(db));
-        //}
-        DBUpdaterDefault updaterDefault = new DBUpdaterDefault();
-        models.addAll(updaterDefault.update(db));
+        IDBUpdater[] updaters = new IDBUpdater[]
+                {
+                        new DBUpdater00(),
+                        new DBUpdaterDefault()
+                };
+        for (IDBUpdater updater : updaters) {
+            List<Model> result = updater.update(db);
+            if (result != null) {
+                if (result.size() > 0)
+                    models.addAll(result);
+            }
+        }
         return models;
     }
 

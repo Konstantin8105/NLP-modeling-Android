@@ -2,8 +2,7 @@ package com.modelingbrain.home.opensave;
 
 // TODO: 7/30/16 add old convert from xml
 public class ValuesIO {
-    // TODO: 7/30/16 rename file to DbModelFile.json
-    public static final String FILENAME = "DBmodelFile.json";
+    public static final String FILENAME = "NlpModels.json";
     public static final String TYPE = "type";
     public static final String NAME = "name";
     public static final String TIME = "time";

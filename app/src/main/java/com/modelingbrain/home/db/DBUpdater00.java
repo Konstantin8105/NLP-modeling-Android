@@ -13,10 +13,8 @@ public class DBUpdater00 implements IDBUpdater {
 
     private String log = new String();
 
-    // TODO: 7/30/16 add inspection attribute for avoid checking next line
-    private static final String prefixTable = "TABLEOFMODEL";
+    private static final String prefixTable = "TABLE" + "OF" + "MODEL";
 
-    //TODO create converting from old version database
     @Override
     public List<Model> update(SQLiteDatabase db) {
         List<ModelID> tables = getTablesWithPrefix(db, prefixTable);
@@ -30,29 +28,29 @@ public class DBUpdater00 implements IDBUpdater {
                 models.addAll(tableModels);
             }
         }
-        {
-            Model model = new Model(ModelID.ID_NOTE);
-            model.setName("Tables");
-            String out = new String();
-            for (int i = 0; i < tables.size(); i++) {
-                out += tables.get(i).toString() + "\n";
-            }
-            model.setAnswer(0, out);
-            models.add(model);
-        }
+//        {
+//            Model model = new Model(ModelID.ID_NOTE);
+//            model.setName("Tables");
+//            String out = new String();
+//            for (int i = 0; i < tables.size(); i++) {
+//                out += tables.get(i).toString() + "\n";
+//            }
+//            model.setAnswer(0, out);
+//            models.add(model);
+//        }
         {
             //drop tables
             for (int i = 0; i < tables.size(); i++) {
                 db.execSQL("DROP TABLE IF EXISTS " + prefixTable + tables.get(i).toString());
             }
         }
-        {
-            // add logging
-            Model logResult = new Model(ModelID.ID_NOTE);
-            logResult.setName("log");
-            logResult.setAnswer(0, log);
-            models.add(logResult);
-        }
+//        {
+//            // add logging
+//            Model logResult = new Model(ModelID.ID_NOTE);
+//            logResult.setName("log");
+//            logResult.setAnswer(0, log);
+//            models.add(logResult);
+//        }
         return models;
     }
 
