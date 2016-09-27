@@ -124,6 +124,8 @@ public class Model {
                 return false;
             if(s1 != null && s2 == null)
                 return false;
+            if(s1 == null && s2 == null)
+                return true;
             if (s1.compareTo(s2) != 0)
                 return false;
         }

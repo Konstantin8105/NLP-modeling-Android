@@ -62,10 +62,6 @@ public class StageFragment extends Fragment {
                     .openModel(savedInstanceState.getInt(modelID));
         }
         initColors();
-//
-//        linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);
-//        linLayout.setBackgroundColor(generalModelColor);
-
         return rootView;
     }
 
