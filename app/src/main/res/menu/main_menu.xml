@@ -19,6 +19,4 @@
         android:orderInCategory="100"
         android:title="@string/action_save_models"
         app:showAsAction="never" />
-
-    <!--TODO Add connect to my group Google+-->
 </menu>

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!--TODO add inspection attribute for avoid inspection -->
     <string-array name="str_array_About">
         <item >Модель НЛП:: SCORE</item>
         <item >http://trenings.ru/entsiklopediya-nlp/modeli/461-model-nlp-score.html</item>
