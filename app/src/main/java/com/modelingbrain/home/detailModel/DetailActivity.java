@@ -59,7 +59,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 changeStageDetail();
                 createView();
-                Snackbar.make(view, getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
+                Snackbar.make(findViewById(R.id.header), getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

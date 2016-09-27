@@ -97,8 +97,6 @@ public enum ModelID {
         }
     }
 
-    // TODO: 9/26/16 check all icons
-
     public static final ModelLine arrModelLine[] = {
 
             new ModelLine(ModelID.ID_Modeling_Gordon,
