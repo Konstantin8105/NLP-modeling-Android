@@ -2,18 +2,11 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
     android:width="24dp"
     android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-
-    <group
-        android:translateY="-1028.3622">
+    android:viewportHeight="24"
+    android:viewportWidth="24">
+    <group android:translateY="-1028.362">
         <path
-            android:fillColor="#000000"
-            android:strokeWidth="1"
-            android:pathData="M 6.3107223,1031.9677 0,17.2174 12.2713987,0 0,-17.2174 -12.2713987,0 z m
-1.2545504,2.8778 9.7622983,0 0,1.1509 -9.7622983,0 0,-1.1509 z m 0,2.5961
-9.7622983,0 0,1.151 -9.7622983,0 0,-1.151 z m 0,2.596 9.7622983,0 0,1.1512
--9.7622983,0 0,-1.1512 z m 0,2.5961 9.7622983,0 0,1.1511 -9.7622983,0 0,-1.1511
-z m 0,2.5961 9.7622983,0 0,1.1511 -9.7622983,0 0,-1.1511 z" />
+            android:fillColor="#646464"
+            android:pathData="M6.3107223 1031.9677l0 17.2174 12.2713987 0 0 -17.2174 -12.2713987 0zm1.2545504 2.8778l9.7622983 0 0 1.1509 -9.7622983 0 0 -1.1509zm0 2.5961l9.7622983 0 0 1.151 -9.7622983 0 0 -1.151zm0 2.596l9.7622983 0 0 1.1512 -9.7622983 0 0 -1.1512zm0 2.5961l9.7622983 0 0 1.1511 -9.7622983 0 0 -1.1511zm0 2.5961l9.7622983 0 0 1.1511 -9.7622983 0 0 -1.1511z" />
     </group>
 </vector>

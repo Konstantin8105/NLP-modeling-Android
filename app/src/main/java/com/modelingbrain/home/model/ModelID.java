@@ -197,7 +197,6 @@ public enum ModelID {
                     R.drawable.ic_model_profile3,
                     10),
 
-            // TODO: 9/25/16 wrong icon
             new ModelLine(ModelID.ID_NOTE,
                     R.array.str_Left_Note,
                     ModelType.STRATEGY,
