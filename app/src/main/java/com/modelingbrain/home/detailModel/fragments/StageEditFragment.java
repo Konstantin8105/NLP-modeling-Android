@@ -19,7 +19,7 @@ public class StageEditFragment extends StageFragment {
     private final String TAG = this.getClass().toString();
 
     // TODO: 7/30/16 avoid taking id by hand
-//    private static final int ID_TEXT_VIEW = 10000;
+    private static final int ID_TEXT_VIEW = 10000;
 
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
     //TODO edit model and saving
