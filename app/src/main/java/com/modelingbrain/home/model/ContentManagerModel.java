@@ -31,6 +31,7 @@ public class ContentManagerModel {
             throw new NullPointerException("dbHelperModel cannot be null");
         }
         ArrayList<Model> models = dbHelperModel.openHeader(state);
+        dbHelperModel.close();
         boolean again;
         do {
             again = false;

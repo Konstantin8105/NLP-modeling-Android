@@ -1,8 +1,9 @@
-package com.modelingbrain.home.detailModel.template;
+package com.modelingbrain.home.detailModel.fragments;
 
 import android.app.Fragment;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,7 +15,12 @@ import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.R;
 
-public class StageFragment extends Fragment {
+public abstract class StageFragment extends Fragment {
+
+    @SuppressWarnings("unused")
+    protected final String TAG = this.getClass().toString();
+
+
     protected Model model;
     protected final String modelID = "ModelDbId";
     protected int generalModelColor;
@@ -34,7 +40,8 @@ public class StageFragment extends Fragment {
         ANSWER
     }
 
-    protected void initColors() {
+    private void initColors() {
+        Log.d(TAG, "initColors - start");
         if (model == null) {
             throw new NullPointerException("Model is null");
         }
@@ -44,26 +51,45 @@ public class StageFragment extends Fragment {
         generalModelTextColor = ContextCompat.getColor(
                 getActivity().getBaseContext(),
                 model.getModelType().getTextColor());
+        Log.d(TAG, "initColors - finish");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
+        Log.d(TAG, "onSaveInstanceState - start");
         super.onSaveInstanceState(outState);
         outState.putInt(modelID, model.getDbId());
+        Log.d(TAG, "onSaveInstanceState - finish");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
-
-        View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
+        Log.d(TAG, "onCreateView - start");
+        Log.d(TAG, "model = " + model.toString());
         if (savedInstanceState != null) {
+            Log.d(TAG, "ATTENTION: savedInstanceState != null");
             model = (new DBHelperModel(getActivity().getBaseContext()))
                     .openModel(savedInstanceState.getInt(modelID));
         }
         initColors();
-        return rootView;
+        View view = initializeData(inflater, parentViewGroup);
+        Log.d(TAG, "onCreateView - finish");
+        return view;
     }
+
+    protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
+
+    protected abstract void savingModelData();
+
+    @Override
+    public void onPause() {
+        Log.d(TAG, "onPause - start");
+        savingModelData();
+        super.onPause();
+        Log.d(TAG, "onPause - finish");
+    }
+
 
     protected void createElement(String str, QA qa) {
         LayoutInflater ltInflater = getActivity().getLayoutInflater();

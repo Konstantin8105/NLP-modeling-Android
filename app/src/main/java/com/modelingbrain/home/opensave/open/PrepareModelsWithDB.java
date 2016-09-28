@@ -22,10 +22,12 @@ public class PrepareModelsWithDB extends PrepareModels{
         Log.d(TAG, "prepare - start");
 
         ArrayList<Model> modelsDB = new ArrayList<>();
-        DBHelperModel dbHelperModel = new DBHelperModel(activity.getBaseContext());
-        modelsDB.addAll(dbHelperModel.openHeader(ModelState.NORMAL));
-        modelsDB.addAll(dbHelperModel.openHeader(ModelState.ARCHIVE));
-
+        {
+            DBHelperModel dbHelperModel = new DBHelperModel(activity.getBaseContext());
+            modelsDB.addAll(dbHelperModel.openHeader(ModelState.NORMAL));
+            modelsDB.addAll(dbHelperModel.openHeader(ModelState.ARCHIVE));
+            dbHelperModel.close();
+        }
         ArrayList<CompareModel> compareModels = new ArrayList<>();
         for(int i=0;i<modelsDB.size();i++){
             CompareModel temp = new CompareModel(modelsDB.get(i));

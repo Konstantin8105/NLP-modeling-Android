@@ -1,14 +1,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="fill_parent"
+    android:layout_height="wrap_content"
     android:id="@+id/llOneRow"
+    android:orientation="vertical"
     android:layout_marginBottom="10dp">
 
     <MultiAutoCompleteTextView
         android:id="@+id/editOneRow"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
+        android:background="@drawable/drw_btn_right_edit"
         android:completionThreshold="1"
         android:gravity="center|left"
         android:inputType="textMultiLine" />

@@ -37,8 +37,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
-        dbHelperModel.updateModel(model);
+        savingModelInDb();
 
         outState.putString(detailFragmentsKey, fragment.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
@@ -142,8 +141,7 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
-        dbHelperModel.updateModel(model);
+        savingModelInDb();
         setResult(RESULT_OK);
         super.onPause();
     }
@@ -152,10 +150,15 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Log.d(TAG, "onBackPressed - start");
-        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
-        dbHelperModel.updateModel(model);
+        savingModelInDb();
         setResult(RESULT_OK);
         super.onBackPressed();
         Log.d(TAG, "onBackPressed - finish");
+    }
+
+    private void savingModelInDb(){
+        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
+        dbHelperModel.updateModel(model);
+        dbHelperModel.close();
     }
 }

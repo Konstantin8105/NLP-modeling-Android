@@ -38,9 +38,12 @@ public class Writer {
         Log.d(TAG, "prepare - start");
 
         ArrayList<Model> modelsDB = new ArrayList<>();
-        DBHelperModel dbHelperModel = new DBHelperModel(activity.getBaseContext());
-        modelsDB.addAll(dbHelperModel.openHeader(ModelState.NORMAL));
-        modelsDB.addAll(dbHelperModel.openHeader(ModelState.ARCHIVE));
+        {
+            DBHelperModel dbHelperModel = new DBHelperModel(activity.getBaseContext());
+            modelsDB.addAll(dbHelperModel.openHeader(ModelState.NORMAL));
+            modelsDB.addAll(dbHelperModel.openHeader(ModelState.ARCHIVE));
+            dbHelperModel.close();
+        }
 
         // TODO: 2/6/16 add version of output data
 
