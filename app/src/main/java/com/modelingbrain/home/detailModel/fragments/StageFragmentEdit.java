@@ -74,12 +74,6 @@ public class StageFragmentEdit extends StageFragment {
         linLayout.addView(view);
     }
 
-    @Override
-    public void onResume() {
-        Log.d(TAG, "onResume - start");
-        super.onResume();
-        Log.d(TAG, "onResume - finish");
-    }
     // TODO: 9/28/16 BIG BUG если перейти в редактирование свернуть и развернуть то глюг
 
     @Override
