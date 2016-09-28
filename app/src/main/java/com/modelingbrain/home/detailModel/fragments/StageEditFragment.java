@@ -25,6 +25,8 @@ public class StageEditFragment extends StageFragment {
     //TODO edit model and saving
     // TODO return changed model
 
+
+    // TODO: 28.09.2016 don`t override this method for unificate savedInstance
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
