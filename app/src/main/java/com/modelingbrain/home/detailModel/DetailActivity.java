@@ -118,23 +118,25 @@ public class DetailActivity extends AppCompatActivity {
 
     private void createView() {
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        Bundle args = new Bundle();
+        args.putInt(DATABASE_ID,model.getDbId());
+        fragment.getFragment().setArguments(args);
+//        fragment.getFragment().send(model);
         switch (fragment) {
             case STATE_VIEW_READ: {
-                transaction.remove(fragment.getFragment());
-                fragment.getFragment().send(model);
+//                transaction.remove(fragment.getFragment());
                 transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 break;
             }
             case STATE_VIEW_WRITE: {
-                transaction.remove(fragment.getFragment());
-                fragment.getFragment().send(model);
+//                transaction.remove(fragment.getFragment());
                 transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 break;
             }
             default:
                 throw new RuntimeException("Add new view");
         }
-        transaction.commit();
+        transaction.addToBackStack(null).commit();
 
         fab.setImageResource(fragment.getFabIconResource());
     }

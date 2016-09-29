@@ -12,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.modelingbrain.home.db.DBHelperModel;
+import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.R;
 
@@ -22,18 +23,17 @@ public abstract class StageFragment extends Fragment {
 
 
     protected Model model;
-    protected final String modelID = "ModelDbId";
     protected int generalModelColor;
     protected int generalModelTextColor;
 
     protected LinearLayout linLayout;
 
-    public void send(Model model) {
-        if (model == null) {
-            throw new NullPointerException("Model is null");
-        }
-        this.model = model;
-    }
+//    public void send(Model model) {
+//        if (model == null) {
+//            throw new NullPointerException("Model is null");
+//        }
+//        this.model = model;
+//    }
 
     protected enum QA {
         QUESTION,
@@ -58,7 +58,7 @@ public abstract class StageFragment extends Fragment {
     public void onSaveInstanceState(Bundle outState) {
         Log.d(TAG, "onSaveInstanceState - start");
         super.onSaveInstanceState(outState);
-        outState.putInt(modelID, model.getDbId());
+        outState.putInt(DetailActivity.DATABASE_ID, model.getDbId());
         Log.d(TAG, "onSaveInstanceState - finish");
     }
 
@@ -66,12 +66,18 @@ public abstract class StageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView - start");
-        Log.d(TAG, "model = " + model.toString());
         if (savedInstanceState != null) {
             Log.d(TAG, "ATTENTION: savedInstanceState != null");
-            model = (new DBHelperModel(getActivity().getBaseContext()))
-                    .openModel(savedInstanceState.getInt(modelID));
+            DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
+            model = db.openModel(savedInstanceState.getInt(DetailActivity.DATABASE_ID));
+            db.close();
+        } else {
+            Log.d(TAG, "ATTENTION: savedInstanceState == null");
+            DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
+            model = db.openModel(getArguments().getInt(DetailActivity.DATABASE_ID));
+            db.close();
         }
+        Log.d(TAG, "model = " + model.toString());
         initColors();
         View view = initializeData(inflater, parentViewGroup);
         Log.d(TAG, "onCreateView - finish");
@@ -90,6 +96,26 @@ public abstract class StageFragment extends Fragment {
         Log.d(TAG, "onPause - finish");
     }
 
+    @Override
+    public void onStart() {
+        Log.d(TAG, "onStart - start");
+        super.onStart();
+        Log.d(TAG, "onStart - finish");
+    }
+
+    @Override
+    public void onResume() {
+        Log.d(TAG, "onResume - start");
+        super.onResume();
+        Log.d(TAG, "onResume - finish");
+    }
+
+    @Override
+    public void onStop() {
+        Log.d(TAG, "onStop - start");
+        super.onStop();
+        Log.d(TAG, "onStop - finish");
+    }
 
     protected void createElement(String str, QA qa) {
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
