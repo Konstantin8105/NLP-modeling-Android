@@ -2,7 +2,7 @@ package com.modelingbrain.home.opensave.open;
 
 import android.os.AsyncTask;
 
-import com.modelingbrain.home.GlobalFunction;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
 import com.modelingbrain.home.opensave.SaveOpenActivity;

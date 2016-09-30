@@ -1,4 +1,4 @@
-package com.modelingbrain.home;
+package com.modelingbrain.home.main;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

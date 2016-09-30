@@ -4,7 +4,7 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import com.modelingbrain.home.GlobalFunction;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.template.ElementList;

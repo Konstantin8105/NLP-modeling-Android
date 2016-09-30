@@ -6,7 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.util.Log;
 import android.view.ActionMode;
 
-import com.modelingbrain.home.MainFragments;
+import com.modelingbrain.home.MainFragment;
 import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.detailModel.StageDetailActivity;
 import com.modelingbrain.home.main.ModelSort;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import static android.app.Activity.RESULT_OK;
 import static com.modelingbrain.home.MainActivity.REQUEST_FRAGMENT;
 
-public class FragmentFolder extends FragmentListWithActionBarTemplate implements MainFragments {
+public class FragmentFolder extends FragmentListWithActionBarTemplate implements MainFragment {
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();

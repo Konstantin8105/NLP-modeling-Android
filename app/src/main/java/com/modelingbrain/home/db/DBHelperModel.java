@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import com.modelingbrain.home.GlobalFunction;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;

@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.PopupMenu;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -21,6 +22,8 @@ import android.view.View;
 import com.modelingbrain.home.about.ActivityAbout;
 import com.modelingbrain.home.archive.FragmentArchive;
 import com.modelingbrain.home.chooseModel.ActivityChooseModel;
+import com.modelingbrain.home.detailModel.FragmentType;
+import com.modelingbrain.home.detailModel.fragments.StageFragment;
 import com.modelingbrain.home.folderModel.FragmentFolder;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.opensave.OpenActivity;
@@ -35,34 +38,13 @@ public class MainActivity extends AppCompatActivity
     private FloatingActionButton fab;
     public static final int REQUEST_FRAGMENT = 800;
 
-    private enum PageStatus {
-        Folder(new FragmentFolder(), R.string.nav_folder),
-        Archive(new FragmentArchive(), R.string.nav_archive);
-
-        private final MainFragments fragment;
-        private final int stringResource;
-
-        PageStatus(MainFragments fragment, int stringResource) {
-            this.fragment = fragment;
-            this.stringResource = stringResource;
-        }
-
-        public MainFragments getMainFragment() {
-            return fragment;
-        }
-
-        public int getStringResource() {
-            return stringResource;
-        }
-    }
-
-    private PageStatus pageStatus;
+    private PageStatus.PageStatusType pageStatusType;
     private final String pageStatusKey = "PageStatus";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putString(pageStatusKey, pageStatus.toString());
+        outState.putString(pageStatusKey, pageStatusType.toString());
     }
 
     @Override
@@ -84,8 +66,8 @@ public class MainActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         if (savedInstanceState != null) {
-            pageStatus = PageStatus.valueOf(savedInstanceState.getString(pageStatusKey));
-            switch (pageStatus) {
+            pageStatusType = PageStatus.PageStatusType.valueOf(savedInstanceState.getString(pageStatusKey));
+            switch (pageStatusType) {
                 case Folder:
                     navigationView.getMenu().getItem(0).setChecked(true);
                     break;
@@ -94,7 +76,7 @@ public class MainActivity extends AppCompatActivity
                     break;
             }
         } else {
-            pageStatus = PageStatus.Folder;
+            pageStatusType = PageStatus.PageStatusType.Folder;
             navigationView.getMenu().getItem(0).setChecked(true);
         }
 
@@ -114,12 +96,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
+        Log.d(TAG, "onBackPressed - start");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
+        Log.d(TAG, "onBackPressed - finish");
     }
 
     @Override
@@ -174,7 +158,7 @@ public class MainActivity extends AppCompatActivity
                             default:
                                 return false;
                         }
-                        pageStatus.getMainFragment().changeSort(modelSort);
+                        PageStatus.getLastFragment().changeSort(modelSort);
                         return true;
                     }
                 });
@@ -188,19 +172,23 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void createView() {
+        Log.d(TAG, "createView - start");
+        MainFragment fragment = PageStatus.getNewInstanceFragment(pageStatusType, getFragmentManager());
+        if(fragment == null){
+            throw new NullPointerException("stageFragment is NULL");
+        }
+
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
-        switch (pageStatus) {
+        switch (pageStatusType) {
             case Folder: {
-                transaction.remove(pageStatus.getMainFragment().getFragment());
-                transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 fab.show();
-                FragmentFolder folder = (FragmentFolder) pageStatus.getMainFragment().getFragment();
+                FragmentFolder folder = (FragmentFolder) fragment;
                 folder.setFab(fab);
                 break;
             }
             case Archive: {
-                transaction.remove(pageStatus.getMainFragment().getFragment());
-                transaction.replace(R.id.detail_fragment, pageStatus.getMainFragment().getFragment());
+                transaction.replace(R.id.detail_fragment, fragment.getFragment());
                 fab.hide();
                 break;
             }
@@ -208,9 +196,10 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
 
         Snackbar.make(findViewById(R.id.nav_view),
-                getBaseContext().getString(pageStatus.getStringResource()),
+                getBaseContext().getString(PageStatus.getStringResource()),
                 Snackbar.LENGTH_SHORT).
                 setAction("Action", null).show();
+        Log.d(TAG, "createView - finish");
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -219,15 +208,15 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
         switch (id) {
             case R.id.nav_folder: {
-                if (pageStatus != PageStatus.Folder) {
-                    pageStatus = PageStatus.Folder;
+                if (pageStatusType != PageStatus.PageStatusType.Folder) {
+                    pageStatusType = PageStatus.PageStatusType.Folder;
                     createView();
                 }
                 break;
             }
             case R.id.nav_archive: {
-                if (pageStatus != PageStatus.Archive) {
-                    pageStatus = PageStatus.Archive;
+                if (pageStatusType != PageStatus.PageStatusType.Archive) {
+                    pageStatusType = PageStatus.PageStatusType.Archive;
                     createView();
                 }
                 break;

@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.view.ActionMode;
 
 import com.modelingbrain.home.MainActivity;
-import com.modelingbrain.home.MainFragments;
+import com.modelingbrain.home.MainFragment;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.detailModel.StageDetailActivity;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
-public class FragmentArchive extends FragmentListWithActionBarTemplate implements MainFragments{
+public class FragmentArchive extends FragmentListWithActionBarTemplate implements MainFragment {
 
     private ModelSort modelSort;
 

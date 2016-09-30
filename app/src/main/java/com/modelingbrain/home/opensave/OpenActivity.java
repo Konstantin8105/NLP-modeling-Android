@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.view.View;
 
-import com.modelingbrain.home.GlobalFunction;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.MainActivity;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
