@@ -28,13 +28,6 @@ public abstract class StageFragment extends Fragment {
 
     protected LinearLayout linLayout;
 
-//    public void send(Model model) {
-//        if (model == null) {
-//            throw new NullPointerException("Model is null");
-//        }
-//        this.model = model;
-//    }
-
     protected enum QA {
         QUESTION,
         ANSWER
@@ -79,6 +72,7 @@ public abstract class StageFragment extends Fragment {
         }
         Log.d(TAG, "model = " + model.toString());
         initColors();
+
         View view = initializeData(inflater, parentViewGroup);
         Log.d(TAG, "onCreateView - finish");
         return view;
@@ -86,15 +80,7 @@ public abstract class StageFragment extends Fragment {
 
     protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
 
-    protected abstract void savingModelData();
-
-    @Override
-    public void onPause() {
-        Log.d(TAG, "onPause - start");
-        savingModelData();
-        super.onPause();
-        Log.d(TAG, "onPause - finish");
-    }
+    public abstract Model savingModelData();
 
     @Override
     public void onStart() {
@@ -111,10 +97,21 @@ public abstract class StageFragment extends Fragment {
     }
 
     @Override
-    public void onStop() {
-        Log.d(TAG, "onStop - start");
-        super.onStop();
-        Log.d(TAG, "onStop - finish");
+    public void onDestroyView() {
+        Log.d(TAG, "onDestroyView");
+        super.onDestroyView();
+    }
+
+    @Override
+    public void onDestroy() {
+        Log.d(TAG, "onDestroy");
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetach() {
+        Log.d(TAG, "onDetach");
+        super.onDetach();
     }
 
     protected void createElement(String str, QA qa) {

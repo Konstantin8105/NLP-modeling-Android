@@ -8,6 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.modelingbrain.home.R;
+import com.modelingbrain.home.model.Model;
 
 public class StageFragmentView extends StageFragment {
 
@@ -30,7 +31,8 @@ public class StageFragmentView extends StageFragment {
     }
 
     @Override
-    public void savingModelData() {
+    public Model savingModelData() {
+        return model;
     }
 
 }

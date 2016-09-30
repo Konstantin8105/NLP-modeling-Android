@@ -2,35 +2,66 @@ package com.modelingbrain.home.detailModel;
 
 
 import android.app.FragmentTransaction;
+import android.util.Log;
 
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.detailModel.fragments.StageFragment;
 import com.modelingbrain.home.detailModel.fragments.StageFragmentEdit;
 import com.modelingbrain.home.detailModel.fragments.StageFragmentView;
 
-public enum FragmentType {
-    STATE_VIEW_READ( StageFragmentView.class, R.string.detail_mode_read_only, R.drawable.ic_lock),
-    STATE_VIEW_WRITE(StageFragmentEdit.class, R.string.detail_mode_write, R.drawable.ic_unlock);
+import java.util.ArrayList;
+import java.util.List;
 
-    StageFragment lastFragment = null;
-    final Class fragment;
-    final int stringResource;
-    final int fabIconResource;
-
-    FragmentType(Class fragment, int stringResource, int fabIconResource) {
-        this.fragment = fragment;
-        this.stringResource = stringResource;
-        this.fabIconResource = fabIconResource;
+public class FragmentType {
+    public enum Type {
+        STATE_VIEW_WRITE,
+        STATE_VIEW_READ
     }
 
-    public StageFragment getNewInstanceFragment(FragmentTransaction transaction) {
+    private static class TypeInner {
+        Type type;
+        Class fragment;
+        int stringResource;
+        int fabIconResource;
+
+        public TypeInner(Type type, Class fragment, int stringResource, int fabIconResource) {
+            this.type = type;
+            this.fragment = fragment;
+            this.stringResource = stringResource;
+            this.fabIconResource = fabIconResource;
+        }
+    }
+
+    static List<TypeInner> types = new ArrayList<>();
+
+    static {
+        types.add(new TypeInner(Type.STATE_VIEW_READ, StageFragmentView.class, R.string.detail_mode_read_only, R.drawable.ic_lock));
+        types.add(new TypeInner(Type.STATE_VIEW_WRITE, StageFragmentEdit.class, R.string.detail_mode_write, R.drawable.ic_unlock));
+    }
+
+    @SuppressWarnings("unused")
+    private final static String TAG = "FragmentType";
+
+    static StageFragment lastFragment = null;
+
+    public static StageFragment getLastFragment() {
+        return lastFragment;
+    }
+
+    static Type lastType = null;
+
+
+    public static StageFragment getNewInstanceFragment(Type type, FragmentTransaction transaction) {
+        Log.d(TAG, "getNewInstanceFragment - start");
         try {
-            if(lastFragment != null){
+            if (lastFragment != null) {
+                Log.d(TAG, "remove last fragment");
                 transaction.remove(lastFragment);
-                transaction.addToBackStack(null);
                 transaction.commit();
             }
-            lastFragment = (StageFragment) fragment.newInstance();
+            lastType = type;
+            lastFragment = (StageFragment) types.get(positionInArray(type)).fragment.newInstance();
+            Log.d(TAG, "getNewInstanceFragment - finish");
             return lastFragment;
         } catch (InstantiationException e) {
             e.printStackTrace();
@@ -40,11 +71,19 @@ public enum FragmentType {
         return null;
     }
 
-    public int getStringResource() {
-        return stringResource;
+    public static int getStringResource() {
+        return types.get(positionInArray(lastType)).stringResource;
     }
 
-    public int getFabIconResource() {
-        return fabIconResource;
+    public static int getFabIconResource() {
+        return types.get(positionInArray(lastType)).fabIconResource;
+    }
+
+    private static int positionInArray(Type type) {
+        for (int i = 0; i < types.size(); i++) {
+            if (types.get(i).type == type)
+                return i;
+        }
+        return -1;
     }
 }

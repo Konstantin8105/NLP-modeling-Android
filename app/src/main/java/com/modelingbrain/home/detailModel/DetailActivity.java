@@ -32,20 +32,20 @@ public class DetailActivity extends AppCompatActivity {
     private StageDetailActivity stageDetailActivity;
     private final String stageDetailActivityKey = "StageDetailActivity";
 
-    private FragmentType fragmentType;
+    private FragmentType.Type fragmentType;
 
 
     private final String detailFragmentsKey = "FragmentType";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-
+        Log.d(TAG, "onSaveInstanceState - start");
         savingModelInDb();
-
         outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
+        super.onSaveInstanceState(outState);
+        Log.d(TAG, "onSaveInstanceState - finish");
     }
 
     @Override
@@ -60,9 +60,10 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                savingModelInDb();
                 changeStageDetail();
                 createView();
-                Snackbar.make(findViewById(R.id.header), getBaseContext().getString(fragmentType.getStringResource()), Snackbar.LENGTH_LONG)
+                Snackbar.make(findViewById(R.id.header), getBaseContext().getString(FragmentType.getStringResource()), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -72,16 +73,16 @@ public class DetailActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             idDb = savedInstanceState.getInt(modelKey);
             stageDetailActivity = StageDetailActivity.valueOf(savedInstanceState.getString(stageDetailActivityKey));
-            fragmentType = FragmentType.valueOf(savedInstanceState.getString(detailFragmentsKey));
+            fragmentType = FragmentType.Type.valueOf(savedInstanceState.getString(detailFragmentsKey));
         } else {
             idDb = getIntent().getIntExtra(DATABASE_ID, 0);
             stageDetailActivity = StageDetailActivity.valueOf(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
             switch (stageDetailActivity) {
                 case STATE_NEW_FROM_WRITE:
-                    fragmentType = FragmentType.STATE_VIEW_WRITE;
+                    fragmentType = FragmentType.Type.STATE_VIEW_WRITE;
                     break;
                 default:
-                    fragmentType = FragmentType.STATE_VIEW_READ;
+                    fragmentType = FragmentType.Type.STATE_VIEW_READ;
             }
         }
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
@@ -109,10 +110,10 @@ public class DetailActivity extends AppCompatActivity {
             return;
         switch (fragmentType) {
             case STATE_VIEW_READ:
-                fragmentType = FragmentType.STATE_VIEW_WRITE;
+                fragmentType = FragmentType.Type.STATE_VIEW_WRITE;
                 break;
             case STATE_VIEW_WRITE:
-                fragmentType = FragmentType.STATE_VIEW_READ;
+                fragmentType = FragmentType.Type.STATE_VIEW_READ;
                 break;
             default:
                 throw new RuntimeException("Add new view");
@@ -121,43 +122,36 @@ public class DetailActivity extends AppCompatActivity {
 
 
     private void createView() {
-
-
-
-        StageFragment stageFragment = fragmentType.getNewInstanceFragment(getFragmentManager().beginTransaction());
+        StageFragment stageFragment = FragmentType.getNewInstanceFragment(fragmentType, getFragmentManager().beginTransaction());
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         Bundle args = new Bundle();
-        args.putInt(DATABASE_ID,model.getDbId());
+        args.putInt(DATABASE_ID, model.getDbId());
         stageFragment.setArguments(args);
-//        fragmentType.getFragment().send(model);
         switch (fragmentType) {
             case STATE_VIEW_READ: {
-//                transaction.remove(fragmentType.getFragment());
                 transaction.add(R.id.detail_fragment, stageFragment);
                 break;
             }
             case STATE_VIEW_WRITE: {
-//                transaction.remove(fragmentType.getFragment());
                 transaction.add(R.id.detail_fragment, stageFragment);
                 break;
             }
             default:
                 throw new RuntimeException("Add new view");
         }
-//        transaction.addToBackStack(null);
         transaction.commit();
 
-        fab.setImageResource(fragmentType.getFabIconResource());
+        fab.setImageResource(FragmentType.getFabIconResource());
     }
 
     @Override
     protected void onPause() {
-        savingModelInDb();
+        Log.d(TAG, "onPause - start");
         setResult(RESULT_OK);
         super.onPause();
+        Log.d(TAG, "onPause - finish");
     }
-
 
     @Override
     public void onBackPressed() {
@@ -168,7 +162,8 @@ public class DetailActivity extends AppCompatActivity {
         Log.d(TAG, "onBackPressed - finish");
     }
 
-    private void savingModelInDb(){
+    private void savingModelInDb() {
+        model = FragmentType.getLastFragment().savingModelData();
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
         dbHelperModel.updateModel(model);
         dbHelperModel.close();

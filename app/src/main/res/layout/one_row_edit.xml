@@ -12,6 +12,7 @@
         android:background="@drawable/drw_btn_right_edit"
         android:completionThreshold="1"
         android:gravity="center|left"
+        android:layout_gravity="right|end"
         android:inputType="textMultiLine" />
 
 </LinearLayout>
