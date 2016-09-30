@@ -1,5 +1,6 @@
 package com.modelingbrain.home.detailModel.fragments;
 
+import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -53,6 +54,7 @@ public class StageFragmentEdit extends StageFragment {
         }
         return rootView;
     }
+
 
     private void createEditElement(String str, int position) {
         // TODO add array for easy edit

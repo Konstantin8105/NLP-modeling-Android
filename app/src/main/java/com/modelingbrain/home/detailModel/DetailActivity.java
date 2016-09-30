@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
+import com.modelingbrain.home.detailModel.fragments.StageFragment;
 import com.modelingbrain.home.model.Model;
 
 public class DetailActivity extends AppCompatActivity {
@@ -30,8 +31,11 @@ public class DetailActivity extends AppCompatActivity {
     private FloatingActionButton fab;
     private StageDetailActivity stageDetailActivity;
     private final String stageDetailActivityKey = "StageDetailActivity";
-    private DetailFragments fragment;
-    private final String detailFragmentsKey = "DetailFragments";
+
+    private FragmentType fragmentType;
+
+
+    private final String detailFragmentsKey = "FragmentType";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
@@ -39,7 +43,7 @@ public class DetailActivity extends AppCompatActivity {
 
         savingModelInDb();
 
-        outState.putString(detailFragmentsKey, fragment.toString());
+        outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
     }
@@ -58,7 +62,7 @@ public class DetailActivity extends AppCompatActivity {
             public void onClick(View view) {
                 changeStageDetail();
                 createView();
-                Snackbar.make(findViewById(R.id.header), getBaseContext().getString(fragment.getStringResource()), Snackbar.LENGTH_LONG)
+                Snackbar.make(findViewById(R.id.header), getBaseContext().getString(fragmentType.getStringResource()), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
@@ -68,16 +72,16 @@ public class DetailActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             idDb = savedInstanceState.getInt(modelKey);
             stageDetailActivity = StageDetailActivity.valueOf(savedInstanceState.getString(stageDetailActivityKey));
-            fragment = DetailFragments.valueOf(savedInstanceState.getString(detailFragmentsKey));
+            fragmentType = FragmentType.valueOf(savedInstanceState.getString(detailFragmentsKey));
         } else {
             idDb = getIntent().getIntExtra(DATABASE_ID, 0);
             stageDetailActivity = StageDetailActivity.valueOf(getIntent().getStringExtra(STATE_DETAIL_ACTIVITY));
             switch (stageDetailActivity) {
                 case STATE_NEW_FROM_WRITE:
-                    fragment = DetailFragments.STATE_VIEW_WRITE;
+                    fragmentType = FragmentType.STATE_VIEW_WRITE;
                     break;
                 default:
-                    fragment = DetailFragments.STATE_VIEW_READ;
+                    fragmentType = FragmentType.STATE_VIEW_READ;
             }
         }
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
@@ -103,12 +107,12 @@ public class DetailActivity extends AppCompatActivity {
     private void changeStageDetail() {
         if (stageDetailActivity == StageDetailActivity.STATE_READ_ONLY)
             return;
-        switch (fragment) {
+        switch (fragmentType) {
             case STATE_VIEW_READ:
-                fragment = DetailFragments.STATE_VIEW_WRITE;
+                fragmentType = FragmentType.STATE_VIEW_WRITE;
                 break;
             case STATE_VIEW_WRITE:
-                fragment = DetailFragments.STATE_VIEW_READ;
+                fragmentType = FragmentType.STATE_VIEW_READ;
                 break;
             default:
                 throw new RuntimeException("Add new view");
@@ -117,28 +121,34 @@ public class DetailActivity extends AppCompatActivity {
 
 
     private void createView() {
+
+
+
+        StageFragment stageFragment = fragmentType.getNewInstanceFragment(getFragmentManager().beginTransaction());
+
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         Bundle args = new Bundle();
         args.putInt(DATABASE_ID,model.getDbId());
-        fragment.getFragment().setArguments(args);
-//        fragment.getFragment().send(model);
-        switch (fragment) {
+        stageFragment.setArguments(args);
+//        fragmentType.getFragment().send(model);
+        switch (fragmentType) {
             case STATE_VIEW_READ: {
-//                transaction.remove(fragment.getFragment());
-                transaction.replace(R.id.detail_fragment, fragment.getFragment());
+//                transaction.remove(fragmentType.getFragment());
+                transaction.add(R.id.detail_fragment, stageFragment);
                 break;
             }
             case STATE_VIEW_WRITE: {
-//                transaction.remove(fragment.getFragment());
-                transaction.replace(R.id.detail_fragment, fragment.getFragment());
+//                transaction.remove(fragmentType.getFragment());
+                transaction.add(R.id.detail_fragment, stageFragment);
                 break;
             }
             default:
                 throw new RuntimeException("Add new view");
         }
-        transaction.addToBackStack(null).commit();
+//        transaction.addToBackStack(null);
+        transaction.commit();
 
-        fab.setImageResource(fragment.getFabIconResource());
+        fab.setImageResource(fragmentType.getFabIconResource());
     }
 
     @Override
