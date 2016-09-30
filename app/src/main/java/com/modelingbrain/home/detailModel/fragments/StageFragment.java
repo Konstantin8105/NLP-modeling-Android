@@ -79,13 +79,14 @@ public abstract class StageFragment extends Fragment {
     }
 
     protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
-
+    protected abstract void createInterface();
     public abstract Model savingModelData();
 
     @Override
     public void onStart() {
         Log.d(TAG, "onStart - start");
         super.onStart();
+        createInterface();
         Log.d(TAG, "onStart - finish");
     }
 

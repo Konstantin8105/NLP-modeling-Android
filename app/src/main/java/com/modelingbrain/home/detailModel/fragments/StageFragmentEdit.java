@@ -22,16 +22,14 @@ public class StageFragmentEdit extends StageFragment {
         Log.d(TAG, "initializeData - start");
         View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
         linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);
-
-
         linLayout.setBackgroundColor(generalModelColor);
         Log.d(TAG, "initializeData - finish");
         return rootView;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    protected void createInterface() {
+
         multiAutoCompleteTextViews = new MultiAutoCompleteTextView[model.getModelID().getSize() + 1];
         createElement(getResources().getString(R.string.model_name), QA.QUESTION);
         createEditElement(model.getName(), 0);
@@ -39,20 +37,6 @@ public class StageFragmentEdit extends StageFragment {
             createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1 + i], QA.QUESTION);
             createEditElement(model.getAnswer(i), i + 1);
         }
-    }
-
-    private void createEditElement(String str, int position) {
-        LayoutInflater ltInflater = getActivity().getLayoutInflater();
-        View view = ltInflater.inflate(R.layout.one_row_edit, linLayout, false);
-        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);
-        ViewGroup.MarginLayoutParams layoutParams =
-                (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-        layoutParams.setMargins(15, 5, 0, 10);
-        linearLayout.setLayoutParams(layoutParams);
-        multiAutoCompleteTextViews[position] = (MultiAutoCompleteTextView) view.findViewById(R.id.editOneRow);
-        multiAutoCompleteTextViews[position].setTextColor(generalModelTextColor);
-        multiAutoCompleteTextViews[position].setText(str);
-        linLayout.addView(view);
     }
 
     @Override
@@ -69,5 +53,19 @@ public class StageFragmentEdit extends StageFragment {
         multiAutoCompleteTextViews = null;
         Log.d(TAG, "savingModelData - finish");
         return model;
+    }
+
+    private void createEditElement(String str, int position) {
+        LayoutInflater ltInflater = getActivity().getLayoutInflater();
+        View view = ltInflater.inflate(R.layout.one_row_edit, linLayout, false);
+        LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) view.getLayoutParams();
+        layoutParams.setMargins(15, 5, 0, 10);
+        linearLayout.setLayoutParams(layoutParams);
+        multiAutoCompleteTextViews[position] = (MultiAutoCompleteTextView) view.findViewById(R.id.editOneRow);
+        multiAutoCompleteTextViews[position].setTextColor(generalModelTextColor);
+        multiAutoCompleteTextViews[position].setText(str);
+        linLayout.addView(view);
     }
 }
