@@ -60,12 +60,10 @@ public abstract class StageFragment extends Fragment {
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView - start");
         if (savedInstanceState != null) {
-            Log.d(TAG, "ATTENTION: savedInstanceState != null");
             DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
             model = db.openModel(savedInstanceState.getInt(DetailActivity.DATABASE_ID));
             db.close();
         } else {
-            Log.d(TAG, "ATTENTION: savedInstanceState == null");
             DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
             model = db.openModel(getArguments().getInt(DetailActivity.DATABASE_ID));
             db.close();
@@ -86,6 +84,7 @@ public abstract class StageFragment extends Fragment {
     public void onStart() {
         Log.d(TAG, "onStart - start");
         super.onStart();
+        linLayout.removeAllViews();
         createInterface();
         Log.d(TAG, "onStart - finish");
     }

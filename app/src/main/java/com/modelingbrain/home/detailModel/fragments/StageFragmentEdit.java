@@ -29,7 +29,7 @@ public class StageFragmentEdit extends StageFragment {
 
     @Override
     protected void createInterface() {
-
+        Log.d(TAG, "createInterface - start");
         multiAutoCompleteTextViews = new MultiAutoCompleteTextView[model.getModelID().getSize() + 1];
         createElement(getResources().getString(R.string.model_name), QA.QUESTION);
         createEditElement(model.getName(), 0);
@@ -37,6 +37,7 @@ public class StageFragmentEdit extends StageFragment {
             createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1 + i], QA.QUESTION);
             createEditElement(model.getAnswer(i), i + 1);
         }
+        Log.d(TAG, "createInterface - finish");
     }
 
     @Override
