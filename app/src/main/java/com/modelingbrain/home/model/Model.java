@@ -120,12 +120,12 @@ public class Model {
         for(int i=0;i<this.getModelID().getSize();i++) {
             String s1 = this.getAnswer(i);
             String s2 = model.getAnswer(i);
-            if(s1 == null && s2 != null)
-                return false;
-            if(s1 != null && s2 == null)
-                return false;
-            if(s1 == null && s2 == null)
-                return true;
+//            if(s1 == null && s2 != null)
+//                return false;
+//            if(s1 != null && s2 == null)
+//                return false;
+//            if(s1 == null && s2 == null)
+//                return true;
             if (s1.compareTo(s2) != 0)
                 return false;
         }

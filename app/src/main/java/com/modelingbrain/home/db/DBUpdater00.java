@@ -56,6 +56,7 @@ public class DBUpdater00 implements IDBUpdater {
         return models;
     }
 
+    @SuppressWarnings("SameParameterValue")
     private List<ModelID> getTablesWithPrefix(SQLiteDatabase db, String prefix) {
         log += "found tables\n";
         List<ModelID> tables = new ArrayList<>();

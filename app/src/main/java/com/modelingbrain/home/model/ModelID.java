@@ -78,6 +78,7 @@ public enum ModelID {
         public final int modelSize;
         public final boolean oldModel;
 
+        @SuppressWarnings("SameParameterValue")
         protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;
@@ -87,6 +88,7 @@ public enum ModelID {
             this.oldModel = oldModel;
         }
 
+        @SuppressWarnings("SameParameterValue")
         protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;

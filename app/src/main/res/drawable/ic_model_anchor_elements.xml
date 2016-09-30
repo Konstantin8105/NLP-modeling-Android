@@ -8,7 +8,6 @@
     <group android:translateY="-552.36218">
         <path
             android:fillColor="#ffff00"
-            android:fillType="evenOdd"
             android:pathData="M 50 802.36218 H 450 V 852.36218 H 50 V 802.36218 Z"
             android:strokeWidth="1" />
         <path

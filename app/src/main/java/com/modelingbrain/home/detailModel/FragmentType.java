@@ -1,6 +1,7 @@
 package com.modelingbrain.home.detailModel;
 
 
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.util.Log;
 
@@ -19,10 +20,10 @@ public class FragmentType {
     }
 
     private static class TypeInner {
-        Type type;
-        Class fragment;
-        int stringResource;
-        int fabIconResource;
+        final Type type;
+        final Class fragment;
+        final int stringResource;
+        final int fabIconResource;
 
         public TypeInner(Type type, Class fragment, int stringResource, int fabIconResource) {
             this.type = type;
@@ -32,7 +33,7 @@ public class FragmentType {
         }
     }
 
-    static List<TypeInner> types = new ArrayList<>();
+    private static final List<TypeInner> types = new ArrayList<>();
 
     static {
         types.add(new TypeInner(Type.STATE_VIEW_READ, StageFragmentView.class, R.string.detail_mode_read_only, R.drawable.ic_lock));
@@ -51,14 +52,17 @@ public class FragmentType {
     static Type lastType = null;
 
 
-    public static StageFragment getNewInstanceFragment(Type type, FragmentTransaction transaction) {
+    public static StageFragment getNewInstanceFragment(Type type, FragmentManager fragmentManager) {
         Log.d(TAG, "getNewInstanceFragment - start");
-        try {
+        if (fragmentManager != null) {
             if (lastFragment != null) {
                 Log.d(TAG, "remove last fragment");
+                FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.remove(lastFragment);
                 transaction.commit();
             }
+        }
+        try {
             lastType = type;
             lastFragment = (StageFragment) types.get(positionInArray(type)).fragment.newInstance();
             Log.d(TAG, "getNewInstanceFragment - finish");

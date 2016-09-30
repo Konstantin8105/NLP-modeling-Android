@@ -122,12 +122,16 @@ public class DetailActivity extends AppCompatActivity {
 
 
     private void createView() {
-        StageFragment stageFragment = FragmentType.getNewInstanceFragment(fragmentType, getFragmentManager().beginTransaction());
+        StageFragment stageFragment = FragmentType.getNewInstanceFragment(fragmentType, getFragmentManager());
+        if(stageFragment == null){
+            throw new NullPointerException("stageFragment is NULL");
+        }
 
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         Bundle args = new Bundle();
         args.putInt(DATABASE_ID, model.getDbId());
         stageFragment.setArguments(args);
+
         switch (fragmentType) {
             case STATE_VIEW_READ: {
                 transaction.add(R.id.detail_fragment, stageFragment);
