@@ -20,10 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.modelingbrain.home.about.ActivityAbout;
-import com.modelingbrain.home.archive.FragmentArchive;
 import com.modelingbrain.home.chooseModel.ActivityChooseModel;
-import com.modelingbrain.home.detailModel.FragmentType;
-import com.modelingbrain.home.detailModel.fragments.StageFragment;
 import com.modelingbrain.home.folderModel.FragmentFolder;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.opensave.OpenActivity;
@@ -174,7 +171,7 @@ public class MainActivity extends AppCompatActivity
     private void createView() {
         Log.d(TAG, "createView - start");
         MainFragment fragment = PageStatus.getNewInstanceFragment(pageStatusType, getFragmentManager());
-        if(fragment == null){
+        if (fragment == null) {
             throw new NullPointerException("stageFragment is NULL");
         }
 
