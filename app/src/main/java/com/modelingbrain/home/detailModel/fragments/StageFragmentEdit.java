@@ -12,6 +12,9 @@ import com.modelingbrain.home.model.Model;
 
 public class StageFragmentEdit extends StageFragment {
 
+    //TODO: Profile 3 - special adding autocomplete
+    //TODO: Eye - add special keyboard
+
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 

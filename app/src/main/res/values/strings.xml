@@ -1,4 +1,6 @@
 <resources>
+
+    <!-- TODO add new languages -->
     <string name="app_name">NLP Modeling</string>
 
 </resources>

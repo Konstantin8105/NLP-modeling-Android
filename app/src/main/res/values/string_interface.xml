@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- TODO add new languages -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -59,6 +60,7 @@
     <string name="task_finish_analyze">Finish analyze</string>
     <string name="task_find_same_in_file">Find same models in File</string>
     <string name="task_find_same_in_db">Find same models in File with database</string>
+    <!-- TODO avoid %d in strings -->
     <string name="task_unique_models">Unique models %2d</string>
     <string name="task_amount_models_add">%2d models will add to database</string>
     <string name="task_added_in_db">Models added in database</string>

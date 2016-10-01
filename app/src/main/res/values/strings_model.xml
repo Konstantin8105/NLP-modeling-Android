@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- TODO add new languages -->
     <!-- ENGLISH VERSION -->
     <string name="model_name">Name:</string>
 

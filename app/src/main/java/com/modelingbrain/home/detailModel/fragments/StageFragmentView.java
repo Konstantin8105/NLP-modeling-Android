@@ -10,6 +10,7 @@ import com.modelingbrain.home.model.Model;
 
 public class StageFragmentView extends StageFragment {
 
+    //TODO: Polar model - special view
 
     @Override
     protected View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup) {

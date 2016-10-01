@@ -1,11 +1,4 @@
 
-// TODO add fragment for polar model
-// TODO add fragment for rules
-// TODO add fragment for eyes
-// TODO add AutoComplete text
-//TODO cleaning the code
-
-
 //}
 //
 ////
@@ -47,7 +40,6 @@
 //        TextView mNameDate = (TextView) findViewById(R.id.title_date);
 //        mNameDate.setText(GlobalFunction.ConvertMillisecondToDate(model.getMillisecond_Date()));
 //
-//        // TODO: FUTURE: Update DetailActivity
 //
 //        linLayout = (LinearLayout) findViewById(R.id.detail_listview);
 //        linLayout.setBackgroundColor(generalModelColor);
