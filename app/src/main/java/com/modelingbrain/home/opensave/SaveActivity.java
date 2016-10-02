@@ -7,6 +7,8 @@ import android.view.View;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.opensave.save.Writer;
 
+import java.util.function.ToDoubleBiFunction;
+
 public class SaveActivity extends SaveOpenActivity {
 
     @SuppressWarnings("unused")
@@ -17,6 +19,8 @@ public class SaveActivity extends SaveOpenActivity {
         task = new SaveTask();
         task.execute();
     }
+
+    //TODO add permission for write files
 
     private class SaveTask extends AsyncTask<Void, String, Void> {
         @Override
