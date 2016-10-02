@@ -85,7 +85,7 @@
 
     <string-array name="str_Left_Polar">
                  <item>Analysis strategy quadrants (polarity)</item>
-                 <item>Axe + X</item>
+                 <item>Axe +X</item>
                  <item>Axe -X</item>
                  <item>Axe +Y</item>
                  <item>Axe -Y</item>

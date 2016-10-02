@@ -48,9 +48,11 @@ public class OpenActivity extends SaveOpenActivity {
             List<Model> models = new ArrayList<>();
             {
                 for (int i = 0; i < ValuesIO.formats.values().length; i++) {
+                    Log.d(TAG, "doInBackground - value : " + ValuesIO.formats.values()[i]);
                     List<String> files = new ArrayList<>();
                     findAllFiles(files, ValuesIO.formats.values()[i].getFormat());
                     for (int j = 0; j < files.size(); j++) {
+                        Log.d(TAG, "doInBackground - file : " + files.get(j));
                         try {
                             publishProgress(getResources().getString(R.string.task_filename) + files.get(j));
                             publishProgress(getResources().getString(R.string.task_start_opening));
@@ -111,15 +113,23 @@ public class OpenActivity extends SaveOpenActivity {
         }
 
         private void findAllFiles(List<String> fileList, String pattern) {
+            Log.d(TAG, "findAllFiles - start");
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            Log.d(TAG, "sdPath = " + sdPath + " :isExist = " + sdPath.exists() + " : isDirectory = " + sdPath.isDirectory());
             File[] files = sdPath.listFiles();
+            if (files == null) {
+                Log.d(TAG, "findAllFiles - finish - No files");
+                return;
+            }
             for (File file : files) {
                 if (!file.isDirectory()) {
                     if (file.getName().endsWith(pattern.toLowerCase())) {
+                        Log.d(TAG, "found file " + file.getName());
                         fileList.add(file.getName());
                     }
                 }
             }
+            Log.d(TAG, "findAllFiles - finish");
         }
 
         @Override

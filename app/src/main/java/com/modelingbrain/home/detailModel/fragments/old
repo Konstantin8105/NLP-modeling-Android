@@ -222,20 +222,6 @@ public class ActivityModel extends Activity implements View.OnClickListener {
         linLayout.addView(item_Right);
     }
 
-    private void CreatePolar() {
-        LayoutInflater ltInflater = getLayoutInflater();
-        View table = ltInflater.inflate(R.layout.one_row_table_view_polar, linLayout, false);
-        ((TextView) table.findViewById(R.id.textView1)).setText("");
-        ((TextView) table.findViewById(R.id.textView2)).setText("\n" + WS.GetLeft(1) + ":\n" + WS.GetRight(1) + "\n");
-        ((TextView) table.findViewById(R.id.textView3)).setText("\n" + WS.GetLeft(0) + ":\n" + WS.GetRight(0) + "\n");
-        ((TextView) table.findViewById(R.id.textView4)).setText(WS.GetLeft(2) + ":\n" + WS.GetRight(2) + "\n");
-        ((TextView) table.findViewById(R.id.textView5)).setText(WS.GetRight(5) + "\n");
-        ((TextView) table.findViewById(R.id.textView6)).setText(WS.GetRight(4) + "\n");
-        ((TextView) table.findViewById(R.id.textView7)).setText(WS.GetLeft(3) + ":\n" + WS.GetRight(3) + "\n");
-        ((TextView) table.findViewById(R.id.textView8)).setText(WS.GetRight(7) + "\n");
-        ((TextView) table.findViewById(R.id.textView9)).setText(WS.GetRight(6) + "\n");
-        linLayout.addView(table);
-    }
 
 
     private void CreateRules() {

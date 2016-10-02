@@ -14,6 +14,7 @@ public class StageFragmentEdit extends StageFragment {
 
     //TODO: Profile 3 - special adding autocomplete
     //TODO: Eye - add special keyboard
+    //TODO: Polar - add test in quadrant
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
