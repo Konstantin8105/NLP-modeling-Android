@@ -50,7 +50,7 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
         if (str == null)
             str = new String();
         LayoutInflater ltInflater = getLayoutInflater();
-        View view = ltInflater.inflate(R.layout.one_row, linLayout, false);
+        View view = ltInflater.inflate(R.layout.one_row_opean_save, linLayout, false);
         TextView textView = (TextView) view.findViewById(R.id.textOneRow);
         textView.setText(str);
         linLayout.addView(view);

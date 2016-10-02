@@ -32,7 +32,7 @@
 
             <TextView
                 android:id="@+id/title_about"
-                style="@style/Base.TextAppearance.AppCompat.Headline"
+                style="@style/Base.TextAppearance.AppCompat.Title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"
@@ -40,7 +40,7 @@
 
             <TextView
                 android:id="@+id/title_link"
-                style="@style/Base.TextAppearance.AppCompat.Subhead"
+                style="@style/Base.TextAppearance.AppCompat.Small"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/app_name"

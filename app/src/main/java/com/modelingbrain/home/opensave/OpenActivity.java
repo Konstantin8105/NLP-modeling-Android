@@ -2,6 +2,7 @@ package com.modelingbrain.home.opensave;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.os.Environment;
 import android.util.Log;
 import android.view.View;
 
@@ -15,8 +16,12 @@ import com.modelingbrain.home.opensave.open.PrepareModelsWithDB;
 import com.modelingbrain.home.opensave.open.ReaderAmount;
 import com.modelingbrain.home.opensave.open.ReaderModels;
 
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class OpenActivity extends SaveOpenActivity {
     @SuppressWarnings("unused")
@@ -38,58 +43,83 @@ public class OpenActivity extends SaveOpenActivity {
         @Override
         protected Void doInBackground(Void... params) {
             Log.d(TAG, "doInBackground - start");
-            try {
-                publishProgress(getResources().getString(R.string.task_start_opening));
-                ReaderAmount readerAmount = new ReaderAmount(this, activity);
-                readerAmount.reading();
-                int amountModels = readerAmount.getAmount();
-                readerAmount.close();
-                if (amountModels == 0)
-                    return null;//TODO not correct if add xml reader
 
-                publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
-                publishProgress(getResources().getString(R.string.task_analyzing));
-                ReaderModels readerModels = new ReaderModels(this, activity, amountModels);
-                readerModels.reading();
-                ArrayList<Model> models = readerModels.getModels();
-                readerModels.close();
-                if (models.size() == 0)
-                    return null;//TODO not correct if add xml reader
-                publishProgress(getResources().getString(R.string.task_finish_analyze));
 
-                //TODO stop try for json
+            List<Model> models = new ArrayList<>();
+            {
+                for (int i = 0; i < ValuesIO.formats.values().length; i++) {
+                    List<String> files = new ArrayList<>();
+                    findAllFiles(files, ValuesIO.formats.values()[i].getFormat());
+                    for (int j = 0; j < files.size(); j++) {
+                        try {
+                            publishProgress(getResources().getString(R.string.task_filename) + files.get(j));
+                            publishProgress(getResources().getString(R.string.task_start_opening));
+                            ReaderAmount readerAmount = new ReaderAmount(this, activity, files.get(j), ValuesIO.formats.values()[i]);
+                            readerAmount.reading();
+                            int amountModels = readerAmount.getAmount();
+                            readerAmount.close();
+                            if (amountModels == 0)
+                                continue;
 
-                // TODO add xml
+                            publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
+                            publishProgress(getResources().getString(R.string.task_analyzing));
+                            ReaderModels readerModels = new ReaderModels(this, activity, files.get(j), amountModels, ValuesIO.formats.values()[i]);
+                            readerModels.reading();
+                            List<Model> modelReader = readerModels.getModels();
+                            readerModels.close();
+                            if (modelReader == null)
+                                continue;
+                            if (modelReader.size() > 0)
+                                models.addAll(modelReader);
+                            publishProgress(getResources().getString(R.string.task_finish_analyze));
 
-                // TODO use next code
-                publishProgress(getResources().getString(R.string.task_find_same_in_file));
-                PrepareModelsToDB prepareModels = new PrepareModelsToDB(this, activity, models);
-                prepareModels.prepare();
-                models = prepareModels.getModels();
-                publishProgress(getResources().getQuantityString(R.plurals.task_unique_models,
-                        models.size(), models.size()));
-
-                publishProgress(getResources().getString(R.string.task_find_same_in_db));
-                PrepareModelsWithDB prepareWithModels = new PrepareModelsWithDB(this, activity, models);
-                prepareWithModels.prepare();
-                models = prepareWithModels.getModels();
-                publishProgress(getResources().getQuantityString(R.plurals.task_amount_models_add,
-                        models.size(), models.size()));
-
-                GlobalFunction.pause();
-
-                DBHelperModel dbHelperModel = new DBHelperModel(getBaseContext());
-                dbHelperModel.addModelNormal(models);
-                publishProgress(getResources().getString(R.string.task_added_in_db));
-
-                GlobalFunction.pause();
-
-            } catch (IOException | RuntimeException e) {
-                e.printStackTrace();
+                        } catch (IOException | RuntimeException | XmlPullParserException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
             }
+
+            if (models.size() == 0)
+                return null;
+
+            publishProgress(getResources().getString(R.string.task_find_same_in_file));
+            PrepareModelsToDB prepareModels = new PrepareModelsToDB(this, activity, models);
+            prepareModels.prepare();
+            models = prepareModels.getModels();
+            publishProgress(getResources().getQuantityString(R.plurals.task_unique_models,
+                    models.size(), models.size()));
+
+            publishProgress(getResources().getString(R.string.task_find_same_in_db));
+            PrepareModelsWithDB prepareWithModels = new PrepareModelsWithDB(this, activity, models);
+            prepareWithModels.prepare();
+            models = prepareWithModels.getModels();
+            publishProgress(getResources().getQuantityString(R.plurals.task_amount_models_add,
+                    models.size(), models.size()));
+
+            GlobalFunction.pause();
+
+            DBHelperModel dbHelperModel = new DBHelperModel(getBaseContext());
+            dbHelperModel.addModelNormal(models);
+            publishProgress(getResources().getString(R.string.task_added_in_db));
+
+            GlobalFunction.pause();
+
 
             Log.d(TAG, "doInBackground - finish");
             return null;
+        }
+
+        private void findAllFiles(List<String> fileList, String pattern) {
+            File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
+            File[] files = sdPath.listFiles();
+            for (File file : files) {
+                if (!file.isDirectory()) {
+                    if (file.getName().endsWith(pattern.toLowerCase())) {
+                        fileList.add(file.getName());
+                    }
+                }
+            }
         }
 
         @Override

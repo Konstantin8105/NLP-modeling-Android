@@ -41,6 +41,8 @@ abstract public class FragmentListTemplate extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
+        //TODO always update - if list is very big, then it is not comfort
+        //TODO don`t save position - if rotate device
         Log.d(TAG, "onCreateView - start");
         View rootView = inflater.inflate(R.layout.fragment_recycle_view, parentViewGroup, false);
 
@@ -61,6 +63,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     abstract protected ArrayList<ElementList> getList();
 
     protected void updateScreen() {
+        //TODO always update - if list is very big, then it is not comfort
         Log.d(TAG, "updateScreen - start");
         if (adapter != null)
             adapter.removeAll();

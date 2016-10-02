@@ -4,15 +4,17 @@ import android.os.AsyncTask;
 import android.util.Log;
 
 import com.modelingbrain.home.opensave.SaveOpenActivity;
+import com.modelingbrain.home.opensave.ValuesIO;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
-public class ReaderAmount extends Reader{
+public class ReaderAmount extends Reader {
 
     private int amount;
 
-    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity) {
-        super(task, activity);
+    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.formats format) {
+        super(task, activity, filename, format);
     }
 
     @Override
@@ -22,8 +24,16 @@ public class ReaderAmount extends Reader{
 
     @Override
     void action() throws IOException {
-        amount ++;
-        reader.skipValue();
+        amount++;
+        switch (format) {
+            case JSON:
+                readerJson.skipValue();
+                break;
+            case XML:
+                break;
+            default:
+                throw new FileNotFoundException("Cannot open that format: " + format);
+        }
     }
 
     @Override
@@ -31,8 +41,8 @@ public class ReaderAmount extends Reader{
         return 0;
     }
 
-    public int getAmount(){
-        Log.d(TAG, "getAmount: amount = "+amount);
+    public int getAmount() {
+        Log.d(TAG, "getAmount: amount = " + amount);
         return amount;
     }
 }

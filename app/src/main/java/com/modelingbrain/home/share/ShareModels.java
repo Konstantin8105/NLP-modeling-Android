@@ -45,7 +45,7 @@ public class ShareModels {
     public void createEmail() {
         Intent email = new Intent(Intent.ACTION_SEND);
         email.putExtra(Intent.EXTRA_EMAIL, new String[]{""});
-        email.putExtra(Intent.EXTRA_SUBJECT, R.string.result_of_modeling);//subject
+        email.putExtra(Intent.EXTRA_SUBJECT, R.string.result_of_modeling);
         String message;
         message = "";
         for (Model model : models) {
@@ -62,7 +62,7 @@ public class ShareModels {
         email.putExtra(Intent.EXTRA_TEXT, message);
 
         Log.d(TAG, "CreateEMAIL: Message -> " + message);
-        Log.d(TAG, "CreateEMAIL: Add file -> " + ValuesIO.FILENAME);
+        Log.d(TAG, "CreateEMAIL: Add file -> " + ValuesIO.OUTPUT_FILENAME_JSON);
 
 
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
@@ -70,7 +70,7 @@ public class ShareModels {
         sdPath = new File(sdPath.getAbsolutePath());
         Log.d(TAG, "CreateEMAIL: Add file -> " + sdPath);
         try {
-            email.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + sdPath.getAbsolutePath() + "/" + ValuesIO.FILENAME));
+            email.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + sdPath.getAbsolutePath() + "/" + ValuesIO.OUTPUT_FILENAME_JSON));
         } catch (NullPointerException e) {
             Log.d(TAG, "CreateEMAIL: Uri exception:" + e);
         }

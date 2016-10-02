@@ -45,8 +45,6 @@ public class Writer {
             dbHelperModel.close();
         }
 
-        // TODO: 2/6/16 add version of output data
-
         Log.d(TAG, "SaveModel: IN");
         Log.d(TAG, "Saving models by JSON type");
         JSONArray jsonArrayGlobal = new JSONArray();
@@ -61,13 +59,13 @@ public class Writer {
             publishProgress((int) ((float) i / (float) modelsDB.size() * 100));
             try {
                 JSONObject obj = new JSONObject();
-                obj.put(ValuesIO.TYPE, model.getModelID().toString());
-                obj.put(ValuesIO.NAME, model.getName());
-                obj.put(ValuesIO.TIME, Long.valueOf(model.getMillisecond_Date()).toString());
+                obj.put(ValuesIO.JsonElemenets.TYPE, model.getModelID().toString());
+                obj.put(ValuesIO.JsonElemenets.NAME, model.getName());
+                obj.put(ValuesIO.JsonElemenets.TIME, Long.valueOf(model.getMillisecond_Date()).toString());
                 JSONArray list = new JSONArray();
                 for (int nn = 0; nn < model.getModelID().getSize(); nn++)
                     list.put(model.getAnswer(nn));//.toString()
-                obj.put(ValuesIO.RIGHT, list);
+                obj.put(ValuesIO.JsonElemenets.RIGHT, list);
                 jsonArrayGlobal.put(obj);
             } catch (final JSONException ignored) {
                 ignored.printStackTrace();
@@ -76,7 +74,7 @@ public class Writer {
 
         try {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.FILENAME;
+            String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.OUTPUT_FILENAME_JSON;
             boolean createFolder = sdPath.mkdirs();
             Log.d(TAG, "SaveModel: createFolder = " + createFolder);
             FileWriter file = new FileWriter(full_path);

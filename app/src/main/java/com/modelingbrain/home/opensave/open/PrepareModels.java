@@ -8,16 +8,17 @@ import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.opensave.SaveOpenActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class PrepareModels {
     @SuppressWarnings({"unused", "FieldCanBeLocal"})
     private final String TAG = this.getClass().toString();
 
-    protected ArrayList<Model> models;
+    protected List<Model> models;
     private final AsyncTask<Void, String, Void> task;
     protected final SaveOpenActivity activity;
 
-    public PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, ArrayList<Model> models) {
+    public PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, List<Model> models) {
         Log.d(TAG, "PrepareModels - start");
         this.task = task;
         this.activity = activity;
@@ -108,7 +109,7 @@ public class PrepareModels {
 //        }
     }
 
-    protected ArrayList<Model> convertModels(ArrayList<CompareModel> compareModels) {
+    protected List<Model> convertModels(List<CompareModel> compareModels) {
         ArrayList<Model> output = new ArrayList<>();
         for (int i = 0; i < compareModels.size(); i++) {
             if (!compareModels.get(i).delete && !compareModels.get(i).insideDB) {
@@ -126,7 +127,7 @@ public class PrepareModels {
         activity.getProgressBar().setProgress(values);
     }
 
-    public ArrayList<Model> getModels() {
+    public List<Model> getModels() {
         return models;
     }
 

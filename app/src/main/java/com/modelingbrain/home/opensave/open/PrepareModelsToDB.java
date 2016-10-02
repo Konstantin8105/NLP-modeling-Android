@@ -7,12 +7,13 @@ import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.opensave.SaveOpenActivity;
 
 import java.util.ArrayList;
+import java.util.List;
 
-public class PrepareModelsToDB extends PrepareModels{
+public class PrepareModelsToDB extends PrepareModels {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();
 
-    public PrepareModelsToDB(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, ArrayList<Model> models) {
+    public PrepareModelsToDB(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, List<Model> models) {
         super(task, activity, models);
     }
 
@@ -20,7 +21,7 @@ public class PrepareModelsToDB extends PrepareModels{
         Log.d(TAG, "prepare - start");
 
         ArrayList<CompareModel> compareModels = new ArrayList<>();
-        for(int i=0;i<models.size();i++){
+        for (int i = 0; i < models.size(); i++) {
             compareModels.add(new CompareModel(models.get(i)));
         }
         createListDeleteSame(compareModels);

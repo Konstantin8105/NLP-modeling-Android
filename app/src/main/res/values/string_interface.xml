@@ -49,6 +49,7 @@
     <string name="task_file_created">File created</string>
 
     <string name="task_start_opening">Start opening&#8230;</string>
+    <string name="task_filename">File:</string>
 
 
     <plurals name="task_amount_models">
