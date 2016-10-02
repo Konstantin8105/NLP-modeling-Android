@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- TODO add new languages -->
     <!-- ENGLISH VERSION -->
@@ -102,14 +102,14 @@
                  <item>Kinesthetic (or proprioceptive) sense(K) - somatic feelings in the body, temperature, pressure, and also emotion</item>
              </string-array>
 
-    <string-array name="str_Left_FrameOfProposal">
+    <string-array name="str_Left_FrameOfProposal" tools:keep="@array/str_Left_FrameOfProposal">
              </string-array>
 
 
     <string-array name="str_Left_ElementsOfAnchors">
             </string-array>
 
-    <string-array name="str_Left_UoltDisney">
+    <string-array name="str_Left_UoltDisney" tools:keep="@array/str_Left_UoltDisney">
              </string-array>
 
     <string-array name="str_Left_Note">
@@ -150,13 +150,13 @@
              </string-array>
 
 
-    <string-array name="str_Position">
+    <string-array name="str_Position" tools:keep="@array/str_Position">
         <item >1st (Self)</item>
         <item >2nd (Other)</item>
         <item >3rd (Observer)</item>
     </string-array>
 
-    <string-array name="str_TricksOfLanguage">
+    <string-array name="str_TricksOfLanguage" tools:keep="@array/str_TricksOfLanguage">
                 <item>Intention</item>
                 <item>Redefine</item>
                 <item>Consequences</item>
@@ -173,13 +173,13 @@
                 <item>Meta Frame</item>
     </string-array>
 
-    <string-array name="str_REP_SYSTEM">
+    <string-array name="str_REP_SYSTEM" tools:keep="@array/str_REP_SYSTEM">
                  <item>V - Visual</item>
                  <item>A - Auditory</item>
                  <item>K - Kinesthetic</item>
              </string-array>
 
-    <string-array name="str_sub_REP_SYSTEM">
+    <string-array name="str_sub_REP_SYSTEM" tools:keep="@array/str_sub_REP_SYSTEM">
                 <!-- Visual -->
                 <item>Color (V)</item>
                 <item>Black and White (V)</item>
@@ -233,13 +233,13 @@
                 <item>Weight (K)</item>
             </string-array>
 
-    <string-array name="str_dishey">
+    <string-array name="str_dishey" tools:keep="@array/str_dishey">
                  <item>Dreamer</item>
                  <item>Realist</item>
                  <item>Critic</item>
              </string-array>
 
-    <string-array name="str_MetaProgramm">
+    <string-array name="str_MetaProgramm" tools:keep="@array/str_MetaProgramm">
         <!-- Direction Filter -->
                  <item>Motivation Towards</item>
                  <item>Motivation Away</item>
@@ -302,7 +302,7 @@
                  <item>Optimization</item>
              </string-array>
 
-    <string-array name="str_MetaProgramm_ubeditel">
+    <string-array name="str_MetaProgramm_ubeditel" tools:keep="@array/str_MetaProgramm_ubeditel">
                  <item>Amplitude</item>
                  <item>Frequency</item>
                  <item>Time</item>

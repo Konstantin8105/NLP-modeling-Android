@@ -22,11 +22,11 @@ public abstract class StageFragment extends Fragment {
     protected final String TAG = this.getClass().toString();
 
 
-    protected Model model;
-    protected int generalModelColor;
-    protected int generalModelTextColor;
+    Model model;
+    int generalModelColor;
+    int generalModelTextColor;
 
-    protected LinearLayout linLayout;
+    LinearLayout linLayout;
 
     protected enum QA {
         QUESTION,
@@ -114,7 +114,7 @@ public abstract class StageFragment extends Fragment {
         super.onDetach();
     }
 
-    protected void createElement(String str, QA qa) {
+    void createElement(String str, QA qa) {
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View view = ltInflater.inflate(R.layout.one_row, linLayout, false);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);

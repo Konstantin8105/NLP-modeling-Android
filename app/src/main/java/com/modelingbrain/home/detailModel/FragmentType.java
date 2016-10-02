@@ -1,6 +1,7 @@
 package com.modelingbrain.home.detailModel;
 
 
+import android.annotation.SuppressLint;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.util.Log;
@@ -43,13 +44,14 @@ public class FragmentType {
     @SuppressWarnings("unused")
     private final static String TAG = "FragmentType";
 
-    static StageFragment lastFragment = null;
+    @SuppressLint("StaticFieldLeak")
+    private static StageFragment lastFragment = null;
 
     public static StageFragment getLastFragment() {
         return lastFragment;
     }
 
-    static Type lastType = null;
+    private static Type lastType = null;
 
 
     public static StageFragment getNewInstanceFragment(Type type, FragmentManager fragmentManager) {

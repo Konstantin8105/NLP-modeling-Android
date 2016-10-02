@@ -52,7 +52,10 @@ public class StageFragmentEdit extends StageFragment {
             } else model.setAnswer(i - 1, multiAutoCompleteTextViews[i].getText().toString());
         }
         for (int i = 0; i < multiAutoCompleteTextViews.length; i++) {
-            Log.d(TAG, "savingModelData - [" + i + "] = " + multiAutoCompleteTextViews[i].getText());
+            Log.d(TAG, "savingModelData - [" + i + "] = "
+                    + multiAutoCompleteTextViews[i].getText()
+                    + " ID = " + multiAutoCompleteTextViews[i].getId()
+            );
         }
         multiAutoCompleteTextViews = null;
         Log.d(TAG, "savingModelData - finish");

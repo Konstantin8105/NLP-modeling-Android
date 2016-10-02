@@ -45,7 +45,7 @@ public class OpenActivity extends SaveOpenActivity {
                 int amountModels = readerAmount.getAmount();
                 readerAmount.close();
                 if (amountModels == 0)
-                    return null;
+                    return null;//TODO not correct if add xml reader
 
                 publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
                 publishProgress(getResources().getString(R.string.task_analyzing));
@@ -54,20 +54,27 @@ public class OpenActivity extends SaveOpenActivity {
                 ArrayList<Model> models = readerModels.getModels();
                 readerModels.close();
                 if (models.size() == 0)
-                    return null;
+                    return null;//TODO not correct if add xml reader
                 publishProgress(getResources().getString(R.string.task_finish_analyze));
 
+                //TODO stop try for json
+
+                // TODO add xml
+
+                // TODO use next code
                 publishProgress(getResources().getString(R.string.task_find_same_in_file));
                 PrepareModelsToDB prepareModels = new PrepareModelsToDB(this, activity, models);
                 prepareModels.prepare();
                 models = prepareModels.getModels();
-                publishProgress(String.format(getResources().getString(R.string.task_unique_models), models.size()));
+                publishProgress(getResources().getQuantityString(R.plurals.task_unique_models,
+                        models.size(), models.size()));
 
                 publishProgress(getResources().getString(R.string.task_find_same_in_db));
                 PrepareModelsWithDB prepareWithModels = new PrepareModelsWithDB(this, activity, models);
                 prepareWithModels.prepare();
                 models = prepareWithModels.getModels();
-                publishProgress(String.format(getResources().getString(R.string.task_amount_models_add), models.size()));
+                publishProgress(getResources().getQuantityString(R.plurals.task_amount_models_add,
+                        models.size(), models.size()));
 
                 GlobalFunction.pause();
 
@@ -77,7 +84,6 @@ public class OpenActivity extends SaveOpenActivity {
 
                 GlobalFunction.pause();
 
-                // TODO: 7/30/16 simplify catches
             } catch (IOException | RuntimeException e) {
                 e.printStackTrace();
             }

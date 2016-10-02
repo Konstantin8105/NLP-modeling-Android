@@ -60,9 +60,17 @@
     <string name="task_finish_analyze">Finish analyze</string>
     <string name="task_find_same_in_file">Find same models in File</string>
     <string name="task_find_same_in_db">Find same models in File with database</string>
-    <!-- TODO avoid %d in strings -->
-    <string name="task_unique_models">Unique models %2d</string>
-    <string name="task_amount_models_add">%2d models will add to database</string>
+
+    <plurals name="task_unique_models">
+        <item quantity="one">Unique %2d model</item>
+        <item quantity="other">Unique %2d models</item>
+    </plurals>
+
+    <plurals name="task_amount_models_add">
+        <item quantity="one">%2d model will add to database</item>
+        <item quantity="other">%2d models will add to database</item>
+    </plurals>
+
     <string name="task_added_in_db">Models added in database</string>
 
     <string name="nav_folder">Folder</string>

@@ -13,6 +13,7 @@ public abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder>
 
     private final SparseBooleanArray selectedItems;
 
+    @SuppressWarnings("WeakerAccess")
     public SelectableAdapter() {
         selectedItems = new SparseBooleanArray();
     }
@@ -22,6 +23,7 @@ public abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder>
      * @param position Position of the item to check
      * @return true if the item is selected, false otherwise
      */
+    @SuppressWarnings("WeakerAccess")
     public boolean isSelected(int position) {
         return getSelectedItems().contains(position);
     }
