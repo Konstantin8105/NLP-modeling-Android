@@ -4,15 +4,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.MultiAutoCompleteTextView;
 
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.model.Model;
+import com.modelingbrain.home.model.ModelID;
 
 public class StageFragmentEdit extends StageFragment {
 
-    //TODO: Profile 3 - special adding autocomplete
     //TODO: Eye - add special keyboard
     //TODO: Polar - add test in quadrant
 
@@ -61,6 +62,19 @@ public class StageFragmentEdit extends StageFragment {
         multiAutoCompleteTextViews[position] = (MultiAutoCompleteTextView) view.findViewById(R.id.editOneRow);
         multiAutoCompleteTextViews[position].setTextColor(generalModelTextColor);
         multiAutoCompleteTextViews[position].setText(str);
+
+        if(model.getModelID() == ModelID.ID_PROFILE3)
+        {
+            if(position == 1) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_REP_SYSTEM)));
+            if(position == 2) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_sub_REP_SYSTEM)));
+            if(position == 4) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_dishey)));
+            if(position == 5) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_MetaProgramm)));
+            if(position == 6) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_MetaProgramm_ubeditel)));
+            if(position == 8) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_TricksOfLanguage)));
+            if(position == 9) multiAutoCompleteTextViews[position].setAdapter(new ArrayAdapter<>(getActivity(), android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.str_Position)));
+            multiAutoCompleteTextViews[position].setTokenizer( new MultiAutoCompleteTextView.CommaTokenizer());
+        }
+
         linLayout.addView(view);
     }
 }

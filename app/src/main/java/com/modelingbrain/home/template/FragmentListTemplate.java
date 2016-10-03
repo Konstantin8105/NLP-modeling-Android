@@ -43,7 +43,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
-        //TODO don`t save position - if rotate device
+
         Log.d(TAG, "onCreateView - start");
         View rootView = inflater.inflate(R.layout.fragment_recycle_view, parentViewGroup, false);
 

@@ -41,9 +41,6 @@ public class OpenActivity extends SaveOpenActivity {
         task.execute();
     }
 
-    //TODO https://developer.android.com/training/permissions/requesting.html
-
-
     @Override
     public void onRequestPermissionsResult(int requestCode,  String permissions[], int[] grantResults) {
         switch (requestCode) {
@@ -115,7 +112,6 @@ public class OpenActivity extends SaveOpenActivity {
                     // READ_EXTERNAL_STORAGE is an
                     // app-defined int constant. The callback method gets the
                     // result of the request.
-                    // TODO permission is failed the opening
                 }
             }
 
