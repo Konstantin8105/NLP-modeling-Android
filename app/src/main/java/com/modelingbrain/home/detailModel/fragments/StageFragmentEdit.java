@@ -16,9 +16,6 @@ public class StageFragmentEdit extends StageFragment {
     //TODO: Eye - add special keyboard
     //TODO: Polar - add test in quadrant
 
-    @SuppressWarnings("unused")
-    private final String TAG = this.getClass().toString();
-
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
 
     @Override

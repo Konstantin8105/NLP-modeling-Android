@@ -20,7 +20,7 @@ import com.modelingbrain.home.model.Model;
 public class DetailActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")
-    private final String TAG = this.getClass().toString();
+    private final String TAG = this.getClass().getSimpleName();
 
     static public final String DATABASE_ID = "DATABASE_ID";
     static public final String STATE_DETAIL_ACTIVITY = "STATE_DETAIL_ACTIVITY";

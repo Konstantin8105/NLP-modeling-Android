@@ -38,7 +38,7 @@ abstract public class FragmentListTemplate extends Fragment implements
 
 
     @SuppressWarnings("unused")
-    protected final String TAG = this.getClass().toString();
+    protected final String TAG = this.getClass().getSimpleName();
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,

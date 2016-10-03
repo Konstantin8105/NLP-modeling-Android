@@ -19,7 +19,7 @@ import com.modelingbrain.home.R;
 public abstract class StageFragment extends Fragment {
 
     @SuppressWarnings("unused")
-    protected final String TAG = this.getClass().toString();
+    protected final String TAG = this.getClass().getSimpleName();
 
 
     Model model;

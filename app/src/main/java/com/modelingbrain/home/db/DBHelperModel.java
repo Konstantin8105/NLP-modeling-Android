@@ -22,7 +22,7 @@ import org.json.JSONException;
 public class DBHelperModel extends SQLiteOpenHelper {
 
     @SuppressWarnings("unused")
-    private final String TAG = this.getClass().toString();
+    private final String TAG = this.getClass().getSimpleName();
 
     protected static final String DATABASE_MODEL = "DataBaseOfModels";
     private static final int DB_Version = 20160716;

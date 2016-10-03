@@ -22,7 +22,7 @@ import static com.modelingbrain.home.MainActivity.REQUEST_FRAGMENT;
 public class FragmentFolder extends FragmentListWithActionBarTemplate implements MainFragment {
 
     @SuppressWarnings("unused")
-    private final String TAG = this.getClass().toString();
+    private final String TAG = this.getClass().getSimpleName();
 
     private FloatingActionButton fab;
 

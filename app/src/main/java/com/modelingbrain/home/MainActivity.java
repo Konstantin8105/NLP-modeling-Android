@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     @SuppressWarnings("unused")
-    protected final String TAG = this.getClass().toString();
+    protected final String TAG = this.getClass().getSimpleName();
 
     private FloatingActionButton fab;
     public static final int REQUEST_FRAGMENT = 800;

@@ -7,7 +7,7 @@ import android.view.View;
 abstract public class FragmentListWithActionBarTemplate extends FragmentListTemplate {
 
     @SuppressWarnings("unused")
-    private final String TAG = this.getClass().toString();
+    private final String TAG = this.getClass().getSimpleName();
 
     private ActionMode actionMode;
 
