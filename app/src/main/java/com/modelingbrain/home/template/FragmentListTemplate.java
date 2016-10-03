@@ -23,9 +23,11 @@ abstract public class FragmentListTemplate extends Fragment implements
         AdapterSelectableTemplate.ViewHolder.ClickListener {
 
     protected AdapterSelectableTemplate adapter;
-    public AdapterSelectableTemplate getAdapter(){
+
+    public AdapterSelectableTemplate getAdapter() {
         return adapter;
     }
+
     private RecyclerView recyclerView;
 
     protected Context context;
@@ -47,7 +49,7 @@ abstract public class FragmentListTemplate extends Fragment implements
         View rootView = inflater.inflate(R.layout.fragment_recycle_view, parentViewGroup, false);
 
         context = getActivity();
-        if(context == null)
+        if (context == null)
             throw new RuntimeException("context == null : ");
 
         recyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
@@ -62,12 +64,14 @@ abstract public class FragmentListTemplate extends Fragment implements
 
     abstract protected ArrayList<ElementList> getList();
 
+    //TODO always update - if list is very big, then it is not comfort
     protected void updateScreen() {
-        //TODO always update - if list is very big, then it is not comfort
         Log.d(TAG, "updateScreen - start");
+        ArrayList<ElementList> list = getList();
+        Log.d(TAG, "list = " + list.size());
         if (adapter != null)
             adapter.removeAll();
-        adapter = new AdapterSelectableTemplate(this,getList());
+        adapter = new AdapterSelectableTemplate(this, list);
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         Log.d(TAG, "updateScreen - finish");
@@ -86,7 +90,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d(TAG, "onActivityResult - start");
-        if(requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == RESULT_OK){
+        if (requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == RESULT_OK) {
             updateScreen();
         }
         Log.d(TAG, "onActivityResult - finish");
