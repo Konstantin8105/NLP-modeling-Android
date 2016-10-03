@@ -43,7 +43,6 @@ abstract public class FragmentListTemplate extends Fragment implements
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
-        //TODO always update - if list is very big, then it is not comfort
         //TODO don`t save position - if rotate device
         Log.d(TAG, "onCreateView - start");
         View rootView = inflater.inflate(R.layout.fragment_recycle_view, parentViewGroup, false);
@@ -64,28 +63,17 @@ abstract public class FragmentListTemplate extends Fragment implements
 
     abstract protected ArrayList<ElementList> getList();
 
-    //TODO always update - if list is very big, then it is not comfort
     protected void updateScreen() {
         Log.d(TAG, "updateScreen - start");
         ArrayList<ElementList> list = getList();
         Log.d(TAG, "list = " + list.size());
-        if (adapter != null)
-            adapter.removeAll();
-        adapter = new AdapterSelectableTemplate(this, list);
-        recyclerView.setAdapter(adapter);
-        adapter.notifyDataSetChanged();
+        if (adapter == null) {
+            adapter = new AdapterSelectableTemplate(this, list);
+            recyclerView.setAdapter(adapter);
+        } else {
+            adapter.swap(list);
+        }
         Log.d(TAG, "updateScreen - finish");
-// TODO: http://stackoverflow.com/questions/30053610/best-way-to-update-data-with-a-recyclerview-adapter
-//        public void swap(List list){
-//            if (mFeedsList != null) {
-//                mFeedsList.clear();
-//                mFeedsList.addAll(list);
-//            }
-//            else {
-//                mFeedsList = list;
-//            }
-//            notifyDataSetChanged();
-//        }
     }
 
     abstract protected void intentItemClicked(int position);

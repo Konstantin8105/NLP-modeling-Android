@@ -19,7 +19,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
     @SuppressWarnings("unused")
     private static final String TAG = AdapterSelectableTemplate.class.getSimpleName();
-    private final List<ElementList> items;
+    private List<ElementList> items;
 
     private final ViewHolder.ClickListener clickListener;
 
@@ -67,10 +67,12 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
     @Override
     public int getItemCount() {
-
-
         return items.size();
-        //return 0;
+    }
+
+    public void swap(List<ElementList> list) {
+        items = list;
+        notifyDataSetChanged();
     }
 
     public void removeAll(){
@@ -121,6 +123,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         }
         notifyItemRangeRemoved(positionStart, itemCount);
     }
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener,
             View.OnLongClickListener{
