@@ -19,16 +19,6 @@ public class StageFragmentEdit extends StageFragment {
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
 
     @Override
-    protected View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup) {
-        Log.d(TAG, "initializeData - start");
-        View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
-        linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);
-        linLayout.setBackgroundColor(generalModelColor);
-        Log.d(TAG, "initializeData - finish");
-        return rootView;
-    }
-
-    @Override
     protected void createInterface() {
         Log.d(TAG, "createInterface - start");
         multiAutoCompleteTextViews = new MultiAutoCompleteTextView[model.getModelID().getSize() + 1];

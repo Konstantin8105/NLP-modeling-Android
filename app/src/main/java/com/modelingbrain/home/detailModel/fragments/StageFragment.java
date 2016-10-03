@@ -59,31 +59,34 @@ public abstract class StageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
         Log.d(TAG, "onCreateView - start");
+
+        DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
         if (savedInstanceState != null) {
-            DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
             model = db.openModel(savedInstanceState.getInt(DetailActivity.DATABASE_ID));
-            db.close();
         } else {
-            DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
             model = db.openModel(getArguments().getInt(DetailActivity.DATABASE_ID));
-            db.close();
         }
+        db.close();
+
         Log.d(TAG, "model = " + model.toString());
         initColors();
 
-        View view = initializeData(inflater, parentViewGroup);
+        View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
+        linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);
+        linLayout.setBackgroundColor(generalModelColor);
+
         Log.d(TAG, "onCreateView - finish");
-        return view;
+        return rootView;
     }
 
-    protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
+//    protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
     protected abstract void createInterface();
     public abstract Model savingModelData();
 
     @Override
     public void onStart() {
-        Log.d(TAG, "onStart - start");
         super.onStart();
+        Log.d(TAG, "onStart - start");
         linLayout.removeAllViews();
         createInterface();
         Log.d(TAG, "onStart - finish");
@@ -115,6 +118,8 @@ public abstract class StageFragment extends Fragment {
     }
 
     void createElement(String str, QA qa) {
+        Log.d(TAG, "createElement - start");
+        Log.d(TAG, "createElement - QA : " + qa);
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View view = ltInflater.inflate(R.layout.one_row, linLayout, false);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);
@@ -141,5 +146,6 @@ public abstract class StageFragment extends Fragment {
             }
         }
         linLayout.addView(view);
+        Log.d(TAG, "createElement - finish");
     }
 }
