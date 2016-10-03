@@ -115,6 +115,7 @@ public class OpenActivity extends SaveOpenActivity {
                     // READ_EXTERNAL_STORAGE is an
                     // app-defined int constant. The callback method gets the
                     // result of the request.
+                    // TODO permission is failed the opening
                 }
             }
 

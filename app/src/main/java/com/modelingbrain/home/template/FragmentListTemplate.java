@@ -75,6 +75,17 @@ abstract public class FragmentListTemplate extends Fragment implements
         recyclerView.setAdapter(adapter);
         adapter.notifyDataSetChanged();
         Log.d(TAG, "updateScreen - finish");
+// TODO: http://stackoverflow.com/questions/30053610/best-way-to-update-data-with-a-recyclerview-adapter
+//        public void swap(List list){
+//            if (mFeedsList != null) {
+//                mFeedsList.clear();
+//                mFeedsList.addAll(list);
+//            }
+//            else {
+//                mFeedsList = list;
+//            }
+//            notifyDataSetChanged();
+//        }
     }
 
     abstract protected void intentItemClicked(int position);
