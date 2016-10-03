@@ -204,9 +204,9 @@ public class ContentManagerModel {
             Collections.sort(result, new Comparator<Model>() {
                 @Override
                 public int compare(Model lhs, Model rhs) {
-                    if (lhs.getMillisecond_Date() > rhs.getMillisecond_Date())
-                        return 1;
                     if (lhs.getMillisecond_Date() < rhs.getMillisecond_Date())
+                        return 1;
+                    if (lhs.getMillisecond_Date() > rhs.getMillisecond_Date())
                         return -1;
                     return 0;
                 }
