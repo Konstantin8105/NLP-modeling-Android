@@ -210,7 +210,11 @@ public class ContentManagerModel {
                         return 1;
                     if (lhs.getMillisecond_Date() > rhs.getMillisecond_Date())
                         return -1;
-                    return 0;
+                    if (lhs.getName().compareTo(rhs.getName()) != 0)
+                        return lhs.getName().compareTo(rhs.getName());
+                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
+                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
+                    return lhs.getModelType().convert() - rhs.getModelType().convert();
                 }
             });
         }
@@ -226,6 +230,8 @@ public class ContentManagerModel {
                 public int compare(Model lhs, Model rhs) {
                     if (lhs.getName().compareTo(rhs.getName()) != 0)
                         return lhs.getName().compareTo(rhs.getName());
+                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
+                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
                     return lhs.getModelType().convert() - rhs.getModelType().convert();
                 }
             });
@@ -241,9 +247,11 @@ public class ContentManagerModel {
                 public int compare(Model lhs, Model rhs) {
                     if ((lhs.getModelType().convert() - rhs.getModelType().convert()) != 0)
                         return (lhs.getModelType().convert() - rhs.getModelType().convert());
+                    if (lhs.getModelType().convert() - rhs.getModelType().convert() == 0)
+                        return lhs.getModelType().convert() - rhs.getModelType().convert();
                     if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) != 0)
                         return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-                    return (rhs.getName().compareTo(lhs.getName()));
+                    return (lhs.getName().compareTo(rhs.getName()));
                 }
             });
         }
