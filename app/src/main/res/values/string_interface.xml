@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- TODO add new languages -->
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
@@ -14,7 +13,7 @@
     <string name="action_save_models">Save models</string>
 
     <string name="detail_mode_read_only">Read only</string>
-    <string name="detail_mode_write">Write</string>
+    <string name="detail_mode_write_mde">Write</string>
 
     <string name="title_activity_detail">DetailActivity</string>
     <string name="title_activity_about">AboutActivity</string>

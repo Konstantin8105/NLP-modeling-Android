@@ -38,7 +38,7 @@ public class FragmentType {
 
     static {
         types.add(new TypeInner(Type.STATE_VIEW_READ, StageFragmentView.class, R.string.detail_mode_read_only, R.drawable.ic_lock));
-        types.add(new TypeInner(Type.STATE_VIEW_WRITE, StageFragmentEdit.class, R.string.detail_mode_write, R.drawable.ic_unlock));
+        types.add(new TypeInner(Type.STATE_VIEW_WRITE, StageFragmentEdit.class, R.string.detail_mode_write_mde, R.drawable.ic_unlock));
     }
 
     @SuppressWarnings("unused")

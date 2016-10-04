@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+
+    <string name="navigation_drawer_other">Остальное</string>
+
+    <string name="action_sort">Сортировка</string>
+    <string name="action_open_models">Открыть модели</string>
+    <string name="action_save_models">Сохранение моделей</string>
+
+    <string name="detail_mode_read_only">Режим чтения</string>
+    <string name="detail_mode_write_mde">Режим записи</string>
+
+
+    <string name="title_activity_detail">DetailActivity</string>
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_open">OpenActivity</string>
+    <string name="title_activity_save">SaveActivity</string>
+
+    <plurals name="remove_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Удалено %d модель</item>
+        <item quantity="other">Удалено %d моделей</item>
+    </plurals>
+
+    <plurals name="archived_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Переместить в архив %d модель</item>
+        <item quantity="other">Переместить в архив %d моделей</item>
+    </plurals>
+
+    <plurals name="normaled_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Перемещений в рабочую папку %d модель</item>
+        <item quantity="other">Перемещений в рабочую папку %d моделей</item>
+    </plurals>
+
+    <plurals name="share_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Отправить %d модель</item>
+        <item quantity="other">Отправить %d моделей</item>
+    </plurals>
+
+    <string name="share">Отправить</string>
+    <string name="to_archive">В архив</string>
+    <string name="delete_models">Удаление моделей</string>
+
+    <string name="task_start_saving">Запуск сохранения &#8230;</string>
+    <string name="task_file_created">Файл создан</string>
+
+    <string name="task_start_opening">Запуск открытия &#8230;</string>
+    <string name="task_filename">Файл:</string>
+
+
+    <plurals name="task_amount_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Поиск %d модель в файле</item>
+        <item quantity="other">Поиск %d моделей в файле</item>
+    </plurals>
+
+    <string name="task_analyzing">Анализ &#8230;</string>
+    <string name="task_finish_analyze">Окончание анализа</string>
+    <string name="task_find_same_in_file">Поиск одинаковых моделей в файле</string>
+    <string name="task_find_same_in_db">Поиск одинаковых моделей в файле и базой данных</string>
+
+    <plurals name="task_unique_models" tools:ignore="MissingQuantity">
+        <item quantity="one">Уникальная %2d модель</item>
+        <item quantity="other">Уникальных %2d моделей</item>
+    </plurals>
+
+    <plurals name="task_amount_models_add" tools:ignore="MissingQuantity">
+        <item quantity="one">%2d модель будет добавлена в базу данных</item>
+        <item quantity="other">%2d моделей будет добавлены в базу данных</item>
+    </plurals>
+
+    <string name="task_added_in_db">Модели добавлены в базу данных</string>
+
+    <string name="nav_folder">Рабочая папка</string>
+    <string name="nav_archive">Архив</string>
+    <string name="nav_help">Помощь</string>
+
+    <string name="menu_unarchive">Перемещение в рабочую папку</string>
+
+    <string name="menu_popup_alphabet">по алфавиту</string>
+    <string name="menu_popup_alphabet_invert">по алфавиту(инверсия)</string>
+    <string name="menu_popup_name_model">по типу модели</string>
+    <string name="menu_popup_name_model_invert">по типу модели(инверсия)</string>
+    <string name="menu_popup_name_date">по дате</string>
+    <string name="menu_popup_name_date_invert">по дате(инверсия)</string>
+
+</resources>
