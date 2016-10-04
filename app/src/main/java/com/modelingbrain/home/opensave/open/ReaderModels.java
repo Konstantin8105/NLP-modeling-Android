@@ -62,8 +62,13 @@ public class ReaderModels extends Reader {
             if (i == 0)
                 model.setModelID(ModelID.valueOf(xpp.getAttributeValue(i)));
             else if (i == 1) model.setName(xpp.getAttributeValue(i));
-            else if (i == 2)
-                model.setMillisecond_Date(Long.valueOf(xpp.getAttributeValue(i)));
+            else if (i == 2) {
+                try {
+                    model.setMillisecond_Date(Long.valueOf(xpp.getAttributeValue(i)));
+                }catch (NumberFormatException e){
+                    model.setMillisecond_Date(0);
+                }
+            }
             else model.setAnswer(i - 3, xpp.getAttributeValue(i));
         }
         return true;

@@ -26,7 +26,7 @@ public class PrepareModels {
         Log.d(TAG, "PrepareModels - finish");
     }
 
-    class CompareModel {
+    static class CompareModel {
         public CompareModel(Model model) {
             this.model = model;
             delete = false;
