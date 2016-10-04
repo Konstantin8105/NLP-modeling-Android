@@ -54,7 +54,7 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
         final ImageView imageView;
         final TextView titleAbout;
         final TextView titleLink;
-        final View selectedOverlay;
+//        final View selectedOverlay;
 
         private final ClickListener listener;
 
@@ -64,7 +64,7 @@ public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
             imageView = (ImageView) itemView.findViewById(R.id.icon);
             titleAbout = (TextView) itemView.findViewById(R.id.title_about);
             titleLink  = (TextView) itemView.findViewById(R.id.title_link);
-            selectedOverlay = itemView.findViewById(R.id.selected_overlay);
+//            selectedOverlay = itemView.findViewById(R.id.selected_overlay);
 
             this.listener = listener;
 

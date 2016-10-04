@@ -33,9 +33,9 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         this.items = items;
     }
 
-    public void add(ElementList elementList){
-        items.add(elementList);
-    }
+//    public void add(ElementList elementList){
+//        items.add(elementList);
+//    }
 
     public ElementList get(int position){
         return items.get(position);
@@ -75,10 +75,10 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         notifyDataSetChanged();
     }
 
-    public void removeAll(){
-        items.clear();
-        notifyDataSetChanged();
-    }
+//    public void removeAll(){
+//        items.clear();
+//        notifyDataSetChanged();
+//    }
 
     private void removeItem(int position) {
         items.remove(position);

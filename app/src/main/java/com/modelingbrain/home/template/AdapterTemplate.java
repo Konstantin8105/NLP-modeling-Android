@@ -30,9 +30,9 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
         Log.d(TAG, "AdapterTemplate - finish");
     }
 
-    public ElementList get(int position){
-        return items.get(position);
-    }
+//    public ElementList get(int position){
+//        return items.get(position);
+//    }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -73,7 +73,7 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
         final TextView    title;
         final TextView    subTitle;
         final TextView    secondSubTitle;
-        final View        selectedOverlay;
+//        final View        selectedOverlay;
         final View        rectangle;
 
         private final ClickListener listener;
@@ -88,7 +88,7 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
             subTitle = (TextView) itemView.findViewById(R.id.subtitle);
             secondSubTitle = (TextView) itemView.findViewById(R.id.second_subtitle);
 
-            selectedOverlay = itemView.findViewById(R.id.selected_overlay);
+//            selectedOverlay = itemView.findViewById(R.id.selected_overlay);
             rectangle = itemView.findViewById(R.id.rectangle_color);
 
             this.listener = listener;
