@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- ENGLISH VERSION -->
-    <string name="model_name">Name:</string>
+    <!-- RUSSIAN VERSION -->
+    <string name="model_name">Имя:</string>
 
-    <string name="result_of_modeling">Results of modeling</string>
-    <string name="name_of_model_">Name of model: </string>
+    <string name="result_of_modeling">Результаты моделирования</string>
+    <string name="name_of_model_">Имя модели: </string>
 
-    <string name="name_model">Model</string>
-    <string name="name_strategy">Strategy</string>
-    <string name="name_dark">Dark strategy</string>
-    <string name="name_other">Other</string>
+    <string name="name_model">Модель</string>
+    <string name="name_strategy">Стратегия</string>
+    <string name="name_dark">Темная стратегия</string>
+    <string name="name_other">Остальное</string>
 
     <string-array name="str_Left_Science">
                  <item>Scientific model</item>
@@ -142,8 +142,8 @@
                  <item>The preferable meta-program (meta-programs):</item>
                  <item>Convincible:</item>
                  <item>Valuables (knowledge, skills):</item>
-                 <item>Sleight of mouth:</item>
-                 <item>Perceptual position:</item>
+        <item>Sleight of mouth:</item>
+        <item>Perceptual position:</item>
                  <item>Additional Notes:</item>
              </string-array>
 

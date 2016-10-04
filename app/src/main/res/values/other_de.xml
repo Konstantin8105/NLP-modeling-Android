@@ -1,0 +1,904 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="toast_archive">Archiv(Schreibgeschützt)</string>
+    <string name="toast_folder">Haupt-Ordner</string>
+    <string name="toast_dearchived">Übertragen aus dem Archiv in den Hauptordner</string>
+    <string name="toast_archived">Die übertragung von Ordnern im Archiv</string>
+    <!-- DEUTSCH VERSION -->
+    <string name="test_procent">Ergebnis: </string>
+    <string name="test_time">Zeit:</string>
+
+    <string name="test_testing"> Überprüfen</string>
+    <string name="test_see_answer">Ansicht die Antworten</string>
+
+    <string name="test_your_result">Ihr Ergebnis: </string>
+
+    <string name="activity_testing">Testen</string>
+
+    <string name="app_name">NLP-Modellierung</string>
+    <string name="action_settings">die Aufstellungen</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="enter_back_edition">Eingang in die erweiterte Version</string>
+
+    <string name="right_hand">Rechtshänder</string>
+    <string name="left_hand">Linkshänder</string>
+
+    <string name="sort_by_name">Nach Namen Sortieren</string>
+    <string name="sort_by_type">Modelle nach Typ Sortieren</string>
+    <string name="sort_by_date">Nach Datum Sortieren</string>
+    <string name="state_edit">Editiermodus</string>
+    <string name="state_view">Wiedergabemodus</string>
+    <string name="open_model">Öffnen Sie die Datei mit den Modellen</string>
+    <string name="save_model">Speichern Sie die ausgewählten Modelle</string>
+    <string name="delete_model">Entfernen</string>
+    <string name="extend_version">Erweiterte Version</string>
+    <string name="about_program">Über das Programm</string>
+    <string name="share_all">Teilen Sie allen Modellen</string>
+
+    <string name="result_of_modeling">Die Ergebnisse der Simulation</string>
+    <string name="name_of_model_">Name des Modells: </string>
+
+
+    <string name="name_model">Modell</string>
+    <string name="name_strategy">Strategie(Technik)</string>
+    <string name="name_dark">Kampf-Strategie(Technik)</string>
+    <string name="name_other">Ergänzung</string>
+
+    <string name="you_delete">Sie löschen: </string>
+    <string name="delete_element"> Element</string>
+    <string name="will_create">Abschnitt in der Entwicklungsphase</string>
+    <string name="you_share">Sie teilen: </string>
+
+    <string-array name="str_Left_Science">
+        <item >Wissenschaftliche Modell</item>
+        <item >BEOBACHTUNG.\nDie Beobachtung der Tatsachen und die Messung, die quantitative oder qualitative Beschreibung der Beobachtungen</item>
+        <item >ANALYSE.\nDie Analyse der Ergebnisse der Beobachtung — deren Systematisierung, entwirren sinnvolle und unwichtigen</item>
+        <item >VERALLGEMEINERUNG.\nZusammenfassung (Synthese) und die Formulierung von Hypothesen, Theorien</item>
+        <item >VORHERSAGE.\nPrognose: die Formulierung der Wirkungen der vorgeschlagenen Hypothese angenommen oder mit Hilfe der Theorie der Deduktion, der Induktion oder anderen logischen Methoden</item>
+        <item >ÜBERPRÜFEN.\nDie überprüfung der prognostizierten Wirkungen mit Hilfe des Experiments (in der Terminologie von Karl Popper — ein kritisches Experiment)</item>
+    </string-array>
+
+    <string-array name="str_Left_SCORE">
+        <item >Modell SCORE</item>
+        <item >S - Symptome.\nDas am deutlichsten sichtbare (externe Kalibrierung) und der vom Kunden wahrgenommenen Aspekte der berechneten Situation/Erfahrung; ein Zustand, der vorhandene auf den heutigen Tag</item>
+        <item >C - Gründe.\nErfahrungen in der Vergangenheit, der Gegenwart Zustand</item>
+        <item >O - Das Ergebnis.\nDas Ziel der Veränderungen oder der Zustand, der den vorliegenden Zustand ersetzen soll</item>
+        <item >R - Ressourcen.\nDie Elemente der Erfahrung, die Anwesenheit von denen uns die gegenwärtige Situation zu lösen können; sie ermöglichen den Übergang von dem gegenwärtigen Zustand zu der gewünschten</item>
+        <item >E - Effekte.\nReaktionen / Effekte Ergebnisse zu erzielen, sowohl für den Kunden und für seine bedeutenden Umwelt; Zustand in der Zukunft, wenn das Ergebnis erreicht worden ist</item>
+    </string-array>
+
+    <string-array name="str_Left_SMART">
+        <item >Das Geschäftsmodell Ziele sind SMART Spezifikationen</item>
+        <item >S - Spezifisch.\nZiele müssen eindeutig definiert sein (nicht vage, sondern so präzise wie möglich)</item>
+        <item >M - Messbar.\nZiele müssen messbar sein (Messbarkeitskriterien).</item>
+        <item >A - Akzeptiert.\nZiele müssen von den Empfängern akzeptiert werden/sein</item>
+        <item >R - Realistisch.\nZiele müssen möglich sein.</item>
+        <item >T - Terminiert.\nzu jedem Ziel gehört eine klare Terminvorgabe, bis wann das Ziel erreicht sein muss.</item>
+    </string-array>
+
+    <string-array name="str_Left_TOTE">
+        <item >TOTE-Modell</item>
+        <item >Т1 - Test 1.(Der Auslöser, "Trigger")\nEs wird eine innerpersonale Testsequenz durchlaufen, als deren Ergebnis eine Inkongruenz zwischen dem aktuellen Zustand des Organismus und dem (gewünschten) Referenzzustand festgestellt wird</item>
+        <item >О - Operation.\nDurch eine „Operation“ wird eine Aktivität zur Veränderung des Zustandes gesetzt</item>
+        <item >Т2 - Test 2.\nEs folgt ein erneuter Test auf Inkongruenz, ist die Inkongruenz weiter vorhanden, wird durch eine Schleife ein neuer Operationsprozess initiiert</item>
+        <item >E - Ausgang.\nNach Herstellung von Kongruenz zwischen Referenzzustand und aktuellem Zustand (vulgo SOLL-IST-Vergleich) wird die Verhaltenssequenz verlassen.</item>
+    </string-array>
+
+    <string-array name="str_Left_TricksOfLanguage">
+        <item >Sprache Tricks</item>
+        <item >1. Absicht\nWir suchen die Absicht der Überzeugung</item>
+        <item >2. Überschreiben\nMachen Reframing Sinn eines der Wörter</item>
+        <item >3. Folgen\nUntersucht die Auswirkungen der Nutzung dieser überzeugungen</item>
+        <item >4. Trennung\nTeilt Elemente der Überzeugung auf den Teil der konstituierenden Elemente</item>
+        <item >5. Vereinigung\nDer Teil der Synthese der Überzeugung </item>
+        <item >6. Analogie\nSuchen Analogie, die eine andere Bedeutung Überzeugung geben</item>
+        <item >7. Ändern der Größe des Frames\nWir tauschen die betrachtete Zeitdauer, Anzahl der Personen, Größe der Fläche, etc., so dass die überzeugung ersetzt sinnvoll oder absurd geworden</item>
+        <item >8. Anderes Ergebnis\nDie Verschiebung des Fokus der Aufmerksamkeit auf ein anderes Ergebnis</item>
+        <item >9. Modell der Welt\nWir bieten die «richtige» überzeugung zu ersetzen, unter Hinweis auf Autoritäten</item>
+        <item >10. Strategie Realität\nWir appellieren an die Geschichte glauben oder seiner inneren Vorstellung</item>
+        <item >11. Gegenbeispiel\nWir suchen die Ausnahme von der Regel</item>
+        <item >12. Hierarchie der Kriterien\nWir bieten eine wichtigere Ziel</item>
+        <item >13. Anwendung an sich selbst\nRegel, die im Verhältnis zu anderen Menschen, muss arbeiten und gegen den Autor überzeugungen. Und und an sich glauben</item>
+        <item >14. Metafrejm\nWir schaffen die überzeugungen über überzeugungen</item>
+    </string-array>
+
+    <string-array name="str_Left_MiltonModel">
+        <item >Milton-Modell</item>
+        <item >Direkte Suggestionen\nArt der suggestion zugeschrieben Kurzschluss, häufiger ein Wort, ein verb(\"Schlafen\",\"Mach die Arbeit\")</item>
+        <item >Komplexe zusammengesetzte suggestion\nArt der suggestion,gestaltet in Form von Ursache-Wirkungs-Beziehungen und/oder äquivalenten komplexen</item>
+        <item >Reihenfolge der Annahme</item>
+        <item >Voraussetzung</item>
+        <item >Binsenweisheit\nDie Banale Wahrheit, die Behauptung von dem sich der Mensch voll und ganz Zustimmen.Im NLP трюизмы dienen zur Einstellung der Recycling Einwände und indirekten Suggestionen. Dabei ist eine Binsenweisheit, fast nie erkannt, wie suggestion. Was sehr praktisch ist.</item>
+        <item >Negative paradoxe suggestion</item>
+        <item >Doppel-Bündel oder eine Wahl ohne Wahl\nDieses Angebot illusorischen Wahl (Wahl ohne Wahl), dessen beide Teile adressiert bewussten Verhalten, wie die Wahl zwischen passen und Sie sehr Fit.</item>
+        <item >Metapher\nGeschichte, Erzählung, Legende, Anekdote</item>
+        <item >Kontextabhängige Vorschlag</item>
+        <item >Mobilisieren der suggestion\nArt der suggestion entwickelt wird für eine bestimmte Aktion</item>
+        <item >Suggestionen, die sich im Laufe der Zeit\nArt der suggestion, die Sie durchführen müssen, für eine bestimmte Zeitspanne oder auf eine bestimmte Zeit</item>
+        <item >Suggestion Zitat\nArt der suggestion verborgen wie der Satz einer anderen Person(Objekt). (\"Nachbarn sagten mir *sei nicht erfolgreich*\", \"Bei meinem Freund auf dem T-SHIRT steht *Ob meiner*\")</item>
+        <item >Dreifache Spirale\nDie Besondere Struktur der drei Metaphern, erzählt durch die folgende Struktur:\nAnfang Metaphern 1\nAnfang Metaphern 2\nMetapher 3 oder Vorschlag\nDas Ende der Metaphern 2\nDas Ende der Metaphern 1</item>
+        <item >Paradoxien\n1) Х, nicht X\n2) Die Verwendung der Antonyme\n3) Die Verwendung von zwei Synonymen\n4) Aufgrund der Metaprogramme\n5) Die Entstellung die Richtung in der Zeit, dem Raum</item>
+        <item >Die Nachgipnotitscheski Eingebung\nDie Art der Eingebung, die man nach dem Ausgang aus der Trance erfüllen muss (Anzurufen, zu schreiben, zu öffnen und der Regenschirm im Stadtzentrum ohne Grund usw. zu schließen.)</item>
+    </string-array>
+
+    <string-array name="str_Left_AIDA">
+        <item >Das Vermarktungsgeschäftsmodell AIDA</item>
+        <item >A — Attention (Die Aufmerksamkeit) \nPriwletsch die Aufmerksamkeit des Kunden</item>
+        <item >I — Interest (Interesse)\nDas gesteigerte Interesse des Kunden, wobei der Schwerpunkt auf der Demonstration der Vorteile und nutzen</item>
+        <item >D — Desire (Wunsch)\nÜberzeugen Sie den Kunden, was er will und wünscht, das Produkt (die Dienstleistung), und dass Sie seine Bedürfnisse befriedigen</item>
+        <item >A — Action (Aktion)\nFühren den Kunden zu treffenden Maßnahmen und/oder Kauf</item>
+    </string-array>
+
+    <string-array name="str_Left_Eye">
+        <item >Glaso-motorischen Strategie</item>
+        <item >Die Schlüssel des Zugangs zeigen, in welcher repräsentativen System im Moment der Mensch verarbeitet Informationen.\nDie Augen bewegen sich nur dann, wenn ein Mensch braucht, finden Sie Informationen.\nDas heißt, wenn die gewünschte Information befindet sich in den «RAM», das die Bewegung der Augen wird nicht"</item>
+    </string-array>
+
+    <string-array name="str_Left_Polar">
+        <item >Strategie-Analyse-Quadranten zusammengefasst (Polaritäten)</item>
+        <item >Achse +X</item>
+        <item >Achse -X</item>
+        <item >Achse +Y</item>
+        <item >Achse -Y</item>
+        <item >Quadrant (+X,+Y)</item>
+        <item >Quadrant (-X,+Y)</item>
+        <item >Quadrant (+X,-Y)</item>
+        <item >Quadrant (-X,-Y)</item>
+    </string-array>
+
+    <string-array name="str_Left_VAK">
+        <item >Repräsentative Systeme</item>
+        <item >Visuelle (V) - Verarbeitung von visuellen Informationen</item>
+        <item >Auditive oder auditive-tonal (A oder At) die - Töne, der Ton der Stimme</item>
+        <item >Kinästhetisch (К) - Behandlung sinnlichen Informationen (taktile Empfindungen, inneren, Geschmack, Geruch)</item>
+    </string-array>
+
+    <string-array name="str_Left_FrameOfProposal">
+        <item >Format Ziel</item>
+        <item >Schritt 1.\nZiel ist die positive Formulierung</item>
+        <item >Schritt 2.\nZiel ist unter Kontrolle</item>
+        <item >Schritt 3.\nZiel проверяема in Touch-Erfahrungen</item>
+        <item >Schritt 4.\nZiel ist umweltfreundlich und behält die anfängliche positive Auswirkung der Ergebnisse</item>
+        <item >Schritt 5.\nDas Ziel liegt im richtigen Kontext</item>
+        <item >Schritt 6.\nDas Ziel ist abhängig vom Zugang zu Ressourcen</item>
+        <item >Schritt 7.\nBekannt sind die ersten Schritte zum Ziel</item>
+    </string-array>
+
+
+
+    <string-array name="str_Left_ElementsOfAnchors">
+        <item >Elemente Verankerung</item>
+        <item >1.	Verwenden Sie Verhaltens-Aspekte, mimik und Tone-Konformität, um zu bewirken, die gewünschte Reaktion</item>
+        <item >2.	Stellen Sie sicher, dass der Kunde erinnerte sich an ein Ereignis, nicht eine Reihe von Unfällen</item>
+        <item >3.	Stellen Sie sicher, dass der Kunde erneut dieses Ereignis erlebt, und will nicht daran denken. Mit anderen Worten, der Kunde muss die Linie mit den eigenen Erfahrungen, als ob er erlebt es jetzt. Vergewissern Sie sich in Gegenwart von physiologischen Signalen eines assoziierten Zustand. Auch beobachten Sie die Bewegungen der Augen. Wenn Sie nicht sicher sind, Fragen Sie Ihren Kunden</item>
+        <item >4.	Stellen Sie den Anker auf den Eintritt in die Situation und die Entwicklung. Installieren Sie einen Anker, wenn ein Client mehr aus der Erfahrungen</item>
+        <item >5.	Mehr als einzigartig das zu installierende Anker, desto besser</item>
+        <item >6.	Sie sollten in der Lage, genau zu wiederholen Anker: die gleiche Dauer der Exposition, den gleichen Druck, die gleiche Stimme, gestik usw.</item>
+        <item >7.	Falls Sie beim überprüfen des Ankers Sie fanden nicht die erwartete Antwort, :\n• entweder der Kunde nicht erlebte Ereignis wie die aktuelle\n• entweder wurde nicht заякорена der intensivste Teil der erlebten Erfahrung\n• entweder müssen die Anker sichern durch zusätzliche Ereignisse gleichen oder ähnlichen Erfahrungen</item>
+    </string-array>
+
+    <string-array name="str_Left_UoltDisney2">
+        <item >Strategie der Kreativität von WALT DISNEY</item>
+        <item >Dreamer.\nKreativ träumen auf "Hochtouren". Er schafft eine möglichst perfekte und hinreißende Traum. Dabei kann es ganz abgerissen ist von der "alltäglichen" Realität. Der Träumer keine Zeit für Gedanken darüber, wie es erreicht werden kann oder was ein Problem sein kann – das ist Aufgabe des Realisten und des Kritikers bzw.\nDreamer nach Art der Traditione.</item>
+        <item >Realist.\nEin Mann der Tat. Konzentriert sich auf die Erreichung des Ziels. Denkt darüber nach, was Sie tun müssen. Nicht abgelenkt durch mögliche Hindernisse – es ist die Aufgabe der Kritik.\nRealist nach Art Кинестетик</item>
+        <item >Kritiker.\nKritiker konzentriert sich auf die möglichen Hindernisse. Aber dabei bleibt er möglichst "konstruktiv" gegenüber, wie der Traum, so zu Verfahren, es zu erreichen. Seine Aufgabe ist es zu finden und informieren über mögliche Schwierigkeiten und Fehlern. Kritiker in Erster spricht in Form von "etwas hinzufügen".\nRealist nach Art Digital</item>
+    </string-array>
+
+    <string-array name="str_Left_Note">
+        <item >Hinweis</item>
+        <item >Hinweis</item>
+    </string-array>
+
+
+
+
+
+    <!--
+    	PROFILE
+    -->
+
+
+
+
+
+    <string-array name="str_Left_PROFILE2">
+        <item >Dossier</item>
+        <item >Bevorzugte repräsentative System (System), Modalität:</item>
+        <item >Bevorzugte SubModalitäten:</item>
+        <item >Strategie:</item>
+        <item >Bevorzugte Positionen von Walt Disney:</item>
+        <item >Das bevorzugte MetaProgramm (MetaProgramme):</item>
+        <item >Überzeugende:</item>
+        <item >Werte(Kenntnisse, Fähigkeiten):</item>
+        <item >Weitere Hinweise:</item>
+    </string-array>
+
+    <string-array name="str_Left_PROFILE3">
+        <item >Dossier</item>
+        <item >Bevorzugte repräsentative System (System), Modalität:</item>
+        <item >Bevorzugte SubModalitäten:</item>
+        <item >Strategie:</item>
+        <item >Bevorzugte Positionen von Walt Disney:</item>
+        <item >Das bevorzugte MetaProgramm (MetaProgramme):</item>
+        <item >Überzeugende:</item>
+        <item >Werte(Kenntnisse, Fähigkeiten):</item>
+        <item >Tricks Sprache:</item>
+        <item >Die Position der Wahrnehmung:</item>
+        <item >Weitere Hinweise:</item>
+    </string-array>
+
+    <string-array name="str_Position">
+        <item > 1. Position ( Ich )</item>
+        <item > 2. Position (Sie)</item>
+        <item > 3. Position (Blick von der Seite)</item>
+    </string-array>
+
+    <string-array name="str_TricksOfLanguage">
+        <item >Absicht</item>
+        <item >Überschreiben</item>
+        <item >Folgen</item>
+        <item >Trennung</item>
+        <item >Vereinigung</item>
+        <item >Die Analogie</item>
+        <item >Ändern der Größe des Frames</item>
+        <item >Ein anderes Ergebnis</item>
+        <item >Modell der Welt</item>
+        <item >Strategie Realität</item>
+        <item >Gegenbeispiel</item>
+        <item >Hierarchie der Kriterien</item>
+        <item >Die Anwendung an sich</item>
+        <item >Metafrejm</item>
+    </string-array>
+
+
+    <string-array name="str_REP_SYSTEM">
+        <item >V - Visuelle</item>
+        <item >A - Auditive</item>
+        <item >K - Kinästhetische</item>
+    </string-array>
+
+    <string-array name="str_sub_REP_SYSTEM">
+        <!-- Visual -->
+        <item >Farb (V)</item>
+        <item >Schwarz-weiß (V)</item>
+        <item >Helligkeit (V)</item>
+        <item >Kontrast (V)</item>
+        <item >Fokus(V)</item>
+        <item >Hintergrund (V)</item>
+        <item >Detailtreue (V)</item>
+        <item >Unschärfe (V)</item>
+        <item >Größe (V)</item>
+        <item >Entfernung (V)</item>
+        <item >Form (V)</item>
+        <item >Grenzen (V)</item>
+        <item >Position (V)</item>
+        <item >Die Bewegung Innerhalb des Bildes (V)</item>
+        <item >Bewegung-Außerhalb des Bildes (V)</item>
+        <item >Die Geschwindigkeit der Bewegung (V)</item>
+        <item >Orientierung/Blickwinkel (V)</item>
+        <item >Associate-dissoziiert (V)</item>
+        <item >Perspektive/Position (V)</item>
+        <item >Verhältnis (V)</item>
+        <item >Die Einzigkeit-Eine Vielheit Von (V)</item>
+        <!-- Audial -->
+        <item >Position (A)</item>
+        <item >Richtung (A)</item>
+        <item >Frequenz (A)</item>
+        <item >Höhe (A)</item>
+        <item >Tonart (A)</item>
+        <item >Geräusche/Worte (A)</item>
+        <item >Melodie (A)</item>
+        <item >Variabilität Modulation der Stimme (A)</item>
+        <item >Lautstärke (A)</item>
+        <item >Tempo (A)</item>
+        <item >Rhythmus (A)</item>
+        <item >Dauer (A)</item>
+        <item >Mono/Stereo (A)</item>
+        <!-- Kinestetic -->
+        <item >Qualität (K)</item>
+        <item >Größe (K)</item>
+        <item >Form (K)</item>
+        <item >Die Konzentration im inneren Empfindungen (K)</item>
+        <item >Temperatur (K)</item>
+        <item >Die Intensität (K)</item>
+        <item >Lage (K)</item>
+        <item >Bewegung (K)</item>
+        <item >Richtung (K)</item>
+        <item >Geschwindigkeit/Beschleunigung (K)</item>
+        <item >Textur (K)</item>
+        <item >Feuchtigkeit (K)</item>
+        <item >Dauer (K)</item>
+        <item >Gewicht (K)</item>
+    </string-array>
+
+    <string-array name="str_dishey">
+        <item >Dreamer</item>
+        <item >Realist</item>
+        <item >Kritiker</item>
+    </string-array>
+
+    <string-array name="str_MetaProgramm">
+        <!-- Die Tore Sortierung -->
+        <item >Orte und Dinge</item>
+        <item >Zeit und Aktion</item>
+        <item >Prozess</item>
+        <item >Werte und Kriterien</item>
+        <item >Menschen</item>
+        <!-- Der Stil der Informationsverarbeitung -->
+        <item >Sehe</item>
+        <item >Fühle</item>
+        <item >Denke</item>
+        <item >Wirke</item>
+        <!-- Motivation -->
+        <item >An</item>
+        <item >VON</item>
+        <!-- Referenz -->
+        <item >Interne Referenz</item>
+        <item >Externe Referenz</item>
+        <!-- Das Niveau der Verallgemeinerungen -->
+        <item >Allgemeine</item>
+        <item >Details</item>
+        <!-- Suche nach oder nach -->
+        <item >Möglichkeiten</item>
+        <item >Verfahren</item>
+        <!-- Vergleich -->
+        <item >Die ähnlichkeit</item>
+        <item >Die ähnlichkeit mit der Verschiedenheit der</item>
+        <item >Der Unterschied</item>
+        <!-- Das Verhältnis zum handeln -->
+        <item >Aktiv</item>
+        <item >Reflektierend</item>
+        <!-- Referenz auf Zeit -->
+        <item >Die Vergangenheit</item>
+        <item >Echt</item>
+        <item >Die Zukunft</item>
+        <!-- Das Verhältnis zur Zeit -->
+        <item >Eingeschlossen</item>
+        <item >End-to-End</item>
+        <!-- Kommunikationsstil -->
+        <item >Selbst</item>
+        <item >Ein anderes</item>
+    </string-array>
+
+    <string-array name="str_MetaProgramm_ubeditel">
+        <item >Die Amplitude</item>
+        <item >Anzahl mal</item>
+        <item >Zeit</item>
+    </string-array>
+
+    <string-array name="str_Left_Strategy_VKDiss">
+        <item >Visuell-kinesteticheskaya die Dissoziation</item>
+        <item >1. Die Schaffung leistungsfähiger Suchinstrumente Anker</item>
+        <item >2a. Die Dissoziation. 1. Stufe\nDer Betreiber bietet dem Kunden 2 Ereignisse zu erinnern (in Form einer Folie auf dem Bildschirm): ein bis zum Ereignis, wenn der Client noch in der Ressource (schwarz-weiß-Folie) und dann, wenn er wieder zu sich kam und war bereits in der Ressource (Farb-dia)</item>
+        <item >2б. Die Dissoziation. 2. Stufe\nBitten Sie den Kunden gedanklich aufstehen hinter sich, sitzt in einem Kino und mit Blick auf den Bildschirm. Beobachten können und von der letzten Reihe des Kinos, und aus dem Stand Filmvorführer</item>
+        <item >3. Anzeigen einer Vorschau eines Films in normaler Geschwindigkeit\nWährend Sie sich auf der 2. Stufe der Dissoziation, der Kunde scannt mit normaler Geschwindigkeit schwarz-weiß-Film, der ab Folie 1 und Folie bis hin zu Nummer 2, aber dabei den Fokus seiner Aufmerksamkeit verschiebt sich auf das, was um ihn herum geschah, beachtet Details und Kleinigkeiten, die er dann nicht bemerkt, wenn es passiert ist</item>
+        <item >4. Eine Reise in die Vergangenheit\nWenn ein Kunde досмотрит Film bis zu farbigen Folie Nummer 2, ihn zu bitten, sich gedanklich in die Vergangenheit gehen - während, wenn dieses Ereignis bereits aufgetreten ist (D. H. im Zusammenhang mit der Folie №2). Dabei gehen Sie in die Vergangenheit, der Kunde bleibt "sich selbst so gut" und bereitet sich auf die Kommunikation mit "sich selbst aus der Vergangenheit"</item>
+        <item >5. Rückkehr\nWenn der Kunde ganz sicher in der Ausführung Ihrer Aufgaben und zu verstehen, dass Sie in der Lage, ruhig zu verlassen "sich mehr als die jüngeren" weiter Leben allein, dann kann er von ihm verabschieden und wieder zurück auf die 1. Stufe der Dissoziation, um die Ergebnisse Ihrer Arbeit</item>
+        <item >6. Integration\nIn diesem Schritt bitten Sie den Kunden einzulassen ", sich mehr als die jüngeren" sich als einen Ihrer Teile, als Teil seiner Lebenserfahrung, und genießen Sie den Besitz dieses Gefühl für ihn wichtigen Teil, der jetzt neu beziehen kann Letzte Situation</item>
+        <item >7. Überprüfen\nFragen Sie Ihren Kunden, was er jetzt denkt über die Letzte Situation und wie er zu Ihr gehört, dabei Kalibrieren Sie seine Physiologie</item>
+        <item >8. Anpassung an die Zukunft\nПредложите Клиенту подумать о возможности возникновения в будущем подобной ситуации и выясните, как бы он хотел на нее реагировать. Добейтесь от Клиента точной сенсорной информации о “критериях осторожности”: как он будет понимать, когда ситBitten Sie den Kunden, denken über die Möglichkeit des Entstehens einer ähnlichen Situation in der Zukunft und finden Sie heraus, wie er gewollt hat, darauf zu reagieren. Holen Sie den Kunden genaue Sensorinformationen über die "Kriterien der Vorsicht": wie wird man verstehen, wenn die Situation sicher ist, und wenn es sich lohnt, vorsichtig sein und ordentlich.уация безопасна, а когда стоит быть осторожным и аккуратным.</item>
+    </string-array>
+
+    <string-array name="str_Left_Strategy_ConflictParts">
+        <item >Der Vertrag Teile</item>
+        <item >1. Die Formulierung des Widerspruchs\nBestimmen Sie zunächst ein Widerspruch. Wer wen behindert.</item>
+        <item >2. Der name und die Absicht, Teile\nGeben Sie den Namen der einzelnen Teile</item>
+        <item >3. Vereinbarung\nFragen Sie konsequent bei den teilen</item>
+        <item >4. Die Entnahme Verpflichtungen\nVielleicht werden Sie nicht sofort Zustimmung erhalten. Ein Teil kann nicht akzeptieren, genehmigen den Vertrag "für immer", aber die Stimme wird versuchen, im Laufe des Monats oder der Woche. Versuchen Sie, alle Einwände zu berücksichtigen, andere Teile</item>
+        <item >5. Ökologische überprüfung\nFinden Sie heraus, ob es noch andere Teile, die etwas haben gegen dieses Vertrags. Wenn ja, dann gehen Sie zurück zum vorherigen Schritt und der Vertrag so umschreiben, um Interessen zu berücksichtigen und diese Teile auch</item>
+        <item >6. Umsatzsteuer und binden Sie an die Zukunft\nWenn Sie änderungen nicht zufrieden sind – gehen Sie zurück auf den vierten Schritt und noch mal arbeiten Einwand.</item>
+    </string-array>
+
+    <string-array name="str_Left_Strategy_XCP">
+        <item >Gut formuliert das Ergebnis</item>
+        <item >Ziel muss positiv formuliert\nZiel sollte bestimmen, was Sie erhalten möchten, und nicht etwas, von dem Sie loswerden möchten. Eines der Anzeichen einer ungenauen Ziel – das Vorhandensein der Negation</item>
+        <item >Von Ihnen gesteuert werden\nWir können nicht kontrollieren, die Dinge und andere Menschen. Aber wir können beeinflussen, Ihnen mit Hilfe unseres Verhaltens</item>
+        <item >Beschreibt die Sprache Touch\nEs ist sehr wichtig, um das Ziel konkret beschrieben wurde, auf der Ebene der sensorischen Vorstellungen</item>
+        <item >Entspricht der Kontext\nDie Nützlichkeit dessen, was in der Regel ein internes Ziel (Status, Fähigkeiten, überzeugungen, Verhaltensmuster) sehr stark vom Kontext abhängig</item>
+        <item >Hat die passende Größe\nWenn das Ziel zu groß – die Motivation geht verloren auf dem Weg. Wenn Ihr Ziel "Vollständig beherrschen der englischen Sprache" mit sehr strengen Kriterien, auch lange und intensiv beschäftige, Sie werden nicht bemerken, proximity</item>
+        <item >Umweltfreundlich\nJede Handlung hat seine Konsequenzen</item>
+        <item >Sind die notwendigen Ressourcen\nDefinieren Sie Ressourcen, die Sie brauchen um das Ziel zu erreichen.\n- Welche Ressourcen benötigen Sie zur Erreichung des Ziels?\n- Kannst du darauf zugreifen?\nWenn nicht – formulieren Sie den Zugang zu Ressourcen als Ziel.</item>
+        <item >Forschung Hindernisse\nEntdecken Sie, was kann Sie davon abhalten, auf dem Weg dieses Ziel zu erreichen\n- Was hindert Sie beginnen erreichen (erzielen) Ziel vorbereitet werden?\n- Welche Hindernisse treffen können auf Ihrem Weg?\n- Was können Sie tun, um diese Hindernisse zu überwinden?</item>
+        <item >Anpassung an die Zukunft\nBestimmen Sie die ersten konkreten Schritte, mit denen Sie beginnen, den Prozess der Erreichung Ihrer Ziele.\nWas wird der erste Schritt zur Erreichung des Ziels?</item>
+    </string-array>
+
+    <string-array name="str_Left_Strategy_Anchor">
+        <item >Verankerung</item>
+        <item >0. Kontrollieren Sie den Status ein, den Sie dem Anker</item>
+        <item >1. Diesen Zustand rufen Sie</item>
+        <item >2. Auf dem Höhepunkt der Statusleiste legen Sie den Anker</item>
+        <item >3. Unterbrechen Sie den Zustand</item>
+        <item >4. Überprüfen Sie, ob der Anker</item>
+    </string-array>
+
+    <string name="save_all">Alles speichern an das Gerät</string>
+    <string name="select_all">Alle auswählen</string>
+    <string name="google_plus">Auf GOOGLE+ beitreten</string>
+
+    <string-array name="str_Left_Three_Position">
+        <item >Modell dreistellungs-Beschreibungen</item>
+        <item >1-Position der Wahrnehmung.\n«Ich-selbst», eine Vereinigung in sich selbst. Schätze die Situation aus Ihrer Sicht.</item>
+        <item >2-Position der Wahrnehmung.\n«Ich-ein anderer», die Vereinigung mit einem anderen. «Ich stehe auf dem Platz» einer anderen Person, «ich schaue durch seine Augen».</item>
+        <item >3-Position der Wahrnehmung.\n«Beobachter», die Dissoziation. Schätze die Situation als qualifizierte in diesem Zusammenhang Beobachter.</item>
+        <item >4-Position der Wahrnehmung.\n</item>
+    </string-array>
+
+    <string-array name="str_Left_Karpman">
+        <item >Dreieck Karpman </item>
+        <item >Die Rolle des «Erlösers»</item>
+        <item >Die Rolle des «Verfolgers»</item>
+        <item >Die Rolle des «Opfers»</item>
+    </string-array>
+
+
+    <!-- NEW WORDS
+    <string name=""></string>
+
+    <string-array name="">
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+        <item ></item>
+    </string-array>
+    -->
+
+    <string-array name="str_Left_Modeling_Gordon">
+        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <item >1. КРИТЕРИЙ\nКогда Вы __________, то что здесь ВАЖНО? Что Вы оцениваете? Что для Вас главное, когда Вы _____________? На что Вы обращаете внимание, когда ___________? Когда Вы ___________, что Вы оцениваете?</item>
+        <item >2. ОПРЕДЕЛЕНИЕ\nЧто Вы под КРИТЕРИЕМ понимаете? Как Вы узнаете, что Вы или кто-то другой соответствуете КРИТЕРИЮ? Как бы Вы описали КРИТЕРИЙ?</item>
+        <item >3. СВИДЕТЕЛЬСТВО\nЧто Вы видите/слышите/чувствуете, что позволяет Вам понять, что это есть? </item>
+        <item >4. ЗАПУСК П-С\nЧто должно быть правдой для того, чтобы КРИТЕРИЙ существовал? Почему КРИТЕРИЙ важен? Что делает КРИТЕРИЙ важным?</item>
+        <item >5. МОТИВИРОВАНИЕ П-С\nЕсли КРИТЕРИЙ удовлетворяется, к чему это приводит? К чему ведет существование КРИТЕРИЯ, или что КРИТЕРИЙ делает возможным?</item>
+        <item >6. ПОДДЕРЖИВАЮЩИЕ УБЕЖДЕНИЯ, ЕСЛИ ЕСТЬ</item>
+        <item >7. ПЕРВИЧНАЯ ОПЕРАЦИЯ\nЧто Вы обычно делаете, чтобы это отвечало КРИТЕРИЮ?</item>
+        <item >8. ПРОВЕРКА\nТо же, что и СВИДЕТЕЛЬСТВО.</item>
+        <item >9. ВТОРИЧНАЯ ОПЕРАЦИЯ\nЧто Вы делаете, когда ___________ недостаточно отвечает КРИТЕРИЮ?\nЧто Вы делаете, когда ___________ совсем не отвечает КРИТЕРИЮ?\nЧто Вы делаете, когда ___________ не может отвечать КРИТЕРИЮ?</item>
+        <item >10. ПОДДЕРЖАНИЕ ЭМОЦИИ.\nНа основе какого чувства Вы продолжаете действовать с целью найти соответствие КРИТЕРИЮ?</item>
+        <item >11. СИГНАЛЬНЫЕ ЭМОЦИИ, ЕСЛИ ЕСТЬ.</item>
+        <item >12. ВНЕШНЕЕ ПОВЕДЕНИЕ.\nЧто Вы делаете, когда Вы делаете ОПЕРАЦИЮ?</item>
+    </string-array>
+
+    <string-array name="str_Left_Modeling_Gordon_Short">
+        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <item >1. Критерий.\nЗа что? Что важно?</item>
+        <item >2. Комплексный эквивалент, содержание.\nЧто это значит?</item>
+        <item >3. VAKOG. Как ты об этом узнал?</item>
+        <item >4. Примечание</item>
+    </string-array>
+
+    <string-array name="str_Left_State">
+        <item >Трансляция состояния</item>
+        <item >Гуманистическое(соответствие)</item>
+        <item >Боевое(несоответствие, разрушение)</item>
+    </string-array>
+
+    <string-array name="str_Left_Rules">
+        <item >Правила</item>
+        <item >Список правил:</item>
+    </string-array>
+
+
+    <string-array name="str_array_About">
+        <item >Модель НЛП:: SCORE</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/461-model-nlp-score.html</item>
+
+        <item >Техника:: SCORE на линии времени</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/tekhniki/474-tekhnika-score-na-linii-vremeni.html</item>
+
+        <item >Модель НЛП:: TOTE</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/451-model-nlp-tote.html</item>
+
+        <item >Глоссарий:: Раскрутки (Фокусы языка)</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/407-glossarij-raskrutki.html</item>
+
+        <item >Модель НЛП:: Раскрутки (фокусы языка)</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/452-model-nlp-raskrutki-fokusy-yazyka.html</item>
+
+        <item >Глоссарий:: Ключи глазного доступа</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/406-glossarij-klyuchi-glaznogo-dostupa.html</item>
+
+        <item >Модель НЛП:: Ключи глазного доступа</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/460-model-nlp-klyuchi-glaznogo-dostupa.html</item>
+
+        <item >Глоссарий:: Репрезентативная система</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/428-glossarij-reprezentativnaya-sistema.html</item>
+
+        <item >Глоссарий:: Субмодальность</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/387-glossarij-submodalnost.html</item>
+
+        <item >Техника:: Стратегия Уолта Диснея</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/tekhniki/465-tekhnika-strategiya-uolta-disneya.html</item>
+
+        <item >Глоссарий:: Метапрограммы</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/389-glossarij-meta-programmy.html</item>
+
+        <item >Глоссарий:: Ценность</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/405-glossarij-tsennost.html</item>
+
+        <item >Наука</item>
+        <item >http://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D1%83%D0%BA%D0%B0</item>
+
+        <item >Техника:: Визуально-кинестетическая диссоциация</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/tekhniki/471-tekhnika-vizualno-kinesteticheskaya-dissotsiatsiya.html</item>
+
+        <item >Глоссарий:: Диссоциация</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/419-glossarij-dissotsiatsiya.html</item>
+
+        <item >Техника:: Интеграция конфликтующих частей</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/tekhniki/468-tekhnika-integratsiya-konfliktuyushchikh-chastej.html</item>
+
+        <item >Техника:: Договор частей</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/tekhniki/487-tekhnika-dogovor-chastej.html</item>
+
+        <item >Модель НЛП:: Хорошо сформулированный результат</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/897-model-nlp-khorsho-sformulirovannyj-rezultat.html</item>
+
+        <item >Глоссарий:: Якорь</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/386-glossarij-yakor.html</item>
+
+        <item >Модель НЛП:: Якоря</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/2-model-nlp-yakorya.html</item>
+
+        <item >Science</item>
+        <item >http://en.wikipedia.org/wiki/Science</item>
+
+        <item >Scientific method</item>
+        <item >http://en.wikipedia.org/wiki/Scientific_method</item>
+
+        <item >Модель НЛП:: Трёхпозиционное описание</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/modeli/911-model-nlp-trjokhpozitsionnoe-opisanie.html</item>
+
+        <item >Глоссарий:: Трёхпозиционное описание</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/912-glossarij-trjokhpozitsionnoe-opisanie.html</item>
+
+        <item >Model T.O.T.E</item>
+        <item >http://en.wikipedia.org/wiki/T.O.T.E.</item>
+
+        <item >SMART(ru)</item>
+        <item >http://ru.wikipedia.org/wiki/SMART</item>
+
+        <item >SMART(en)</item>
+        <item >http://en.wikipedia.org/wiki/SMART_criteria</item>
+
+        <item >AIDA(en)</item>
+        <item >http://en.wikipedia.org/wiki/AIDA_(marketing)</item>
+
+        <item >AIDA(ru)</item>
+        <item >http://ru.wikipedia.org/wiki/%D0%90%D0%98%D0%94%D0%90_(%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82%D0%B8%D0%BD%D0%B3)</item>
+
+        <item >Sleight of Mouth</item>
+        <item >http://www.renewal.ca/nlp21.htm</item>
+
+        <item >Representational systems</item>
+        <item >http://en.wikipedia.org/wiki/Representational_systems_(NLP)</item>
+
+        <item >Walt Disney - Planning Strategy</item>
+        <item >http://www.nlpu.com/Patterns/pattern7.htm</item>
+
+        <item >FIT scheme</item>
+        <item >http://developer.android.com/design/patterns/actionbar.html</item>
+
+        <item >Глоссарий:: Трюизм</item>
+        <item >http://trenings.ru/entsiklopediya-nlp/gllossarij/925-glossarij-tryuizm.html</item>
+
+        <item >Созависимость</item>
+        <item >http://ru.wikipedia.org/wiki/%D0%A1%D0%BE%D0%B7%D0%B0%D0%B2%D0%B8%D1%81%D0%B8%D0%BC%D0%BE%D1%81%D1%82%D1%8C</item>
+
+        <item >Karpman drama triangle</item>
+        <item >http://en.wikipedia.org/wiki/Karpman_drama_triangle</item>
+
+        <item >Licence of material</item>
+        <item >http://trenings.ru/home/karta-sajta/879-kak-perepechatyvat-materialy-sajta.html</item>
+
+        <item >Creative Commons Attribution-Share-Alike 3.0</item>
+        <item >http://creativecommons.org/licenses/by-sa/3.0/</item>
+
+        <item >GNU Free Documentation License</item>
+        <item >http://www.gnu.org/copyleft/fdl.html</item>
+
+        <item >Тест:: Мотивация Активный-Рефлексивный</item>
+        <item >http://trenings.ru/materialy/testy/893-test-motivatsiya-aktivnyj-refleksivnyj.html</item>
+        <item >Тест:: Трёхпозиционное описание</item>
+        <item >http://trenings.ru/materialy/testy/73-test-trjokhpozitsionnoe-opisanie.html</item>
+        <item >Тест:: Структура коммуникации</item>
+        <item >http://trenings.ru/materialy/testy/74-test-struktura-kommunikatsii.html</item>
+        <item >Тест:: Каналы восприятия (модальности)</item>
+        <item >http://trenings.ru/materialy/testy/75-test-kanaly-vospriyatiya-modalnosti.html</item>
+        <item >Тест:: Пресуппозиции</item>
+        <item >http://trenings.ru/materialy/testy/76-test-presuppozitsii.html</item>
+        <item >Тест:: Фокус Сравнения</item>
+        <item >http://trenings.ru/materialy/testy/77-test-fokus-sravneniya.html</item>
+        <item >Тест:: Разговорный рефрейминг</item>
+        <item >http://trenings.ru/materialy/testy/78-test-razgovornyj-refrejming.html</item>
+        <item >Тест:: Мотивация К-ОТ</item>
+        <item >http://trenings.ru/materialy/testy/79-test-motivatsiya-k-ot.html</item>
+        <item >Тест:: Якоря</item>
+        <item >http://trenings.ru/materialy/testy/80-test-yakorya.html</item>
+        <item >Тест:: Ассоциация - диссоциация</item>
+        <item >http://trenings.ru/materialy/testy/81-test-assotsiatsiya-dissotsiatsiya.html</item>
+
+    </string-array>
+
+    <string name="str_HELP">Первичное руководство по программе</string>
+
+    <string-array name="str_array_HELP">
+        <item >Это иконка данной программы</item>
+        <item >Данная иконка создает файл \"DBmodelFile.xml\" в папке \Downloads, Вы можете поделиться моделью с друзьями или создать резервную копию моделей.
+         Для загрузки модели необходимо скопировать файл \"DBmodelFile.xml\" в папку \Downloads и нажать \"Меню->Открыть модели\"</item>
+        <item >Режим редактирования моделей</item>
+        <item >Режим просмотра моделей</item>
+        <item >Архив моделей</item>
+        <item >Создание новой модели</item>
+        <item >Перемещение моделей в архив</item>
+        <item >Перемещение моделей из архива в режим редактировании</item>
+        <item >Сортировка по дате</item>
+        <item >Сортировка по имени</item>
+        <item >Сортировка по типу модели</item>
+    </string-array>
+
+    <string name="str_link">Гиперссылки</string>
+
+
+
+    <string-array name="test_trenings_ru_Association">
+        <item >Name TEST</item>
+        <item >Ассоциация-Диссоциация</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При ассоциированном восприятии:</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Ситуация воспринимается отстранённо</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Эмоциональная включённость в ситуацию</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Наблюдение за ситуацией "со стороны"</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Ситуация переживается "изнутри"</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Диссоциация даёт возможность:</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Оценить ситуацию с чужой точки зрения</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Более взвешенно оценить ситуацию</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Уменьшить эмоциональную включённость</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Сильнее включиться в ситуацию</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Какие фразы говорят об диссоциированном восприятии ситуации:</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Я встал на его точку зрения</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Я посмотрел на это со стороны</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Я видел это как на экране телевизора</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Я видел себя его глазами</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Я встал на его место</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При диссоциированном восприятии текущей ситуации:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >визуальное воспоминание и мета-ощущение</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >визуальное воспоминание, тактильные и внутренние ощущения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >визуальное конструирование, тактильные и внутренние ощущения</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >визуальное конструирование и мета-ощущения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Если человек говорит о себе в 3-ем лице, то это скорее всего:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не сообщает ни об ассоциации, ни об диссоциации</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >диссоциация</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >ассоциация</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Если Вы отстраннённо вспоминаете ситуацию без Вашего участия, то это скорее всего:</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >ни ассоциация, ни диссоциация</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >ассоциация</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >диссоциация</item>
+    </string-array>
+
+
+    <string-array name="test_trenings_ru_Anchor">
+        <item >Name TEST</item>
+        <item >Якоря</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Якорь(в НЛП) это:</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Условный рефлекс</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Гипнотическая речевая команда</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Навык, образующийся в результате положительного подкрепления</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Связь стимул-реакция</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Навык, образующийся в результате отрицательного подкрепления</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Внутренняя программа, выполняющаяся по команде снаружи</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Якорь образуется в результате:</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Любого достаточно интенсивного переживания</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Внезапного разрушения уже существующих связей</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Положительного подкрепления стимула</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Многократного повторения состояния</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Совмещения стимула и пика состояния</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Отрицательного подкрепления стимула</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Порядок установки якоря:</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Доступ к состоянию - якорение - прерывание состояния</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Прерывание состояния - якорение - подкрепление</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Вызов состояния - подкрепление - якорение</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Доступ к состоянию - прерывание состояния - якорение</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Вызов состояния - усиление состояния - прерывание состояния</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Что наиболее важно при воспроизведении якоря?</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Интенсивность состояния</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Нестандартность стимула в данном контексте</item>
+        <item >CHECKBOX</item>	<item >YES</item>	<item >Точность воспроизведения стимула</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Прерывание предыдущего состояния</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Максимум состояния</item>
+        <item >CHECKBOX</item>	<item >NONE</item>	<item >Калибровка состояния</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Может ли якорь, установленный одним человеком, запустить другой человек?</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Нет</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Да</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При наложении якорей:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Несколько состояний объединяются в одно новое</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Человек получает быстрый доступ к состояниям, которые были "наложены" друг на друга</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Более сильное состояние поглащает более слабое</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Происходит уничтожение противоположных состояний</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Для наложения якорей надо:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Одновременно запустить несколько якорей</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Прервать состояние и быстро запустить следующее</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Использовать различные стимулы для якорения одного и того же состояния</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Использовать один и тот же стимул для якорения различных состояний</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Одновременно вызвать несколько состояний и установить якорь</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При интеграции двух якорей одного знака:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Более интенсивное состояние поглощает более слабое</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Получаеться некое третье состояние</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Ничего не происходит</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Уничтожаются оба якоря</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Для коллапса якорей надо:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Заякорить два противоположных состояний на один стимул</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Одновременно запустить два одинаковых по знаку якоря</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Одновременно запустить два якоря противоположных по знаку, но приблизительно равных по "силе"</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Сначало запустить одно состояние, прервать его, запустить второе состояние</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >В результате коллапса якорей:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Человек получает быстрый доступ к обоим состояниям</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Более сильное состояние поглащает более слабое</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Задействование стимула случайным образом вызывает любое из состояний</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Разрушается связь стимул-реакция для обоих якорей</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Образуется некое третье состояние</item>
+
+    </string-array>
+
+
+    <string-array name="test_trenings_ru_Motivations">
+        <item >Name TEST</item>
+        <item >Мотивация приближения-избегания (К-ОТ)</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Решением проблем мотивируются люди с преимущественно:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивацией избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивацией приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Вчера я засиделся допоздна на работе, - является признаком:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Я сторонюсь сложных ситуаций, - является признаком:</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Наклон вперёд при разговоре характерен при:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Более энергичные жесты характерны при:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Я должен много работать, -является признаком:</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Сбор информации до начала действия характерен при преимущественной</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Я добиваюсь чего хочу, -является признаком:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При мотивации приближения наиболее мотивирующей будет фраза:</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >Если вы хотите получить лучшее образование, поступайте в наш университет</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Поступайте в наш университет, если не хотите некачественного образования</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Поступайте в наш университет</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >Если не хотите попасть в армию, поступайте в наш университет</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Возможны сильные эмоциональные реакции и затруднения в стрессовой ситуации при преимущественной:</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Я поменял работу, так как на старую было долго добираться, -является признаком</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Лучше поддерживают движение в заданном направлении люди с преимущественной:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Визуализация более характерна при:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Фраза: -Я купил новый монитор, так как хотел более качественную картинку, -является признаком:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации приближения</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Принятие решения, основанное не сложившейся ситуации, более характерно при:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >Более низкий уровень мыщечного тонуса характерен при:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >мотивации приближения</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >не связано с мотивацией приближения-избегания</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >мотивации избегания</item>
+
+        <item >STEP</item>
+        <item >TEXT</item>							<item >При мотивации избегания наиболее мотивирующей будет фраза:</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >-Будете хорошо работать - повысим зарплату</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >-Работайте хорошо</item>
+        <item >RADIOBOX</item>	<item >NONE</item>	<item >-Работайте хорошо, и всё у вас получится</item>
+        <item >RADIOBOX</item>	<item >YES</item>	<item >-Будете плохо работать - понизим зарплату</item>
+    </string-array>
+
+
+    <string-array name="test_Representational_Systems">
+    </string-array>
+
+
+</resources>
