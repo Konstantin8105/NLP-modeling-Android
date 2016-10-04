@@ -11,6 +11,8 @@ import com.modelingbrain.home.model.ModelID;
 
 public class StageFragmentView extends StageFragment {
 
+    //TODO - special view  for rules
+
     @Override
     protected void createInterface() {
         createElement(getResources().getString(R.string.model_name), QA.QUESTION);
