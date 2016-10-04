@@ -224,18 +224,11 @@ public class ContentManagerModel {
             Collections.sort(result, new Comparator<Model>() {
                 @Override
                 public int compare(Model lhs, Model rhs) {
-                    return lhs.getName().compareTo(rhs.getName());
+                    if (lhs.getName().compareTo(rhs.getName()) != 0)
+                        return lhs.getName().compareTo(rhs.getName());
+                    return lhs.getModelType().convert() - rhs.getModelType().convert();
                 }
             });
-            //todo wrong second sorting
-//            Collections.sort(result, new Comparator<Model>() {
-//                @Override
-//                public int compare(Model lhs, Model rhs) {
-//                    if (lhs.getName().compareTo(rhs.getName()) == 0)
-//                        return 0;
-//                    return rhs.getModelType().convert() - lhs.getModelType().convert();
-//                }
-//            });
         }
         return convert(context, result);
     }
@@ -246,28 +239,13 @@ public class ContentManagerModel {
             Collections.sort(result, new Comparator<Model>() {
                 @Override
                 public int compare(Model lhs, Model rhs) {
-                    return (lhs.getModelType().convert() - rhs.getModelType().convert());
+                    if ((lhs.getModelType().convert() - rhs.getModelType().convert()) != 0)
+                        return (lhs.getModelType().convert() - rhs.getModelType().convert());
+                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) != 0)
+                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
+                    return (rhs.getName().compareTo(lhs.getName()));
                 }
             });
-            //todo wrong second sorting
-//            Collections.sort(result, new Comparator<Model>() {
-//                @Override
-//                public int compare(Model lhs, Model rhs) {
-//                    if (lhs.getModelType() != rhs.getModelType())
-//                        return 0;
-//                    return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-//                }
-//            });
-//            Collections.sort(result, new Comparator<Model>() {
-//                @Override
-//                public int compare(Model lhs, Model rhs) {
-//                    if (lhs.getModelType() != rhs.getModelType())
-//                        return 0;
-//                    if (lhs.getModelID().getParameter() != rhs.getModelID().getParameter())
-//                        return 0;
-//                    return (rhs.getName().compareTo(lhs.getName()));
-//                }
-//            });
         }
         return convert(context, result);
     }
