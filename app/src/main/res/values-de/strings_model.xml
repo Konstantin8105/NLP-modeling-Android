@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- RUSSIAN VERSION -->
+    <!-- TODO  check -->
+
+    <!-- DE VERSION -->
     <string name="model_name">Name des Modells:</string>
 
     <string name="result_of_modeling">Die Ergebnisse der Simulation</string>
@@ -61,7 +63,7 @@
         <item >10. Strategie Realität\nWir appellieren an die Geschichte glauben oder seiner inneren Vorstellung</item>
         <item >11. Gegenbeispiel\nWir suchen die Ausnahme von der Regel</item>
         <item >12. Hierarchie der Kriterien\nWir bieten eine wichtigere Ziel</item>
-        <item >13. Anwendung an sich selbst\nRegel, die im Verhältnis zu anderen Menschen, muss arbeiten und gegen den Autor überzeugungen. Und und an sich glauben</item>
+        <item >13. Anwendung an sich selbst\nRegel, die im Verhältnis zu anderen Menschen, muss arbeiten und gegen den Autor überzeugungen. Und an sich glauben</item>
         <item >14. Metafrejm\nWir schaffen die überzeugungen über überzeugungen</item>
     </string-array>
 
