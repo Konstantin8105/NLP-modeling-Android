@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
 
     <string name="navigation_drawer_other">Остальное</string>
 
@@ -10,22 +10,22 @@
     <string name="detail_mode_read_only">Режим чтения</string>
     <string name="detail_mode_write_mde">Режим редактирования</string>
 
-    <plurals name="remove_models" tools:ignore="MissingQuantity">
+    <plurals name="remove_models">
         <item quantity="one">Удалено %d модель</item>
         <item quantity="other">Удалено %d моделей</item>
     </plurals>
 
-    <plurals name="archived_models" tools:ignore="MissingQuantity">
+    <plurals name="archived_models">
         <item quantity="one">Переместить в архив %d модель</item>
         <item quantity="other">Переместить в архив %d моделей</item>
     </plurals>
 
-    <plurals name="normaled_models" tools:ignore="MissingQuantity">
+    <plurals name="normaled_models">
         <item quantity="one">Перемещений в рабочую папку %d модель</item>
         <item quantity="other">Перемещений в рабочую папку %d моделей</item>
     </plurals>
 
-    <plurals name="share_models" tools:ignore="MissingQuantity">
+    <plurals name="share_models">
         <item quantity="one">Отправить %d модель</item>
         <item quantity="other">Отправить %d моделей</item>
     </plurals>
@@ -41,7 +41,7 @@
     <string name="task_filename">Файл:</string>
 
 
-    <plurals name="task_amount_models" tools:ignore="MissingQuantity">
+    <plurals name="task_amount_models">
         <item quantity="one">Поиск %d модель в файле</item>
         <item quantity="other">Поиск %d моделей в файле</item>
     </plurals>
@@ -51,12 +51,12 @@
     <string name="task_find_same_in_file">Поиск одинаковых моделей в файле</string>
     <string name="task_find_same_in_db">Поиск одинаковых моделей в файле и базой данных</string>
 
-    <plurals name="task_unique_models" tools:ignore="MissingQuantity">
+    <plurals name="task_unique_models">
         <item quantity="one">Уникальная %2d модель</item>
         <item quantity="other">Уникальных %2d моделей</item>
     </plurals>
 
-    <plurals name="task_amount_models_add" tools:ignore="MissingQuantity">
+    <plurals name="task_amount_models_add">
         <item quantity="one">%2d модель будет добавлена в базу данных</item>
         <item quantity="other">%2d моделей будет добавлены в базу данных</item>
     </plurals>

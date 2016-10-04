@@ -35,15 +35,6 @@
     <string name="about_program">Über das Programm</string>
     <string name="share_all">Teilen Sie allen Modellen</string>
 
-    <string name="result_of_modeling">Die Ergebnisse der Simulation</string>
-    <string name="name_of_model_">Name des Modells: </string>
-
-
-    <string name="name_model">Modell</string>
-    <string name="name_strategy">Strategie(Technik)</string>
-    <string name="name_dark">Kampf-Strategie(Technik)</string>
-    <string name="name_other">Ergänzung</string>
-
     <string name="you_delete">Sie löschen: </string>
     <string name="delete_element"> Element</string>
     <string name="will_create">Abschnitt in der Entwicklungsphase</string>
