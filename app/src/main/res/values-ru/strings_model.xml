@@ -2,10 +2,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- RUSSIAN VERSION -->
-    <string name="model_name">Имя:</string>
+    <string name="model_name">Имя модели:</string>
 
     <string name="result_of_modeling">Результаты моделирования</string>
-    <string name="name_of_model_">Имя модели: </string>
+    <string name="name_of_model_">Имя модели:</string>
 
     <string name="name_model">Модель</string>
     <string name="name_strategy">Стратегия</string>
@@ -31,304 +31,365 @@
     </string-array>
 
     <string-array name="str_Left_SMART">
-                 <item>Business model specification of goals. SMART</item>
-                 <item>S - Specific.\nThe first criterion stresses the need for a specific goal rather than a more general one. This means the goal is clear and unambiguous; without vagaries and platitudes</item>
-                 <item>M - Measurable.\nThe second criterion stresses the need for concrete criteria for measuring progress toward the attainment of the goal. The thought behind this is that if a goal is not measurable, it is not possible to know whether a team is making progress toward successful completion</item>
-                 <item>A - Attainable.\nThe third criterion stresses the importance of goals that are realistic and attainable. While an attainable goal may stretch a team in order to achieve it, the goal is not extreme. That is, the goals are neither out of reach nor below standard performance, as these may be considered meaningless</item>
-                 <item>R - Relevant.\nThe fourth criterion stresses the importance of choosing goals that matter</item>
-                 <item>T - Time-bound.\nThe fifth criterion stresses the importance of grounding goals within a time frame, giving them a target date. A commitment to a deadline helps a team focus their efforts on completion of the goal on or before the due date</item>
-             </string-array>
+        <item >Бизнес-модель спецификации цели SMART</item>
+        <item >S - Конкретный.\nОбъясняется, что именно необходимо достигнуть</item>
+        <item >M - Измеримый.\nОбъясняется в чем будет измеряться результат</item>
+        <item >A - Достижимый.\nОбъясняется за счёт чего планируется достигнуть цели</item>
+        <item >R - Актуальный.\nОпределение истинности цели</item>
+        <item >T - Ограниченный во времени.\nОпределение временного триггера/промежутка по наступлению/окончанию, которого должна быть достигнута цель</item>
+    </string-array>
 
     <string-array name="str_Left_TOTE">
-                 <item>Model T.O.T.E.</item>
-                 <item>T1 - Test 1.\nTest to obtain some representation of the problem state</item>
-                 <item>O  - Operate.\nOperate intervene in some way</item>
-                 <item>T2 - Test 2.\nTest again to see if the desired result has been achieved. If it has not, loop back to operate. Compare T1 (desired) with T2 (current)</item>
-                 <item>E  - Exit.\nExit - problem solved. T1 = T2</item>
-             </string-array>
+        <item >Модель TOTE</item>
+        <item >Т1 - Тест 1.(Триггер, "Спусковой крючок")\nТочка задания цели. Здесь человек определяет, чего он хочет достигнуть (цель), как он узнает о достижении (критерии достижения цели), мотивирует себя на действие, когда он начнёт достигать цель (триггер запуска стратегии)</item>
+        <item >О - Операции.\nДвижение к цели</item>
+        <item >Т2 - Тест 2.\nПроверка \"Получилось-Не получилось\". Сравнение Т1(желаемого) с Т2(текущим)</item>
+        <item >E - Выход.\nТочка выбора. Если T1= T2 то тут всё просто – процесс завершается</item>
+    </string-array>
 
     <string-array name="str_Left_TricksOfLanguage">
-                <item>Sleight of Mouth</item>
-                <item>1. Intention:\nWhat could be the positive intention?</item>
-                <item>2. Redefine:\nUse words that are similar but may infer something different. e.g. replace “irresponsible” with “careless” and “lay-offs” with “unable to adjust”</item>
-                <item>3. Consequences:\nFocus a consequence that leads to challenging the belief</item>
-                <item>4. Chunk down:\nLook at a specific element that challenges the belief.</item>
-                <item>5. Chunk Up:\nGeneralize in order to change the relationship defined by the belief.</item>
-                <item>6. Analogy:\nUse an analogy or metaphor that challenges the generalization defined by the belief.</item>
-                <item>7. Change Frame Size:\nRe-evaluate the implication of the belief in the context of a longer (or shorter) time frame, a larger number of people (or from an individual point of view) or a bigger or smaller perspective</item>
-                <item>8. Another Outcome:\nPropose a different outcome that challenges the relevancy of the belief.</item>
-                <item>9. Model of the World:\nLook at the belief from a different perspective (model of the world)</item>
-                <item>10. Reality Strategy:\nRe-assess the belief based on the fact that beliefs are based on specific perceptions</item>
-                <item>11. Another Outcome:\nPropose a different outcome that challenges the relevancy of the belief</item>
-                <item>12. Hierarchy of Criteria:\nRe-assess the belief based on a more important criterion</item>
-                <item>13. Apply to Self:\nUse key aspects of the belief to challenge the belief</item>
-                <item>14. Meta Frame:\nChallenge the basis for the belief. E.g. formulate a belief as to the origin of the belief</item>
-            </string-array>
+        <item >Фокусы языка</item>
+        <item >1. Намерение\nИщем намерение убеждения</item>
+        <item >2. Переопределение\nДелаем рефрейминг смысла одного из слов.</item>
+        <item >3. Последствия\nРассматривается последствия использования данного убеждения</item>
+        <item >4. Разделение\nДробим элементы убеждения на части, составные элементы</item>
+        <item >5. Объединение\nОбобщение части убеждения</item>
+        <item >6. Аналогия\nПоиск аналогии, которая придаст убеждению другой смысл</item>
+        <item >7. Изменение размера фрейма\nМеняем рассматриваемую продолжительность времени, количество людей, размер территории и т.д. таким образом, чтобы убеждение сменило смысл или стало абсурдным</item>
+        <item >8. Другой результат\nСмещение фокуса внимания на другой результат.</item>
+        <item >9. Модель мира\nПредлагаем «правильное» убеждение на замену, ссылаясь на авторитетов</item>
+        <item >10. Стратегия реальности\nОбращаемся к истории создания убеждения или его внутреннему представлению</item>
+        <item >11. Противоположный пример\nИщем исключение из правил</item>
+        <item >12. Иерархия критериев\nПредлагаем более важную цель</item>
+        <item >13. Применение к себе\nПравило, применяемое по отношению к другим людям, должно работать и по отношению к автору убеждения. А так же и к самому убеждению</item>
+        <item >14. Метафрейм\nСоздаём убеждения относительно убеждения</item>
+    </string-array>
 
     <string-array name="str_Left_MiltonModel">
-            </string-array>
+        <item >Милтон-модель</item>
+        <item >Прямые внушения\nВид внушение характеризующее краткость, чаще одно слово, глагол(\"Спать\",\"Делай работу\")</item>
+        <item >Сложное составное внушение\nВид внушение оформленный в виде причинно-следственных связей и/или комплексных эквивалентов</item>
+        <item >Последовательность принятия</item>
+        <item >Пресуппозиция</item>
+        <item >Трюизм.\nБанальная истина, утверждение с которым человек полностью согласен.В НЛП трюизмы используются для подстройки, утилизации возражений и косвенных внушений. При этом трюизм практически никогда не распознаётся, как внушение. Что удобно.</item>
+        <item >Негативные парадоксальные внушения</item>
+        <item >Двойная связка, или выбор без выбора\nЭто предложение иллюзорного выбора(выбор без выбора), обе части которого адресованы сознательному поведению, как выбор между нужным и очень нужным вам.</item>
+        <item >Метафора\nИстория, рассказ, байка, анекдот</item>
+        <item >Контекстуальное внушение</item>
+        <item >Мобилизующие внушения\nВид внушения предназначенный на получение определенного действия</item>
+        <item >Внушения, связанные со временем\nВид внушения которое необходимо выполнить за определенный промежуток или к конкретному времени</item>
+        <item >Внушение цитированием\nВид внушения скрытая как фраза другого человека(объекта). (\"Соседи мне сказали *не будь успешным*\", \"У моего друга на футболка написано *Будь моей*\")</item>
+        <item >Тройная спираль\nОсобая структура трех метафор, рассказанных по следующей структуре:\nНачало метафоры 1\nНачало метафоры 2\nМетафора 3 или внушение\nОкончание метафоры 2\nОкончание метафоры 1</item>
+        <item >Парадоксы\n1) Х, не Х\n2) Использование антонимов\n3) Использование двух синонимов\n4) На основании Метапрограмм\n5) Искажение направление во времени, пространстве</item>
+        <item >Постгипнотическое внушение\nВид внушения, который необходимо выполнить после выхода из транса (Позвонить, написать, открыть и закрыть зонтик в центре города без причины, и т.д.)</item>
+    </string-array>
 
     <string-array name="str_Left_AIDA">
-                 <item>Marketing business model AIDA</item>
-                 <item>A - Attention (Awareness): attract the attention of the customer</item>
-                 <item>I - Interest: raise customer interest by focusing on and demonstrating advantages and benefits (instead of focusing on features, as in traditional advertising)</item>
-                 <item>D - Desire: convince customers that they want and desire the product or service and that it will satisfy their needs</item>
-                 <item>A - Action: lead customers towards taking action and/or purchasing</item>
-             </string-array>
+        <item >Маркетинговая бизнес-модель AIDA</item>
+        <item >A — Attention (внимание)\nПривлечь внимание клиента</item>
+        <item >I — Interest (интерес)\nПовышение интереса клиента, сосредоточив внимание на демонстрации преимуществ и выгод</item>
+        <item >D — Desire (желание)\nУбедить клиента, что он хочет и желает продукт (услугу), и что она будет удовлетворять его потребности</item>
+        <item >A — Action (действие)\nПривести клиента к принятию мер и/или покупки</item>
+    </string-array>
 
     <string-array name="str_Left_Eye">
-                 <item>Eye movement strategies</item>
-                 <item>Eye movement to the left or right for many people seems to indicate if a memory was recalled or constructed.</item>
-             </string-array>
+        <item >Глазо-двигательные стратегии</item>
+        <item >Ключи глазного доступа показывают, в какой репрезентативной системе в данный момент человек обрабатывает информацию.\nГлаза будут двигаться только в том случае, если человеку нужно найти информацию.\nТо есть, если нужная информация находится в «оперативной памяти», то движения глаз не будет"</item>
+    </string-array>
 
     <string-array name="str_Left_Polar">
-                 <item>Analysis strategy quadrants (polarity)</item>
-                 <item>Axe +X</item>
-                 <item>Axe -X</item>
-                 <item>Axe +Y</item>
-                 <item>Axe -Y</item>
-                 <item>Quadrant (+X, +Y)</item>
-                 <item>Quadrant (-X, +Y)</item>
-                 <item>Quadrant (+X, -Y)</item>
-                 <item>Quadrant (-X, -Y)</item>
-             </string-array>
+        <item >Стратегия анализа квадрантами (полярностями)</item>
+        <item >Ось +X</item>
+        <item >Ось -X</item>
+        <item >Ось +Y</item>
+        <item >Ось -Y</item>
+        <item >Квадрант (+X,+Y)</item>
+        <item >Квадрант (-X,+Y)</item>
+        <item >Квадрант (+X,-Y)</item>
+        <item >Квадрант (-X,-Y)</item>
+    </string-array>
 
     <string-array name="str_Left_VAK">
-                 <item>Representational systems</item>
-                 <item>Visual thoughts(V) - sight, mental imagery, spatial awareness</item>
-                 <item>Auditory (or linguistic) thoughts(A) - sound, speech, dialog, white noise</item>
-                 <item>Kinesthetic (or proprioceptive) sense(K) - somatic feelings in the body, temperature, pressure, and also emotion</item>
-             </string-array>
+        <item >Репрезентативные системы</item>
+        <item >Визуальная (В) - обработка зрительной информации</item>
+        <item >Аудиальная или Аудиально-тональная (А или Ат) - звуки, тон голоса</item>
+        <item >Кинестетическая (К) - обработка чувственной информации (тактильные ощущения, внутренние, вкус, запах)</item>
+    </string-array>
 
-    <string-array name="str_Left_FrameOfProposal" tools:keep="@array/str_Left_FrameOfProposal">
-             </string-array>
-
+    <string-array name="str_Left_FrameOfProposal">
+        <item >Формат цели</item>
+        <item >Шаг 1.\nЦель формулировка позитивная</item>
+        <item >Шаг 2.\nЦель находится под контролем</item>
+        <item >Шаг 3.\nЦель проверяема в сенсорном опыте</item>
+        <item >Шаг 4.\nЦель экологична и сохраняет первоначальные позитивные побочные результаты</item>
+        <item >Шаг 5.\nЦель находится в нужном контексте</item>
+        <item >Шаг 6.\nЦель зависит от доступа к реcурсам</item>
+        <item >Шаг 7.\nИзвестны первые шаги для достижения цели</item>
+    </string-array>
 
     <string-array name="str_Left_ElementsOfAnchors">
-            </string-array>
+        <item >Элементы якорения</item>
+        <item >1. Используйте поведенческие аспекты, выражения лица и тональное соответствие, чтобы вызвать желаемый отклик</item>
+        <item >2. Убедитесь, что клиент вспомнил одно событие, а не серию происшествий</item>
+        <item >3. Убедитесь, что клиент вновь переживает это событие, а не думает о нем. Другими словами, клиент должен быть ассоциирован со своим опытом, как будто бы он переживает его сейчас. Удостоверьтесь в наличии физиологических сигналов ассоциированного состояния. Также наблюдайте за движениями глаз. Если вы не уверены, спросите клиента</item>
+        <item >4. Устанавливайте якорь на вхождение в ситуацию и развитие. Не устанавливайте якорь, когда клиент выходит из состояния переживания</item>
+        <item >5. Чем более уникален устанавливаемый якорь, тем лучше</item>
+        <item >6. Вы должны уметь в точности повторить якорь: та же продолжительность воздействия, то же давление, тот же голос, жест и т. д.</item>
+        <item >7. Если при проверке якоря вы не обнаружили ожидаемого отклика, то:\n• либо клиент не переживал событие как актуальное\n• либо не была заякорена наиболее интенсивная часть переживаемого опыта\n• либо нужно подкрепить якорь дополнительными событиями того же или похожего переживания</item>
+    </string-array>
+
 
     <string-array name="str_Left_UoltDisney" tools:keep="@array/str_Left_UoltDisney">
              </string-array>
 
+
     <string-array name="str_Left_Note">
-                 <item>Note</item>
-                 <item>Note</item>
-             </string-array>
+        <item >Заметка</item>
+        <item >Заметка</item>
+    </string-array>
 
 
     <!--
     	PROFILE
     -->
 
-
     <string-array name="str_Left_PROFILE2">
-                 <item>Profile</item>
-                 <item>The preferable representational system(s):</item>
-                 <item>The preferable submodality:</item>
-                 <item>Strategy:</item>
-                 <item>The preferable position of Walt Disney:</item>
-                 <item>The preferable meta-program (meta-programs):</item>
-                 <item>Convincible:</item>
-                 <item>Valuables (knowledge, skills): </item>
-                 <item>Additional Notes:</item>
-             </string-array>
+        <item >Досье</item>
+        <item >Предпочитаемая репрезентативная система (системы), модальность:</item>
+        <item >Предпочитаемые субмодальности:</item>
+        <item >Стратегии:</item>
+        <item >Предпочитаемые позиции Уолта Диснея:</item>
+        <item >Предпочитаемая метапрограмма (метапрограммы):</item>
+        <item >Убедитель:</item>
+        <item >Ценности(знания, умения):</item>
+        <item >Дополнительные примечания:</item>
+    </string-array>
 
     <string-array name="str_Left_PROFILE3">
-                 <item>Profile</item>
-                 <item>The preferable representational system(s):</item>
-                 <item>The preferable submodality:</item>
-                 <item>Strategy:</item>
-                 <item>The preferable position of Walt Disney:</item>
-                 <item>The preferable meta-program (meta-programs):</item>
-                 <item>Convincible:</item>
-                 <item>Valuables (knowledge, skills):</item>
-        <item>Sleight of mouth:</item>
-        <item>Perceptual position:</item>
-                 <item>Additional Notes:</item>
-             </string-array>
-
-
-    <string-array name="str_Position" tools:keep="@array/str_Position">
-        <item >1st (Self)</item>
-        <item >2nd (Other)</item>
-        <item >3rd (Observer)</item>
+        <item >Досье</item>
+        <item >Предпочитаемая репрезентативная система (системы), модальность:</item>
+        <item >Предпочитаемые субмодальности:</item>
+        <item >Стратегии:</item>
+        <item >Предпочитаемые позиции Уолта Диснея:</item>
+        <item >Предпочитаемая метапрограмма (метапрограммы):</item>
+        <item >Убедитель:</item>
+        <item >Ценности(знания, умения):</item>
+        <item >Фокусы языка:</item>
+        <item >Позиция восприятия:</item>
+        <item >Дополнительные примечания:</item>
     </string-array>
 
-    <string-array name="str_TricksOfLanguage" tools:keep="@array/str_TricksOfLanguage">
-                <item>Intention</item>
-                <item>Redefine</item>
-                <item>Consequences</item>
-                <item>Chunk down</item>
-                <item>Chunk Up</item>
-                <item>Analogy</item>
-                <item>Change Frame Size</item>
-                <item>Another Outcome</item>
-                <item>Model of the World</item>
-                <item>Reality Strategy</item>
-                <item>Another Outcome</item>
-                <item>Hierarchy of Criteria</item>
-                <item>Apply to Self</item>
-                <item>Meta Frame</item>
+    <string-array name="str_Position">
+        <item >1ая позиция( Я )</item>
+        <item >2ая позиция(Они)</item>
+        <item >3ая позиция(Взгляд со стороны)</item>
     </string-array>
 
-    <string-array name="str_REP_SYSTEM" tools:keep="@array/str_REP_SYSTEM">
-                 <item>V - Visual</item>
-                 <item>A - Auditory</item>
-                 <item>K - Kinesthetic</item>
-             </string-array>
+    <string-array name="str_TricksOfLanguage">
+        <item >Намерение</item>
+        <item >Переопределение</item>
+        <item >Последствия</item>
+        <item >Разделение</item>
+        <item >Объединение</item>
+        <item >Аналогия</item>
+        <item >Изменение размера фрейма</item>
+        <item >Другой результат</item>
+        <item >Модель мира</item>
+        <item >Стратегия реальности</item>
+        <item >Противоположный пример</item>
+        <item >Иерархия критериев</item>
+        <item >Применение к себе</item>
+        <item >Метафрейм</item>
+    </string-array>
+
+    <string-array name="str_REP_SYSTEM">
+        <item >V - Визуальный</item>
+        <item >A - Аудиальный</item>
+        <item >K - Кинестетический</item>
+    </string-array>
 
     <string-array name="str_sub_REP_SYSTEM" tools:keep="@array/str_sub_REP_SYSTEM">
-                <!-- Visual -->
-                <item>Color (V)</item>
-                <item>Black and White (V)</item>
-                <item>Brightness (V)</item>
-                <item>Contrast (V)</item>
-                <item>Focus (V)</item>
-                <item>Background (V)</item>
-                <item>The detail (V)</item>
-                <item>Smooth (V)</item>
-                <item>Size (V)</item>
-                <item>Distance (V)</item>
-                <item>Form (V)</item>
-                <item>Borders (V)</item>
-                <item>Position (V)</item>
-                <item>Movement - Inside the Image (V)</item>
-                <item>Movement - Outside of the image (V)</item>
-                <item>Speed ​​(V)</item>
-                <item>Orientation/angle of view (V)</item>
-                <item>Associates-dissociated (V)</item>
-                <item>Perspective/position (V)</item>
-                <item>Proportions (V)</item>
-                <item>Uniqueness, Multiplicity (V)</item>
+                <!-- Visual --> 
+        <item >Цветной (V)</item>
+        <item >Черно-белый (V)</item>
+        <item >Яркость (V)</item>
+        <item >Контраст (V)</item>
+        <item >Фокус (V)</item>
+        <item >Фон (V)</item>
+        <item >Детальность (V)</item>
+        <item >Размытость (V)</item>
+        <item >Размер (V)</item>
+        <item >Расстояние (V)</item>
+        <item >Форма (V)</item>
+        <item >Границы (V)</item>
+        <item >Положение (V)</item>
+        <item >Движение-Внутри образа (V)</item>
+        <item >Движение-Вне образа (V)</item>
+        <item >Скорость движения (V)</item>
+        <item >Ориентация/Угол зрения (V)</item>
+        <item >Ассоциирован-Диссоциирован (V)</item>
+        <item >Перспектива/Позиция (V)</item>
+        <item >Пропорции (V)</item>
+        <item >Единственность-Множественность (V)</item>
                 <!-- Audial -->
-                <item>Position (A)</item>
-                <item>Direction (A)</item>
-                <item>Frequency (A)</item>
-                <item>High-frequency(A)</item>
-                <item>Mode (A)</item>
-                <item>Sounds/words (A)</item>
-                <item>Melody (A)</item>
-                <item>The variability of the voice modulation (A)</item>
-                <item>Volume (A)</item>
-                <item>Tempo (A)</item>
-                <item>Rhythm (A)</item>
-                <item>Duration (A)</item>
-                <item>Mono/Stereo (A)</item>
+        <item >Положение (A)</item>
+        <item >Направление (A)</item>
+        <item >Частота (A)</item>
+        <item >Высота (A)</item>
+        <item >Тональность (A)</item>
+        <item >Звуки/Слова (A)</item>
+        <item >Мелодия (A)</item>
+        <item >Изменяемость модуляции голоса (A)</item>
+        <item >Громкость (A)</item>
+        <item >Темп (A)</item>
+        <item >Ритм (A)</item>
+        <item >Длительность (A)</item>
+        <item >Моно/Стерео (A)</item>
                 <!-- Kinestetic -->
-                <item>Quality (K)</item>
-                <item>Size (K)</item>
-                <item>Form (K)</item>
-                <item>Concentration feeling inside (K)</item>
-                <item>Temperature (K)</item>
-                <item>Intensity (K)</item>
-                <item>Location (K)</item>
-                <item>Movement (K)</item>
-                <item>Direction (K)</item>
-                <item>Speed​​/Acceleration (K)</item>
-                <item>Texture (K)</item>
-                <item>Humidity (K)</item>
-                <item>Duration (K)</item>
-                <item>Weight (K)</item>
-            </string-array>
+        <item >Качество (K)</item>
+        <item >Размер (K)</item>
+        <item >Форма (K)</item>
+        <item >Концентрация внутри ощущения (K)</item>
+        <item >Температура (K)</item>
+        <item >Интенсивность (K)</item>
+        <item >Расположение (K)</item>
+        <item >Движение (K)</item>
+        <item >Направление (K)</item>
+        <item >Скорость/Ускорение (K)</item>
+        <item >Текстура (K)</item>
+        <item >Влажность (K)</item>
+        <item >Продолжительность (K)</item>
+        <item >Вес (K)</item>
+    </string-array>
 
-    <string-array name="str_dishey" tools:keep="@array/str_dishey">
-                 <item>Dreamer</item>
-                 <item>Realist</item>
-                 <item>Critic</item>
-             </string-array>
+    <string-array name="str_dishey">
+        <item >Мечтатель</item>
+        <item >Реалист</item>
+        <item >Критик</item>
+    </string-array>
 
-    <string-array name="str_MetaProgramm" tools:keep="@array/str_MetaProgramm">
-        <!-- Direction Filter -->
-                 <item>Motivation Towards</item>
-                 <item>Motivation Away</item>
-        <!-- Modal Operator Filter (Reason Filter) -->
-                 <item>Possibility</item>
-                 <item>Necessity</item>
-        <!-- Frame of Reference Filter -->
-                 <item>Internal Frame of Reference</item>
-                 <item>External Frame of Reference</item>
-                 <item>Balanced</item>
-                 <item>Internal with an External Check</item>
-                 <item>External with an Internal Check</item>
-        <!-- Convincer Representational Filter -->
-                 <item>See it</item>
-                 <item>Hear it</item>
-                 <item>Deal with them</item>
-                 <item>Read about it</item>
-        <!-- Convincer Demonstration Filter -->
-                 <item>Automatic</item>
-                 <item>Number of Times</item>
-                 <item>Period of Time</item>
-                 <item>Consistent</item>
-        <!-- Action Filter -->
-                 <item>Active</item>
-                 <item>Reflective</item>
-                 <item>Inactive</item>
-        <!-- The Work Preference Filter -->
-                 <item>Things</item>
-                 <item>Systems</item>
-                 <item>People</item>
-        <!-- Primary Interest Filter -->
-                 <item>People</item>
-                 <item>Place</item>
-                 <item>Things</item>
-                 <item>Activity</item>
-                 <item>Information</item>
-        <!-- Chunk Size Filter -->
-                 <item>Specific</item>
-                 <item>Global</item>
-                 <item>Specific to Global</item>
-                 <item>Global to Specific</item>
-        <!-- Relationship Filter (Matching/Mismatching) -->
-                 <item>Matcher</item>
-                 <item>Mismatcher</item>
-        <!-- Emotional Stress Filter -->
-                 <item>Dissociated</item>
-                 <item>Associated</item>
-                 <item>Choice</item>
-        <!-- Time Filter -->
-                 <item>Past</item>
-                 <item>Present</item>
-                 <item>Future</item>
-        <!-- Modal Operator Sequence -->
-                 <item>I can’t</item>
-                 <item>I should</item>
-                 <item>I have to</item>
-                 <item>I mustn’t</item>
-        <!-- Goal Filter -->
-                 <item>Perfection</item>
-                 <item>Optimization</item>
-             </string-array>
+    <string-array name="str_MetaProgramm">
 
-    <string-array name="str_MetaProgramm_ubeditel" tools:keep="@array/str_MetaProgramm_ubeditel">
-                 <item>Amplitude</item>
-                 <item>Frequency</item>
-                 <item>Time</item>
-             </string-array>
+        <!-- Врата сортировки -->
+        <item >Места и вещи</item>
+        <item >Время и Действие</item>
+        <item >Процесс</item>
+        <item >Ценности и критерии</item>
+        <item >Люди</item>
+
+        <!-- Стиль обработки информации -->
+        <item >Вижу</item>
+        <item >Чувствую</item>
+        <item >Думаю</item>
+        <item >Действую</item>
+
+        <!-- Мотивация -->
+        <item >К</item>
+        <item >ОТ</item>
+
+        <!-- Референция -->
+        <item >Внутренняя референция</item>
+        <item >Внешняя референция</item>
+
+        <!-- Уровень обобщения -->
+        <item >Общее</item>
+        <item >Детали</item>
+
+        <!-- Поиск или следование -->
+        <item >Возможности</item>
+        <item >Процедуры</item>
+
+        <!-- Сравнение -->
+        <item >Сходство</item>
+        <item >Сходство с различием</item>
+        <item >Различие</item>
+
+        <!-- Отношение к действию -->
+        <item >Активный</item>
+        <item >Рефлексивный</item>
+
+        <!-- Референция по времени -->
+        <item >Прошлое</item>
+        <item >Настоящее</item>
+        <item >Будущее</item>
+
+        <!-- Отношение ко времени -->
+        <item >Включенное</item>
+        <item >Сквозное</item>
+
+        <!-- Стиль общения -->
+        <item >Сам</item>
+        <item >Другой</item>
+    </string-array>
+
+    <string-array name="str_MetaProgramm_ubeditel">
+        <item >Амплитуда</item>
+        <item >Количество раз</item>
+        <item >Время</item>
+    </string-array>
+
 
 
     <string-array name="str_Left_Strategy_VKDiss">
+        <item >Визуально-кинестетическая диссоциация</item>
+        <item >1. Создание мощного ресурсного якоря</item>
+        <item >2a. Диссоциация. 1-я ступень\nОператор предлагает Клиенту вспомнить 2 события (в виде слайдов на экране): одно до события, когда Клиент ещё был в ресурсе (черно-белый слайд) и после, когда он пришел в себя и уже был в ресурсе (цветной слайд)</item>
+        <item >2б. Диссоциация. 2-я ступень\nПредложите Клиенту мысленно встать позади себя, сидящего в кинотеатре и смотрящего на экран. Наблюдать можно и с последнего ряда кинотеатра, и из будки киномеханика</item>
+        <item >3. Просмотр фильма с нормальной скоростью\nНаходясь на 2-ой ступени диссоциации, Клиент просматривает с нормальной скоростью черно-белый фильм, начиная со Слайда №1 и заканчивая Слайдом №2, но при этом фокус его внимания смещается на то, что происходило вокруг, замечает детали и мелочи, которых он не заметил тогда, когда это случилось</item>
+        <item >4. Путешествие в прошлое\nКогда Клиент досмотрит фильм до цветного Слайда №2, предложите ему мысленно отправиться в прошлое - в то время, когда уже произошло это событие (то есть ассоциироваться со Слайдом №2). При этом отправляясь в прошлое, Клиент остается “самим собой настоящим” и готовится к общению с “самим собой из прошлого”</item>
+        <item >5. Возвращение\nКогда Клиент будет полностью уверен в выполнении своей задачи и поймет, что сможет спокойно оставить “себя более младшего” жить дальше самостоятельно, то он может попрощаться с ним и вернуться на 1-ю ступень диссоциации для проверки результатов своей работы</item>
+        <item >6. Интеграция\nНа этом шаге предложите Клиенту впустить “себя более младшего” в себя как одну из своих частей, как часть своего жизненного опыта, и насладиться ощущением обладания этой важной для него частью, которая теперь по-новому может относиться к прошлой ситуации</item>
+        <item >7. Проверка\nСпросите Клиента, что он теперь думает о прошлой ситуации и как он к ней относится, при этом калибруйте его физиологию</item>
+        <item >8. Подстройка к будущему\nПредложите Клиенту подумать о возможности возникновения в будущем подобной ситуации и выясните, как бы он хотел на нее реагировать. Добейтесь от Клиента точной сенсорной информации о “критериях осторожности”: как он будет понимать, когда ситуация безопасна, а когда стоит быть осторожным и аккуратным.</item>
     </string-array>
 
     <string-array name="str_Left_Strategy_ConflictParts">
+        <item >Договор частей</item>
+        <item >1. Формулировка противоречия\nСначала определите противоречие. Кто кому мешает.</item>
+        <item >2. Имя и намерение частей\nДайте каждой части имя</item>
+        <item >3. Соглашение\nСпросите последовательно у частей</item>
+        <item >4. Взятие обязательств\nВозможно вы не сразу получите согласие. Какая-то часть может не согласиться утвердить договор "навсегда", но будет согласна попробовать в течении месяца или недели. Постарайтесь учесть все возражения других частей</item>
+        <item >5. Экологическая проверка\nВыясните, есть ли другие части, которые имеют что-то против этого договора. Если да, то вернитесь на предыдущий шаг и переформулируйте договор так, чтобы учесть интересы и этих частей тоже</item>
+        <item >6. Проверка и привязка к будущему\nЕсли вас не устраивают изменения – вернитесь на четвёртый шаг и ещё раз проработайте возражения.</item>
     </string-array>
 
     <string-array name="str_Left_Strategy_XCP">
+        <item >Хорошо сформулированный результат</item>
+        <item >Цель должна быть позитивно сформулирована\nЦель должна определять, что вы хотите получить, а не то, от чего вы хотите избавиться. Один из признаков неправильной формулировки цели – наличие отрицания</item>
+        <item >Контролируется вами\nМы не можем контролировать вещи и других людей. Но можем воздействовать на них при помощи нашего поведения</item>
+        <item >Описывается сенсорным языком\nОчень важно, чтобы цель была описана конкретно, на уровне сенсорных представлений</item>
+        <item >Соответствует контексту\nПолезность того, что обычно является внутренней целью (состояния, способности, убеждения, паттерны поведения) очень сильно зависит от контекста</item>
+        <item >Имеет подходящий размер\nЕсли цель слишком большая – теряется мотивация на пути. Если ваша цель "Полностью овладеть английским языком" с очень жёсткими критериями, то даже долго и интенсивно занимаясь, вы не будете замечать приближения</item>
+        <item >Экологична\nУ любого действия есть свои последствия</item>
+        <item >Включает необходимые ресурсы\nОпределите ресурсы, нужные вам для достижения цели.\n- Какие ресурсы нужны вам для достижения цели?\n- Можете ли вы иметь к ним доступ?\nЕсли нет – сформулируйте доступ к ресурсам как цель.</item>
+        <item >Исследование препятствий\nИсследуйте, что может помешать вам на пути достижения этой цели\n- Что мешает вам начать достигать (достигнуть) цель прямо сейчас?\n- Какие препятствия могут встретиться на вашем пути?\n- Что вы можете сделать для преодоления этих препятствий?</item>
+        <item >Подстройка к будущему\nОпределите первые конкретные шаги, с которых в начнёте процесс достижения ваших целей.\nКакой будет первый шаг по достижению цели?</item>
     </string-array>
 
     <string-array name="str_Left_Strategy_Anchor">
+        <item >Якорение</item>
+        <item >0. Определите состояние, которое хотите заякорить</item>
+        <item >1. Вызовите это состояние</item>
+        <item >2. На пике состояния установите якорь</item>
+        <item >3. Прервите состояние</item>
+        <item >4. Проверьте, работает ли якорь</item>
     </string-array>
 
     <string-array name="str_Left_Three_Position">
+        <item >Модель трёхпозиционного описания</item>
+        <item >1-я позиция восприятия.\n«Я-сам», ассоциация в себя. Оцениваю ситуацию со своей точки зрения.</item>
+        <item >2-я позиция восприятия.\n«Я-другой», ассоциация в другого. «Встаю на место» другого человека, «смотрю его глазами».</item>
+        <item >3-я позиция восприятия.\n«Наблюдатель», диссоциация. Оцениваю ситуацию как квалифицированный в данном контексте наблюдатель.</item>
+        <item >4-я позиция восприятия.\n</item>
     </string-array>
+
 
     <string-array name="str_Left_Karpman">
-        <item >Karpman s Drama Triangle</item>
-        <item >Rescuer</item>
-        <item >Persecutor</item>
-        <item >Victim</item>
+        <item >Треугольник Карпмана</item>
+        <item >Роль «спасителя»</item>
+        <item >Роль «преследователя»</item>
+        <item >Роль «жертвы»</item>
     </string-array>
-
 
     <!-- NEW WORDS
     <string name=""></string>
@@ -357,15 +418,38 @@
     -->
 
     <string-array name="str_Left_Modeling_Gordon">
+        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <item >1. КРИТЕРИЙ\nКогда Вы __________, то что здесь ВАЖНО? Что Вы оцениваете? Что для Вас главное, когда Вы _____________? На что Вы обращаете внимание, когда ___________? Когда Вы ___________, что Вы оцениваете?</item>
+        <item >2. ОПРЕДЕЛЕНИЕ\nЧто Вы под КРИТЕРИЕМ понимаете? Как Вы узнаете, что Вы или кто-то другой соответствуете КРИТЕРИЮ? Как бы Вы описали КРИТЕРИЙ?</item>
+        <item >3. СВИДЕТЕЛЬСТВО\nЧто Вы видите/слышите/чувствуете, что позволяет Вам понять, что это есть? </item>
+        <item >4. ЗАПУСК П-С\nЧто должно быть правдой для того, чтобы КРИТЕРИЙ существовал? Почему КРИТЕРИЙ важен? Что делает КРИТЕРИЙ важным?</item>
+        <item >5. МОТИВИРОВАНИЕ П-С\nЕсли КРИТЕРИЙ удовлетворяется, к чему это приводит? К чему ведет существование КРИТЕРИЯ, или что КРИТЕРИЙ делает возможным?</item>
+        <item >6. ПОДДЕРЖИВАЮЩИЕ УБЕЖДЕНИЯ, ЕСЛИ ЕСТЬ</item>
+        <item >7. ПЕРВИЧНАЯ ОПЕРАЦИЯ\nЧто Вы обычно делаете, чтобы это отвечало КРИТЕРИЮ?</item>
+        <item >8. ПРОВЕРКА\nТо же, что и СВИДЕТЕЛЬСТВО.</item>
+        <item >9. ВТОРИЧНАЯ ОПЕРАЦИЯ\nЧто Вы делаете, когда ___________ недостаточно отвечает КРИТЕРИЮ?\nЧто Вы делаете, когда ___________ совсем не отвечает КРИТЕРИЮ?\nЧто Вы делаете, когда ___________ не может отвечать КРИТЕРИЮ?</item>
+        <item >10. ПОДДЕРЖАНИЕ ЭМОЦИИ.\nНа основе какого чувства Вы продолжаете действовать с целью найти соответствие КРИТЕРИЮ?</item>
+        <item >11. СИГНАЛЬНЫЕ ЭМОЦИИ, ЕСЛИ ЕСТЬ.</item>
+        <item >12. ВНЕШНЕЕ ПОВЕДЕНИЕ.\nЧто Вы делаете, когда Вы делаете ОПЕРАЦИЮ?</item>
     </string-array>
 
     <string-array name="str_Left_Modeling_Gordon_Short">
+        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <item >1. Критерий.\nЗа что? Что важно?</item>
+        <item >2. Комплексный эквивалент, содержание.\nЧто это значит?</item>
+        <item >3. VAKOG. Как ты об этом узнал?</item>
+        <item >4. Примечание</item>
     </string-array>
 
     <string-array name="str_Left_State">
+        <item >Трансляция состояния</item>
+        <item >Гуманистическое(соответствие)</item>
+        <item >Боевое(несоответствие, разрушение)</item>
     </string-array>
 
     <string-array name="str_Left_Rules">
+        <item >Правила</item>
+        <item >Список правил:</item>
     </string-array>
 
 

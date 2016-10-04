@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
     <string name="navigation_drawer_other">Other</string>
 
-    <string name="icon">Icon</string>
+    <string name="icon" translatable="false">Icon</string>
 
     <string name="action_sort">Sort</string>
     <string name="action_open_models">Open models</string>
@@ -15,10 +15,10 @@
     <string name="detail_mode_read_only">Read only</string>
     <string name="detail_mode_write_mde">Write</string>
 
-    <string name="title_activity_detail">DetailActivity</string>
-    <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_open">OpenActivity</string>
-    <string name="title_activity_save">SaveActivity</string>
+    <string name="title_activity_detail" translatable="false">DetailActivity</string>
+    <string name="title_activity_about" translatable="false">AboutActivity</string>
+    <string name="title_activity_open" translatable="false">OpenActivity</string>
+    <string name="title_activity_save" translatable="false">SaveActivity</string>
 
     <plurals name="remove_models">
         <item quantity="one">Remove %d model</item>

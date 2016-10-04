@@ -158,6 +158,7 @@ public class ContentManagerModel {
         if (modelID.isOldModel()) {
             ignore = true;
         }
+        Log.d(TAG, "modelID = " + modelID + " ... " + ignore);
         return ignore;
     }
 

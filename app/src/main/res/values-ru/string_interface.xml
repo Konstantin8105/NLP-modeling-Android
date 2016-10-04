@@ -11,12 +11,6 @@
     <string name="detail_mode_read_only">Режим чтения</string>
     <string name="detail_mode_write_mde">Режим редактирования</string>
 
-
-    <string name="title_activity_detail">DetailActivity</string>
-    <string name="title_activity_about">AboutActivity</string>
-    <string name="title_activity_open">OpenActivity</string>
-    <string name="title_activity_save">SaveActivity</string>
-
     <plurals name="remove_models" tools:ignore="MissingQuantity">
         <item quantity="one">Удалено %d модель</item>
         <item quantity="other">Удалено %d моделей</item>
