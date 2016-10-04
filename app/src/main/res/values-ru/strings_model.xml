@@ -13,22 +13,22 @@
     <string name="name_other">Остальное</string>
 
     <string-array name="str_Left_Science">
-                 <item>Scientific model</item>
-                 <item>Formulation of a question.\nThe question can refer to the explanation of a specific observation</item>
-                 <item>Hypothesis.\nAn hypothesis is a conjecture, based on the knowledge obtained while formulating the question, that may explain the observed behavior of a part of our universe. The hypothesis might be very specific</item>
-                 <item>Prediction.\nThis step involves determining the logical consequences of the hypothesis. One or more predictions are then selected for further testing. The less likely that the prediction would be correct simply by coincidence, the stronger evidence it would be if the prediction were fulfilled</item>
-                 <item>Testing.\nThis is an investigation of whether the real world behaves as predicted by the hypothesis. Scientists (and other people) test hypotheses by conducting experiments. The purpose of an experiment is to determine whether observations of the real world agree with or conflict with the predictions derived from an hypothesis. If they agree, confidence in the hypothesis increases; otherwise, it decreases</item>
-                 <item>Analysis.\nThis involves determining what the results of the experiment show and deciding on the next actions to take. The predictions of the hypothesis are compared to those of the null hypothesis, to determine which is better able to explain the data</item>
-             </string-array>
+        <item >Научная модель</item>
+        <item >НАБЛЮДЕНИЕ.\nНаблюдение фактов и измерение, количественное или качественное описание наблюдений</item>
+        <item >АНАЛИЗ.\nАнализ результатов наблюдения — их систематизация, вычленение значимого и второстепенного</item>
+        <item >ОБОБЩЕНИЕ.\nОбобщение (синтез) и формулирование гипотез, теорий</item>
+        <item >ПРОГНОЗ.\nПрогноз: формулирование следствий из предложенной гипотезы или принятой теории с помощью дедукции, индукции или других логических методов</item>
+        <item >ПРОВЕРКА.\nПроверка прогнозируемых следствий с помощью эксперимента (по терминологии Карла Поппера — критического эксперимента)</item>
+    </string-array>
 
     <string-array name="str_Left_SCORE">
-                 <item>Model SCORE</item>
-                 <item>S - Symptoms.\nThis is the most visible(by "external" calibration) and perceived as submitted by the Client aspects of the situation/experience; state existing on the date</item>
-                 <item>C - Cause.\nExperience in the past, gave rise to the present state</item>
-                 <item>O - Outcome.\nThe purpose of the changes or the state, which should replace the present state</item>
-                 <item>R - Resources.\nElements of User Experience, the presence of which can solve the current situation; they make possible the transition from the present state to the desired</item>
-                 <item>E - Effects.\nResponses/impact on the achievement of the results, for the client and for his significant environment, state in the future, when the result has already been achieved</item>
-             </string-array>
+        <item >Модель SCORE</item>
+        <item >S - Симптомы.\nЭто наиболее заметные (по внешней калибровке) и осознаваемые Клиентом аспекты предъявленной ситуации/опыта; состояние, существующее на сегодняшний день</item>
+        <item >C - Причины.\nОпыт в прошлом, породивший настоящее состояние</item>
+        <item >O - Результат.\nЦель изменений или состояние, которое должно заменить настоящее состояние</item>
+        <item >R - Ресурсы.\nЭлементы опыта, наличие которых позволяет решать настоящую ситуацию; они делают возможным переход из настоящего состояния в желаемое</item>
+        <item >E - Эффекты.\nОтклики/последствия достижения результата, как для самого Клиента, так и для его значимого окружения; состояние в будущем, когда результат уже достигнут</item>
+    </string-array>
 
     <string-array name="str_Left_SMART">
                  <item>Business model specification of goals. SMART</item>
