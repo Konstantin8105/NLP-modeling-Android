@@ -22,15 +22,15 @@ public abstract class Reader {
     @SuppressWarnings("unused")
     protected final String TAG = this.getClass().toString();
 
-    protected JsonReader readerJson;
-    protected BufferedReader xmlBuffer;
-    protected XmlPullParser xpp;
+    JsonReader readerJson;
+    private BufferedReader xmlBuffer;
+    XmlPullParser xpp;
     private final AsyncTask<Void, String, Void> task;
     private final SaveOpenActivity activity;
     private final String filename;
-    protected final ValuesIO.formats format;
+    final ValuesIO.formats format;
 
-    public Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.formats format) {
+    Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.formats format) {
         this.activity = activity;
         this.task = task;
         this.filename = filename;

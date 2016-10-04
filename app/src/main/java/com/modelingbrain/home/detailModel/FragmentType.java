@@ -69,9 +69,9 @@ public class FragmentType {
             lastFragment = (StageFragment) types.get(positionInArray(type)).fragment.newInstance();
             Log.d(TAG, "getNewInstanceFragment - finish");
             return lastFragment;
-        } catch (InstantiationException e) {
-            e.printStackTrace();
         } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
             e.printStackTrace();
         }
         return null;

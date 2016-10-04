@@ -18,11 +18,11 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
     private final String TAG = this.getClass().toString();
 
     private LinearLayout linLayout;
-    protected SaveOpenActivity activity;
+    SaveOpenActivity activity;
 
-    protected AsyncTask<Void, String, Void> task;
+    AsyncTask<Void, String, Void> task;
 
-    protected ProgressBar progressBar;
+    ProgressBar progressBar;
 
     public ProgressBar getProgressBar() {
         return progressBar;
@@ -44,11 +44,11 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
 
     protected abstract void initializeTask();
 
-    protected void createElement(String str) {
+    void createElement(String str) {
         Log.d(TAG, "createElement - start");
         Log.d(TAG, "createElement - str = " + str);
         if (str == null)
-            str = new String();
+            str = "";//new String();
         LayoutInflater ltInflater = getLayoutInflater();
         View view = ltInflater.inflate(R.layout.one_row_opean_save, linLayout, false);
         TextView textView = (TextView) view.findViewById(R.id.textOneRow);

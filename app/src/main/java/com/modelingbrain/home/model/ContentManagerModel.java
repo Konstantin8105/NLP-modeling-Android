@@ -59,7 +59,7 @@ public class ContentManagerModel {
                 model.getName(),
                 String.format("%s. %s", context.getResources().getString(model.getModelType().getStringResource()),
                         context.getResources().getStringArray(model.getModelID().getResourceQuestion())[0]),
-                GlobalFunction.ConvertMillisecondToDate(model.getMillisecond_Date()),
+                GlobalFunction.convertMillisecondToDate(model.getMillisecond_Date()),
                 ContextCompat.getColor(context, model.getModelType().getGeneralColor()),
                 model.getDbId()
         );

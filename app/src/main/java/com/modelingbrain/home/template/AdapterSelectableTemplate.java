@@ -167,7 +167,6 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
             if (listener != null) {
                 return listener.onItemLongClicked(getAdapterPosition());
             }
-
             return false;
         }
 

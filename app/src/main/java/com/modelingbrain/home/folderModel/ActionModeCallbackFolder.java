@@ -14,7 +14,7 @@ import com.modelingbrain.home.template.FragmentListWithActionBarTemplate;
 
 import java.util.List;
 
-public class ActionModeCallbackFolder implements ActionMode.Callback  {
+class ActionModeCallbackFolder implements ActionMode.Callback  {
 
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();

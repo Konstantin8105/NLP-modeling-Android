@@ -10,7 +10,7 @@ import com.modelingbrain.home.model.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DBUpdaterManager {
+class DBUpdaterManager {
 
     @SuppressWarnings("unused")
     private static final String TAG = "DBUpdaterManager";

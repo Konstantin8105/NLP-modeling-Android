@@ -23,7 +23,7 @@ public abstract class StageFragment extends Fragment {
 
 
     Model model;
-    int generalModelColor;
+    private int generalModelColor;
     int generalModelTextColor;
 
     LinearLayout linLayout;

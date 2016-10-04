@@ -70,16 +70,16 @@ public enum ModelID {
         return i;
     }
 
-    public static final class ModelLine {
-        public final ModelID modelID;
-        public final int resourceQuestions;
-        public final ModelType modelType;
-        public final int resourceIcon;
-        public final int modelSize;
-        public final boolean oldModel;
+    static final class ModelLine {
+        final ModelID modelID;
+        final int resourceQuestions;
+        final ModelType modelType;
+        final int resourceIcon;
+        final int modelSize;
+        final boolean oldModel;
 
         @SuppressWarnings("SameParameterValue")
-        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel) {
+        ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize, boolean oldModel) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;
             this.modelType = modelType;
@@ -89,7 +89,7 @@ public enum ModelID {
         }
 
         @SuppressWarnings("SameParameterValue")
-        protected ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize) {
+        ModelLine(ModelID modelID, int resourceQuestions, ModelType modelType, int resourceIcon, int modelSize) {
             this.modelID = modelID;
             this.resourceQuestions = resourceQuestions;
             this.modelType = modelType;
@@ -99,7 +99,7 @@ public enum ModelID {
         }
     }
 
-    public static final ModelLine arrModelLine[] = {
+    static final ModelLine[] arrModelLine = {
 
             new ModelLine(ModelID.ID_Modeling_Gordon,
                     R.array.str_Left_Modeling_Gordon,

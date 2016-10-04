@@ -19,7 +19,7 @@ public class ValuesIO {
         }
     }
 
-    public class JsonElemenets{
+    public static class JsonElemenets{
         public static final String TYPE = "type";
         public static final String NAME = "name";
         public static final String TIME = "time";

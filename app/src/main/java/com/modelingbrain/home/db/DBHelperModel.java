@@ -24,7 +24,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().getSimpleName();
 
-    protected static final String DATABASE_MODEL = "DataBaseOfModels";
+    static final String DATABASE_MODEL = "DataBaseOfModels";
     private static final int DB_Version = 20160716;
 
     private Context context;
@@ -202,11 +202,11 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     public void updateModel(Model model) {
         Log.d(TAG, "updateModel - start");
-        Log.d(TAG, "updateModel - " + model.toString());
         //noinspection ConstantConditions
         if (model == null) return;
         Model modelDB = this.openModel(model.getDbId());
         if (modelDB == null) return;
+        Log.d(TAG, "updateModel - " + model.toString());
 
         //If changed just time, then no changes
         if (modelDB.compareTo(model) && modelDB.getState() == model.getState()) {

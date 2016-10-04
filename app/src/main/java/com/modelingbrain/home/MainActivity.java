@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity
     public static final int REQUEST_FRAGMENT = 800;
 
     private PageStatus.PageStatusType pageStatusType;
-    private final String pageStatusKey = "PageStatus";
+    private static final String pageStatusKey = "PageStatus";
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {

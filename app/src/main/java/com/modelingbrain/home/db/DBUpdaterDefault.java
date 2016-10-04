@@ -53,7 +53,7 @@ public class DBUpdaterDefault implements IDBUpdater {
             do {
                 model = new Model(ModelID.ID_NOTE);
                 model.setName((new Date()).getTime() + "");
-                String note = new String();
+                String note = "";//new String();
                 for (int i = 0; i < columnsIndex.length; i++) {
                     note += columns[i] + " " + c.getString(columnsIndex[i]) + ";";
                 }

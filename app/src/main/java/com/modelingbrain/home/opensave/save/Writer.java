@@ -71,19 +71,25 @@ public class Writer {
                 ignored.printStackTrace();
             }
         }
-
+        FileWriter file = null;
         try {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.OUTPUT_FILENAME_JSON;
             boolean createFolder = sdPath.mkdirs();
             Log.d(TAG, "SaveModel: createFolder = " + createFolder);
-            FileWriter file = new FileWriter(full_path);
+            file = new FileWriter(full_path);
             file.write(jsonArrayGlobal.toString());
             file.flush();
             file.close();
         } catch (IOException e) {
             Log.d(TAG, "SaveModel: ERROR WRITE FILE");
             e.printStackTrace();
+            if(file != null)
+                try {
+                    file.close();
+                } catch (IOException e1) {
+                    e1.printStackTrace();
+                }
         }
         Log.d(TAG, "SaveModel: OUT");
     }

@@ -18,7 +18,7 @@ public class PageStatus {
     }
 
     private static class TypeInner {
-        private PageStatusType type;
+        private final PageStatusType type;
         private final Class fragment;
         private final int stringResource;
 
@@ -39,14 +39,13 @@ public class PageStatus {
     @SuppressWarnings("unused")
     private final static String TAG = "PageStatus";
 
-    static MainFragment lastFragment = null;
+    private static MainFragment lastFragment = null;
 
     public static MainFragment getLastFragment() {
         return lastFragment;
     }
 
-    static PageStatusType lastType = null;
-
+    private static PageStatusType lastType = null;
 
     public static MainFragment getNewInstanceFragment(PageStatusType type, FragmentManager fragmentManager) {
         Log.d(TAG, "getNewInstanceFragment - start");

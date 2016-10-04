@@ -14,11 +14,11 @@ public class PrepareModels {
     @SuppressWarnings({"unused", "FieldCanBeLocal"})
     private final String TAG = this.getClass().toString();
 
-    protected List<Model> models;
+    List<Model> models;
     private final AsyncTask<Void, String, Void> task;
-    protected final SaveOpenActivity activity;
+    final SaveOpenActivity activity;
 
-    public PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, List<Model> models) {
+    PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, List<Model> models) {
         Log.d(TAG, "PrepareModels - start");
         this.task = task;
         this.activity = activity;
@@ -26,7 +26,7 @@ public class PrepareModels {
         Log.d(TAG, "PrepareModels - finish");
     }
 
-    protected class CompareModel {
+    class CompareModel {
         public CompareModel(Model model) {
             this.model = model;
             delete = false;
@@ -38,7 +38,7 @@ public class PrepareModels {
         public boolean insideDB;
     }
 
-    protected void createListDeleteSame(ArrayList<CompareModel> compareModels) {
+    void createListDeleteSame(ArrayList<CompareModel> compareModels) {
         for (int i = 0; i < compareModels.size(); i++) {
             if (task.isCancelled()) {
                 return;
@@ -109,7 +109,7 @@ public class PrepareModels {
 //        }
     }
 
-    protected List<Model> convertModels(List<CompareModel> compareModels) {
+    List<Model> convertModels(List<CompareModel> compareModels) {
         ArrayList<Model> output = new ArrayList<>();
         for (int i = 0; i < compareModels.size(); i++) {
             if (!compareModels.get(i).delete && !compareModels.get(i).insideDB) {

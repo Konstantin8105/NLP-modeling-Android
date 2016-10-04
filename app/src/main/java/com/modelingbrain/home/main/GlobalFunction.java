@@ -17,11 +17,11 @@ public class GlobalFunction {
         return (new Date()).getTime();
     }
 
-    private static final SimpleDateFormat format = new SimpleDateFormat(
-            "hh:mm:ss dd.MM.yyyy", Locale.getDefault());
-    public static String ConvertMillisecondToDate(long date) {
+    public static String convertMillisecondToDate(long date) {
         Date d = new Date(date);
         d.setTime(date);
+        SimpleDateFormat format = new SimpleDateFormat(
+                "hh:mm:ss dd.MM.yyyy", Locale.getDefault());
         return format.format(d);
     }
 }

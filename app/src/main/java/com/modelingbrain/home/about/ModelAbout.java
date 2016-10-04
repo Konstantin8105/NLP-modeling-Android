@@ -6,15 +6,15 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-public class ModelAbout {
+class ModelAbout {
 
     @SuppressWarnings("unused")
     private static final String TAG = "ModelAbout";
 
-    private ModelAbout(){
-//        title = new String();
-//        link  = new String();
-    }
+//    private ModelAbout(){
+////        title = new String();
+////        link  = new String();
+//    }
 
     public String title;
     public String link;

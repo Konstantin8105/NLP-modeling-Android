@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DBUpdater00 implements IDBUpdater {
 
-    private String log = new String();
+//    private String log = new String();
 
     private static final String prefixTable = "TABLE" + "OF" + "MODEL";
 
@@ -58,20 +58,20 @@ public class DBUpdater00 implements IDBUpdater {
 
     @SuppressWarnings("SameParameterValue")
     private List<ModelID> getTablesWithPrefix(SQLiteDatabase db, String prefix) {
-        log += "found tables\n";
+//        log += "found tables\n";
         List<ModelID> tables = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 String str = c.getString(c.getColumnIndex("name"));
-                log += "tableName = " + str + "\n";
+//                log += "tableName = " + str + "\n";
                 if (str.startsWith(prefix)) {
                     String temp = str.substring(prefix.length(), str.length());
-                    log += "add table -- " + temp + "\n";
+//                    log += "add table -- " + temp + "\n";
                     for (int i = 0; i < ModelID.values().length; i++) {
                         if (temp.compareTo(ModelID.values()[i].toString()) == 0) {
                             tables.add(ModelID.values()[i]);
-                            log += "ModelID " + ModelID.values()[i].toString() + "\n";
+//                            log += "ModelID " + ModelID.values()[i].toString() + "\n";
                         }
                     }
                 }
@@ -80,10 +80,10 @@ public class DBUpdater00 implements IDBUpdater {
         }
         c.close();
         //
-        log += "\ngetTablesWithPrefix size = " + tables.size() + "\n";
-        for (int i = 0; i < tables.size(); i++) {
-            log += "getTablesWithPrefix i = " + i + "\nName = " + tables.get(i) + "\n";
-        }
+//        log += "\ngetTablesWithPrefix size = " + tables.size() + "\n";
+//        for (int i = 0; i < tables.size(); i++) {
+//            log += "getTablesWithPrefix i = " + i + "\nName = " + tables.get(i) + "\n";
+//        }
         //
         return tables;
     }
@@ -93,7 +93,7 @@ public class DBUpdater00 implements IDBUpdater {
             return null;
         List<Model> models = new ArrayList<>();
         String tableName = prefixTable + tableId.toString();
-        log += "\n\n\n\nanalyzeTable table = " + tableName + "\n";
+//        log += "\n\n\n\nanalyzeTable table = " + tableName + "\n";
         Cursor c = db.query(tableName, null, null, null, null, null, null);
         if (c.moveToFirst()) {
             int NameColIndex = c.getColumnIndex("name");
@@ -106,25 +106,25 @@ public class DBUpdater00 implements IDBUpdater {
                 try {
                     int i = 0;
                     do {
-                        log += "position = " + i + "\n";
+//                        log += "position = " + i + "\n";
                         String line = c.getString(c.getColumnIndex("Str" + i));
-                        log += "line = " + line + "\n";
+//                        log += "line = " + line + "\n";
                         listRight.add(i, line);
                         i++;
                     } while (i < 200);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-                log += "\ncreateNewRecord"
-                        + "name = " + name
-                        + "time = " + time
-                        + "listRight = " + listRight
-                        + "\n";
+//                log += "\ncreateNewRecord"
+//                        + "name = " + name
+//                        + "time = " + time
+//                        + "listRight = " + listRight
+//                        + "\n";
                 if (listRight.size() != tableId.getSize()) {
                     Model model = new Model(ModelID.ID_NOTE);
                     model.setName(name);
                     model.setMillisecond_Date(time);
-                    String out = new String();
+                    String out = "";//new String();
                     for (int i = 0; i < listRight.size(); i++) {
                         out += listRight.get(i);
                     }

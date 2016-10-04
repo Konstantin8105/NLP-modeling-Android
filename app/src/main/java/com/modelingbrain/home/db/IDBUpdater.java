@@ -7,6 +7,6 @@ import com.modelingbrain.home.model.Model;
 
 import java.util.List;
 
-public interface IDBUpdater {
+interface IDBUpdater {
     List<Model> update(Context context, SQLiteDatabase db);
 }
