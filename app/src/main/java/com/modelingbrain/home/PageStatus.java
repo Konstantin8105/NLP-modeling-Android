@@ -47,6 +47,7 @@ public class PageStatus {
 
     private static PageStatusType lastType = null;
 
+    @SuppressWarnings("TryWithIdenticalCatches")
     public static MainFragment getNewInstanceFragment(PageStatusType type, FragmentManager fragmentManager) {
         Log.d(TAG, "getNewInstanceFragment - start");
         if (fragmentManager != null) {
