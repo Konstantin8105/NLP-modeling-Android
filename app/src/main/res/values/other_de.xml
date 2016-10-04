@@ -331,33 +331,42 @@
         <item >Fühle</item>
         <item >Denke</item>
         <item >Wirke</item>
-        <!-- Motivation
+
+         Motivation
         <item >An</item>
         <item >VON</item>
-        <!-- Referenz
+
+         Referenz
         <item >Interne Referenz</item>
         <item >Externe Referenz</item>
-        <!-- Das Niveau der Verallgemeinerungen
+
+         Das Niveau der Verallgemeinerungen
         <item >Allgemeine</item>
         <item >Details</item>
-        <!-- Suche nach oder nach
+
+         Suche nach oder nach
         <item >Möglichkeiten</item>
         <item >Verfahren</item>
-        <!-- Vergleich
+
+         Vergleich
         <item >Die ähnlichkeit</item>
         <item >Die ähnlichkeit mit der Verschiedenheit der</item>
         <item >Der Unterschied</item>
-        <!-- Das Verhältnis zum handeln
+
+         Das Verhältnis zum handeln
         <item >Aktiv</item>
         <item >Reflektierend</item>
-        <!-- Referenz auf Zeit
+
+         Referenz auf Zeit
         <item >Die Vergangenheit</item>
         <item >Echt</item>
         <item >Die Zukunft</item>
-        <!-- Das Verhältnis zur Zeit
+
+         Das Verhältnis zur Zeit
         <item >Eingeschlossen</item>
         <item >End-to-End</item>
-        <!-- Kommunikationsstil
+
+         Kommunikationsstil
         <item >Selbst</item>
         <item >Ein anderes</item>
     </string-array>

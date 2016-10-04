@@ -5,11 +5,11 @@
     <string name="navigation_drawer_other">Остальное</string>
 
     <string name="action_sort">Сортировка</string>
-    <string name="action_open_models">Открыть модели</string>
-    <string name="action_save_models">Сохранение моделей</string>
+    <string name="action_open_models">Открыть модели в файле</string>
+    <string name="action_save_models">Сохранение моделей в файл</string>
 
     <string name="detail_mode_read_only">Режим чтения</string>
-    <string name="detail_mode_write_mde">Режим записи</string>
+    <string name="detail_mode_write_mde">Режим редактирования</string>
 
 
     <string name="title_activity_detail">DetailActivity</string>
