@@ -155,241 +155,242 @@
     -->
 
     <string-array name="str_Left_PROFILE2">
-        <item >Досье</item>
-        <item >Предпочитаемая репрезентативная система (системы), модальность:</item>
-        <item >Предпочитаемые субмодальности:</item>
-        <item >Стратегии:</item>
-        <item >Предпочитаемые позиции Уолта Диснея:</item>
-        <item >Предпочитаемая метапрограмма (метапрограммы):</item>
-        <item >Убедитель:</item>
-        <item >Ценности(знания, умения):</item>
-        <item >Дополнительные примечания:</item>
+        <item >Dossier</item>
+        <item >Bevorzugte repräsentative System (System), Modalität:</item>
+        <item >Bevorzugte SubModalitäten:</item>
+        <item >Strategie:</item>
+        <item >Bevorzugte Positionen von Walt Disney:</item>
+        <item >Das bevorzugte MetaProgramm (MetaProgramme):</item>
+        <item >Überzeugende:</item>
+        <item >Werte(Kenntnisse, Fähigkeiten):</item>
+        <item >Weitere Hinweise:</item>
     </string-array>
 
     <string-array name="str_Left_PROFILE3">
-        <item >Досье</item>
-        <item >Предпочитаемая репрезентативная система (системы), модальность:</item>
-        <item >Предпочитаемые субмодальности:</item>
-        <item >Стратегии:</item>
-        <item >Предпочитаемые позиции Уолта Диснея:</item>
-        <item >Предпочитаемая метапрограмма (метапрограммы):</item>
-        <item >Убедитель:</item>
-        <item >Ценности(знания, умения):</item>
-        <item >Фокусы языка:</item>
-        <item >Позиция восприятия:</item>
-        <item >Дополнительные примечания:</item>
+        <item >Dossier</item>
+        <item >Bevorzugte repräsentative System (System), Modalität:</item>
+        <item >Bevorzugte SubModalitäten:</item>
+        <item >Strategie:</item>
+        <item >Bevorzugte Positionen von Walt Disney:</item>
+        <item >Das bevorzugte MetaProgramm (MetaProgramme):</item>
+        <item >Überzeugende:</item>
+        <item >Werte(Kenntnisse, Fähigkeiten):</item>
+        <item >Tricks Sprache:</item>
+        <item >Die Position der Wahrnehmung:</item>
+        <item >Weitere Hinweise:</item>
     </string-array>
 
     <string-array name="str_Position">
-        <item >1ая позиция( Я )</item>
-        <item >2ая позиция(Они)</item>
-        <item >3ая позиция(Взгляд со стороны)</item>
+        <item > 1. Position ( Ich )</item>
+        <item > 2. Position (Sie)</item>
+        <item > 3. Position (Blick von der Seite)</item>
     </string-array>
 
     <string-array name="str_TricksOfLanguage">
-        <item >Намерение</item>
-        <item >Переопределение</item>
-        <item >Последствия</item>
-        <item >Разделение</item>
-        <item >Объединение</item>
-        <item >Аналогия</item>
-        <item >Изменение размера фрейма</item>
-        <item >Другой результат</item>
-        <item >Модель мира</item>
-        <item >Стратегия реальности</item>
-        <item >Противоположный пример</item>
-        <item >Иерархия критериев</item>
-        <item >Применение к себе</item>
-        <item >Метафрейм</item>
+        <item >Absicht</item>
+        <item >Überschreiben</item>
+        <item >Folgen</item>
+        <item >Trennung</item>
+        <item >Vereinigung</item>
+        <item >Die Analogie</item>
+        <item >Ändern der Größe des Frames</item>
+        <item >Ein anderes Ergebnis</item>
+        <item >Modell der Welt</item>
+        <item >Strategie Realität</item>
+        <item >Gegenbeispiel</item>
+        <item >Hierarchie der Kriterien</item>
+        <item >Die Anwendung an sich</item>
+        <item >Metafrejm</item>
     </string-array>
 
     <string-array name="str_REP_SYSTEM">
-        <item >V - Визуальный</item>
-        <item >A - Аудиальный</item>
-        <item >K - Кинестетический</item>
+        <item >V - Visuelle</item>
+        <item >A - Auditive</item>
+        <item >K - Kinästhetische</item>
     </string-array>
 
-    <string-array name="str_sub_REP_SYSTEM" tools:keep="@array/str_sub_REP_SYSTEM">
-                <!-- Visual --> 
-        <item >Цветной (V)</item>
-        <item >Черно-белый (V)</item>
-        <item >Яркость (V)</item>
-        <item >Контраст (V)</item>
-        <item >Фокус (V)</item>
-        <item >Фон (V)</item>
-        <item >Детальность (V)</item>
-        <item >Размытость (V)</item>
-        <item >Размер (V)</item>
-        <item >Расстояние (V)</item>
-        <item >Форма (V)</item>
-        <item >Границы (V)</item>
-        <item >Положение (V)</item>
-        <item >Движение-Внутри образа (V)</item>
-        <item >Движение-Вне образа (V)</item>
-        <item >Скорость движения (V)</item>
-        <item >Ориентация/Угол зрения (V)</item>
-        <item >Ассоциирован-Диссоциирован (V)</item>
-        <item >Перспектива/Позиция (V)</item>
-        <item >Пропорции (V)</item>
-        <item >Единственность-Множественность (V)</item>
-                <!-- Audial -->
-        <item >Положение (A)</item>
-        <item >Направление (A)</item>
-        <item >Частота (A)</item>
-        <item >Высота (A)</item>
-        <item >Тональность (A)</item>
-        <item >Звуки/Слова (A)</item>
-        <item >Мелодия (A)</item>
-        <item >Изменяемость модуляции голоса (A)</item>
-        <item >Громкость (A)</item>
-        <item >Темп (A)</item>
-        <item >Ритм (A)</item>
-        <item >Длительность (A)</item>
-        <item >Моно/Стерео (A)</item>
-                <!-- Kinestetic -->
-        <item >Качество (K)</item>
-        <item >Размер (K)</item>
-        <item >Форма (K)</item>
-        <item >Концентрация внутри ощущения (K)</item>
-        <item >Температура (K)</item>
-        <item >Интенсивность (K)</item>
-        <item >Расположение (K)</item>
-        <item >Движение (K)</item>
-        <item >Направление (K)</item>
-        <item >Скорость/Ускорение (K)</item>
-        <item >Текстура (K)</item>
-        <item >Влажность (K)</item>
-        <item >Продолжительность (K)</item>
-        <item >Вес (K)</item>
+
+
+    <string-array name="str_sub_REP_SYSTEM">
+        <!-- Visual -->
+        <item >Farb (V)</item>
+        <item >Schwarz-weiß (V)</item>
+        <item >Helligkeit (V)</item>
+        <item >Kontrast (V)</item>
+        <item >Fokus(V)</item>
+        <item >Hintergrund (V)</item>
+        <item >Detailtreue (V)</item>
+        <item >Unschärfe (V)</item>
+        <item >Größe (V)</item>
+        <item >Entfernung (V)</item>
+        <item >Form (V)</item>
+        <item >Grenzen (V)</item>
+        <item >Position (V)</item>
+        <item >Die Bewegung Innerhalb des Bildes (V)</item>
+        <item >Bewegung-Außerhalb des Bildes (V)</item>
+        <item >Die Geschwindigkeit der Bewegung (V)</item>
+        <item >Orientierung/Blickwinkel (V)</item>
+        <item >Associate-dissoziiert (V)</item>
+        <item >Perspektive/Position (V)</item>
+        <item >Verhältnis (V)</item>
+        <item >Die Einzigkeit-Eine Vielheit Von (V)</item>
+        <!-- Audial -->
+        <item >Position (A)</item>
+        <item >Richtung (A)</item>
+        <item >Frequenz (A)</item>
+        <item >Höhe (A)</item>
+        <item >Tonart (A)</item>
+        <item >Geräusche/Worte (A)</item>
+        <item >Melodie (A)</item>
+        <item >Variabilität Modulation der Stimme (A)</item>
+        <item >Lautstärke (A)</item>
+        <item >Tempo (A)</item>
+        <item >Rhythmus (A)</item>
+        <item >Dauer (A)</item>
+        <item >Mono/Stereo (A)</item>
+        <!-- Kinestetic -->
+        <item >Qualität (K)</item>
+        <item >Größe (K)</item>
+        <item >Form (K)</item>
+        <item >Die Konzentration im inneren Empfindungen (K)</item>
+        <item >Temperatur (K)</item>
+        <item >Die Intensität (K)</item>
+        <item >Lage (K)</item>
+        <item >Bewegung (K)</item>
+        <item >Richtung (K)</item>
+        <item >Geschwindigkeit/Beschleunigung (K)</item>
+        <item >Textur (K)</item>
+        <item >Feuchtigkeit (K)</item>
+        <item >Dauer (K)</item>
+        <item >Gewicht (K)</item>
     </string-array>
 
     <string-array name="str_dishey">
-        <item >Мечтатель</item>
-        <item >Реалист</item>
-        <item >Критик</item>
+        <item >Dreamer</item>
+        <item >Realist</item>
+        <item >Kritiker</item>
     </string-array>
+
 
     <string-array name="str_MetaProgramm">
 
-        <!-- Врата сортировки -->
-        <item >Места и вещи</item>
-        <item >Время и Действие</item>
-        <item >Процесс</item>
-        <item >Ценности и критерии</item>
-        <item >Люди</item>
+        <!-- Die Tore Sortierung -->
+        <item >Orte und Dinge</item>
+        <item >Zeit und Aktion</item>
+        <item >Prozess</item>
+        <item >Werte und Kriterien</item>
+        <item >Menschen</item>
 
-        <!-- Стиль обработки информации -->
-        <item >Вижу</item>
-        <item >Чувствую</item>
-        <item >Думаю</item>
-        <item >Действую</item>
+        <!-- Der Stil der Informationsverarbeitung -->
+        <item >Sehe</item>
+        <item >Fühle</item>
+        <item >Denke</item>
+        <item >Wirke</item>
 
-        <!-- Мотивация -->
-        <item >К</item>
-        <item >ОТ</item>
+        <!-- Motivation -->
+        <item >An</item>
+        <item >VON</item>
 
-        <!-- Референция -->
-        <item >Внутренняя референция</item>
-        <item >Внешняя референция</item>
+        <!-- Referenz -->
+        <item >Interne Referenz</item>
+        <item >Externe Referenz</item>
 
-        <!-- Уровень обобщения -->
-        <item >Общее</item>
-        <item >Детали</item>
+        <!-- Das Niveau der Verallgemeinerungen -->
+        <item >Allgemeine</item>
+        <item >Details</item>
 
-        <!-- Поиск или следование -->
-        <item >Возможности</item>
-        <item >Процедуры</item>
+        <!-- Suche nach oder nach -->
+        <item >Möglichkeiten</item>
+        <item >Verfahren</item>
 
-        <!-- Сравнение -->
-        <item >Сходство</item>
-        <item >Сходство с различием</item>
-        <item >Различие</item>
+        <!-- Vergleich -->
+        <item >Die ähnlichkeit</item>
+        <item >Die ähnlichkeit mit der Verschiedenheit der</item>
+        <item >Der Unterschied</item>
 
-        <!-- Отношение к действию -->
-        <item >Активный</item>
-        <item >Рефлексивный</item>
+        <!-- Das Verhältnis zum handeln -->
+        <item >Aktiv</item>
+        <item >Reflektierend</item>
 
-        <!-- Референция по времени -->
-        <item >Прошлое</item>
-        <item >Настоящее</item>
-        <item >Будущее</item>
+        <!-- Referenz auf Zeit -->
+        <item >Die Vergangenheit</item>
+        <item >Echt</item>
+        <item >Die Zukunft</item>
 
-        <!-- Отношение ко времени -->
-        <item >Включенное</item>
-        <item >Сквозное</item>
+        <!-- Das Verhältnis zur Zeit -->
+        <item >Eingeschlossen</item>
+        <item >End-to-End</item>
 
-        <!-- Стиль общения -->
-        <item >Сам</item>
-        <item >Другой</item>
+        <!-- Kommunikationsstil -->
+        <item >Selbst</item>
+        <item >Ein anderes</item>
     </string-array>
 
     <string-array name="str_MetaProgramm_ubeditel">
-        <item >Амплитуда</item>
-        <item >Количество раз</item>
-        <item >Время</item>
+        <item >Die Amplitude</item>
+        <item >Anzahl mal</item>
+        <item >Zeit</item>
     </string-array>
 
-
-
     <string-array name="str_Left_Strategy_VKDiss">
-        <item >Визуально-кинестетическая диссоциация</item>
-        <item >1. Создание мощного ресурсного якоря</item>
-        <item >2a. Диссоциация. 1-я ступень\nОператор предлагает Клиенту вспомнить 2 события (в виде слайдов на экране): одно до события, когда Клиент ещё был в ресурсе (черно-белый слайд) и после, когда он пришел в себя и уже был в ресурсе (цветной слайд)</item>
-        <item >2б. Диссоциация. 2-я ступень\nПредложите Клиенту мысленно встать позади себя, сидящего в кинотеатре и смотрящего на экран. Наблюдать можно и с последнего ряда кинотеатра, и из будки киномеханика</item>
-        <item >3. Просмотр фильма с нормальной скоростью\nНаходясь на 2-ой ступени диссоциации, Клиент просматривает с нормальной скоростью черно-белый фильм, начиная со Слайда №1 и заканчивая Слайдом №2, но при этом фокус его внимания смещается на то, что происходило вокруг, замечает детали и мелочи, которых он не заметил тогда, когда это случилось</item>
-        <item >4. Путешествие в прошлое\nКогда Клиент досмотрит фильм до цветного Слайда №2, предложите ему мысленно отправиться в прошлое - в то время, когда уже произошло это событие (то есть ассоциироваться со Слайдом №2). При этом отправляясь в прошлое, Клиент остается “самим собой настоящим” и готовится к общению с “самим собой из прошлого”</item>
-        <item >5. Возвращение\nКогда Клиент будет полностью уверен в выполнении своей задачи и поймет, что сможет спокойно оставить “себя более младшего” жить дальше самостоятельно, то он может попрощаться с ним и вернуться на 1-ю ступень диссоциации для проверки результатов своей работы</item>
-        <item >6. Интеграция\nНа этом шаге предложите Клиенту впустить “себя более младшего” в себя как одну из своих частей, как часть своего жизненного опыта, и насладиться ощущением обладания этой важной для него частью, которая теперь по-новому может относиться к прошлой ситуации</item>
-        <item >7. Проверка\nСпросите Клиента, что он теперь думает о прошлой ситуации и как он к ней относится, при этом калибруйте его физиологию</item>
-        <item >8. Подстройка к будущему\nПредложите Клиенту подумать о возможности возникновения в будущем подобной ситуации и выясните, как бы он хотел на нее реагировать. Добейтесь от Клиента точной сенсорной информации о “критериях осторожности”: как он будет понимать, когда ситуация безопасна, а когда стоит быть осторожным и аккуратным.</item>
+        <item >Visuell-kinesteticheskaya die Dissoziation</item>
+        <item >1. Die Schaffung leistungsfähiger Suchinstrumente Anker</item>
+        <item >2a. Die Dissoziation. 1. Stufe\nDer Betreiber bietet dem Kunden 2 Ereignisse zu erinnern (in Form einer Folie auf dem Bildschirm): ein bis zum Ereignis, wenn der Client noch in der Ressource (schwarz-weiß-Folie) und dann, wenn er wieder zu sich kam und war bereits in der Ressource (Farb-dia)</item>
+        <item >2б. Die Dissoziation. 2. Stufe\nBitten Sie den Kunden gedanklich aufstehen hinter sich, sitzt in einem Kino und mit Blick auf den Bildschirm. Beobachten können und von der letzten Reihe des Kinos, und aus dem Stand Filmvorführer</item>
+        <item >3. Anzeigen einer Vorschau eines Films in normaler Geschwindigkeit\nWährend Sie sich auf der 2. Stufe der Dissoziation, der Kunde scannt mit normaler Geschwindigkeit schwarz-weiß-Film, der ab Folie 1 und Folie bis hin zu Nummer 2, aber dabei den Fokus seiner Aufmerksamkeit verschiebt sich auf das, was um ihn herum geschah, beachtet Details und Kleinigkeiten, die er dann nicht bemerkt, wenn es passiert ist</item>
+        <item >4. Eine Reise in die Vergangenheit\nWenn ein Kunde досмотрит Film bis zu farbigen Folie Nummer 2, ihn zu bitten, sich gedanklich in die Vergangenheit gehen - während, wenn dieses Ereignis bereits aufgetreten ist (D. H. im Zusammenhang mit der Folie №2). Dabei gehen Sie in die Vergangenheit, der Kunde bleibt "sich selbst so gut" und bereitet sich auf die Kommunikation mit "sich selbst aus der Vergangenheit"</item>
+        <item >5. Rückkehr\nWenn der Kunde ganz sicher in der Ausführung Ihrer Aufgaben und zu verstehen, dass Sie in der Lage, ruhig zu verlassen "sich mehr als die jüngeren" weiter Leben allein, dann kann er von ihm verabschieden und wieder zurück auf die 1. Stufe der Dissoziation, um die Ergebnisse Ihrer Arbeit</item>
+        <item >6. Integration\nIn diesem Schritt bitten Sie den Kunden einzulassen ", sich mehr als die jüngeren" sich als einen Ihrer Teile, als Teil seiner Lebenserfahrung, und genießen Sie den Besitz dieses Gefühl für ihn wichtigen Teil, der jetzt neu beziehen kann Letzte Situation</item>
+        <item >7. Überprüfen\nFragen Sie Ihren Kunden, was er jetzt denkt über die Letzte Situation und wie er zu Ihr gehört, dabei Kalibrieren Sie seine Physiologie</item>
+        <item >8. Anpassung an die Zukunft\nПредложите Клиенту подумать о возможности возникновения в будущем подобной ситуации и выясните, как бы он хотел на нее реагировать. Добейтесь от Клиента точной сенсорной информации о “критериях осторожности”: как он будет понимать, когда ситBitten Sie den Kunden, denken über die Möglichkeit des Entstehens einer ähnlichen Situation in der Zukunft und finden Sie heraus, wie er gewollt hat, darauf zu reagieren. Holen Sie den Kunden genaue Sensorinformationen über die "Kriterien der Vorsicht": wie wird man verstehen, wenn die Situation sicher ist, und wenn es sich lohnt, vorsichtig sein und ordentlich.уация безопасна, а когда стоит быть осторожным и аккуратным.</item>
     </string-array>
 
     <string-array name="str_Left_Strategy_ConflictParts">
-        <item >Договор частей</item>
-        <item >1. Формулировка противоречия\nСначала определите противоречие. Кто кому мешает.</item>
-        <item >2. Имя и намерение частей\nДайте каждой части имя</item>
-        <item >3. Соглашение\nСпросите последовательно у частей</item>
-        <item >4. Взятие обязательств\nВозможно вы не сразу получите согласие. Какая-то часть может не согласиться утвердить договор "навсегда", но будет согласна попробовать в течении месяца или недели. Постарайтесь учесть все возражения других частей</item>
-        <item >5. Экологическая проверка\nВыясните, есть ли другие части, которые имеют что-то против этого договора. Если да, то вернитесь на предыдущий шаг и переформулируйте договор так, чтобы учесть интересы и этих частей тоже</item>
-        <item >6. Проверка и привязка к будущему\nЕсли вас не устраивают изменения – вернитесь на четвёртый шаг и ещё раз проработайте возражения.</item>
+        <item >Der Vertrag Teile</item>
+        <item >1. Die Formulierung des Widerspruchs\nBestimmen Sie zunächst ein Widerspruch. Wer wen behindert.</item>
+        <item >2. Der name und die Absicht, Teile\nGeben Sie den Namen der einzelnen Teile</item>
+        <item >3. Vereinbarung\nFragen Sie konsequent bei den teilen</item>
+        <item >4. Die Entnahme Verpflichtungen\nVielleicht werden Sie nicht sofort Zustimmung erhalten. Ein Teil kann nicht akzeptieren, genehmigen den Vertrag "für immer", aber die Stimme wird versuchen, im Laufe des Monats oder der Woche. Versuchen Sie, alle Einwände zu berücksichtigen, andere Teile</item>
+        <item >5. Ökologische überprüfung\nFinden Sie heraus, ob es noch andere Teile, die etwas haben gegen dieses Vertrags. Wenn ja, dann gehen Sie zurück zum vorherigen Schritt und der Vertrag so umschreiben, um Interessen zu berücksichtigen und diese Teile auch</item>
+        <item >6. Umsatzsteuer und binden Sie an die Zukunft\nWenn Sie änderungen nicht zufrieden sind – gehen Sie zurück auf den vierten Schritt und noch mal arbeiten Einwand.</item>
     </string-array>
 
     <string-array name="str_Left_Strategy_XCP">
-        <item >Хорошо сформулированный результат</item>
-        <item >Цель должна быть позитивно сформулирована\nЦель должна определять, что вы хотите получить, а не то, от чего вы хотите избавиться. Один из признаков неправильной формулировки цели – наличие отрицания</item>
-        <item >Контролируется вами\nМы не можем контролировать вещи и других людей. Но можем воздействовать на них при помощи нашего поведения</item>
-        <item >Описывается сенсорным языком\nОчень важно, чтобы цель была описана конкретно, на уровне сенсорных представлений</item>
-        <item >Соответствует контексту\nПолезность того, что обычно является внутренней целью (состояния, способности, убеждения, паттерны поведения) очень сильно зависит от контекста</item>
-        <item >Имеет подходящий размер\nЕсли цель слишком большая – теряется мотивация на пути. Если ваша цель "Полностью овладеть английским языком" с очень жёсткими критериями, то даже долго и интенсивно занимаясь, вы не будете замечать приближения</item>
-        <item >Экологична\nУ любого действия есть свои последствия</item>
-        <item >Включает необходимые ресурсы\nОпределите ресурсы, нужные вам для достижения цели.\n- Какие ресурсы нужны вам для достижения цели?\n- Можете ли вы иметь к ним доступ?\nЕсли нет – сформулируйте доступ к ресурсам как цель.</item>
-        <item >Исследование препятствий\nИсследуйте, что может помешать вам на пути достижения этой цели\n- Что мешает вам начать достигать (достигнуть) цель прямо сейчас?\n- Какие препятствия могут встретиться на вашем пути?\n- Что вы можете сделать для преодоления этих препятствий?</item>
-        <item >Подстройка к будущему\nОпределите первые конкретные шаги, с которых в начнёте процесс достижения ваших целей.\nКакой будет первый шаг по достижению цели?</item>
+        <item >Gut formuliert das Ergebnis</item>
+        <item >Ziel muss positiv formuliert\nZiel sollte bestimmen, was Sie erhalten möchten, und nicht etwas, von dem Sie loswerden möchten. Eines der Anzeichen einer ungenauen Ziel – das Vorhandensein der Negation</item>
+        <item >Von Ihnen gesteuert werden\nWir können nicht kontrollieren, die Dinge und andere Menschen. Aber wir können beeinflussen, Ihnen mit Hilfe unseres Verhaltens</item>
+        <item >Beschreibt die Sprache Touch\nEs ist sehr wichtig, um das Ziel konkret beschrieben wurde, auf der Ebene der sensorischen Vorstellungen</item>
+        <item >Entspricht der Kontext\nDie Nützlichkeit dessen, was in der Regel ein internes Ziel (Status, Fähigkeiten, überzeugungen, Verhaltensmuster) sehr stark vom Kontext abhängig</item>
+        <item >Hat die passende Größe\nWenn das Ziel zu groß – die Motivation geht verloren auf dem Weg. Wenn Ihr Ziel "Vollständig beherrschen der englischen Sprache" mit sehr strengen Kriterien, auch lange und intensiv beschäftige, Sie werden nicht bemerken, proximity</item>
+        <item >Umweltfreundlich\nJede Handlung hat seine Konsequenzen</item>
+        <item >Sind die notwendigen Ressourcen\nDefinieren Sie Ressourcen, die Sie brauchen um das Ziel zu erreichen.\n- Welche Ressourcen benötigen Sie zur Erreichung des Ziels?\n- Kannst du darauf zugreifen?\nWenn nicht – formulieren Sie den Zugang zu Ressourcen als Ziel.</item>
+        <item >Forschung Hindernisse\nEntdecken Sie, was kann Sie davon abhalten, auf dem Weg dieses Ziel zu erreichen\n- Was hindert Sie beginnen erreichen (erzielen) Ziel vorbereitet werden?\n- Welche Hindernisse treffen können auf Ihrem Weg?\n- Was können Sie tun, um diese Hindernisse zu überwinden?</item>
+        <item >Anpassung an die Zukunft\nBestimmen Sie die ersten konkreten Schritte, mit denen Sie beginnen, den Prozess der Erreichung Ihrer Ziele.\nWas wird der erste Schritt zur Erreichung des Ziels?</item>
     </string-array>
 
+
     <string-array name="str_Left_Strategy_Anchor">
-        <item >Якорение</item>
-        <item >0. Определите состояние, которое хотите заякорить</item>
-        <item >1. Вызовите это состояние</item>
-        <item >2. На пике состояния установите якорь</item>
-        <item >3. Прервите состояние</item>
-        <item >4. Проверьте, работает ли якорь</item>
+        <item >Verankerung</item>
+        <item >0. Kontrollieren Sie den Status ein, den Sie dem Anker</item>
+        <item >1. Diesen Zustand rufen Sie</item>
+        <item >2. Auf dem Höhepunkt der Statusleiste legen Sie den Anker</item>
+        <item >3. Unterbrechen Sie den Zustand</item>
+        <item >4. Überprüfen Sie, ob der Anker</item>
     </string-array>
 
     <string-array name="str_Left_Three_Position">
-        <item >Модель трёхпозиционного описания</item>
-        <item >1-я позиция восприятия.\n«Я-сам», ассоциация в себя. Оцениваю ситуацию со своей точки зрения.</item>
-        <item >2-я позиция восприятия.\n«Я-другой», ассоциация в другого. «Встаю на место» другого человека, «смотрю его глазами».</item>
-        <item >3-я позиция восприятия.\n«Наблюдатель», диссоциация. Оцениваю ситуацию как квалифицированный в данном контексте наблюдатель.</item>
-        <item >4-я позиция восприятия.\n</item>
+        <item >Modell dreistellungs-Beschreibungen</item>
+        <item >1-Position der Wahrnehmung.\n«Ich-selbst», eine Vereinigung in sich selbst. Schätze die Situation aus Ihrer Sicht.</item>
+        <item >2-Position der Wahrnehmung.\n«Ich-ein anderer», die Vereinigung mit einem anderen. «Ich stehe auf dem Platz» einer anderen Person, «ich schaue durch seine Augen».</item>
+        <item >3-Position der Wahrnehmung.\n«Beobachter», die Dissoziation. Schätze die Situation als qualifizierte in diesem Zusammenhang Beobachter.</item>
+        <item >4-Position der Wahrnehmung.\n</item>
     </string-array>
 
-
     <string-array name="str_Left_Karpman">
-        <item >Треугольник Карпмана</item>
-        <item >Роль «спасителя»</item>
-        <item >Роль «преследователя»</item>
-        <item >Роль «жертвы»</item>
+        <item >Dreieck Karpman </item>
+        <item >Die Rolle des «Erlösers»</item>
+        <item >Die Rolle des «Verfolgers»</item>
+        <item >Die Rolle des «Opfers»</item>
     </string-array>
 
     <!-- NEW WORDS
@@ -419,7 +420,7 @@
     -->
 
     <string-array name="str_Left_Modeling_Gordon">
-        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <!-- item >Стратегия моделирования по Дэвиду Гордону</item>
         <item >1. КРИТЕРИЙ\nКогда Вы __________, то что здесь ВАЖНО? Что Вы оцениваете? Что для Вас главное, когда Вы _____________? На что Вы обращаете внимание, когда ___________? Когда Вы ___________, что Вы оцениваете?</item>
         <item >2. ОПРЕДЕЛЕНИЕ\nЧто Вы под КРИТЕРИЕМ понимаете? Как Вы узнаете, что Вы или кто-то другой соответствуете КРИТЕРИЮ? Как бы Вы описали КРИТЕРИЙ?</item>
         <item >3. СВИДЕТЕЛЬСТВО\nЧто Вы видите/слышите/чувствуете, что позволяет Вам понять, что это есть? </item>
@@ -432,25 +433,31 @@
         <item >10. ПОДДЕРЖАНИЕ ЭМОЦИИ.\nНа основе какого чувства Вы продолжаете действовать с целью найти соответствие КРИТЕРИЮ?</item>
         <item >11. СИГНАЛЬНЫЕ ЭМОЦИИ, ЕСЛИ ЕСТЬ.</item>
         <item >12. ВНЕШНЕЕ ПОВЕДЕНИЕ.\nЧто Вы делаете, когда Вы делаете ОПЕРАЦИЮ?</item>
+        -->
     </string-array>
 
     <string-array name="str_Left_Modeling_Gordon_Short">
-        <item >Стратегия моделирования по Дэвиду Гордону</item>
+        <!-- item >Стратегия моделирования по Дэвиду Гордону</item>
         <item >1. Критерий.\nЗа что? Что важно?</item>
         <item >2. Комплексный эквивалент, содержание.\nЧто это значит?</item>
         <item >3. VAKOG. Как ты об этом узнал?</item>
         <item >4. Примечание</item>
+        -->
     </string-array>
 
     <string-array name="str_Left_State">
+        <!--
         <item >Трансляция состояния</item>
         <item >Гуманистическое(соответствие)</item>
         <item >Боевое(несоответствие, разрушение)</item>
+        -->
     </string-array>
 
     <string-array name="str_Left_Rules">
+        <!--
         <item >Правила</item>
         <item >Список правил:</item>
+        -->
     </string-array>
 
 
