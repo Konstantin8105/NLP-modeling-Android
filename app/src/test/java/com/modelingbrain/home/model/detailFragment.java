@@ -6,7 +6,7 @@ import com.modelingbrain.home.detailModel.FragmentType;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class detailFragment {
+public class DetailFragment {
     @Test
     public void checkFragment(){
         for (int i = 0; i < FragmentType.Type.values().length; i++) {

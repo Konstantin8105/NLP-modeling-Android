@@ -421,7 +421,7 @@
     </string-array>
     -->
 
-    <string-array name="str_Left_Modeling_Gordon">
+    <string-array name="str_Left_Modeling_Gordon" tools:ignore="InconsistentArrays">
         <!-- item >Стратегия моделирования по Дэвиду Гордону</item>
         <item >1. КРИТЕРИЙ\nКогда Вы __________, то что здесь ВАЖНО? Что Вы оцениваете? Что для Вас главное, когда Вы _____________? На что Вы обращаете внимание, когда ___________? Когда Вы ___________, что Вы оцениваете?</item>
         <item >2. ОПРЕДЕЛЕНИЕ\nЧто Вы под КРИТЕРИЕМ понимаете? Как Вы узнаете, что Вы или кто-то другой соответствуете КРИТЕРИЮ? Как бы Вы описали КРИТЕРИЙ?</item>
@@ -438,7 +438,7 @@
         -->
     </string-array>
 
-    <string-array name="str_Left_Modeling_Gordon_Short">
+    <string-array name="str_Left_Modeling_Gordon_Short" tools:ignore="InconsistentArrays">
         <!-- item >Стратегия моделирования по Дэвиду Гордону</item>
         <item >1. Критерий.\nЗа что? Что важно?</item>
         <item >2. Комплексный эквивалент, содержание.\nЧто это значит?</item>
@@ -447,7 +447,7 @@
         -->
     </string-array>
 
-    <string-array name="str_Left_State">
+    <string-array name="str_Left_State" tools:ignore="InconsistentArrays">
         <!--
         <item >Трансляция состояния</item>
         <item >Гуманистическое(соответствие)</item>
@@ -455,7 +455,7 @@
         -->
     </string-array>
 
-    <string-array name="str_Left_Rules">
+    <string-array name="str_Left_Rules" tools:ignore="InconsistentArrays">
         <!--
         <item >Правила</item>
         <item >Список правил:</item>

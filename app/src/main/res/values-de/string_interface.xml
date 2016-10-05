@@ -1,81 +1,81 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- TODO  translate -->
+    <!-- TODO  check -->
 
-    <string name="navigation_drawer_other">Остальное</string>
+    <string name="navigation_drawer_other">übrig</string>
 
-    <string name="action_sort">Сортировка</string>
-    <string name="action_open_models">Открыть модели в файле</string>
-    <string name="action_save_models">Сохранение моделей в файл</string>
+    <string name="action_sort">Sortierung</string>
+    <string name="action_open_models">Öffnen des Modells in der Datei</string>
+    <string name="action_save_models">Speichern von Modellen in eine Datei</string>
 
-    <string name="detail_mode_read_only">Режим чтения</string>
-    <string name="detail_mode_write_mde">Режим редактирования</string>
+    <string name="detail_mode_read_only">Lesemodus</string>
+    <string name="detail_mode_write_mde">Bearbeitungsmodus</string>
 
     <plurals name="remove_models">
-        <item quantity="one">Удалено %d модель</item>
-        <item quantity="other">Удалено %d моделей</item>
+        <item quantity="one">Gelöscht %d Modell</item>
+        <item quantity="other">Gelöscht %d-Modelle</item>
     </plurals>
 
     <plurals name="archived_models">
-        <item quantity="one">Переместить в архив %d модель</item>
-        <item quantity="other">Переместить в архив %d моделей</item>
+        <item quantity="one">In Archiv verschieben %d Modell</item>
+        <item quantity="other">In Archiv verschieben %d-Modelle</item>
     </plurals>
 
     <plurals name="normaled_models">
-        <item quantity="one">Перемещений в рабочую папку %d модель</item>
-        <item quantity="other">Перемещений в рабочую папку %d моделей</item>
+        <item quantity="one">Verschiebungen in den Arbeitsordner %d Modell</item>
+        <item quantity="other">Verschiebungen in den Arbeitsordner %d-Modelle</item>
     </plurals>
 
     <plurals name="share_models">
-        <item quantity="one">Отправить %d модель</item>
-        <item quantity="other">Отправить %d моделей</item>
+        <item quantity="one">Senden Sie %d-Modell</item>
+        <item quantity="other">Senden Sie %d-Modelle</item>
     </plurals>
 
-    <string name="share">Отправить</string>
-    <string name="to_archive">В архив</string>
-    <string name="delete_models">Удаление моделей</string>
+    <string name="share">Senden</string>
+    <string name="to_archive">Im Archiv</string>
+    <string name="delete_models">Löschen von Modellen</string>
 
-    <string name="task_start_saving">Запуск сохранения &#8230;</string>
-    <string name="task_file_created">Файл создан</string>
+    <string name="task_start_saving">Startup speichern &#8230;</string>
+    <string name="task_file_created">Datei erstellt</string>
 
-    <string name="task_start_opening">Запуск открытия &#8230;</string>
-    <string name="task_filename">Файл:</string>
+    <string name="task_start_opening">Start öffnen &#8230;</string>
+    <string name="task_filename">Datei:</string>
 
 
     <plurals name="task_amount_models">
-        <item quantity="one">Поиск %d модель в файле</item>
-        <item quantity="other">Поиск %d моделей в файле</item>
+        <item quantity="one">Suche nach %d-Modell in der Datei</item>
+        <item quantity="other">Suche nach %d-Modelle in der Datei</item>
     </plurals>
 
-    <string name="task_analyzing">Анализ &#8230;</string>
-    <string name="task_finish_analyze">Окончание анализа</string>
-    <string name="task_find_same_in_file">Поиск одинаковых моделей в файле</string>
-    <string name="task_find_same_in_db">Поиск одинаковых моделей в файле и базой данных</string>
+    <string name="task_analyzing">Analyse &#8230;</string>
+    <string name="task_finish_analyze">Das Ende der Analyse</string>
+    <string name="task_find_same_in_file">Suche nach gleichen mustern in der Datei</string>
+    <string name="task_find_same_in_db">Suche nach identischen mustern in der Datei und der Datenbank</string>
 
     <plurals name="task_unique_models">
-        <item quantity="one">Уникальная %2d модель</item>
-        <item quantity="other">Уникальных %2d моделей</item>
+        <item quantity="one">Einzigartige %2d-Modell</item>
+        <item quantity="other">Einzigartige %2d Modelle</item>
     </plurals>
 
     <plurals name="task_amount_models_add">
-        <item quantity="one">%2d модель будет добавлена в базу данных</item>
-        <item quantity="other">%2d моделей будет добавлены в базу данных</item>
+        <item quantity="one">%2d-Modell wird in die Datenbank aufgenommen werden</item>
+        <item quantity="other">%2d Modelle werden zur Datenbank Hinzugefügt</item>
     </plurals>
 
-    <string name="task_added_in_db">Модели добавлены в базу данных</string>
+    <string name="task_added_in_db">Modelle zur Datenbank Hinzugefügt</string>
 
-    <string name="nav_folder">Рабочая папка</string>
-    <string name="nav_archive">Архив</string>
-    <string name="nav_help">Помощь</string>
+    <string name="nav_folder">Arbeitsverzeichnis</string>
+    <string name="nav_archive">Archiv</string>
+    <string name="nav_help">Hilfe</string>
 
-    <string name="menu_unarchive">Перемещение в рабочую папку</string>
+    <string name="menu_unarchive">Verschieben Sie in den Arbeitsordner</string>
 
-    <string name="menu_popup_alphabet">по алфавиту</string>
-    <string name="menu_popup_alphabet_invert">по алфавиту(инверсия)</string>
-    <string name="menu_popup_name_model">по типу модели</string>
-    <string name="menu_popup_name_model_invert">по типу модели(инверсия)</string>
-    <string name="menu_popup_name_date">по дате</string>
-    <string name="menu_popup_name_date_invert">по дате(инверсия)</string>
+    <string name="menu_popup_alphabet">alphabetisch</string>
+    <string name="menu_popup_alphabet_invert">alphabetisch(Inversion)</string>
+    <string name="menu_popup_name_model">nach der Art der Modelle</string>
+    <string name="menu_popup_name_model_invert">nach der Art der Modelle(Inversion)</string>
+    <string name="menu_popup_name_date">nach Datum</string>
+    <string name="menu_popup_name_date_invert">nach Datum(Inversion)</string>
 
 </resources>

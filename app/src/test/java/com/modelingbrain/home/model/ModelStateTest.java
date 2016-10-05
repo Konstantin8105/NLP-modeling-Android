@@ -5,7 +5,6 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class ModelStateTest {
-
     @Test
     public void testNotEquals() throws Exception {
         for (int i = 0; i < ModelState.values().length; i++) {

@@ -12,7 +12,7 @@ public enum ModelID {
     ID_Polar(60),//OK
     ID_Eye(70),//OK
     ID_AIDA(80),//OK
-    //ID_FrameOfProposal(90),//NONE
+    ID_FrameOfProposal(90),//OK
     ID_ElementsOfAnchors(100),//OK
     //ID_UoltDisney(11),//NONE
     ID_VAKOG(120),//OK
@@ -243,6 +243,14 @@ public enum ModelID {
                     R.array.str_Left_State,
                     ModelType.STRATEGY,
                     R.drawable.ic_model_state,
-                    2)
+                    2),
+
+            new ModelLine(ModelID.ID_FrameOfProposal,
+                    R.array.str_Left_FrameOfProposal,
+                    ModelType.STRATEGY,
+                    R.drawable.ic_model_state,
+                    7)
+
+
     };
 }

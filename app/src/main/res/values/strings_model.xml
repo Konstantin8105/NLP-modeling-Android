@@ -66,6 +66,22 @@
             </string-array>
 
     <string-array name="str_Left_MiltonModel">
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
+        <item />
             </string-array>
 
     <string-array name="str_Left_AIDA">
@@ -100,19 +116,17 @@
                  <item>Kinesthetic (or proprioceptive) sense(K) - somatic feelings in the body, temperature, pressure, and also emotion</item>
              </string-array>
 
-    <string-array name="str_Left_FrameOfProposal" tools:keep="@array/str_Left_FrameOfProposal">
+    <string-array name="str_Left_FrameOfProposal" tools:ignore="InconsistentArrays">
              </string-array>
 
 
-    <string-array name="str_Left_ElementsOfAnchors">
+    <string-array name="str_Left_ElementsOfAnchors" tools:ignore="InconsistentArrays">
             </string-array>
 
-    <string-array name="str_Left_UoltDisney" tools:keep="@array/str_Left_UoltDisney">
+    <string-array name="str_Left_UoltDisney" tools:ignore="InconsistentArrays">
              </string-array>
 
-    <string-array name="str_Left_Note">
-                 <item>Note</item>
-                 <item>Note</item>
+    <string-array name="str_Left_Note" tools:ignore="InconsistentArrays">
              </string-array>
 
 
@@ -237,7 +251,7 @@
                  <item>Critic</item>
              </string-array>
 
-    <string-array name="str_MetaProgramm" tools:keep="@array/str_MetaProgramm">
+    <string-array name="str_MetaProgramm" tools:ignore="InconsistentArrays">
         <!-- Direction Filter -->
                  <item>Motivation Towards</item>
                  <item>Motivation Away</item>
@@ -307,19 +321,19 @@
              </string-array>
 
 
-    <string-array name="str_Left_Strategy_VKDiss">
+    <string-array name="str_Left_Strategy_VKDiss"  tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Strategy_ConflictParts">
+    <string-array name="str_Left_Strategy_ConflictParts" tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Strategy_XCP">
+    <string-array name="str_Left_Strategy_XCP" tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Strategy_Anchor">
+    <string-array name="str_Left_Strategy_Anchor" tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Three_Position">
+    <string-array name="str_Left_Three_Position" tools:ignore="InconsistentArrays">
     </string-array>
 
     <string-array name="str_Left_Karpman">
@@ -356,16 +370,16 @@
     </string-array>
     -->
 
-    <string-array name="str_Left_Modeling_Gordon">
+    <string-array name="str_Left_Modeling_Gordon"  tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Modeling_Gordon_Short">
+    <string-array name="str_Left_Modeling_Gordon_Short"  tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_State">
+    <string-array name="str_Left_State" tools:ignore="InconsistentArrays">
     </string-array>
 
-    <string-array name="str_Left_Rules">
+    <string-array name="str_Left_Rules" tools:ignore="InconsistentArrays">
     </string-array>
 
 

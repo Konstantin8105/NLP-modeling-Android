@@ -268,7 +268,7 @@
         <item >Критик</item>
     </string-array>
 
-    <string-array name="str_MetaProgramm">
+    <string-array name="str_MetaProgramm" tools:ignore="InconsistentArrays">
 
         <!-- Врата сортировки -->
         <item >Места и вещи</item>
@@ -451,6 +451,5 @@
         <item >Правила</item>
         <item >Список правил:</item>
     </string-array>
-
 
 </resources>
