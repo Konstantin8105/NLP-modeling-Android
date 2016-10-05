@@ -34,7 +34,6 @@ public class DetailActivity extends AppCompatActivity {
 
     private FragmentType.Type fragmentType;
 
-
     private final String detailFragmentsKey = "FragmentType";
 
     @Override
