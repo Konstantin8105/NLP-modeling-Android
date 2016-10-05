@@ -40,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         Log.d(TAG, "onSaveInstanceState - start");
-        savingModelInDb();
+//        savingModelInDb();
         outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
@@ -168,11 +168,16 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     private void savingModelInDb() {
+        Log.d(TAG, "savingModelInDb - start");
         model = FragmentType.getLastFragment().savingModelData();
-        if(model == null)
+        if(model == null) {
+            Log.d(TAG, "model == null");
+            Log.d(TAG, "savingModelInDb - finish");
             return;
+        }
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
         dbHelperModel.updateModel(model);
         dbHelperModel.close();
+        Log.d(TAG, "savingModelInDb - finish");
     }
 }

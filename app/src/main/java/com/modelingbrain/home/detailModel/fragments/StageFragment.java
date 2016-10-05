@@ -50,8 +50,8 @@ public abstract class StageFragment extends Fragment {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         Log.d(TAG, "onSaveInstanceState - start");
-        super.onSaveInstanceState(outState);
         outState.putInt(DetailActivity.DATABASE_ID, model.getDbId());
+        super.onSaveInstanceState(outState);
         Log.d(TAG, "onSaveInstanceState - finish");
     }
 

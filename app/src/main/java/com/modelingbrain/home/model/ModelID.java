@@ -151,7 +151,6 @@ public enum ModelID {
                     R.drawable.ic_model_tricksoflanguage,
                     14),
 
-            // TODO: 05.10.2016 какая то хуйня с иконкой
             new ModelLine(ModelID.ID_MiltonModel,
                     R.array.str_Left_MiltonModel,
                     ModelType.MODEL,
@@ -176,7 +175,6 @@ public enum ModelID {
                     R.drawable.ic_model_aida,
                     4),
 
-            // TODO: 05.10.2016 какая то хуйня с иконкой
             new ModelLine(ModelID.ID_ElementsOfAnchors,
                     R.array.str_Left_ElementsOfAnchors,
                     ModelType.STRATEGY,
@@ -248,11 +246,11 @@ public enum ModelID {
                     ModelType.STRATEGY,
                     R.drawable.ic_model_state,
                     2),
-            // TODO: 05.10.2016 какая то хуйня с иконкой
+
             new ModelLine(ModelID.ID_FrameOfProposal,
                     R.array.str_Left_FrameOfProposal,
                     ModelType.STRATEGY,
-                    R.drawable.ic_model_state,
+                    R.drawable.ic_model_frame_of_proposal,
                     7)
     };
 }
