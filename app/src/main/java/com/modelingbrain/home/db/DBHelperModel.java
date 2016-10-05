@@ -1,8 +1,5 @@
 package com.modelingbrain.home.db;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -19,6 +16,9 @@ import com.modelingbrain.home.model.ModelState;
 import org.json.JSONArray;
 import org.json.JSONException;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DBHelperModel extends SQLiteOpenHelper {
 
     @SuppressWarnings("unused")
@@ -32,7 +32,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
     private final static String DB_ID = "id";
     private final static String DB_MODEL_ID = "modelID";
     private final static String DB_NAME = "name";
-    private final static String DB_DATE = "date";
+    final static String DB_DATE = "date";
     private final static String DB_STATE = "state";
     private final static String DB_JSON_ARRAY = "json_array";
 

@@ -20,7 +20,6 @@ class DBUpdaterManager {
         Log.d(TAG, "DBUpdaterManager:onUpgrade() {" + oldVersion + ";" + newVersion + "}" + "current version ->" + db.getVersion());
         List<Model> models = new ArrayList<>();
         viewTableInLog(db);
-        // TODO тут какой то пиздец - 3 файла ru_RU | name TABLEOFTEST | от модели приблежения - избегания нихуя не осталось
         IDBUpdater[] updaters = new IDBUpdater[]
                 {
                         new DBUpdater00(),
