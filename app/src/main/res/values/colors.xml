@@ -2,9 +2,9 @@
 <resources>
     <color name="colorPrimary"      >#00BCD4</color> <!-- 500 -->
     <color name="colorPrimaryDark"  >#0097A7</color> <!-- 700 -->
-    <color name="colorAccent"       >#FFFF00</color> <!-- A200 -->
+    <color name="colorAccent"       >#FFD740</color> <!-- A200 -->
 
-    <color name="selected_overlay"  >#2800BCD4</color>
+    <color name="selected_overlay"  >#28FFD740</color>
 
     <color name="model_color"         >#B3E5FC</color> <!-- 100 -->
     <color name="model_color_text"    >#000000</color>
