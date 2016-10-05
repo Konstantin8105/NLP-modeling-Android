@@ -14,9 +14,6 @@ import com.modelingbrain.home.model.ModelID;
 
 public class StageFragmentEdit extends StageFragment {
 
-    //TODO: Eye - add special keyboard
-    //TODO: Polar - add test in quadrant
-
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];
 
     @Override

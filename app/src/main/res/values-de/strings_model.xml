@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO  check -->
-
     <!-- DE VERSION -->
     <string name="model_name">Name des Modells:</string>
 

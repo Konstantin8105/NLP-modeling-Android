@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- TODO  check -->
-
     <string name="navigation_drawer_other">übrig</string>
 
     <string name="action_sort">Sortierung</string>
