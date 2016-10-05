@@ -61,7 +61,6 @@
 
         </ScrollView>
 
-        <!-- TODO https://www.sitepoint.com/animating-android-floating-action-button/ -->
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fab"
             android:layout_width="wrap_content"

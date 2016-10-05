@@ -135,7 +135,6 @@ public class ContentManagerModel {
     }
 
     public static boolean isIgnore(Context context, ModelID modelID) {
-        Log.d(TAG, "modelID = " + modelID + " ... is ignore ?");
         boolean ignore = false;
 
         if (context.getResources().getStringArray(modelID.getResourceQuestion()).length != modelID.getSize() + 1) {
