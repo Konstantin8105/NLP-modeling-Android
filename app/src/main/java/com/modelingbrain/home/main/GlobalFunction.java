@@ -7,7 +7,7 @@ import java.util.Locale;
 public class GlobalFunction {
     public static void pause() {
         try {
-            Thread.sleep(200);
+            Thread.sleep(20);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
