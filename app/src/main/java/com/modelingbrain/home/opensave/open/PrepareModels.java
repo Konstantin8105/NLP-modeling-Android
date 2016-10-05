@@ -43,6 +43,8 @@ public class PrepareModels {
             if (task.isCancelled()) {
                 return;
             }
+            if (i < 0)
+                continue;
             publishProgress((int) ((float) i / (float) compareModels.size() * 100));
             GlobalFunction.pause();
             for (int j = i + 1; j < compareModels.size(); j++) {
@@ -52,7 +54,8 @@ public class PrepareModels {
                 if (compareModels.get(i).model.compareTo(compareModels.get(j).model)) {
                     if (!compareModels.get(i).insideDB) {
                         compareModels.remove(i);
-                        //continue;
+                        j = compareModels.size();
+                        i--;//continue;
                     } else if (!compareModels.get(j).insideDB) {
                         compareModels.remove(j);
                         j--;
@@ -61,7 +64,8 @@ public class PrepareModels {
                         j--;
                     } else {
                         compareModels.remove(i);
-                        //continue;
+                        j = compareModels.size();
+                        i--;//continue;
                     }
                 }
             }
@@ -70,43 +74,6 @@ public class PrepareModels {
             if (compareModels.get(i).insideDB)
                 compareModels.remove(i);
         }
-
-
-//        boolean[] list_delete = new boolean[compareModels.size()];
-//        for(int i=0;i<list_delete.length;i++){
-//            list_delete[i] = false;
-//        }
-//        for(int i=0;i<compareModels.size();i++)
-//        {
-//            if(task.isCancelled()) {
-//                return;
-//            }
-//            GlobalFunction.pause();
-//            if(!list_delete[i]) {
-//                for (int j = i; j < compareModels.size(); j++) {
-//                    if (j > i && !list_delete[j] && !list_delete[i]) {
-//                        if (compareModels.get(i).model.compareTo(compareModels.get(j).model))
-//                            if(!compareModels.get(i).insideDB){
-//                                list_delete[i] = true;
-//                                list_delete[j] = false;
-//                                compareModels.get(i).delete = true;
-//                                compareModels.get(j).delete = false;
-//                            } else if(!compareModels.get(j).insideDB){
-//                                list_delete[i] = false;
-//                                list_delete[j] = true;
-//                                compareModels.get(i).delete = false;
-//                                compareModels.get(j).delete = true;
-//                            } else {
-//                                list_delete[i] = false;
-//                                list_delete[j] = false;
-//                                compareModels.get(i).delete = false;
-//                                compareModels.get(j).delete = false;
-//                            }
-//                    }
-//                }
-//            }
-//            publishProgress((int)((float)i/(float)models.size()*100));
-//        }
     }
 
     List<Model> convertModels(List<CompareModel> compareModels) {

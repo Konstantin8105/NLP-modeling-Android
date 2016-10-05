@@ -65,7 +65,8 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     private int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
         Log.i(TAG, "DBHelperModel : addModelWithoutClose - start");
-        Log.i(TAG, "model = " + model.toString());
+        Log.i(TAG, "DBHelperModel : addModel : modelName = " + model.getName());
+        Log.i(TAG, "DBHelperModel : addModel : model = " + model.toString());
         ContentValues contentValues = new ContentValues();
         contentValues.put(DB_MODEL_ID, model.getModelID().toString());
         contentValues.put(DB_NAME, model.getName());

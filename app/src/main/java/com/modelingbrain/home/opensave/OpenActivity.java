@@ -175,6 +175,10 @@ public class OpenActivity extends SaveOpenActivity {
 
             GlobalFunction.pause();
 
+            // don`t add models if it`s cancelled
+            if (isCancelled()) {
+                return null;
+            }
             DBHelperModel dbHelperModel = new DBHelperModel(getBaseContext());
             dbHelperModel.addModelNormal(models);
             publishProgress(getResources().getString(R.string.task_added_in_db));
