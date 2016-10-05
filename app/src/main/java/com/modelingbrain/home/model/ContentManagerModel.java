@@ -158,13 +158,13 @@ public class ContentManagerModel {
         if (modelID.isOldModel()) {
             ignore = true;
         }
-        Log.d(TAG, "modelID = " + modelID + " ... " + ignore);
+        Log.i(TAG, "modelID = " + modelID + " ... " + ignore);
         return ignore;
     }
 
     private static void showLogArray(ArrayList<ElementList> array) {
         for (int i = 0; i < array.size(); i++) {
-            Log.d(TAG, TAG + "i = " + i + " array = " + array.get(i).getID());
+            Log.i(TAG, TAG + "i = " + i + " array = " + array.get(i).getID());
         }
     }
 
@@ -195,7 +195,7 @@ public class ContentManagerModel {
             output = Inverse(output);
         }
 
-        Log.d(TAG, "Time for sort - " + (GlobalFunction.getTime() - start) + " millisecond");
+        Log.i(TAG, "Time for sort - " + (GlobalFunction.getTime() - start) + " millisecond");
         return output;
     }
 
@@ -263,14 +263,14 @@ public class ContentManagerModel {
     }
 
     private static ArrayList<ElementList> Inverse(ArrayList<ElementList> result) {
-        Log.d(TAG, "ModelMain::Inverse - start");
+        Log.i(TAG, "ModelMain::Inverse - start");
         if (result.size() < 2)
             return result;
         ArrayList<ElementList> output = new ArrayList<>();
         for (int i = 0; i < result.size(); i++)
             output.add(result.get(result.size() - 1 - i));
         result.clear();
-        Log.d(TAG, "ModelMain::Inverse - end");
+        Log.i(TAG, "ModelMain::Inverse - end");
         return output;
     }
 

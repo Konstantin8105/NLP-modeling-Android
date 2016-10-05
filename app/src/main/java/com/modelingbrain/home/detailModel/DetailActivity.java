@@ -38,18 +38,18 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        Log.d(TAG, "onSaveInstanceState - start");
+        Log.i(TAG, "onSaveInstanceState - start");
 //        savingModelInDb();
         outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "onSaveInstanceState - finish");
+        Log.i(TAG, "onSaveInstanceState - finish");
     }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate - start");
+        Log.i(TAG, "onCreate - start");
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_detail);
@@ -101,7 +101,7 @@ public class DetailActivity extends AppCompatActivity {
         icon.setImageResource(model.getModelID().getResourceIcon());
 
         createView();
-        Log.d(TAG, "onCreate - finish");
+        Log.i(TAG, "onCreate - finish");
     }
 
     private void changeStageDetail() {
@@ -150,33 +150,33 @@ public class DetailActivity extends AppCompatActivity {
 
     @Override
     protected void onPause() {
-        Log.d(TAG, "onPause - start");
+        Log.i(TAG, "onPause - start");
         savingModelInDb();
         setResult(RESULT_OK);
         super.onPause();
-        Log.d(TAG, "onPause - finish");
+        Log.i(TAG, "onPause - finish");
     }
 
     @Override
     public void onBackPressed() {
-        Log.d(TAG, "onBackPressed - start");
+        Log.i(TAG, "onBackPressed - start");
         savingModelInDb();
         setResult(RESULT_OK);
         super.onBackPressed();
-        Log.d(TAG, "onBackPressed - finish");
+        Log.i(TAG, "onBackPressed - finish");
     }
 
     private void savingModelInDb() {
-        Log.d(TAG, "savingModelInDb - start");
+        Log.i(TAG, "savingModelInDb - start");
         model = FragmentType.getLastFragment().savingModelData();
         if(model == null) {
-            Log.d(TAG, "model == null");
-            Log.d(TAG, "savingModelInDb - finish");
+            Log.i(TAG, "model == null");
+            Log.i(TAG, "savingModelInDb - finish");
             return;
         }
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
         dbHelperModel.updateModel(model);
         dbHelperModel.close();
-        Log.d(TAG, "savingModelInDb - finish");
+        Log.i(TAG, "savingModelInDb - finish");
     }
 }

@@ -53,13 +53,13 @@ public class SaveActivity extends SaveOpenActivity {
     private class SaveTask extends AsyncTask<Void, String, Void> {
         @Override
         protected void onPreExecute() {
-            Log.d(TAG, "onPreExecute - start");
-            Log.d(TAG, "onPreExecute - finish");
+            Log.i(TAG, "onPreExecute - start");
+            Log.i(TAG, "onPreExecute - finish");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.d(TAG, "doInBackground - start");
+            Log.i(TAG, "doInBackground - start");
 
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
@@ -91,37 +91,37 @@ public class SaveActivity extends SaveOpenActivity {
                 e.printStackTrace();
             }
 
-            Log.d(TAG, "doInBackground - finish");
+            Log.i(TAG, "doInBackground - finish");
             return null;
         }
 
         @Override
         protected void onProgressUpdate(String... values) {
-            Log.d(TAG, "onProgressUpdate - start");
+            Log.i(TAG, "onProgressUpdate - start");
             createElement(values[0]);
-            Log.d(TAG, "onProgressUpdate - finish");
+            Log.i(TAG, "onProgressUpdate - finish");
         }
 
         @Override
         protected void onCancelled() {
-            Log.d(TAG, "onCancelled - start");
+            Log.i(TAG, "onCancelled - start");
             super.onCancelled();
-            Log.d(TAG, "onCancelled - finish");
+            Log.i(TAG, "onCancelled - finish");
         }
 
         @Override
         protected void onCancelled(Void aVoid) {
-            Log.d(TAG, "onCancelled(Void aVoid) - start");
+            Log.i(TAG, "onCancelled(Void aVoid) - start");
             super.onCancelled(aVoid);
-            Log.d(TAG, "onCancelled(Void aVoid) - finish");
+            Log.i(TAG, "onCancelled(Void aVoid) - finish");
         }
 
         @Override
         protected void onPostExecute(Void params) {
-            Log.d(TAG, "onPostExecute - start");
+            Log.i(TAG, "onPostExecute - start");
             progressBar.setVisibility(View.GONE);
             finish();
-            Log.d(TAG, "onPostExecute - finish");
+            Log.i(TAG, "onPostExecute - finish");
         }
     }
 }

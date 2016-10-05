@@ -19,11 +19,11 @@ public class PrepareModels {
     final SaveOpenActivity activity;
 
     PrepareModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, List<Model> models) {
-        Log.d(TAG, "PrepareModels - start");
+        Log.i(TAG, "PrepareModels - start");
         this.task = task;
         this.activity = activity;
         this.models = models;
-        Log.d(TAG, "PrepareModels - finish");
+        Log.i(TAG, "PrepareModels - finish");
     }
 
     static class CompareModel {

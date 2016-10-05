@@ -49,10 +49,10 @@ public class PageStatus {
 
     @SuppressWarnings("TryWithIdenticalCatches")
     public static MainFragment getNewInstanceFragment(PageStatusType type, FragmentManager fragmentManager) {
-        Log.d(TAG, "getNewInstanceFragment - start");
+        Log.i(TAG, "getNewInstanceFragment - start");
         if (fragmentManager != null) {
             if (lastFragment != null) {
-                Log.d(TAG, "remove last fragment");
+                Log.i(TAG, "remove last fragment");
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 transaction.remove(lastFragment.getFragment());
                 transaction.commit();
@@ -61,7 +61,7 @@ public class PageStatus {
         try {
             lastType = type;
             lastFragment = (MainFragment) types.get(positionInArray(type)).fragment.newInstance();
-            Log.d(TAG, "getNewInstanceFragment - finish");
+            Log.i(TAG, "getNewInstanceFragment - finish");
             return lastFragment;
         } catch (InstantiationException e) {
             e.printStackTrace();

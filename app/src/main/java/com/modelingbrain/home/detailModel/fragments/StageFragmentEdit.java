@@ -18,7 +18,7 @@ public class StageFragmentEdit extends StageFragment {
 
     @Override
     protected void createInterface() {
-        Log.d(TAG, "createInterface - start");
+        Log.i(TAG, "createInterface - start");
         multiAutoCompleteTextViews = new MultiAutoCompleteTextView[model.getModelID().getSize() + 1];
         createElement(getResources().getString(R.string.model_name), QA.QUESTION);
         createEditElement(model.getName(), 0);
@@ -26,12 +26,12 @@ public class StageFragmentEdit extends StageFragment {
             createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1 + i], QA.QUESTION);
             createEditElement(model.getAnswer(i), i + 1);
         }
-        Log.d(TAG, "createInterface - finish");
+        Log.i(TAG, "createInterface - finish");
     }
 
     @Override
     public Model savingModelData() {
-        Log.d(TAG, "savingModelData - start");
+        Log.i(TAG, "savingModelData - start");
         if(multiAutoCompleteTextViews == null)
             return null;
         for (int i = 0; i < multiAutoCompleteTextViews.length; i++) {
@@ -40,13 +40,13 @@ public class StageFragmentEdit extends StageFragment {
             } else model.setAnswer(i - 1, multiAutoCompleteTextViews[i].getText().toString());
         }
         for (int i = 0; i < multiAutoCompleteTextViews.length; i++) {
-            Log.d(TAG, "savingModelData - [" + i + "] = "
+            Log.i(TAG, "savingModelData - [" + i + "] = "
                     + multiAutoCompleteTextViews[i].getText()
                     + " ID = " + multiAutoCompleteTextViews[i].getId()
             );
         }
         multiAutoCompleteTextViews = null;
-        Log.d(TAG, "savingModelData - finish");
+        Log.i(TAG, "savingModelData - finish");
         return model;
     }
 

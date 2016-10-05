@@ -31,7 +31,7 @@ public class ActivityChooseModel extends AppCompatActivity implements
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		Log.d(TAG,"onCreate - start");
+		Log.i(TAG,"onCreate - start");
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_choose);
 
@@ -42,12 +42,12 @@ public class ActivityChooseModel extends AppCompatActivity implements
 		recyclerView.setAdapter(adapter);
 		recyclerView.setItemAnimator(new DefaultItemAnimator());
 		recyclerView.setLayoutManager(new LinearLayoutManager(this));
-		Log.d(TAG, "onCreate - finish");
+		Log.i(TAG, "onCreate - finish");
 	}
 
 	@Override
 	public void onItemClicked(int position) {
-		Log.d(TAG,"onItemClicked - start");
+		Log.i(TAG,"onItemClicked - start");
 		Model model = new Model(ModelID.values()[listModels.get(position).getID()]);
 
 		DBHelperModel dbHelper = new DBHelperModel(this);
@@ -59,7 +59,7 @@ public class ActivityChooseModel extends AppCompatActivity implements
 		startActivity(intent);
 
 		setResult(RESULT_OK);
-		Log.d(TAG, "onItemClicked - finish");
+		Log.i(TAG, "onItemClicked - finish");
 		finish();
 	}
 }

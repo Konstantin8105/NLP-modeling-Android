@@ -35,7 +35,7 @@ public class Writer {
     }
 
     public void write(Context context) {
-        Log.d(TAG, "prepare - start");
+        Log.i(TAG, "prepare - start");
 
         ArrayList<Model> modelsDB = new ArrayList<>();
         {
@@ -45,8 +45,8 @@ public class Writer {
             dbHelperModel.close();
         }
 
-        Log.d(TAG, "SaveModel: IN");
-        Log.d(TAG, "Saving models by JSON type");
+        Log.i(TAG, "SaveModel: IN");
+        Log.i(TAG, "Saving models by JSON type");
         JSONArray jsonArrayGlobal = new JSONArray();
         for (int i = 0; i < modelsDB.size(); i++) {
             Model model = modelsDB.get(i);
@@ -76,13 +76,13 @@ public class Writer {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.OUTPUT_FILENAME_JSON;
             boolean createFolder = sdPath.mkdirs();
-            Log.d(TAG, "SaveModel: createFolder = " + createFolder);
+            Log.i(TAG, "SaveModel: createFolder = " + createFolder);
             file = new FileWriter(full_path);
             file.write(jsonArrayGlobal.toString());
             file.flush();
             file.close();
         } catch (IOException e) {
-            Log.d(TAG, "SaveModel: ERROR WRITE FILE");
+            Log.i(TAG, "SaveModel: ERROR WRITE FILE");
             e.printStackTrace();
             if(file != null)
                 try {
@@ -91,7 +91,7 @@ public class Writer {
                     e1.printStackTrace();
                 }
         }
-        Log.d(TAG, "SaveModel: OUT");
+        Log.i(TAG, "SaveModel: OUT");
     }
 
 

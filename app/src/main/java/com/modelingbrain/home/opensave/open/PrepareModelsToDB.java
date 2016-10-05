@@ -18,7 +18,7 @@ public class PrepareModelsToDB extends PrepareModels {
     }
 
     public void prepare() {
-        Log.d(TAG, "prepare - start");
+        Log.i(TAG, "prepare - start");
 
         ArrayList<CompareModel> compareModels = new ArrayList<>();
         for (int i = 0; i < models.size(); i++) {
@@ -26,6 +26,6 @@ public class PrepareModelsToDB extends PrepareModels {
         }
         createListDeleteSame(compareModels);
         models = convertModels(compareModels);
-        Log.d(TAG, "prepare - finish");
+        Log.i(TAG, "prepare - finish");
     }
 }

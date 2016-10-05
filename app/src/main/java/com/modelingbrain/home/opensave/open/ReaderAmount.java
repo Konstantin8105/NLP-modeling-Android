@@ -42,7 +42,7 @@ public class ReaderAmount extends Reader {
     }
 
     public int getAmount() {
-        Log.d(TAG, "getAmount: amount = " + amount);
+        Log.i(TAG, "getAmount: amount = " + amount);
         return amount;
     }
 }

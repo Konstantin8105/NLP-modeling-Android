@@ -93,14 +93,14 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onBackPressed() {
-        Log.d(TAG, "onBackPressed - start");
+        Log.i(TAG, "onBackPressed - start");
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
         }
-        Log.d(TAG, "onBackPressed - finish");
+        Log.i(TAG, "onBackPressed - finish");
     }
 
     @Override
@@ -169,7 +169,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void createView() {
-        Log.d(TAG, "createView - start");
+        Log.i(TAG, "createView - start");
         MainFragment fragment = PageStatus.getNewInstanceFragment(pageStatusType, getFragmentManager());
         if (fragment == null) {
             throw new NullPointerException("stageFragment is NULL");
@@ -196,7 +196,7 @@ public class MainActivity extends AppCompatActivity
                 getBaseContext().getString(PageStatus.getStringResource()),
                 Snackbar.LENGTH_SHORT).
                 setAction("Action", null).show();
-        Log.d(TAG, "createView - finish");
+        Log.i(TAG, "createView - finish");
     }
 
     @SuppressWarnings("StatementWithEmptyBody")

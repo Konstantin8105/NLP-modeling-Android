@@ -44,7 +44,7 @@ public abstract class Reader {
     }
 
     private void openFile() throws FileNotFoundException {
-        Log.d(TAG, "openFile - start");
+        Log.i(TAG, "openFile - start");
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         String full_path = sdPath.getAbsolutePath() + File.separator + filename;
         switch (format) {
@@ -58,7 +58,7 @@ public abstract class Reader {
             default:
                 throw new FileNotFoundException("Cannot open that format: " + format);
         }
-        Log.d(TAG, "openFile - finish");
+        Log.i(TAG, "openFile - finish");
     }
 
     private void readingFile() throws IOException, XmlPullParserException {

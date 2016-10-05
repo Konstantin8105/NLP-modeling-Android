@@ -61,24 +61,24 @@ public class ShareModels {
         }
         email.putExtra(Intent.EXTRA_TEXT, message);
 
-        Log.d(TAG, "CreateEMAIL: Message -> " + message);
-        Log.d(TAG, "CreateEMAIL: Add file -> " + ValuesIO.OUTPUT_FILENAME_JSON);
+        Log.i(TAG, "CreateEMAIL: Message -> " + message);
+        Log.i(TAG, "CreateEMAIL: Add file -> " + ValuesIO.OUTPUT_FILENAME_JSON);
 
 
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        Log.d(TAG, "CreateEMAIL: Add file -> " + sdPath);
+        Log.i(TAG, "CreateEMAIL: Add file -> " + sdPath);
         sdPath = new File(sdPath.getAbsolutePath());
-        Log.d(TAG, "CreateEMAIL: Add file -> " + sdPath);
+        Log.i(TAG, "CreateEMAIL: Add file -> " + sdPath);
         try {
             email.putExtra(Intent.EXTRA_STREAM, Uri.parse("file://" + sdPath.getAbsolutePath() + "/" + ValuesIO.OUTPUT_FILENAME_JSON));
         } catch (NullPointerException e) {
-            Log.d(TAG, "CreateEMAIL: Uri exception:" + e);
+            Log.i(TAG, "CreateEMAIL: Uri exception:" + e);
         }
 
         email.setType("text/xml");//text/plain");//
         email.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         context.startActivity(Intent.createChooser(email, "Send email"));//email);//
-        Log.d(TAG, "CreateEMAIL: OUT");
+        Log.i(TAG, "CreateEMAIL: OUT");
     }
 }

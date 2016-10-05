@@ -24,10 +24,10 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
 
     public AdapterTemplate(ViewHolder.ClickListener clickListener, ArrayList<ElementList> items) {
         super();
-        Log.d(TAG, "AdapterTemplate - start");
+        Log.i(TAG, "AdapterTemplate - start");
         this.clickListener = clickListener;
         this.items = items;
-        Log.d(TAG, "AdapterTemplate - finish");
+        Log.i(TAG, "AdapterTemplate - finish");
     }
 
 //    public ElementList get(int position){
@@ -36,16 +36,16 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        Log.d(TAG, "onCreateViewHolder - start");
+        Log.i(TAG, "onCreateViewHolder - start");
         final int layout = R.layout.item;
         View v = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
-        Log.d(TAG, "onCreateViewHolder - finish");
+        Log.i(TAG, "onCreateViewHolder - finish");
         return new ViewHolder(v, clickListener);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Log.d(TAG, "onBindViewHolder - start");
+        Log.i(TAG, "onBindViewHolder - start");
         final ElementList item = items.get(position);
 
         GradientDrawable bgShape = (GradientDrawable) holder.rectangle.getBackground();
@@ -55,7 +55,7 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
         holder.title.setText(item.getTitle());
         holder.subTitle.setText(item.getSubTitle());
         holder.secondSubTitle.setText(item.getSecondSubTitle());
-        Log.d(TAG, "onBindViewHolder - finish");
+        Log.i(TAG, "onBindViewHolder - finish");
     }
 
     @Override
@@ -80,7 +80,7 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
 
         public ViewHolder(View itemView, ClickListener listener){
             super(itemView);
-            Log.d(TAG, "ViewHolder - start");
+            Log.i(TAG, "ViewHolder - start");
 
             imageView = (ImageView) itemView.findViewById(R.id.icon);
 
@@ -94,7 +94,7 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
             this.listener = listener;
 
             itemView.setOnClickListener(this);
-            Log.d(TAG, "ViewHolder - finish");
+            Log.i(TAG, "ViewHolder - finish");
         }
 
 

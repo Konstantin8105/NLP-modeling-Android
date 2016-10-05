@@ -18,39 +18,39 @@ abstract public class FragmentListWithActionBarTemplate extends FragmentListTemp
     abstract protected ActionMode.Callback getActionModeCallback();
 
     private void toggleSelection(int position) {
-        Log.d(TAG, "toggleSelection - start");
+        Log.i(TAG, "toggleSelection - start");
         adapter.toggleSelection(position);
         int count = adapter.getSelectedItemCount();
 
-        Log.d(TAG, "toggleSelection - count = "+count);
+        Log.i(TAG, "toggleSelection - count = "+count);
         if (count == 0) {
             actionMode.finish();
         } else {
             actionMode.setTitle(String.valueOf(count));
             actionMode.invalidate();
         }
-        Log.d(TAG, "toggleSelection - finish");
+        Log.i(TAG, "toggleSelection - finish");
     }
 
     @Override
     public void onItemClicked(View view, int position) {
-        Log.d(TAG, "onItemClicked - start");
+        Log.i(TAG, "onItemClicked - start");
         if (actionMode != null) {
             toggleSelection(position);
         } else {
             super.onItemClicked(view, position);
         }
-        Log.d(TAG, "onItemClicked - finish");
+        Log.i(TAG, "onItemClicked - finish");
     }
 
     @Override
     public boolean onItemLongClicked(int position) {
-        Log.d(TAG, "onItemLongClicked - start");
+        Log.i(TAG, "onItemLongClicked - start");
         if (actionMode == null) {
             actionMode = getActivity().startActionMode(getActionModeCallback());
         }
         toggleSelection(position);
-        Log.d(TAG, "onItemLongClicked - finish");
+        Log.i(TAG, "onItemLongClicked - finish");
         return true;
     }
 }

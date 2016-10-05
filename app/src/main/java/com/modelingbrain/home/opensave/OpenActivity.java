@@ -68,35 +68,35 @@ public class OpenActivity extends SaveOpenActivity {
 
 
     private void findAllFiles(List<String> fileList, String pattern) {
-        Log.d(TAG, "findAllFiles - start");
+        Log.i(TAG, "findAllFiles - start");
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        Log.d(TAG, "sdPath = " + sdPath + " :isExist = " + sdPath.exists() + " : isDirectory = " + sdPath.isDirectory());
+        Log.i(TAG, "sdPath = " + sdPath + " :isExist = " + sdPath.exists() + " : isDirectory = " + sdPath.isDirectory());
         File[] files = sdPath.listFiles();
         if (files == null) {
-            Log.d(TAG, "findAllFiles - finish - No files");
+            Log.i(TAG, "findAllFiles - finish - No files");
             return;
         }
         for (File file : files) {
             if (!file.isDirectory()) {
                 if (file.getName().endsWith(pattern.toLowerCase())) {
-                    Log.d(TAG, "found file " + file.getName());
+                    Log.i(TAG, "found file " + file.getName());
                     fileList.add(file.getName());
                 }
             }
         }
-        Log.d(TAG, "findAllFiles - finish");
+        Log.i(TAG, "findAllFiles - finish");
     }
 
     private class OpenTask extends AsyncTask<Void, String, Void> {
         @Override
         protected void onPreExecute() {
-            Log.d(TAG, "onPreExecute - start");
-            Log.d(TAG, "onPreExecute - finish");
+            Log.i(TAG, "onPreExecute - start");
+            Log.i(TAG, "onPreExecute - finish");
         }
 
         @Override
         protected Void doInBackground(Void... params) {
-            Log.d(TAG, "doInBackground - start");
+            Log.i(TAG, "doInBackground - start");
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
                 if (ContextCompat.checkSelfPermission(activity, Manifest.permission.READ_EXTERNAL_STORAGE)
@@ -122,11 +122,11 @@ public class OpenActivity extends SaveOpenActivity {
             List<Model> models = new ArrayList<>();
             {
                 for (int i = 0; i < ValuesIO.formats.values().length; i++) {
-                    Log.d(TAG, "doInBackground - value : " + ValuesIO.formats.values()[i]);
+                    Log.i(TAG, "doInBackground - value : " + ValuesIO.formats.values()[i]);
                     List<String> files = new ArrayList<>();
                     findAllFiles(files, ValuesIO.formats.values()[i].getFormat());
                     for (int j = 0; j < files.size(); j++) {
-                        Log.d(TAG, "doInBackground - file : " + files.get(j));
+                        Log.i(TAG, "doInBackground - file : " + files.get(j));
                         try {
                             publishProgress(getResources().getString(R.string.task_filename) + files.get(j));
                             publishProgress(getResources().getString(R.string.task_start_opening));
@@ -182,39 +182,39 @@ public class OpenActivity extends SaveOpenActivity {
             GlobalFunction.pause();
 
 
-            Log.d(TAG, "doInBackground - finish");
+            Log.i(TAG, "doInBackground - finish");
             return null;
         }
 
         @Override
         protected void onProgressUpdate(String... values) {
-            Log.d(TAG, "onProgressUpdate - start");
+            Log.i(TAG, "onProgressUpdate - start");
             createElement(values[0]);
-            Log.d(TAG, "onProgressUpdate - finish");
+            Log.i(TAG, "onProgressUpdate - finish");
         }
 
         @Override
         protected void onCancelled() {
-            Log.d(TAG, "onCancelled - start");
+            Log.i(TAG, "onCancelled - start");
             super.onCancelled();
-            Log.d(TAG, "onCancelled - finish");
+            Log.i(TAG, "onCancelled - finish");
         }
 
         @Override
         protected void onCancelled(Void aVoid) {
-            Log.d(TAG, "onCancelled(Void aVoid) - start");
+            Log.i(TAG, "onCancelled(Void aVoid) - start");
             super.onCancelled(aVoid);
-            Log.d(TAG, "onCancelled(Void aVoid) - finish");
+            Log.i(TAG, "onCancelled(Void aVoid) - finish");
         }
 
         @Override
         protected void onPostExecute(Void params) {
-            Log.d(TAG, "onPostExecute - start");
+            Log.i(TAG, "onPostExecute - start");
             progressBar.setVisibility(View.GONE);
             Intent resultIntent = new Intent();
             setResult(MainActivity.RESULT_OK, resultIntent);
             finish();
-            Log.d(TAG, "onPostExecute - finish");
+            Log.i(TAG, "onPostExecute - finish");
         }
     }
 }

@@ -26,9 +26,9 @@ class ActionModeCallbackArchive implements ActionMode.Callback  {
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-        Log.d(TAG, "onCreateActionMode - start");
+        Log.i(TAG, "onCreateActionMode - start");
         mode.getMenuInflater().inflate(R.menu.contex_menu_archive, menu);
-        Log.d(TAG, "onCreateActionMode - finish");
+        Log.i(TAG, "onCreateActionMode - finish");
         return true;
     }
 
@@ -41,7 +41,7 @@ class ActionModeCallbackArchive implements ActionMode.Callback  {
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_share: {
-                Log.d(TAG, "menu_share");
+                Log.i(TAG, "menu_share");
                 List<Integer> list = fragment.getAdapter().getSelectedItems();
                 int [] shareModelId = new int [list.size()];
                 for(int i=0;i<list.size();i++){
@@ -75,10 +75,10 @@ class ActionModeCallbackArchive implements ActionMode.Callback  {
 
     @Override
     public void onDestroyActionMode(ActionMode mode) {
-        Log.d(TAG, "onDestroyActionMode - start");
+        Log.i(TAG, "onDestroyActionMode - start");
         fragment.nullableActionMode();
         fragment.getAdapter().clearSelection();
         fragment.getAdapter().notifyDataSetChanged();
-        Log.d(TAG, "onDestroyActionMode - finish");
+        Log.i(TAG, "onDestroyActionMode - finish");
     }
 }

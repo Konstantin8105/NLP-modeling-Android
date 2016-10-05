@@ -30,7 +30,7 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate - start");
+        Log.i(TAG, "onCreate - start");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_open_save);
         progressBar = (ProgressBar) findViewById(R.id.progressBar);
@@ -39,14 +39,14 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
         activity = this;
         initializeTask();
 
-        Log.d(TAG, "onCreate - finish");
+        Log.i(TAG, "onCreate - finish");
     }
 
     protected abstract void initializeTask();
 
     void createElement(String str) {
-        Log.d(TAG, "createElement - start");
-        Log.d(TAG, "createElement - str = " + str);
+        Log.i(TAG, "createElement - start");
+        Log.i(TAG, "createElement - str = " + str);
         if (str == null)
             str = "";//new String();
         LayoutInflater ltInflater = getLayoutInflater();
@@ -54,7 +54,7 @@ abstract public class SaveOpenActivity extends AppCompatActivity {
         TextView textView = (TextView) view.findViewById(R.id.textOneRow);
         textView.setText(str);
         linLayout.addView(view);
-        Log.d(TAG, "createElement - finish");
+        Log.i(TAG, "createElement - finish");
     }
 
     @Override

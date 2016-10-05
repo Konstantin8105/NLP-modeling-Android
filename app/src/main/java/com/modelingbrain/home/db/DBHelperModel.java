@@ -37,35 +37,35 @@ public class DBHelperModel extends SQLiteOpenHelper {
     private final static String DB_JSON_ARRAY = "json_array";
 
     public void addModelNormal(List<Model> models) {
-        Log.d(TAG, "DBHelperModel : addModelNormal - start");
+        Log.i(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
             addModel(model);
         }
-        Log.d(TAG, "DBHelperModel : addModelNormal - finish");
+        Log.i(TAG, "DBHelperModel : addModelNormal - finish");
     }
 
     private void addModelNormal(SQLiteDatabase sqLiteDatabase, List<Model> models) {
-        Log.d(TAG, "DBHelperModel : addModelNormal - start");
+        Log.i(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
             addModel(sqLiteDatabase, model);
         }
-        Log.d(TAG, "DBHelperModel : addModelNormal - finish");
+        Log.i(TAG, "DBHelperModel : addModelNormal - finish");
     }
 
     public int addModel(Model model) {
-        Log.d(TAG, "DBHelperModel : addModel - start");
+        Log.i(TAG, "DBHelperModel : addModel - start");
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         int id = addModel(sqLiteDatabase, model);
         sqLiteDatabase.close();
-        Log.d(TAG, "DBHelperModel : addModel - finish");
+        Log.i(TAG, "DBHelperModel : addModel - finish");
         return id;
     }
 
     private int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
-        Log.d(TAG, "DBHelperModel : addModelWithoutClose - start");
-        Log.d(TAG, "model = " + model.toString());
+        Log.i(TAG, "DBHelperModel : addModelWithoutClose - start");
+        Log.i(TAG, "model = " + model.toString());
         ContentValues contentValues = new ContentValues();
         contentValues.put(DB_MODEL_ID, model.getModelID().toString());
         contentValues.put(DB_NAME, model.getName());
@@ -82,7 +82,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         }
         contentValues.put(DB_JSON_ARRAY, jsonArray.toString());
         long rowID = sqLiteDatabase.insert(DATABASE_MODEL, null, contentValues);
-        Log.d(TAG, "DBHelperModel : addModelWithoutClose - end");
+        Log.i(TAG, "DBHelperModel : addModelWithoutClose - end");
         return (int) rowID;
     }
 
@@ -122,7 +122,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         String selectQuery = "SELECT  * FROM " + DATABASE_MODEL + " WHERE "
                 + DB_ID + " = " + inputID;
 
-        Log.d(TAG, selectQuery);
+        Log.i(TAG, selectQuery);
 
         Cursor cursor = db.rawQuery(selectQuery, null);
 
@@ -139,13 +139,13 @@ public class DBHelperModel extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
-//        Log.d(TAG, "DBHelperModel : openModel - ID = " + element.getDbId());
+//        Log.i(TAG, "DBHelperModel : openModel - ID = " + element.getDbId());
         return element;
     }
 
 
     public ArrayList<Model> openHeader(ModelState modelState) {
-        Log.d(TAG, "openHeader - start");
+        Log.i(TAG, "openHeader - start");
         if (modelState == null) {
             throw new NullPointerException("modelState cannot be null");
         }
@@ -153,7 +153,7 @@ public class DBHelperModel extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         String selectQuery = "SELECT  * FROM " + DATABASE_MODEL + " WHERE "
                 + DB_STATE + " = " + modelState.getValue();
-        Log.d(TAG, selectQuery);
+        Log.i(TAG, selectQuery);
         Cursor cursor = db.rawQuery(selectQuery, null);
         if (cursor.moveToFirst()) {
             do {
@@ -165,52 +165,52 @@ public class DBHelperModel extends SQLiteOpenHelper {
         }
         db.close();
         cursor.close();
-        Log.d(TAG, "openHeader - amount models = " + outputModel.size());
-        Log.d(TAG, "openHeader - finish");
+        Log.i(TAG, "openHeader - amount models = " + outputModel.size());
+        Log.i(TAG, "openHeader - finish");
         return outputModel;
     }
 
     public void archiveModel(int idDB) {
-        Log.d(TAG, "archiveModel - start");
+        Log.i(TAG, "archiveModel - start");
         if (idDB < 0) return;
         Model model = this.openModel(idDB);
         if (model == null) return;
         model.setState(ModelState.ARCHIVE);
         updateModel(model);
-        Log.d(TAG, "archiveModel - finish");
+        Log.i(TAG, "archiveModel - finish");
     }
 
     public void normalModel(int idDB) {
-        Log.d(TAG, "normalModel - start");
+        Log.i(TAG, "normalModel - start");
         if (idDB < 0) return;
         Model model = this.openModel(idDB);
         if (model == null) return;
         model.setState(ModelState.NORMAL);
         updateModel(model);
-        Log.d(TAG, "normalModel - finish");
+        Log.i(TAG, "normalModel - finish");
     }
 
     public void deleteModel(int idDB) {
-        Log.d(TAG, "deleteModel - start");
+        Log.i(TAG, "deleteModel - start");
         if (idDB < 0) return;
         Model model = this.openModel(idDB);
         if (model == null) return;
         model.setState(ModelState.DELETE);
         updateModel(model);
-        Log.d(TAG, "deleteModel - finish");
+        Log.i(TAG, "deleteModel - finish");
     }
 
     public void updateModel(Model model) {
-        Log.d(TAG, "updateModel - start");
+        Log.i(TAG, "updateModel - start");
         //noinspection ConstantConditions
         if (model == null) return;
         Model modelDB = this.openModel(model.getDbId());
         if (modelDB == null) return;
-        Log.d(TAG, "updateModel - " + model.toString());
+        Log.i(TAG, "updateModel - " + model.toString());
 
         //If changed just time, then no changes
         if (modelDB.compareTo(model) && modelDB.getState() == model.getState()) {
-            Log.d(TAG, "updateModel - finish");
+            Log.i(TAG, "updateModel - finish");
             return;
         }
         //If changed text of model, then update time
@@ -230,9 +230,9 @@ public class DBHelperModel extends SQLiteOpenHelper {
         }
         contentValues.put(DB_JSON_ARRAY, jsonArray.toString());
         sqLiteDatabase.update(DATABASE_MODEL, contentValues, "id = ? ", new String[]{Integer.toString(model.getDbId())});
-        Log.d(TAG, "updateModel - model.ID" + model.getDbId());
-        Log.d(TAG, "updateModel - model.state" + model.getState());
-        Log.d(TAG, "updateModel - finish");
+        Log.i(TAG, "updateModel - model.ID    - " + model.getModelID());
+        Log.i(TAG, "updateModel - model.state - " + model.getState());
+        Log.i(TAG, "updateModel - finish");
     }
 
     public DBHelperModel(Context context) {
@@ -244,13 +244,13 @@ public class DBHelperModel extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        Log.d(TAG, "onCreate - start");
+        Log.i(TAG, "onCreate - start");
         createDB(db);
-        Log.d(TAG, "onCreate - finish");
+        Log.i(TAG, "onCreate - finish");
     }
 
     private void createDB(SQLiteDatabase db) {
-        Log.d(TAG, "createDB - start");
+        Log.i(TAG, "createDB - start");
         String str = "create table  IF NOT EXISTS " + DATABASE_MODEL
                 + " ( " + DB_ID + " integer primary key autoincrement "
                 + " , " + DB_MODEL_ID + " text "
@@ -260,16 +260,16 @@ public class DBHelperModel extends SQLiteOpenHelper {
                 + " , " + DB_JSON_ARRAY + " text "
                 + " );";
         db.execSQL(str);
-        Log.d(TAG, "createDB - finish");
+        Log.i(TAG, "createDB - finish");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.d(TAG, "onUpgrade - start");
+        Log.i(TAG, "onUpgrade - start");
         createDB(db);
         List<Model> models = DBUpdaterManager.update(context, db, oldVersion, newVersion);
         addModelNormal(db, models);
-        Log.d(TAG, "onUpgrade - finish");
+        Log.i(TAG, "onUpgrade - finish");
     }
 }
 

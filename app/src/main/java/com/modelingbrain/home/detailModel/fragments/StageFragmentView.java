@@ -32,7 +32,7 @@ public class StageFragmentView extends StageFragment {
     }
 
     private void createPolar() {
-        Log.d(TAG, "createPolar - start");
+        Log.i(TAG, "createPolar - start");
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View table = ltInflater.inflate(R.layout.view_model_polar, linLayout, false);
 
@@ -73,6 +73,6 @@ public class StageFragmentView extends StageFragment {
                 model.getAnswer(4));
 
         linLayout.addView(table);
-        Log.d(TAG, "createPolar - finish");
+        Log.i(TAG, "createPolar - finish");
     }
 }

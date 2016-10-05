@@ -20,7 +20,7 @@ class ModelAbout {
     public String link;
 
     static public ArrayList<ModelAbout> convert (String[] strings){
-        Log.d(TAG, "convert - start");
+        Log.i(TAG, "convert - start");
         ArrayList<ModelAbout> modelAbouts = new ArrayList<>();
         for(int i=0;i<strings.length/2;i++){
             ModelAbout element = new ModelAbout();
@@ -29,18 +29,18 @@ class ModelAbout {
             modelAbouts.add(element);
         }
         for (int i = 0; i < modelAbouts.size(); i++) {
-            Log.d(TAG, "i = " + i + " model = "+modelAbouts.get(i).title);
+            Log.i(TAG, "i = " + i + " model = "+modelAbouts.get(i).title);
         }
         modelAbouts = sort(modelAbouts);
         for (int i = 0; i < modelAbouts.size(); i++) {
-            Log.d(TAG, "i = " + i + " model = "+modelAbouts.get(i).title);
+            Log.i(TAG, "i = " + i + " model = "+modelAbouts.get(i).title);
         }
-        Log.d(TAG, "convert - finish");
+        Log.i(TAG, "convert - finish");
         return  modelAbouts;
     }
 
     private static ArrayList<ModelAbout> sort(ArrayList<ModelAbout> result) {
-        Log.d(TAG, "sort - start");
+        Log.i(TAG, "sort - start");
         if(result.size()<2)
             return result;
         Collections.sort(result, new Comparator<ModelAbout>() {
@@ -49,7 +49,7 @@ class ModelAbout {
                 return lhs.title.compareTo(rhs.title);
             }
         });
-        Log.d(TAG, "sort - finish");
+        Log.i(TAG, "sort - finish");
         return result;
     }
 }

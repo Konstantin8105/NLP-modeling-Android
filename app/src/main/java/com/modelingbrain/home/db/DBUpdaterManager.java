@@ -16,8 +16,8 @@ class DBUpdaterManager {
     private static final String TAG = "DBUpdaterManager";
 
     public static List<Model> update(Context context, SQLiteDatabase db, int oldVersion, int newVersion) {
-        Log.d(TAG, "DBUpdaterManager:update()");
-        Log.d(TAG, "DBUpdaterManager:onUpgrade() {" + oldVersion + ";" + newVersion + "}" + "current version ->" + db.getVersion());
+        Log.i(TAG, "DBUpdaterManager:update()");
+        Log.i(TAG, "DBUpdaterManager:onUpgrade() {" + oldVersion + ";" + newVersion + "}" + "current version ->" + db.getVersion());
         List<Model> models = new ArrayList<>();
         viewTableInLog(db);
         IDBUpdater[] updaters = new IDBUpdater[]
@@ -36,16 +36,16 @@ class DBUpdaterManager {
     }
 
     private static void viewTableInLog(SQLiteDatabase db) {
-        Log.d(TAG, "\nviewTableInLog");
+        Log.i(TAG, "\nviewTableInLog");
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 String str = c.getString(c.getColumnIndex("name"));
-                Log.d(TAG, "\t|\tListTables - " + str);
+                Log.i(TAG, "\t|\tListTables - " + str);
                 c.moveToNext();
             }
         }
         c.close();
-        Log.d(TAG, "\n");
+        Log.i(TAG, "\n");
     }
 }

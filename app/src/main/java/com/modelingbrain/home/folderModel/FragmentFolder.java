@@ -65,8 +65,8 @@ public class FragmentFolder extends FragmentListWithActionBarTemplate implements
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        Log.d(TAG, "REQUEST_FRAGMENT = " + requestCode);
-        Log.d(TAG, "resultCode = " + requestCode);
+        Log.i(TAG, "REQUEST_FRAGMENT = " + requestCode);
+        Log.i(TAG, "resultCode = " + requestCode);
         if (requestCode == REQUEST_FRAGMENT && resultCode == RESULT_OK) {
             updateScreen();
         }

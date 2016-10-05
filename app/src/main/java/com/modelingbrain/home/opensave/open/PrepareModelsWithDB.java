@@ -20,7 +20,7 @@ public class PrepareModelsWithDB extends PrepareModels {
     }
 
     public void prepare() {
-        Log.d(TAG, "prepare - start");
+        Log.i(TAG, "prepare - start");
 
         ArrayList<Model> modelsDB = new ArrayList<>();
         {
@@ -42,7 +42,7 @@ public class PrepareModelsWithDB extends PrepareModels {
         createListDeleteSame(compareModels);
         models = convertModels(compareModels);
 
-        Log.d(TAG, "prepare - finish");
+        Log.i(TAG, "prepare - finish");
     }
 
 }

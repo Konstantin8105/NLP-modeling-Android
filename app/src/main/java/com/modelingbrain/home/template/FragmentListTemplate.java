@@ -44,7 +44,7 @@ abstract public class FragmentListTemplate extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
 
-        Log.d(TAG, "onCreateView - start");
+        Log.i(TAG, "onCreateView - start");
         View rootView = inflater.inflate(R.layout.fragment_recycle_view, parentViewGroup, false);
 
         context = getActivity();
@@ -57,47 +57,47 @@ abstract public class FragmentListTemplate extends Fragment implements
 
         updateScreen();
 
-        Log.d(TAG, "onCreateView - finish");
+        Log.i(TAG, "onCreateView - finish");
         return rootView;
     }
 
     abstract protected ArrayList<ElementList> getList();
 
     protected void updateScreen() {
-        Log.d(TAG, "updateScreen - start");
+        Log.i(TAG, "updateScreen - start");
         ArrayList<ElementList> list = getList();
-        Log.d(TAG, "list = " + list.size());
+        Log.i(TAG, "list = " + list.size());
         if (adapter == null) {
             adapter = new AdapterSelectableTemplate(this, list);
             recyclerView.setAdapter(adapter);
         } else {
             adapter.swap(list);
         }
-        Log.d(TAG, "updateScreen - finish");
+        Log.i(TAG, "updateScreen - finish");
     }
 
     abstract protected void intentItemClicked(int position);
 
     @Override
     public void onItemClicked(View view, int position) {
-        Log.d(TAG, "onItemClicked - start");
+        Log.i(TAG, "onItemClicked - start");
         intentItemClicked(position);
-        Log.d(TAG, "onItemClicked - finish");
+        Log.i(TAG, "onItemClicked - finish");
     }
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Log.d(TAG, "onActivityResult - start");
+        Log.i(TAG, "onActivityResult - start");
         if (requestCode == MainActivity.REQUEST_FRAGMENT && resultCode == RESULT_OK) {
             updateScreen();
         }
-        Log.d(TAG, "onActivityResult - finish");
+        Log.i(TAG, "onActivityResult - finish");
     }
 
     @Override
     public boolean onItemLongClicked(int position) {
-        Log.d(TAG, "onItemLongClicked");
+        Log.i(TAG, "onItemLongClicked");
         return true;
     }
 }

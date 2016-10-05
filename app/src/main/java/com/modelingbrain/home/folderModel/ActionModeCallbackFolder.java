@@ -30,10 +30,10 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
 
     @Override
     public boolean onCreateActionMode(ActionMode mode, Menu menu) {
-        Log.d(TAG, "onCreateActionMode - start");
+        Log.i(TAG, "onCreateActionMode - start");
         mode.getMenuInflater().inflate (R.menu.contex_menu_folder, menu);
         fab.hide();
-        Log.d(TAG, "onCreateActionMode - finish");
+        Log.i(TAG, "onCreateActionMode - finish");
         return true;
     }
 
@@ -46,7 +46,7 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
     public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
         switch (item.getItemId()) {
             case R.id.menu_remove: {
-                Log.d(TAG, "menu_remove");
+                Log.i(TAG, "menu_remove");
                 DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
 //                ArrayList<Model> items = dbHelperModel.openHeader(ModelState.NORMAL);
                 List<Integer> list = fragment.getAdapter().getSelectedItems();
@@ -62,7 +62,7 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
                 break;
             }
             case R.id.menu_share: {
-                Log.d(TAG, "menu_share");
+                Log.i(TAG, "menu_share");
 //                DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
                 List<Integer> list = fragment.getAdapter().getSelectedItems();
                 int [] shareModelId = new int [list.size()];
@@ -97,11 +97,11 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
 
     @Override
     public void onDestroyActionMode(ActionMode mode) {
-        Log.d(TAG, "onDestroyActionMode - start");
+        Log.i(TAG, "onDestroyActionMode - start");
         fragment.nullableActionMode();
         fragment.getAdapter().clearSelection();
         fragment.getAdapter().notifyDataSetChanged();
         fab.show();
-        Log.d(TAG, "onDestroyActionMode - finish");
+        Log.i(TAG, "onDestroyActionMode - finish");
     }
 }

@@ -34,7 +34,7 @@ public abstract class StageFragment extends Fragment {
     }
 
     private void initColors() {
-        Log.d(TAG, "initColors - start");
+        Log.i(TAG, "initColors - start");
         if (model == null) {
             throw new NullPointerException("Model is null");
         }
@@ -44,21 +44,21 @@ public abstract class StageFragment extends Fragment {
         generalModelTextColor = ContextCompat.getColor(
                 getActivity().getBaseContext(),
                 model.getModelType().getTextColor());
-        Log.d(TAG, "initColors - finish");
+        Log.i(TAG, "initColors - finish");
     }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        Log.d(TAG, "onSaveInstanceState - start");
+        Log.i(TAG, "onSaveInstanceState - start");
         outState.putInt(DetailActivity.DATABASE_ID, model.getDbId());
         super.onSaveInstanceState(outState);
-        Log.d(TAG, "onSaveInstanceState - finish");
+        Log.i(TAG, "onSaveInstanceState - finish");
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup parentViewGroup,
                              Bundle savedInstanceState) {
-        Log.d(TAG, "onCreateView - start");
+        Log.i(TAG, "onCreateView - start");
 
         DBHelperModel db = new DBHelperModel(getActivity().getBaseContext());
         if (savedInstanceState != null) {
@@ -68,14 +68,14 @@ public abstract class StageFragment extends Fragment {
         }
         db.close();
 
-        Log.d(TAG, "model = " + model.toString());
+        Log.i(TAG, "model = " + model.toString());
         initColors();
 
         View rootView = inflater.inflate(R.layout.fragment_list, parentViewGroup, false);
         linLayout = (LinearLayout) rootView.findViewById(R.id.fragment_linear_layout);
         linLayout.setBackgroundColor(generalModelColor);
 
-        Log.d(TAG, "onCreateView - finish");
+        Log.i(TAG, "onCreateView - finish");
         return rootView;
     }
 
@@ -85,40 +85,40 @@ public abstract class StageFragment extends Fragment {
     @Override
     public void onStart() {
         super.onStart();
-        Log.d(TAG, "onStart - start");
+        Log.i(TAG, "onStart - start");
         linLayout.removeAllViews();
         createInterface();
-        Log.d(TAG, "onStart - finish");
+        Log.i(TAG, "onStart - finish");
     }
 
     @Override
     public void onResume() {
-        Log.d(TAG, "onResume - start");
+        Log.i(TAG, "onResume - start");
         super.onResume();
-        Log.d(TAG, "onResume - finish");
+        Log.i(TAG, "onResume - finish");
     }
 
     @Override
     public void onDestroyView() {
-        Log.d(TAG, "onDestroyView");
+        Log.i(TAG, "onDestroyView");
         super.onDestroyView();
     }
 
     @Override
     public void onDestroy() {
-        Log.d(TAG, "onDestroy");
+        Log.i(TAG, "onDestroy");
         super.onDestroy();
     }
 
     @Override
     public void onDetach() {
-        Log.d(TAG, "onDetach");
+        Log.i(TAG, "onDetach");
         super.onDetach();
     }
 
     void createElement(String str, QA qa) {
-        Log.d(TAG, "createElement - start");
-        Log.d(TAG, "createElement - QA : " + qa);
+        Log.i(TAG, "createElement - start");
+        Log.i(TAG, "createElement - QA : " + qa);
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View view = ltInflater.inflate(R.layout.one_row, linLayout, false);
         LinearLayout linearLayout = (LinearLayout) view.findViewById(R.id.llOneRow);
@@ -145,6 +145,6 @@ public abstract class StageFragment extends Fragment {
             }
         }
         linLayout.addView(view);
-        Log.d(TAG, "createElement - finish");
+        Log.i(TAG, "createElement - finish");
     }
 }
