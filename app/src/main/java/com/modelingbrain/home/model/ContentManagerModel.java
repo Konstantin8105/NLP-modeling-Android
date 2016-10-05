@@ -177,7 +177,7 @@ public class ContentManagerModel {
         switch (modelSort) {
             case SortName:
             case SortNameInverse:
-                output = SortName(context, result);
+                output = SortModelName(context, result);
                 break;
             case SortAlphabet:
             case SortAlphabetInverse:
@@ -188,7 +188,7 @@ public class ContentManagerModel {
                 output = SortDate(context, result);
                 break;
             default:
-                output = SortName(context, result);
+                output = SortModelName(context, result);
         }
         if (modelSort == ModelSort.SortNameInverse ||
                 modelSort == ModelSort.SortAlphabetInverse ||
@@ -210,11 +210,12 @@ public class ContentManagerModel {
                         return 1;
                     if (lhs.getMillisecond_Date() > rhs.getMillisecond_Date())
                         return -1;
-                    if (lhs.getName().compareTo(rhs.getName()) != 0)
-                        return lhs.getName().compareTo(rhs.getName());
-                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
-                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-                    return lhs.getModelType().convert() - rhs.getModelType().convert();
+                    return 0;
+//                    if (lhs.getName().compareTo(rhs.getName()) != 0)
+//                        return lhs.getName().compareTo(rhs.getName());
+//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
+//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
+//                    return lhs.getModelType().convert() - rhs.getModelType().convert();
                 }
             });
         }
@@ -222,36 +223,40 @@ public class ContentManagerModel {
     }
 
 
+    //TODO not correct sorting
     private static ArrayList<ElementList> SortAlphabet(Context context, final ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
                 @Override
                 public int compare(Model lhs, Model rhs) {
-                    if (lhs.getName().compareTo(rhs.getName()) != 0)
-                        return lhs.getName().compareTo(rhs.getName());
-                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
-                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-                    return lhs.getModelType().convert() - rhs.getModelType().convert();
+                    return lhs.getName().compareTo(rhs.getName());
+//                    if (lhs.getName().compareTo(rhs.getName()) != 0)
+//                        return lhs.getName().compareTo(rhs.getName());
+//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
+//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
+//                    return lhs.getModelType().convert() - rhs.getModelType().convert();
                 }
             });
         }
         return convert(context, result);
     }
 
-    private static ArrayList<ElementList> SortName(Context context, ArrayList<Model> result) {
+    //TODO not correct sorting
+    private static ArrayList<ElementList> SortModelName(Context context, ArrayList<Model> result) {
         if (result.size() > 1) {
 
             Collections.sort(result, new Comparator<Model>() {
                 @Override
                 public int compare(Model lhs, Model rhs) {
-                    if ((lhs.getModelType().convert() - rhs.getModelType().convert()) != 0)
-                        return (lhs.getModelType().convert() - rhs.getModelType().convert());
-                    if (lhs.getModelType().convert() - rhs.getModelType().convert() == 0)
-                        return lhs.getModelType().convert() - rhs.getModelType().convert();
-                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) != 0)
-                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-                    return (lhs.getName().compareTo(rhs.getName()));
+                    return (lhs.getModelType().convert() - rhs.getModelType().convert());
+//                    if ((lhs.getModelType().convert() - rhs.getModelType().convert()) != 0)
+//                        return (lhs.getModelType().convert() - rhs.getModelType().convert());
+//                    if (lhs.getModelType().convert() - rhs.getModelType().convert() == 0)
+//                        return lhs.getModelType().convert() - rhs.getModelType().convert();
+//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) != 0)
+//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
+//                    return (lhs.getName().compareTo(rhs.getName()));
                 }
             });
         }
