@@ -79,7 +79,6 @@ public abstract class StageFragment extends Fragment {
         return rootView;
     }
 
-//    protected abstract View initializeData(LayoutInflater inflater, ViewGroup parentViewGroup);
     protected abstract void createInterface();
     public abstract Model savingModelData();
 

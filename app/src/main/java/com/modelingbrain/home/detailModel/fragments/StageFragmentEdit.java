@@ -35,6 +35,8 @@ public class StageFragmentEdit extends StageFragment {
     @Override
     public Model savingModelData() {
         Log.d(TAG, "savingModelData - start");
+        if(multiAutoCompleteTextViews == null)
+            return null;
         for (int i = 0; i < multiAutoCompleteTextViews.length; i++) {
             if (i == 0) {
                 model.setName(multiAutoCompleteTextViews[i].getText().toString());

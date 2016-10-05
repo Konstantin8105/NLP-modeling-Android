@@ -152,6 +152,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         Log.d(TAG, "onPause - start");
+        savingModelInDb();
         setResult(RESULT_OK);
         super.onPause();
         Log.d(TAG, "onPause - finish");
@@ -168,6 +169,8 @@ public class DetailActivity extends AppCompatActivity {
 
     private void savingModelInDb() {
         model = FragmentType.getLastFragment().savingModelData();
+        if(model == null)
+            return;
         DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
         dbHelperModel.updateModel(model);
         dbHelperModel.close();
