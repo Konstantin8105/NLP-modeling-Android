@@ -185,9 +185,6 @@ public class OpenActivity extends SaveOpenActivity {
 
             GlobalFunction.pause();
 
-            //TODO remove same models in DB
-
-
             Log.i(TAG, "doInBackground - finish");
             return null;
         }
