@@ -10,7 +10,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.modelingbrain.home.R;
@@ -124,7 +123,7 @@ public class DetailActivity extends AppCompatActivity {
 
     private void createView() {
         StageFragment stageFragment = FragmentType.getNewInstanceFragment(fragmentType, getFragmentManager());
-        if(stageFragment == null){
+        if (stageFragment == null) {
             throw new NullPointerException("stageFragment is NULL");
         }
 

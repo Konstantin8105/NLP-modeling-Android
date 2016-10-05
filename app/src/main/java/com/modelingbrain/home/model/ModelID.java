@@ -250,7 +250,5 @@ public enum ModelID {
                     ModelType.STRATEGY,
                     R.drawable.ic_model_state,
                     7)
-
-
     };
 }
