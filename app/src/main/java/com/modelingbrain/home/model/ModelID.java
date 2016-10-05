@@ -2,8 +2,6 @@ package com.modelingbrain.home.model;
 
 import com.modelingbrain.home.R;
 
-import java.util.function.ToDoubleBiFunction;
-
 public enum ModelID {
     ID_Science(0),//OK
     ID_SCORE(10),//OK

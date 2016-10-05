@@ -15,7 +15,9 @@ import java.util.List;
 public class DBUpdater00 implements IDBUpdater {
 
     private static final String prefixTable = "TABLE" + "OF" + "MODEL";
-    List<Model> logModels = new ArrayList<>();
+    private final List<Model> logModels = new ArrayList<>();
+
+    //TODO remove strange logs
 
     @Override
     public List<Model> update(Context context, SQLiteDatabase db) {
@@ -30,34 +32,17 @@ public class DBUpdater00 implements IDBUpdater {
                 models.addAll(tableModels);
             }
         }
-//        {
-//            Model model = new Model(ModelID.ID_NOTE);
-//            model.setName("Tables");
-//            String out = new String();
-//            for (int i = 0; i < tables.size(); i++) {
-//                out += tables.get(i).toString() + "\n";
-//            }
-//            model.setAnswer(0, out);
-//            models.add(model);
-//        }
         {
             //drop tables
             for (int i = 0; i < tables.size(); i++) {
                 db.execSQL("DROP TABLE IF EXISTS " + prefixTable + tables.get(i).toString());
             }
         }
-//        {
-//            // add logging
-//            Model logResult = new Model(ModelID.ID_NOTE);
-//            logResult.setName("log");
-//            logResult.setAnswer(0, log);
-//            models.add(logResult);
-//        }
         models.addAll(logModels);
         return models;
     }
 
-    private List<ModelID> getTablesWithPrefix(SQLiteDatabase db, String prefix) {
+    private List<ModelID> getTablesWithPrefix(SQLiteDatabase db, @SuppressWarnings("SameParameterValue") String prefix) {
 
         Model logModel = new Model(ModelID.ID_NOTE);
         logModel.setName("Log : getTablesWithPrefix");
@@ -68,11 +53,11 @@ public class DBUpdater00 implements IDBUpdater {
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 String str = c.getString(c.getColumnIndex("name"));
-                textLog.append("\n\nstr = " + str);
+                textLog.append("\n\nstr = ").append(str);
                 if (str.startsWith(prefix)) {
-                    textLog.append("with prefix: " + prefix);
+                    textLog.append("with prefix: ").append(prefix);
                     String modelIdName = str.substring(prefix.length(), str.length());
-                    textLog.append("with modelId name: " + prefix);
+                    textLog.append("with modelId name: ").append(prefix);
                     for (int i = 0; i < ModelID.values().length; i++) {
                         if (modelIdName.compareTo(ModelID.values()[i].toString()) == 0) {
                             tables.add(ModelID.values()[i]);
@@ -101,7 +86,7 @@ public class DBUpdater00 implements IDBUpdater {
 
         if (!ContentManagerModel.isIgnore(context, tableId)) {
             String tableName = prefixTable + tableId.toString();
-            textLog.append("\n\n\n\nanalyzeTable table = " + tableName + "\n");
+            textLog.append("\n\n\n\nanalyzeTable table = ").append(tableName).append("\n");
             Cursor c = db.query(tableName, null, null, null, null, null, null);
             if (c.moveToFirst()) {
                 int NameColIndex = c.getColumnIndex("name");
@@ -114,20 +99,16 @@ public class DBUpdater00 implements IDBUpdater {
                     try {
                         int i = 0;
                         do {
-                            textLog.append("position = " + i + "\n");
+                            textLog.append("position = ").append(i).append("\n");
                             String line = c.getString(c.getColumnIndex("Str" + i));
-                            textLog.append("line = " + line + "\n");
+                            textLog.append("line = ").append(line).append("\n");
                             listRight.add(i, line);
                             i++;
                         } while (i < 200);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    textLog.append("\ncreateNewRecord"
-                            + "name = " + name
-                            + "time = " + time
-                            + "listRight = " + listRight
-                            + "\n");
+                    textLog.append("\ncreateNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
                     if (listRight.size() != tableId.getSize()) {
                         Model model = new Model(ModelID.ID_NOTE);
                         model.setName(name);

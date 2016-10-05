@@ -3,13 +3,11 @@ package com.modelingbrain.home.db;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
 
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static com.modelingbrain.home.db.DBHelperModel.DB_DATE;
@@ -52,11 +50,11 @@ public class DBUpdaterDefault implements IDBUpdater {
                 model.setName(tableName + " : " + (position++));
                 StringBuilder note = new StringBuilder();
                 for (int i = 0; i < columnsIndex.length; i++) {
-                    note.append(columns[i] + " " + c.getString(columnsIndex[i]) + ";");
+                    note.append(columns[i]).append(" ").append(c.getString(columnsIndex[i])).append(";");
                 }
                 model.setAnswer(0, note.toString());
                 int datePosition = c.getColumnIndex(DB_DATE);
-                if(datePosition >= 0){
+                if (datePosition >= 0) {
                     model.setMillisecond_Date(c.getLong(datePosition));
                 }
                 models.add(model);
