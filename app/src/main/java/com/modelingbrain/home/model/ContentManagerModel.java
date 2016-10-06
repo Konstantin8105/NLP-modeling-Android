@@ -221,9 +221,9 @@ public class ContentManagerModel {
     private static final Comparator<Model> modelDate = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
-            if (o1.getMillisecond_Date() > o2.getMillisecond_Date())
-                return 1;
             if (o1.getMillisecond_Date() < o2.getMillisecond_Date())
+                return 1;
+            if (o1.getMillisecond_Date() > o2.getMillisecond_Date())
                 return -1;
             return 0;
         }

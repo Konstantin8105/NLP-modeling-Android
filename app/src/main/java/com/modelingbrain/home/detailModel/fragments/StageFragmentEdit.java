@@ -30,10 +30,10 @@ public class StageFragmentEdit extends StageFragment {
     }
 
     @Override
-    public Model savingModelData() {
+    public void savingModelData() {
         Log.i(TAG, "savingModelData - start");
         if(multiAutoCompleteTextViews == null)
-            return null;
+            return;
         for (int i = 0; i < multiAutoCompleteTextViews.length; i++) {
             if (i == 0) {
                 model.setName(multiAutoCompleteTextViews[i].getText().toString());
@@ -47,7 +47,6 @@ public class StageFragmentEdit extends StageFragment {
         }
         multiAutoCompleteTextViews = null;
         Log.i(TAG, "savingModelData - finish");
-        return model;
     }
 
     private void createEditElement(String str, int position) {

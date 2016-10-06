@@ -59,7 +59,6 @@ public class DetailActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                savingModelInDb();
                 changeStageDetail();
                 createView();
                 Snackbar.make(findViewById(R.id.header), getBaseContext().getString(FragmentType.getStringResource()), Snackbar.LENGTH_LONG)
@@ -126,7 +125,6 @@ public class DetailActivity extends AppCompatActivity {
             throw new NullPointerException("stageFragment is NULL");
         }
 
-        //TODO: BUG FIXED: ошибка возникает тут после внесения замены слова и добавления в словарь
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         Bundle args = new Bundle();
         args.putInt(DATABASE_ID, model.getDbId());
@@ -152,7 +150,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         Log.i(TAG, "onPause - start");
-        savingModelInDb();
         setResult(RESULT_OK);
         super.onPause();
         Log.i(TAG, "onPause - finish");
@@ -161,23 +158,9 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         Log.i(TAG, "onBackPressed - start");
-        savingModelInDb();
         setResult(RESULT_OK);
         super.onBackPressed();
         Log.i(TAG, "onBackPressed - finish");
     }
 
-    private void savingModelInDb() {
-        Log.i(TAG, "savingModelInDb - start");
-        model = FragmentType.getLastFragment().savingModelData();
-        if(model == null) {
-            Log.i(TAG, "model == null");
-            Log.i(TAG, "savingModelInDb - finish");
-            return;
-        }
-        DBHelperModel dbHelperModel = new DBHelperModel(this.getBaseContext());
-        dbHelperModel.updateModel(model);
-        dbHelperModel.close();
-        Log.i(TAG, "savingModelInDb - finish");
-    }
 }

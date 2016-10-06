@@ -27,8 +27,8 @@ public class StageFragmentView extends StageFragment {
     }
 
     @Override
-    public Model savingModelData() {
-        return model;
+    public void savingModelData() {
+        return;
     }
 
     private void createPolar() {

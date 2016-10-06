@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
+import com.modelingbrain.home.detailModel.FragmentType;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.R;
 
@@ -79,8 +80,9 @@ public abstract class StageFragment extends Fragment {
         return rootView;
     }
 
-    protected abstract void createInterface();
-    public abstract Model savingModelData();
+    abstract void createInterface();
+
+    abstract void savingModelData();
 
     @Override
     public void onStart() {
@@ -89,31 +91,6 @@ public abstract class StageFragment extends Fragment {
         linLayout.removeAllViews();
         createInterface();
         Log.i(TAG, "onStart - finish");
-    }
-
-    @Override
-    public void onResume() {
-        Log.i(TAG, "onResume - start");
-        super.onResume();
-        Log.i(TAG, "onResume - finish");
-    }
-
-    @Override
-    public void onDestroyView() {
-        Log.i(TAG, "onDestroyView");
-        super.onDestroyView();
-    }
-
-    @Override
-    public void onDestroy() {
-        Log.i(TAG, "onDestroy");
-        super.onDestroy();
-    }
-
-    @Override
-    public void onDetach() {
-        Log.i(TAG, "onDetach");
-        super.onDetach();
     }
 
     void createElement(String str, QA qa) {
@@ -146,5 +123,21 @@ public abstract class StageFragment extends Fragment {
         }
         linLayout.addView(view);
         Log.i(TAG, "createElement - finish");
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Log.i(TAG, "savingModelInDb - start");
+        savingModelData();
+        if (model == null) {
+            Log.i(TAG, "model == null");
+            Log.i(TAG, "savingModelInDb - finish");
+            return;
+        }
+        DBHelperModel dbHelperModel = new DBHelperModel(this.getActivity().getBaseContext());
+        dbHelperModel.updateModel(model);
+        dbHelperModel.close();
+        Log.i(TAG, "savingModelInDb - finish");
     }
 }
