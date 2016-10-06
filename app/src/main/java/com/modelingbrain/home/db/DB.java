@@ -8,5 +8,8 @@ class DB {
     static final List<String> listDb = new ArrayList<>(Arrays.asList
             (
                     DBHelperModel.DATABASE_MODEL,
-                    "locale"));
+                    "locale",
+                    "android_metadata",
+                    "sqlite_sequence",
+                    "TABLE"+"OF"+"TEST"));
 }

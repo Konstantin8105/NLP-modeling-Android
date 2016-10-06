@@ -15,9 +15,7 @@ import java.util.List;
 public class DBUpdater00 implements IDBUpdater {
 
     private static final String prefixTable = "TABLE" + "OF" + "MODEL";
-    private final List<Model> logModels = new ArrayList<>();
-
-    //TODO remove strange logs
+    //LOG: private final List<Model> logModels = new ArrayList<>();
 
     @Override
     public List<Model> update(Context context, SQLiteDatabase db) {
@@ -38,30 +36,30 @@ public class DBUpdater00 implements IDBUpdater {
                 db.execSQL("DROP TABLE IF EXISTS " + prefixTable + tables.get(i).toString());
             }
         }
-        models.addAll(logModels);
+        //LOG: models.addAll(logModels);
         return models;
     }
 
     private List<ModelID> getTablesWithPrefix(SQLiteDatabase db, @SuppressWarnings("SameParameterValue") String prefix) {
 
-        Model logModel = new Model(ModelID.ID_NOTE);
-        logModel.setName("Log : getTablesWithPrefix");
-        StringBuilder textLog = new StringBuilder();
+        //LOG: Model logModel = new Model(ModelID.ID_NOTE);
+        //LOG: logModel.setName("Log : getTablesWithPrefix");
+        //LOG: StringBuilder textLog = new StringBuilder();
 
         List<ModelID> tables = new ArrayList<>();
         Cursor c = db.rawQuery("SELECT name FROM sqlite_master WHERE type='table'", null);
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 String str = c.getString(c.getColumnIndex("name"));
-                textLog.append("\n\nstr = ").append(str);
+                //LOG: textLog.append("\n\nstr = ").append(str);
                 if (str.startsWith(prefix)) {
-                    textLog.append("with prefix: ").append(prefix);
+                    //LOG: textLog.append("with prefix: ").append(prefix);
                     String modelIdName = str.substring(prefix.length(), str.length());
-                    textLog.append("with modelId name: ").append(prefix);
+                    //LOG: textLog.append("with modelId name: ").append(prefix);
                     for (int i = 0; i < ModelID.values().length; i++) {
                         if (modelIdName.compareTo(ModelID.values()[i].toString()) == 0) {
                             tables.add(ModelID.values()[i]);
-                            textLog.append("found");
+                            //LOG: textLog.append("found");
                         }
                     }
                 }
@@ -70,9 +68,9 @@ public class DBUpdater00 implements IDBUpdater {
         }
         c.close();
 
-        logModel.setAnswer(0, textLog.toString());
-        logModel.setMillisecond_Date(GlobalFunction.getTime());
-        logModels.add(logModel);
+        //LOG: logModel.setAnswer(0, textLog.toString());
+        //LOG: logModel.setMillisecond_Date(GlobalFunction.getTime());
+        //LOG: logModels.add(logModel);
 
         return tables;
     }
@@ -80,13 +78,13 @@ public class DBUpdater00 implements IDBUpdater {
     private List<Model> analyzeTable(Context context, SQLiteDatabase db, ModelID tableId) {
         List<Model> models = new ArrayList<>();
 
-        Model logModel = new Model(ModelID.ID_NOTE);
-        logModel.setName("Log : analyzeTable : " + tableId);
-        StringBuilder textLog = new StringBuilder();
+        //LOG: Model logModel = new Model(ModelID.ID_NOTE);
+        //LOG: logModel.setName("Log : analyzeTable : " + tableId);
+        //LOG: StringBuilder textLog = new StringBuilder();
 
         if (!ContentManagerModel.isIgnore(context, tableId)) {
             String tableName = prefixTable + tableId.toString();
-            textLog.append("\n\n\n\nanalyzeTable table = ").append(tableName).append("\n");
+            //LOG: textLog.append("\n\n\n\nanalyzeTable table = ").append(tableName).append("\n");
             Cursor c = db.query(tableName, null, null, null, null, null, null);
             if (c.moveToFirst()) {
                 int NameColIndex = c.getColumnIndex("name");
@@ -99,16 +97,16 @@ public class DBUpdater00 implements IDBUpdater {
                     try {
                         int i = 0;
                         do {
-                            textLog.append("position = ").append(i).append("\n");
+                            //LOG: textLog.append("position = ").append(i).append("\n");
                             String line = c.getString(c.getColumnIndex("Str" + i));
-                            textLog.append("line = ").append(line).append("\n");
+                            //LOG: textLog.append("line = ").append(line).append("\n");
                             listRight.add(i, line);
                             i++;
                         } while (i < 200);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    textLog.append("\ncreateNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
+                    //LOG: textLog.append("\ncreateNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
                     if (listRight.size() != tableId.getSize()) {
                         Model model = new Model(ModelID.ID_NOTE);
                         model.setName(name);
@@ -132,12 +130,12 @@ public class DBUpdater00 implements IDBUpdater {
             }
             c.close();
         } else {
-            textLog.append("ignored");
+            //LOG: textLog.append("ignored");
         }
 
-        logModel.setAnswer(0, textLog.toString());
-        logModel.setMillisecond_Date(GlobalFunction.getTime());
-        logModels.add(logModel);
+        //LOG: logModel.setAnswer(0, textLog.toString());
+        //LOG: logModel.setMillisecond_Date(GlobalFunction.getTime());
+        //LOG: logModels.add(logModel);
 
         return models;
     }
