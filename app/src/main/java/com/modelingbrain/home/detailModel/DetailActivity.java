@@ -126,6 +126,7 @@ public class DetailActivity extends AppCompatActivity {
             throw new NullPointerException("stageFragment is NULL");
         }
 
+        //TODO: BUG FIXED: ошибка возникает тут после внесения замены слова и добавления в словарь
         FragmentTransaction transaction = getFragmentManager().beginTransaction();
         Bundle args = new Bundle();
         args.putInt(DATABASE_ID, model.getDbId());
