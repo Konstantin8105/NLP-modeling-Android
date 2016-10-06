@@ -199,7 +199,7 @@ public enum ModelID {
 
             new ModelLine(ModelID.ID_NOTE,
                     R.array.str_Left_Note,
-                    ModelType.STRATEGY,
+                    ModelType.NONE,
                     R.drawable.ic_model_note,
                     1),
 

@@ -15,7 +15,7 @@
     <color name="dark_color"          >#D7CCC8</color> <!-- 100 -->
     <color name="dark_color_text"     >#000000</color>
 
-    <color name="other_color"         >#F5F5F5</color><!-- 100 -->
+    <color name="other_color"         >#F0F4C3</color> <!-- 100 -->
     <color name="other_color_text"    >#000000</color>
 
 </resources>
