@@ -13,7 +13,7 @@ public class ReaderAmount extends Reader {
 
     private int amount;
 
-    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.formats format) {
+    public ReaderAmount(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.Formats format) {
         super(task, activity, filename, format);
     }
 

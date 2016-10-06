@@ -28,9 +28,9 @@ public abstract class Reader {
     private final AsyncTask<Void, String, Void> task;
     private final SaveOpenActivity activity;
     private final String filename;
-    final ValuesIO.formats format;
+    final ValuesIO.Formats format;
 
-    Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.formats format) {
+    Reader(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, ValuesIO.Formats format) {
         this.activity = activity;
         this.task = task;
         this.filename = filename;

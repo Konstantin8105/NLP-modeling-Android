@@ -120,16 +120,16 @@ public class OpenActivity extends SaveOpenActivity {
 
             List<Model> models = new ArrayList<>();
             {
-                for (int i = 0; i < ValuesIO.formats.values().length; i++) {
-                    Log.i(TAG, "doInBackground - value : " + ValuesIO.formats.values()[i]);
+                for (int i = 0; i < ValuesIO.Formats.values().length; i++) {
+                    Log.i(TAG, "doInBackground - value : " + ValuesIO.Formats.values()[i]);
                     List<String> files = new ArrayList<>();
-                    findAllFiles(files, ValuesIO.formats.values()[i].getFormat());
+                    findAllFiles(files, ValuesIO.Formats.values()[i].getFormat());
                     for (int j = 0; j < files.size(); j++) {
                         Log.i(TAG, "doInBackground - file : " + files.get(j));
                         try {
                             publishProgress(getResources().getString(R.string.task_filename) + files.get(j));
                             publishProgress(getResources().getString(R.string.task_start_opening));
-                            ReaderAmount readerAmount = new ReaderAmount(this, activity, files.get(j), ValuesIO.formats.values()[i]);
+                            ReaderAmount readerAmount = new ReaderAmount(this, activity, files.get(j), ValuesIO.Formats.values()[i]);
                             readerAmount.reading();
                             int amountModels = readerAmount.getAmount();
                             readerAmount.close();
@@ -138,7 +138,7 @@ public class OpenActivity extends SaveOpenActivity {
 
                             publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
                             publishProgress(getResources().getString(R.string.task_analyzing));
-                            ReaderModels readerModels = new ReaderModels(this, activity, files.get(j), amountModels, ValuesIO.formats.values()[i]);
+                            ReaderModels readerModels = new ReaderModels(this, activity, files.get(j), amountModels, ValuesIO.Formats.values()[i]);
                             readerModels.reading();
                             List<Model> modelReader = readerModels.getModels();
                             readerModels.close();

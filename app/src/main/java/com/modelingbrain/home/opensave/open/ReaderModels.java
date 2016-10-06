@@ -19,7 +19,7 @@ public class ReaderModels extends Reader {
     private final int amount;
     private int position;
 
-    public ReaderModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, int amount, ValuesIO.formats format) {
+    public ReaderModels(AsyncTask<Void, String, Void> task, SaveOpenActivity activity, String filename, int amount, ValuesIO.Formats format) {
         super(task, activity, filename, format);
         this.amount = amount;
     }

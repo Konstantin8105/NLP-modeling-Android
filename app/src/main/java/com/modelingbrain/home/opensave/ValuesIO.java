@@ -4,13 +4,13 @@ package com.modelingbrain.home.opensave;
 public class ValuesIO {
     public static final String OUTPUT_FILENAME_JSON = "NlpModeling.json";
 
-    public enum formats{
+    public enum Formats {
         JSON (".json"),
         XML(".xml");
 
         private final String format;
 
-        formats(String format) {
+        Formats(String format) {
             this.format = format;
         }
 
