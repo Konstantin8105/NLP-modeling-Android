@@ -44,7 +44,7 @@ public class OpenActivity extends SaveOpenActivity {
                 // Should we show an explanation?
                 if (ActivityCompat.shouldShowRequestPermissionRationale(activity,
                         Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                    // Show an expanation to the user *asynchronously* -- don't block
+                    // Show an explanation to the user *asynchronously* -- don't block
                     // this thread waiting for the user's response! After the user
                     // sees the explanation, try again to request the permission.
                     Log.i(TAG, "READ_EXTERNAL_STORAGE permission rationale to provide additional context.");

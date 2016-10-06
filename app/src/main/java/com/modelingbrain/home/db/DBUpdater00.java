@@ -50,7 +50,7 @@ public class DBUpdater00 implements IDBUpdater {
         if (c.moveToFirst()) {
             while (!c.isAfterLast()) {
                 String str = c.getString(c.getColumnIndex("name"));
-                //LOG: textLog.append("\n\nstr = ").append(str);
+                //LOG: textLog.append("\n\n str = ").append(str);
                 if (str.startsWith(prefix)) {
                     //LOG: textLog.append("with prefix: ").append(prefix);
                     String modelIdName = str.substring(prefix.length(), str.length());
@@ -83,7 +83,7 @@ public class DBUpdater00 implements IDBUpdater {
 
         if (!ContentManagerModel.isIgnore(context, tableId)) {
             String tableName = prefixTable + tableId.toString();
-            //LOG: textLog.append("\n\n\n\nanalyzeTable table = ").append(tableName).append("\n");
+            //LOG: textLog.append("\n\n\n\n analyzeTable table = ").append(tableName).append("\n");
             Cursor c = db.query(tableName, null, null, null, null, null, null);
             if (c.moveToFirst()) {
                 int NameColIndex = c.getColumnIndex("name");
@@ -105,7 +105,7 @@ public class DBUpdater00 implements IDBUpdater {
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    //LOG: textLog.append("\ncreateNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
+                    //LOG: textLog.append("\n createNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
                     if (listRight.size() != tableId.getSize()) {
                         Model model = new Model(ModelID.ID_NOTE);
                         model.setName(name);
