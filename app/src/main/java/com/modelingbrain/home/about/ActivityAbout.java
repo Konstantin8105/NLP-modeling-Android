@@ -13,28 +13,27 @@ import com.modelingbrain.home.R;
 import java.util.ArrayList;
 
 public class ActivityAbout extends AppCompatActivity implements
-		AdapterAbout.ViewHolder.ClickListener
-{
+        AdapterAbout.ViewHolder.ClickListener {
 
-	private ArrayList<ModelAbout> listModels;
+    private ArrayList<ModelAbout> listModels;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_choose);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_choose);
 
-		listModels = ModelAbout.convert(this.getResources().getStringArray(R.array.str_array_About));
-		AdapterAbout adapter = new AdapterAbout(this, listModels);
-		RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-		recyclerView.setAdapter(adapter);
-		recyclerView.setItemAnimator(new DefaultItemAnimator());
-		recyclerView.setLayoutManager(new LinearLayoutManager(this));
-	}
+        listModels = ModelAbout.convert(this.getResources().getStringArray(R.array.str_array_About));
+        AdapterAbout adapter = new AdapterAbout(this, listModels);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+    }
 
-	@Override
-	public void onItemClicked(int position) {
-		Intent i = new Intent(Intent.ACTION_VIEW);
-		i.setData(Uri.parse(listModels.get(position).link));
-		startActivity(i);
-	}
+    @Override
+    public void onItemClicked(int position) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(listModels.get(position).link));
+        startActivity(i);
+    }
 }

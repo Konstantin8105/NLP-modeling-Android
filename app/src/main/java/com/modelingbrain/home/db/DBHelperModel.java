@@ -118,7 +118,6 @@ public class DBHelperModel extends SQLiteOpenHelper {
     public Model openModel(int inputID) {
         Model element = null;
         SQLiteDatabase db = this.getWritableDatabase();
-//        Cursor cursor = db.query(MODEL_TABLE, null, null, null, null, null, null);
 
         String selectQuery = "SELECT  * FROM " + DATABASE_MODEL + " WHERE "
                 + DB_ID + " = " + inputID;
@@ -140,7 +139,6 @@ public class DBHelperModel extends SQLiteOpenHelper {
             } while (cursor.moveToNext());
         }
         cursor.close();
-//        Log.i(TAG, "DBHelperModel : openModel - ID = " + element.getDbId());
         return element;
     }
 

@@ -25,7 +25,4 @@ public class ValuesIO {
         public static final String TIME = "time";
         public static final String RIGHT = "right";
     }
-
-
-
 }

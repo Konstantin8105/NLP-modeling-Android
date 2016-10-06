@@ -48,11 +48,11 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
             case R.id.menu_remove: {
                 Log.i(TAG, "menu_remove");
                 DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
-//                ArrayList<Model> items = dbHelperModel.openHeader(ModelState.NORMAL);
                 List<Integer> list = fragment.getAdapter().getSelectedItems();
                 for (int i = 0; i < list.size(); i++) {
                     dbHelperModel.deleteModel(fragment.getAdapter().get(list.get(i)).getID());
                 }
+                dbHelperModel.close();
                 int count = fragment.getAdapter().getSelectedItems().size();
                 if(count > 0){
                     String text = fragment.getFragmentContext().getResources().getQuantityString(R.plurals.remove_models,count,count);
@@ -63,7 +63,6 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
             }
             case R.id.menu_share: {
                 Log.i(TAG, "menu_share");
-//                DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
                 List<Integer> list = fragment.getAdapter().getSelectedItems();
                 int [] shareModelId = new int [list.size()];
                 for(int i=0;i<list.size();i++){
@@ -80,6 +79,7 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
                 for(int i=0;i<list.size();i++){
                     dbHelperModel.archiveModel(fragment.getAdapter().get(list.get(i)).getID());
                 }
+                dbHelperModel.close();
                 int count = fragment.getAdapter().getSelectedItems().size();
                 if(count > 0){
                     String text = fragment.getFragmentContext().getResources().getQuantityString(R.plurals.archived_models,count,count);

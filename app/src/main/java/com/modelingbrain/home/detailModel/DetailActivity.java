@@ -39,7 +39,7 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         Log.i(TAG, "onSaveInstanceState - start");
-//        savingModelInDb();
+        //never add savingModelInDb() - because it is FAIL
         outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
