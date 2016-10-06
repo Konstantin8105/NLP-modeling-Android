@@ -19,6 +19,7 @@ import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 
+@SuppressWarnings("ALL")
 public class RotateTest {
     @Rule
     public final ActivityTestRule<MainActivity> main = new ActivityTestRule<>(MainActivity.class);

@@ -8,6 +8,7 @@ import java.util.List;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 
+@SuppressWarnings("ALL")
 public class TestModelId {
     @Test
     public void amountMoreZero() {
