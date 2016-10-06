@@ -82,6 +82,7 @@ public class OpenActivity extends SaveOpenActivity {
             }
             // other 'case' lines to check for other
             // permissions this app might request
+            default:
         }
     }
 
