@@ -217,15 +217,15 @@ public class ContentManagerModel {
     private static final Comparator<Model> modelName = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
-            return o1.getName().compareTo(o2.getName());
+            return o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase());
         }
     };
     private static final Comparator<Model> modelDate = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
-            if (o1.getMillisecond_Date() < o2.getMillisecond_Date())
-                return 1;
             if (o1.getMillisecond_Date() > o2.getMillisecond_Date())
+                return 1;
+            if (o1.getMillisecond_Date() < o2.getMillisecond_Date())
                 return -1;
             return 0;
         }
@@ -244,17 +244,17 @@ public class ContentManagerModel {
 
 
     private static ArrayList<ElementList> SortModelName(Context context, ArrayList<Model> result) {
-        sort(result, modelType, modelId);
+        sort(result, modelType, modelId, modelName);
         return convert(context, result);
     }
 
     private static void sort(List<Model> data, Comparator<Model>... comparators) {
         Log.i(TAG, "ModelMain::sort - start");
         for (int i = 0; i < data.size(); i++) {
-            Log.i(TAG, "Input -- " + data.get(i).toString());
+            Log.i(TAG, "Input -- " + data.get(i).getName());
         }
         for (int i = 0; i < comparators.length; i++) {
-            Log.i(TAG, "Comparator["+i+"] -- " + comparators[i]);
+            Log.i(TAG, "Comparator[" + i + "] -- " + comparators[i]);
         }
         if (data.size() < 2) {
             return;
@@ -264,7 +264,7 @@ public class ContentManagerModel {
             //recurse
             int leftPosition = 0;
             for (int i = 1; i < data.size(); i++) {
-                if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0) {
+                if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0 || i == data.size() - 1) {
                     if (i - leftPosition > 2) {
                         Comparator<Model>[] otherWithoutZero = new Comparator[comparators.length - 1];
                         for (int j = 1; j < comparators.length; j++) {
@@ -273,7 +273,7 @@ public class ContentManagerModel {
                         List<Model> part = data.subList(leftPosition, i);
                         sort(part, otherWithoutZero);
                         for (int j = 0; j < part.size(); j++) {
-                            data.set(j+leftPosition,part.get(j));
+                            data.set(j + leftPosition, part.get(j));
                         }
                     }
                     leftPosition = i;
@@ -281,7 +281,7 @@ public class ContentManagerModel {
             }
         }
         for (int i = 0; i < data.size(); i++) {
-            Log.i(TAG, "Output -- " + data.get(i).toString());
+            Log.i(TAG, "Output -- " + data.get(i).getName());
         }
         Log.i(TAG, "ModelMain::sort - finish");
     }
