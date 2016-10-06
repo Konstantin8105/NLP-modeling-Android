@@ -47,12 +47,7 @@ public class FragmentType {
     @SuppressLint("StaticFieldLeak")
     private static StageFragment lastFragment = null;
 
-    public static StageFragment getLastFragment() {
-        return lastFragment;
-    }
-
     private static Type lastType = null;
-
 
     @SuppressWarnings("TryWithIdenticalCatches")
     public static StageFragment getNewInstanceFragment(Type type, FragmentManager fragmentManager) {

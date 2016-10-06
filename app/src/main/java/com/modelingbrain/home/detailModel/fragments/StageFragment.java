@@ -11,11 +11,10 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
-import com.modelingbrain.home.detailModel.FragmentType;
 import com.modelingbrain.home.model.Model;
-import com.modelingbrain.home.R;
 
 public abstract class StageFragment extends Fragment {
 

@@ -6,7 +6,6 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.modelingbrain.home.R;
-import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
 
 public class StageFragmentView extends StageFragment {
@@ -28,7 +27,6 @@ public class StageFragmentView extends StageFragment {
 
     @Override
     public void savingModelData() {
-        return;
     }
 
     private void createPolar() {
