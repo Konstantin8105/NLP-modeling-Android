@@ -22,6 +22,26 @@ public class SaveActivity extends SaveOpenActivity {
 
     @Override
     protected void initializeTask() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                // Should we show an explanation?
+                if (ActivityCompat.shouldShowRequestPermissionRationale(activity,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
+                    // Show an expanation to the user *asynchronously* -- don't block
+                    // this thread waiting for the user's response! After the user
+                    // sees the explanation, try again to request the permission.
+                    Log.i(TAG, "WRITE_EXTERNAL_STORAGE permission rationale to provide additional context.");
+                } else {
+                    // No explanation needed, we can request the permission.
+                    ActivityCompat.requestPermissions(activity,
+                            new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                            REQUEST_WRITE_STORAGE);
+                    // READ_EXTERNAL_STORAGE is an
+                    // app-defined int constant. The callback method gets the
+                    // result of the request.
+                }
+            }
+        }
         task = new SaveTask();
         task.execute();
     }
@@ -33,14 +53,13 @@ public class SaveActivity extends SaveOpenActivity {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-
                     // permission was granted, yay! Do the
                     // contacts-related task you need to do.
-
+                    Log.i(TAG, "REQUEST_WRITE_STORAGE permission has now been granted. Showing preview.");
                 } else {
-
                     // permission denied, boo! Disable the
                     // functionality that depends on this permission.
+                    Log.i(TAG, "REQUEST_WRITE_STORAGE permission was NOT granted.");
                 }
                 break;
             }
@@ -60,27 +79,6 @@ public class SaveActivity extends SaveOpenActivity {
         @Override
         protected Void doInBackground(Void... params) {
             Log.i(TAG, "doInBackground - start");
-
-
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
-                if (ContextCompat.checkSelfPermission(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    // Should we show an explanation?
-                    if (ActivityCompat.shouldShowRequestPermissionRationale(activity,
-                            Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
-                        // Show an expanation to the user *asynchronously* -- don't block
-                        // this thread waiting for the user's response! After the user
-                        // sees the explanation, try again to request the permission.
-                    } else {
-                        // No explanation needed, we can request the permission.
-                        ActivityCompat.requestPermissions(activity,
-                                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                                REQUEST_WRITE_STORAGE);
-                        // READ_EXTERNAL_STORAGE is an
-                        // app-defined int constant. The callback method gets the
-                        // result of the request.
-                    }
-                }
-            }
 
             try {
                 publishProgress(getResources().getString(R.string.task_start_saving));

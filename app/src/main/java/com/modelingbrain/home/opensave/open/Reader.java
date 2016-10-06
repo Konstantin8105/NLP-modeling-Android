@@ -83,14 +83,15 @@ public abstract class Reader {
                 xpp.setInput(xmlBuffer);
                 int eventType = xpp.getEventType();
                 while (eventType != XmlPullParser.END_DOCUMENT) {
-                    if (eventType == XmlPullParser.START_DOCUMENT) {
-                    } else if (xpp.getAttributeCount() > 0) {
-                        if (task.isCancelled()) {
-                            close();
-                            return;
+                    if (eventType != XmlPullParser.START_DOCUMENT) {
+                        if (xpp.getAttributeCount() > 0) {
+                            if (task.isCancelled()) {
+                                close();
+                                return;
+                            }
+                            action();
+                            publishProgress(getPositionProgress());
                         }
-                        action();
-                        publishProgress(getPositionProgress());
                     }
                     eventType = xpp.next();
                 }
