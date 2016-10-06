@@ -162,6 +162,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
             }
         }
 
+        @SuppressWarnings("SimplifiableIfStatement")
         @Override
         public boolean onLongClick(View v) {
             if (listener != null) {
@@ -172,6 +173,7 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
 
         public interface ClickListener {
             void onItemClicked(View view, int position);
+            @SuppressWarnings("SameReturnValue")
             boolean onItemLongClicked(int position);
         }
     }

@@ -6,14 +6,14 @@
         android:icon="@drawable/ic_menu_archive"
         android:orderInCategory="100"
         android:title="@string/to_archive"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_menu_share"
         android:orderInCategory="100"
         android:title="@string/share"
-        app:showAsAction="always" />
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menu_remove"

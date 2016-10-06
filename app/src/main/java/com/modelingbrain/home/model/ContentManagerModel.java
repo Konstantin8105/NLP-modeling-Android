@@ -9,9 +9,7 @@ import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.template.ElementList;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -231,23 +229,27 @@ public class ContentManagerModel {
         }
     };
 
+    @SuppressWarnings("unchecked")
     private static ArrayList<ElementList> SortDate(Context context, ArrayList<Model> result) {
         sort(result, modelDate);
         return convert(context, result);
     }
 
 
+    @SuppressWarnings("unchecked")
     private static ArrayList<ElementList> SortAlphabet(Context context, final ArrayList<Model> result) {
         sort(result, modelName, modelType, modelId);
         return convert(context, result);
     }
 
 
+    @SuppressWarnings("unchecked")
     private static ArrayList<ElementList> SortModelName(Context context, ArrayList<Model> result) {
         sort(result, modelType, modelId, modelName);
         return convert(context, result);
     }
 
+    @SuppressWarnings("unchecked")
     private static void sort(List<Model> data, Comparator<Model>... comparators) {
         Log.i(TAG, "ModelMain::sort - start");
         for (int i = 0; i < data.size(); i++) {
@@ -267,9 +269,7 @@ public class ContentManagerModel {
                 if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0 || i == data.size() - 1) {
                     if (i - leftPosition > 2) {
                         Comparator<Model>[] otherWithoutZero = new Comparator[comparators.length - 1];
-                        for (int j = 1; j < comparators.length; j++) {
-                            otherWithoutZero[j - 1] = comparators[j];
-                        }
+                        System.arraycopy(comparators, 1, otherWithoutZero, 0, comparators.length - 1);
                         List<Model> part = data.subList(leftPosition, i);
                         sort(part, otherWithoutZero);
                         for (int j = 0; j < part.size(); j++) {

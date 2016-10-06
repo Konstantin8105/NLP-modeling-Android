@@ -5,7 +5,7 @@
     <item
         android:id="@+id/action_sort"
         android:icon="@drawable/ic_menu_sort"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:title="@string/action_sort" />
     <item
         android:id="@+id/action_open_models"

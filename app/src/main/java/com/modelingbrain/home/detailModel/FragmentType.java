@@ -54,6 +54,7 @@ public class FragmentType {
     private static Type lastType = null;
 
 
+    @SuppressWarnings("TryWithIdenticalCatches")
     public static StageFragment getNewInstanceFragment(Type type, FragmentManager fragmentManager) {
         Log.i(TAG, "getNewInstanceFragment - start");
         if (fragmentManager != null) {

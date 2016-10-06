@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
@@ -129,9 +128,9 @@ public class DBUpdater00 implements IDBUpdater {
                 } while (c.moveToNext());
             }
             c.close();
-        } else {
-            //LOG: textLog.append("ignored");
-        }
+        } //LOG: else {
+        //LOG: textLog.append("ignored");
+        //LOG: }
 
         //LOG: logModel.setAnswer(0, textLog.toString());
         //LOG: logModel.setMillisecond_Date(GlobalFunction.getTime());
