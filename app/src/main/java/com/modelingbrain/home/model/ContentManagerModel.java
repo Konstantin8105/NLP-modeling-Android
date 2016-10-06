@@ -4,14 +4,17 @@ import android.content.Context;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.db.DBHelperModel;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.template.ElementList;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.List;
 
 public class ContentManagerModel {
     static private final String TAG = " ContentManager ";
@@ -199,67 +202,88 @@ public class ContentManagerModel {
         return output;
     }
 
+    private static final Comparator<Model> modelType = new Comparator<Model>() {
+        @Override
+        public int compare(Model o1, Model o2) {
+            return (o1.getModelType().convert() - o2.getModelType().convert());
+        }
+    };
+    private static final Comparator<Model> modelId = new Comparator<Model>() {
+        @Override
+        public int compare(Model o1, Model o2) {
+            return (o1.getModelID().getParameter() - o2.getModelID().getParameter());
+        }
+    };
+    private static final Comparator<Model> modelName = new Comparator<Model>() {
+        @Override
+        public int compare(Model o1, Model o2) {
+            return o1.getName().compareTo(o2.getName());
+        }
+    };
+    private static final Comparator<Model> modelDate = new Comparator<Model>() {
+        @Override
+        public int compare(Model o1, Model o2) {
+            if (o1.getMillisecond_Date() < o2.getMillisecond_Date())
+                return 1;
+            if (o1.getMillisecond_Date() > o2.getMillisecond_Date())
+                return -1;
+            return 0;
+        }
+    };
+
     private static ArrayList<ElementList> SortDate(Context context, ArrayList<Model> result) {
-        if (result.size() > 1) {
-
-            Collections.sort(result, new Comparator<Model>() {
-                @Override
-                public int compare(Model lhs, Model rhs) {
-                    if (lhs.getMillisecond_Date() < rhs.getMillisecond_Date())
-                        return 1;
-                    if (lhs.getMillisecond_Date() > rhs.getMillisecond_Date())
-                        return -1;
-                    return 0;
-//                    if (lhs.getName().compareTo(rhs.getName()) != 0)
-//                        return lhs.getName().compareTo(rhs.getName());
-//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
-//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-//                    return lhs.getModelType().convert() - rhs.getModelType().convert();
-                }
-            });
-        }
+        sort(result, modelDate);
         return convert(context, result);
     }
 
 
-    //TODO not correct sorting
     private static ArrayList<ElementList> SortAlphabet(Context context, final ArrayList<Model> result) {
-        if (result.size() > 1) {
-
-            Collections.sort(result, new Comparator<Model>() {
-                @Override
-                public int compare(Model lhs, Model rhs) {
-                    return lhs.getName().compareTo(rhs.getName());
-//                    if (lhs.getName().compareTo(rhs.getName()) != 0)
-//                        return lhs.getName().compareTo(rhs.getName());
-//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) == 0)
-//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-//                    return lhs.getModelType().convert() - rhs.getModelType().convert();
-                }
-            });
-        }
+        sort(result, modelName, modelType, modelId);
         return convert(context, result);
     }
 
-    //TODO not correct sorting
-    private static ArrayList<ElementList> SortModelName(Context context, ArrayList<Model> result) {
-        if (result.size() > 1) {
 
-            Collections.sort(result, new Comparator<Model>() {
-                @Override
-                public int compare(Model lhs, Model rhs) {
-                    return (lhs.getModelType().convert() - rhs.getModelType().convert());
-//                    if ((lhs.getModelType().convert() - rhs.getModelType().convert()) != 0)
-//                        return (lhs.getModelType().convert() - rhs.getModelType().convert());
-//                    if (lhs.getModelType().convert() - rhs.getModelType().convert() == 0)
-//                        return lhs.getModelType().convert() - rhs.getModelType().convert();
-//                    if ((rhs.getModelID().getParameter() - lhs.getModelID().getParameter()) != 0)
-//                        return (rhs.getModelID().getParameter() - lhs.getModelID().getParameter());
-//                    return (lhs.getName().compareTo(rhs.getName()));
-                }
-            });
-        }
+    private static ArrayList<ElementList> SortModelName(Context context, ArrayList<Model> result) {
+        sort(result, modelType, modelId);
         return convert(context, result);
+    }
+
+    private static void sort(List<Model> data, Comparator<Model>... comparators) {
+        Log.i(TAG, "ModelMain::sort - start");
+        for (int i = 0; i < data.size(); i++) {
+            Log.i(TAG, "Input -- " + data.get(i).toString());
+        }
+        for (int i = 0; i < comparators.length; i++) {
+            Log.i(TAG, "Comparator["+i+"] -- " + comparators[i]);
+        }
+        if (data.size() < 2) {
+            return;
+        }
+        Collections.sort(data, comparators[0]);
+        if (comparators.length > 1) {
+            //recurse
+            int leftPosition = 0;
+            for (int i = 1; i < data.size(); i++) {
+                if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0) {
+                    if (i - leftPosition > 2) {
+                        Comparator<Model>[] otherWithoutZero = new Comparator[comparators.length - 1];
+                        for (int j = 1; j < comparators.length; j++) {
+                            otherWithoutZero[j - 1] = comparators[j];
+                        }
+                        List<Model> part = data.subList(leftPosition, i);
+                        sort(part, otherWithoutZero);
+                        for (int j = 0; j < part.size(); j++) {
+                            data.set(j+leftPosition,part.get(j));
+                        }
+                    }
+                    leftPosition = i;
+                }
+            }
+        }
+        for (int i = 0; i < data.size(); i++) {
+            Log.i(TAG, "Output -- " + data.get(i).toString());
+        }
+        Log.i(TAG, "ModelMain::sort - finish");
     }
 
     private static ArrayList<ElementList> Inverse(ArrayList<ElementList> result) {
