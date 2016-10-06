@@ -39,7 +39,6 @@ public class DetailActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
         Log.i(TAG, "onSaveInstanceState - start");
-        //never add savingModelInDb() - because it is FAIL
         outState.putString(detailFragmentsKey, fragmentType.toString());
         outState.putString(stageDetailActivityKey, stageDetailActivity.toString());
         outState.putInt(modelKey, model.getDbId());
@@ -51,9 +50,7 @@ public class DetailActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         Log.i(TAG, "onCreate - start");
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_detail);
-
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -117,7 +114,6 @@ public class DetailActivity extends AppCompatActivity {
                 throw new RuntimeException("Add new view");
         }
     }
-
 
     private void createView() {
         StageFragment stageFragment = FragmentType.getNewInstanceFragment(fragmentType, getFragmentManager());
