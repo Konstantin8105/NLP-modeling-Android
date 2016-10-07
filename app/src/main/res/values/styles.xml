@@ -6,7 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:typeface">monospace</item>
+        <!--<item name="android:typeface">monospace</item>-->
 
 
         <!-- Toolbar + Contextual menu -->
@@ -24,11 +24,11 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="HeaderText" parent="Base.TextAppearance.AppCompat.Title">
-        <item name="android:typeface">monospace</item>
+        <!--<item name="android:typeface">monospace</item>-->
     </style>
 
     <style name="SubText" parent="Base.TextAppearance.AppCompat.Small">
-        <item name="android:typeface">monospace</item>
+        <!--<item name="android:typeface">monospace</item>-->
     </style>
 
 </resources>
