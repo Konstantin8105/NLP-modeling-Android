@@ -21,7 +21,7 @@
 
         <TextView
             android:id="@+id/textView2"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            style="@style/SubText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
@@ -34,7 +34,7 @@
 
         <TextView
             android:id="@+id/textView3"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            style="@style/SubText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical|center_horizontal"
@@ -54,7 +54,7 @@
 
         <TextView
             android:id="@+id/textView4"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            style="@style/SubText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"
@@ -99,7 +99,7 @@
 
         <TextView
             android:id="@+id/textView7"
-            style="@style/Base.TextAppearance.AppCompat.Subhead"
+            style="@style/SubText"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left|center_vertical"

@@ -44,7 +44,7 @@
 
                     <TextView
                         android:id="@+id/model_name"
-                        style="@style/Base.TextAppearance.AppCompat.Medium"
+                        style="@style/SubText"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center_vertical"

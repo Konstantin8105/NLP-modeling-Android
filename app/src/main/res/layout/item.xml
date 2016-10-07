@@ -41,16 +41,17 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/Base.TextAppearance.AppCompat.Title"
+                style="@style/HeaderText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:typeface="monospace"
                 android:maxLines="2"
                 android:text="@string/app_name" />
 
 
             <TextView
                 android:id="@+id/subtitle"
-                style="@style/Base.TextAppearance.AppCompat.Small"
+                style="@style/SubText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
@@ -58,7 +59,7 @@
 
             <TextView
                 android:id="@+id/second_subtitle"
-                style="@style/Base.TextAppearance.AppCompat.Small"
+                style="@style/SubText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLines="1"
