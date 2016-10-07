@@ -6,23 +6,30 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.modelingbrain.home.R;
-import com.modelingbrain.home.model.ModelID;
 
 public class StageFragmentView extends StageFragment {
 
     @Override
     protected void createInterface() {
-        createElement(getResources().getString(R.string.model_name), QA.QUESTION);
-        createElement(model.getName(), QA.ANSWER);
-
-        if (model.getModelID() == ModelID.ID_Polar) {
-            createPolar();
+        switch (model.getModelID()) {
+            case ID_Polar: {
+                createPolar();
+                break;
+            }
+            case ID_Rules: {
+                createRules();
+                break;
+            }
+            default: {
+                createElement(getResources().getString(R.string.model_name), QA.QUESTION);
+                createElement(model.getName(), QA.ANSWER);
+                for (int i = 0; i < model.getModelID().getSize(); i++) {
+                    createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1 + i], QA.QUESTION);
+                    createElement(model.getAnswer(i), QA.ANSWER);
+                }
+            }
         }
 
-        for (int i = 0; i < model.getModelID().getSize(); i++) {
-            createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1 + i], QA.QUESTION);
-            createElement(model.getAnswer(i), QA.ANSWER);
-        }
     }
 
     @Override
@@ -31,6 +38,10 @@ public class StageFragmentView extends StageFragment {
 
     private void createPolar() {
         Log.i(TAG, "createPolar - start");
+
+        createElement(getResources().getString(R.string.model_name), QA.QUESTION);
+        createElement(model.getName(), QA.ANSWER);
+
         LayoutInflater ltInflater = getActivity().getLayoutInflater();
         View table = ltInflater.inflate(R.layout.view_model_polar, linLayout, false);
 
@@ -72,5 +83,17 @@ public class StageFragmentView extends StageFragment {
 
         linLayout.addView(table);
         Log.i(TAG, "createPolar - finish");
+    }
+
+    private void createRules() {
+        createElement(getResources().getString(R.string.model_name), QA.QUESTION);
+        createElement(model.getName(), QA.ANSWER);
+
+        createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1], QA.QUESTION);
+        String[] array = model.getAnswer(0).split("\n");
+        for (int i = 0; i < array.length; i++) {
+            if (array[i].trim().length() > 1)
+                createElement(array[i].trim(), QA.ANSWER);
+        }
     }
 }
