@@ -29,7 +29,6 @@ public class StageFragmentView extends StageFragment {
                 }
             }
         }
-
     }
 
     @Override
@@ -91,9 +90,9 @@ public class StageFragmentView extends StageFragment {
 
         createElement(getResources().getStringArray(model.getModelID().getResourceQuestion())[1], QA.QUESTION);
         String[] array = model.getAnswer(0).split("\n");
-        for (int i = 0; i < array.length; i++) {
-            if (array[i].trim().length() > 1)
-                createElement(array[i].trim(), QA.ANSWER);
+        for (String str : array) {
+            if (str.trim().length() > 1)
+                createElement(str.trim(), QA.ANSWER);
         }
     }
 }
