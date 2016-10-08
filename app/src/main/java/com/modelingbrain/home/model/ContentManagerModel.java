@@ -145,8 +145,8 @@ public class ContentManagerModel {
         if (resourse.length == 0) {
             ignore = true;
         }
-        for (int i = 0; i < resourse.length; i++) {
-            if(resourse[i].length() == 0){
+        for (String res : resourse) {
+            if (res.length() == 0) {
                 ignore = true;
                 break;
             }
