@@ -3,6 +3,7 @@ package com.modelingbrain.home;
 import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.annotation.NonNull;
@@ -173,6 +174,9 @@ public class MainActivity extends AppCompatActivity
                 popupMenu.show();
                 return true;
             }
+            case (R.id.google_plus_link):
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/communities/115807576331346688333"));
+                startActivity(browserIntent);
             default:
                 return false;
         }
