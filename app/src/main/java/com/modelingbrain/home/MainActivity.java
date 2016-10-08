@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.app.FragmentTransaction;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.modelingbrain.home.about.ActivityAbout;
 import com.modelingbrain.home.chooseModel.ActivityChooseModel;
@@ -25,6 +27,9 @@ import com.modelingbrain.home.folderModel.FragmentFolder;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.opensave.OpenActivity;
 import com.modelingbrain.home.opensave.SaveActivity;
+import com.modelingbrain.home.opensave.ValuesIO;
+
+import java.io.File;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -120,6 +125,12 @@ public class MainActivity extends AppCompatActivity
             case (R.id.action_save_models): {
                 Intent intent = new Intent(this, SaveActivity.class);
                 startActivity(intent);
+
+                Toast.makeText(getBaseContext(),
+                        Environment.DIRECTORY_DOWNLOADS
+                                + File.separator
+                                + ValuesIO.OUTPUT_FILENAME_JSON,
+                        Toast.LENGTH_LONG);
                 break;
             }
             case (R.id.action_open_models): {

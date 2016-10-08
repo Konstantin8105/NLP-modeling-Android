@@ -157,13 +157,13 @@ public enum ModelID {
 
             new ModelLine(ModelID.ID_Eye,
                     R.array.str_Left_Eye,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_eye,
                     1),
 
             new ModelLine(ModelID.ID_Polar,
                     R.array.str_Left_Polar,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_polar,
                     8),
 
@@ -175,13 +175,13 @@ public enum ModelID {
 
             new ModelLine(ModelID.ID_ElementsOfAnchors,
                     R.array.str_Left_ElementsOfAnchors,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_anchor_elements,
                     7),
 
             new ModelLine(ModelID.ID_VAKOG,
                     R.array.str_Left_VAK,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_vak,
                     3),
 
@@ -205,25 +205,25 @@ public enum ModelID {
 
             new ModelLine(ModelID.ID_Strategy_VKDiss,
                     R.array.str_Left_Strategy_VKDiss,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_vk_dissiciation,
                     9),
 
             new ModelLine(ModelID.ID_Strategy_ConflictParts,
                     R.array.str_Left_Strategy_ConflictParts,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_conflict_parts,
                     6),
 
             new ModelLine(ModelID.ID_Strategy_XCP,
                     R.array.str_Left_Strategy_XCP,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_frame_of_goal,
                     9),
 
             new ModelLine(ModelID.ID_Strategy_Anchor,
                     R.array.str_Left_Strategy_Anchor,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_anchor,
                     5),
 
@@ -235,19 +235,19 @@ public enum ModelID {
 
             new ModelLine(ModelID.ID_Karpman,
                     R.array.str_Left_Karpman,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_karpman,
                     3),
 
             new ModelLine(ModelID.ID_State,
                     R.array.str_Left_State,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_state,
                     2),
 
             new ModelLine(ModelID.ID_FrameOfProposal,
                     R.array.str_Left_FrameOfProposal,
-                    ModelType.STRATEGY,
+                    ModelType.MODEL,
                     R.drawable.ic_model_frame_of_proposal,
                     7)
     };

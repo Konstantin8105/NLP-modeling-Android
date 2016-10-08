@@ -4,14 +4,19 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.os.AsyncTask;
 import android.os.Build;
+import android.os.Environment;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import com.modelingbrain.home.MainActivity;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.opensave.save.Writer;
+
+import java.io.File;
 
 public class SaveActivity extends SaveOpenActivity {
 
