@@ -81,56 +81,53 @@ public class DBUpdater00 implements IDBUpdater {
         //LOG: logModel.setName("Log : analyzeTable : " + tableId);
         //LOG: StringBuilder textLog = new StringBuilder();
 
-        if (!ContentManagerModel.isIgnore(context, tableId)) {
-            String tableName = prefixTable + tableId.toString();
-            //LOG: textLog.append("\n\n\n\n analyzeTable table = ").append(tableName).append("\n");
-            Cursor c = db.query(tableName, null, null, null, null, null, null);
-            if (c.moveToFirst()) {
-                int NameColIndex = c.getColumnIndex("name");
-                int DateColIndex = c.getColumnIndex("date");
-                do {
-                    String name = c.getString(NameColIndex);
-                    long time = c.getLong(DateColIndex);
-                    List<String> listRight = new ArrayList<>();
+        String tableName = prefixTable + tableId.toString();
+        //LOG: textLog.append("\n\n\n\n analyzeTable table = ").append(tableName).append("\n");
+        Cursor c = db.query(tableName, null, null, null, null, null, null);
+        if (c.moveToFirst()) {
+            int NameColIndex = c.getColumnIndex("name");
+            int DateColIndex = c.getColumnIndex("date");
+            do {
+                String name = c.getString(NameColIndex);
+                long time = c.getLong(DateColIndex);
+                List<String> listRight = new ArrayList<>();
 
-                    try {
-                        int i = 0;
-                        do {
-                            //LOG: textLog.append("position = ").append(i).append("\n");
-                            String line = c.getString(c.getColumnIndex("Str" + i));
-                            //LOG: textLog.append("line = ").append(line).append("\n");
-                            listRight.add(i, line);
-                            i++;
-                        } while (i < 200);
-                    } catch (Exception e) {
-                        e.printStackTrace();
+                try {
+                    int i = 0;
+                    do {
+                        //LOG: textLog.append("position = ").append(i).append("\n");
+                        String line = c.getString(c.getColumnIndex("Str" + i));
+                        //LOG: textLog.append("line = ").append(line).append("\n");
+                        listRight.add(i, line);
+                        i++;
+                    } while (i < 200);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                //LOG: textLog.append("\n createNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
+                if (listRight.size() != tableId.getSize() || ContentManagerModel.isIgnore(context, tableId)) {
+                    Model model = new Model(ModelID.ID_NOTE);
+                    model.setName(name);
+                    model.setMillisecond_Date(time);
+                    StringBuilder out = new StringBuilder();
+                    for (int i = 0; i < listRight.size(); i++) {
+                        out.append(listRight.get(i));
+                        out.append("\n");
                     }
-                    //LOG: textLog.append("\n createNewRecord" + "name = ").append(name).append("time = ").append(time).append("listRight = ").append(listRight).append("\n");
-                    if (listRight.size() != tableId.getSize()) {
-                        Model model = new Model(ModelID.ID_NOTE);
-                        model.setName(name);
-                        model.setMillisecond_Date(time);
-                        String out = "";//new String();
-                        for (int i = 0; i < listRight.size(); i++) {
-                            out += listRight.get(i);
-                        }
-                        model.setAnswer(0, out);
-                        models.add(model);
-                    } else {
-                        Model model = new Model(tableId);
-                        model.setName(name);
-                        model.setMillisecond_Date(time);
-                        for (int i = 0; i < listRight.size(); i++) {
-                            model.setAnswer(i, listRight.get(i));
-                        }
-                        models.add(model);
+                    model.setAnswer(0, out.toString());
+                    models.add(model);
+                } else {
+                    Model model = new Model(tableId);
+                    model.setName(name);
+                    model.setMillisecond_Date(time);
+                    for (int i = 0; i < listRight.size(); i++) {
+                        model.setAnswer(i, listRight.get(i));
                     }
-                } while (c.moveToNext());
-            }
-            c.close();
-        } //LOG: else {
-        //LOG: textLog.append("ignored");
-        //LOG: }
+                    models.add(model);
+                }
+            } while (c.moveToNext());
+        }
+        c.close();
 
         //LOG: logModel.setAnswer(0, textLog.toString());
         //LOG: logModel.setMillisecond_Date(GlobalFunction.getTime());
