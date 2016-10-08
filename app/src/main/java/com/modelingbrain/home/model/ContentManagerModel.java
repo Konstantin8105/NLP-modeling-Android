@@ -138,21 +138,28 @@ public class ContentManagerModel {
     public static boolean isIgnore(Context context, ModelID modelID) {
         boolean ignore = false;
 
-        if (context.getResources().getStringArray(modelID.getResourceQuestion()).length != modelID.getSize() + 1) {
+        String[] resourse = context.getResources().getStringArray(modelID.getResourceQuestion());
+        if (resourse.length != modelID.getSize() + 1) {
             ignore = true;
         }
-        if (context.getResources().getStringArray(modelID.getResourceQuestion()).length == 0) {
+        if (resourse.length == 0) {
             ignore = true;
         }
-        if (context.getResources().getStringArray(modelID.getResourceQuestion()).length > 0)
-            if (context.getResources().getStringArray(modelID.getResourceQuestion())[0].compareTo("NONE") == 0) {
+        for (int i = 0; i < resourse.length; i++) {
+            if(resourse[i].length() == 0){
+                ignore = true;
+                break;
+            }
+        }
+        if (resourse.length > 0)
+            if (resourse[0].compareTo("NONE") == 0) {
                 ignore = true;
             }
-        if (context.getResources().getStringArray(modelID.getResourceQuestion()).length > 1)
-            if (context.getResources().getStringArray(modelID.getResourceQuestion())[1].compareTo("NONE") == 0) {
+        if (resourse.length > 1)
+            if (resourse[1].compareTo("NONE") == 0) {
                 ignore = true;
             }
-        if (context.getResources().getStringArray(modelID.getResourceQuestion()).length < 2) {
+        if (resourse.length < 2) {
             ignore = true;
         }
 
