@@ -3,32 +3,32 @@ package com.modelingbrain.home.model;
 import com.modelingbrain.home.R;
 
 public enum ModelID {
-    ID_Science(0),//OK
-    ID_SCORE(10),//OK
-    ID_SMART(20),//OK
-    ID_TOTE(30),//OK
-    ID_TricksOfLanguage(40),//OK
-    ID_MiltonModel(50),//OK
-    ID_Polar(60),//OK
-    ID_Eye(70),//OK
-    ID_AIDA(80),//OK
-    ID_FrameOfProposal(90),//OK
-    ID_ElementsOfAnchors(100),//OK
+    ID_Science(0),
+    ID_SCORE(10),
+    ID_SMART(20),
+    ID_TOTE(30),
+    ID_TricksOfLanguage(40),
+    ID_MiltonModel(50),
+    ID_Polar(60),
+    ID_Eye(70),
+    ID_AIDA(80),
+    ID_FrameOfProposal(90),//OLD
+    ID_ElementsOfAnchors(100),
     //ID_UoltDisney(11),//NONE
-    ID_VAKOG(120),//OK
-    ID_PROFILE2(130),//OK
-    ID_NOTE(140),//OK
-    ID_Strategy_VKDiss(150),//OK
-    ID_Strategy_ConflictParts(160),//OK
-    ID_Strategy_XCP(170),//OK
-    ID_Strategy_Anchor(180),//OK
-    ID_PROFILE3(190),//OK
-    ID_Three_Position(200),//OK
-    ID_Karpman(210),//OK
-    ID_Modeling_Gordon(220),//OK
-    ID_Modeling_Gordon_Short(230),//OK
-    ID_State(240),//OK
-    ID_Rules(250)//OK
+    ID_VAKOG(120),
+    ID_PROFILE2(130),//OLD
+    ID_NOTE(140),
+    ID_Strategy_VKDiss(150),
+    ID_Strategy_ConflictParts(160),
+    ID_Strategy_XCP(170),
+    ID_Strategy_Anchor(180),
+    ID_PROFILE3(190),
+    ID_Three_Position(200),
+    ID_Karpman(210),
+    ID_Modeling_Gordon(220),
+    ID_Modeling_Gordon_Short(230),
+    ID_State(240),
+    ID_Rules(250)
     ;
 
     private final int parameter;
@@ -189,7 +189,8 @@ public enum ModelID {
                     R.array.str_Left_PROFILE2,
                     ModelType.DARK,
                     R.drawable.ic_model_profile2,
-                    8, true),
+                    8,
+                    true),
 
             new ModelLine(ModelID.ID_PROFILE3,
                     R.array.str_Left_PROFILE3,
@@ -249,6 +250,7 @@ public enum ModelID {
                     R.array.str_Left_FrameOfProposal,
                     ModelType.MODEL,
                     R.drawable.ic_model_frame_of_proposal,
-                    7)
+                    7,
+                    true)
     };
 }
