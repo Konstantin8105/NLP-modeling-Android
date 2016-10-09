@@ -3,7 +3,6 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 24
     buildToolsVersion '24.0.1'
-
     defaultConfig {
         applicationId "com.modelingbrain.home"
         minSdkVersion 11
@@ -22,13 +21,21 @@ android {
     testOptions {
         unitTests.returnDefaultValues = true
     }
+    dexOptions {
+    }
+    productFlavors {
+    }
+    android{
+        lintOptions{
+            abortOnError false
+        }
+    }
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     androidTestCompile 'com.android.support:support-annotations:24.2.1'
-
     ///////////////////
     // Testing-only dependencies
     androidTestCompile('com.android.support.test:runner:0.5') {
@@ -52,8 +59,6 @@ dependencies {
     }
     // Testing-only dependencies
     ///////////////////
-
-
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'
