@@ -7,10 +7,16 @@ import android.os.Environment;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.modelingbrain.home.main.GlobalFunction;
+import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.opensave.ValuesIO;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.model.Model;
+import com.modelingbrain.home.opensave.save.ModelToJson;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -64,6 +70,8 @@ public class ShareModels {
         Log.i(TAG, "CreateEMAIL: Message -> " + message);
         Log.i(TAG, "CreateEMAIL: Add file -> " + ValuesIO.OUTPUT_FILENAME_JSON);
 
+        JSONArray jsonArrayGlobal = createJson();
+        ModelToJson.saveJsonStringInFile(jsonArrayGlobal.toString());
 
         File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
         Log.i(TAG, "CreateEMAIL: Add file -> " + sdPath);
@@ -80,5 +88,19 @@ public class ShareModels {
 
         context.startActivity(Intent.createChooser(email, "Send email"));//email);//
         Log.i(TAG, "CreateEMAIL: OUT");
+    }
+
+    private JSONArray createJson() {
+        JSONArray jsonArrayGlobal = new JSONArray();
+        for (int i = 0; i < models.size(); i++) {
+            Model model = models.get(i);
+            if (ContentManagerModel.isIgnore(context, model.getModelID()))
+                continue;
+            JSONObject obj = ModelToJson.convertModelToJson(model);
+            if(obj != null){
+                jsonArrayGlobal.put(obj);
+            }
+        }
+        return jsonArrayGlobal;
     }
 }

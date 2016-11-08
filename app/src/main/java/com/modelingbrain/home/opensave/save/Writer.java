@@ -57,40 +57,12 @@ public class Writer {
             }
             GlobalFunction.pause();
             publishProgress((int) ((float) i / (float) modelsDB.size() * 100));
-            try {
-                JSONObject obj = new JSONObject();
-                obj.put(ValuesIO.JsonElemenets.TYPE, model.getModelID().toString());
-                obj.put(ValuesIO.JsonElemenets.NAME, model.getName());
-                obj.put(ValuesIO.JsonElemenets.TIME, Long.valueOf(model.getMillisecond_Date()).toString());
-                JSONArray list = new JSONArray();
-                for (int nn = 0; nn < model.getModelID().getSize(); nn++)
-                    list.put(model.getAnswer(nn));//.toString()
-                obj.put(ValuesIO.JsonElemenets.RIGHT, list);
+            JSONObject obj = ModelToJson.convertModelToJson(model);
+            if(obj != null){
                 jsonArrayGlobal.put(obj);
-            } catch (final JSONException ignored) {
-                ignored.printStackTrace();
             }
         }
-        FileWriter file = null;
-        try {
-            File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-            String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.OUTPUT_FILENAME_JSON;
-            boolean createFolder = sdPath.mkdirs();
-            Log.i(TAG, "SaveModel: createFolder = " + createFolder);
-            file = new FileWriter(full_path);
-            file.write(jsonArrayGlobal.toString());
-            file.flush();
-            file.close();
-        } catch (IOException e) {
-            Log.i(TAG, "SaveModel: ERROR WRITE FILE");
-            e.printStackTrace();
-            if(file != null)
-                try {
-                    file.close();
-                } catch (IOException e1) {
-                    e1.printStackTrace();
-                }
-        }
+        ModelToJson.saveJsonStringInFile(jsonArrayGlobal.toString());
         Log.i(TAG, "SaveModel: OUT");
     }
 
