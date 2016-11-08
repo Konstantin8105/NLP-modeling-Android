@@ -16,8 +16,8 @@ import java.io.IOException;
 public class ModelToJson {
 
     public static JSONObject convertModelToJson(Model model) {
+        JSONObject obj = new JSONObject();
         try {
-            JSONObject obj = new JSONObject();
             obj.put(ValuesIO.JsonElemenets.TYPE, model.getModelID().toString());
             obj.put(ValuesIO.JsonElemenets.NAME, model.getName());
             obj.put(ValuesIO.JsonElemenets.TIME, Long.valueOf(model.getMillisecond_Date()).toString());
@@ -27,8 +27,9 @@ public class ModelToJson {
             obj.put(ValuesIO.JsonElemenets.RIGHT, list);
         } catch (final JSONException ignored) {
             ignored.printStackTrace();
+            return null;
         }
-        return null;
+        return obj;
     }
 
     public static void saveJsonStringInFile(String string) {
