@@ -70,6 +70,7 @@ public class ShareModels {
         Log.i(TAG, "CreateEMAIL: Message -> " + message);
         Log.i(TAG, "CreateEMAIL: Add file -> " + ValuesIO.OUTPUT_FILENAME_JSON);
 
+        // add file in folder Downloads
         JSONArray jsonArrayGlobal = createJson();
         ModelToJson.saveJsonStringInFile(jsonArrayGlobal.toString());
 

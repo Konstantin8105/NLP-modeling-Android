@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
+import com.modelingbrain.home.model.ModelState;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -87,6 +88,7 @@ public class DBUpdater00 implements IDBUpdater {
         if (c.moveToFirst()) {
             int NameColIndex = c.getColumnIndex("name");
             int DateColIndex = c.getColumnIndex("date");
+            int StateColIndex = c.getColumnIndex("state");
             do {
                 String name = c.getString(NameColIndex);
                 long time = c.getLong(DateColIndex);
@@ -123,6 +125,7 @@ public class DBUpdater00 implements IDBUpdater {
                     for (int i = 0; i < listRight.size(); i++) {
                         model.setAnswer(i, listRight.get(i));
                     }
+                    model.setState(ModelState.convert(c.getInt(StateColIndex)));
                     models.add(model);
                 }
             } while (c.moveToNext());
