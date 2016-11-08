@@ -98,7 +98,7 @@ public class OpenActivity extends SaveOpenActivity {
         }
         for (File file : files) {
             if (!file.isDirectory()) {
-                if (file.getName().endsWith(pattern.toLowerCase())) {
+                if (file.getName().toLowerCase().endsWith(pattern.toLowerCase())) {
                     Log.i(TAG, "found file " + file.getName());
                     fileList.add(file.getName());
                 }
