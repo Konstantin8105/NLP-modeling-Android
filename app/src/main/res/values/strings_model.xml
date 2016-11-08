@@ -123,9 +123,10 @@
     <string-array name="str_Left_ElementsOfAnchors" tools:ignore="InconsistentArrays">
             </string-array>
 
-    <string-array name="str_Left_Note" tools:ignore="InconsistentArrays">
-             </string-array>
-
+    <string-array name="str_Left_Note">
+                <item >Note</item>
+                <item >Note</item>
+    </string-array>
 
     <!--
     	PROFILE
