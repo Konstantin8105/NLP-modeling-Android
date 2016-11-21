@@ -2,24 +2,18 @@ package com.modelingbrain.home.opensave.save;
 
 import android.content.Context;
 import android.os.AsyncTask;
-import android.os.Environment;
 import android.util.Log;
 
-import com.modelingbrain.home.main.GlobalFunction;
-import com.modelingbrain.home.opensave.ValuesIO;
 import com.modelingbrain.home.db.DBHelperModel;
+import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelState;
 import com.modelingbrain.home.opensave.SaveOpenActivity;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class Writer {

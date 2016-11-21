@@ -1,77 +1,127 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 24
+//    signingConfigs {
+//    }
+    compileSdkVersion 25
     buildToolsVersion '24.0.3'
     defaultConfig {
         applicationId "com.modelingbrain.home"
         minSdkVersion 11
-        targetSdkVersion 24
-        versionCode 501
+        targetSdkVersion 25
+        versionCode 94
         versionName "5.0.1"
-        multiDexEnabled true
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+//        multiDexEnabled true
+//        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
+//            zipAlignEnabled true
+//            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+        }
+        debug {
+            zipAlignEnabled true
         }
     }
-    testOptions {
-        unitTests.returnDefaultValues = true
-    }
-    dexOptions {
-    }
-    productFlavors {
-    }
-    android {
-        lintOptions {
-            abortOnError false
-        }
-    }
-    compileOptions {
-        targetCompatibility 1.7
-        sourceCompatibility 1.7
-    }
+//    testOptions {
+//        unitTests.returnDefaultValues = true
+//    }
+//    dexOptions {
+//    }
+//    productFlavors {
+//    }
+////    android {
+////        lintOptions {
+////            abortOnError false
+////        }
+////    }
+//    compileOptions {
+////        targetCompatibility JavaVersion.VERSION_1_7
+////        sourceCompatibility JavaVersion.VERSION_1_7
+//    }
 }
+
+// TODO
+// https://developer.android.com/studio/publish/app-signing.html#release-mode
+// "Sign Your App Manually"
+// zipalign -v -p 4  app-debug.apk   my-app.apk >>out.txt
+/*
+
+
+ 1746843 res/drawable-anydpi-v21/ic_unlock.xml (OK - compressed)
+ 1747988 res/drawable-hdpi-v4/abc_ab_share_pack_mtrl_alpha.9.png (OK)
+ 1748358 res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_000.png (BAD - 2)
+ 1748677 res/drawable-hdpi-v4/abc_btn_check_to_on_mtrl_015.png (BAD - 1)
+ 1749171 res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_000.png (BAD - 3)
+ 1749718 res/drawable-hdpi-v4/abc_btn_radio_to_on_mtrl_015.png (BAD - 2)
+ 1750375 res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00001.9.png (BAD - 3)
+ 1752018 res/drawable-hdpi-v4/abc_btn_switch_to_on_mtrl_00012.9.png (BAD - 2)
+ 1753862 res/drawable-hdpi-v4/abc_cab_background_top_mtrl_alpha.9.png (BAD - 2)
+ 1754187 res/drawable-hdpi-v4/abc_ic_commit_search_api_mtrl_alpha.png (BAD - 3)
+ 1754443 res/drawable-hdpi-v4/abc_ic_menu_copy_mtrl_am_alpha.png (BAD - 3)
+ 1754733 res/drawable-hdpi-v4/abc_ic_menu_cut_mtrl_alpha.png (BAD - 1)
+
+
+ 1771538 res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_disabled.9.png (BAD - 2)
+ 1772882 res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_normal.9.png (BAD - 2)
+ 1774841 res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_pressed.9.png (BAD - 1)
+ 1776783 res/drawable-hdpi-v4/common_google_signin_btn_icon_light_disabled.9.png (BAD - 3)
+ 1777870 res/drawable-hdpi-v4/common_google_signin_btn_icon_light_normal.9.png (BAD - 2)
+ 1779771 res/drawable-hdpi-v4/common_google_signin_btn_icon_light_pressed.9.png (BAD - 3)
+ 1781642 res/drawable-hdpi-v4/common_google_signin_btn_text_dark_disabled.9.png (BAD - 2)
+ 1783046 res/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal.9.png (BAD - 2)
+ 1785120 res/drawable-hdpi-v4/common_google_signin_btn_text_dark_pressed.9.png (OK)
+ 1787174 res/drawable-hdpi-v4/common_google_signin_btn_text_light_disabled.9.png (BAD - 2)
+ 1788331 res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal.9.png (BAD - 3)
+ 1790354 res/drawable-hdpi-v4/common_google_signin_btn_text_light_pressed.9.png (BAD - 2)
+
+
+ 1824622 res/drawable-hdpi-v4/ic_model_science.png (BAD - 2)
+ 1825572 res/drawable-hdpi-v4/ic_model_score.png (OK)
+ 1826636 res/drawable-hdpi-v4/ic_model_smart.png (OK)
+ 1827602 res/drawable-hdpi-v4/ic_model_state.png (BAD - 2)
+ 1828205 res/drawable-hdpi-v4/ic_model_tote.png (BAD - 1)
+ 1828996 res/drawable-hdpi-v4/ic_model_tricksoflanguage.png (OK)
+ 1830103 res/drawable-hdpi-v4/ic_model_vak.png (BAD - 3)
+ */
+
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    testCompile "org.robolectric:robolectric:3.1.2"
-    androidTestCompile 'com.android.support:support-annotations:24.2.1'
+    //    testCompile "org.robolectric:robolectric:3.1.2"
+    //    androidTestCompile 'com.android.support:support-annotations:25.0.1'
     ///////////////////
     // Testing-only dependencies
-    androidTestCompile('com.android.support.test:runner:0.5') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile('com.android.support.test:rules:0.5') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile('com.android.support.test.espresso:espresso-intents:2.2.2') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2') {
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'recyclerview-v7'
-        exclude group: 'com.android.support', module: 'appcompat-v7'
-        exclude group: 'com.android.support', module: 'design'
-    }
+    //    androidTestCompile('com.android.support.test:runner:0.5') {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    }
+    //    androidTestCompile('com.android.support.test:rules:0.5') {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    }
+    //    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    }
+    //    androidTestCompile('com.android.support.test.espresso:espresso-intents:2.2.2') {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //    }
+    //    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.2.2') {
+    //        exclude group: 'com.android.support', module: 'support-annotations'
+    //        exclude group: 'com.android.support', module: 'support-v4'
+    //        exclude group: 'com.android.support', module: 'recyclerview-v7'
+    //        exclude group: 'com.android.support', module: 'appcompat-v7'
+    //        exclude group: 'com.android.support', module: 'design'
+    //    }
     // Testing-only dependencies
     ///////////////////
-    compile 'com.android.support:appcompat-v7:24.2.1'
-    compile 'com.android.support:design:24.2.1'
-    compile 'com.android.support:recyclerview-v7:24.2.1'
-    compile 'com.google.android.gms:play-services-appindexing:9.6.1'
-    compile 'com.android.support:support-v4:24.2.1'
-    compile('com.android.support:cardview-v7:24.1.1') {
-        exclude module: 'support-v4'
-    }
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.google.android.gms:play-services-appindexing:9.8.0'
+    compile 'com.android.support:support-v4:25.0.1'
+    compile 'com.android.support:cardview-v7:24.1.1'
     compile 'com.android.support:multidex:1.0.1'
-//    compile 'com.android.support.constraint:constraint-layout:+'
+    //    compile 'com.android.support.constraint:constraint-layout:+'
 }
