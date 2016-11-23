@@ -31,7 +31,7 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:contentDescription="@string/icon"
-            android:src="@drawable/ic_launcher" />
+            android:src="@drawable/ic_launcher_start" />
 
         <LinearLayout
             android:layout_width="match_parent"
