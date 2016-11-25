@@ -103,4 +103,16 @@ public class ContentManagerModelTest {
         assertTrue(list.get(1).getName().compareTo("a") == 0);
         assertTrue(list.get(2).getName().compareTo("c") == 0);
     }
+
+    @Test
+    public void testSortByModelName2() {
+        List<Model> list = new ArrayList<>();
+
+        Model model1 = new Model(ModelID.ID_AIDA);
+        model1.setName("c");
+        list.add(model1);
+
+        ContentManagerModel.sort(list, ContentManagerModel.modelId, ContentManagerModel.modelName);
+        assertTrue(list.get(0).getName().compareTo("c") == 0);
+    }
 }
