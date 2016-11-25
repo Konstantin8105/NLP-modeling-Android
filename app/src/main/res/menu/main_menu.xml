@@ -25,4 +25,5 @@
         android:orderInCategory="100"
         android:title="@string/google_plus"
         app:showAsAction="never" />
+    <!-- TODO: Create developer page with my experience -->
 </menu>

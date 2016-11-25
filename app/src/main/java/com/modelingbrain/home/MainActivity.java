@@ -234,6 +234,7 @@ public class MainActivity extends AppCompatActivity
                 }
                 break;
             }
+            //TODO: Добавить корзину
             case R.id.nav_help: {
                 Intent intent = new Intent(this, ActivityAbout.class);
                 startActivity(intent);
