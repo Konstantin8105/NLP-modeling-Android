@@ -25,9 +25,9 @@ android {
             zipAlignEnabled true
         }
     }
-//    testOptions {
-//        unitTests.returnDefaultValues = true
-//    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+    }
 //    dexOptions {
 //    }
 //    productFlavors {

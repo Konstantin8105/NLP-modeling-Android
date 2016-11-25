@@ -28,8 +28,7 @@ public enum ModelID {
     ID_Modeling_Gordon(220),
     ID_Modeling_Gordon_Short(230),
     ID_State(240),
-    ID_Rules(250)
-    ;
+    ID_Rules(250);
 
     private final int parameter;
 
@@ -53,7 +52,11 @@ public enum ModelID {
         return arrModelLine[getPositionArrayModelLine()].resourceIcon;
     }
 
-    public int getResourceQuestion() {
+    public int getResourceQuestion() throws NullPointerException {
+        if (arrModelLine == null)
+            throw new NullPointerException();
+        if (arrModelLine.length <= getPositionArrayModelLine())
+            throw new NullPointerException();
         return arrModelLine[getPositionArrayModelLine()].resourceQuestions;
     }
 

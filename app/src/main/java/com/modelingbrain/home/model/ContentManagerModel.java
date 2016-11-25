@@ -9,10 +9,7 @@ import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.main.ModelSort;
 import com.modelingbrain.home.template.ElementList;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class ContentManagerModel {
     static private final String TAG = " ContentManager ";
@@ -77,6 +74,19 @@ public class ContentManagerModel {
 
 
         if (elements.size() > 1) {
+            Iterator<ModelID> iterator = elements.iterator();
+            while (iterator.hasNext()) {
+                ModelID present = iterator.next();
+                try {
+                    if (present == null)
+                        iterator.remove();
+                    assert present != null;
+                    if (context.getResources().getStringArray(present.getResourceQuestion()) == null)
+                        iterator.remove();
+                } catch (Exception e) {
+                    iterator.remove();
+                }
+            }
             boolean again;
             do {
                 again = false;
@@ -207,25 +217,25 @@ public class ContentManagerModel {
         return output;
     }
 
-    private static final Comparator<Model> modelType = new Comparator<Model>() {
+    protected static final Comparator<Model> modelType = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
             return (o1.getModelType().convert() - o2.getModelType().convert());
         }
     };
-    private static final Comparator<Model> modelId = new Comparator<Model>() {
+    protected static final Comparator<Model> modelId = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
             return (o1.getModelID().getParameter() - o2.getModelID().getParameter());
         }
     };
-    private static final Comparator<Model> modelName = new Comparator<Model>() {
+    protected static final Comparator<Model> modelName = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
             return o1.getName().toLowerCase().compareTo(o2.getName().toLowerCase());
         }
     };
-    private static final Comparator<Model> modelDate = new Comparator<Model>() {
+    protected static final Comparator<Model> modelDate = new Comparator<Model>() {
         @Override
         public int compare(Model o1, Model o2) {
             if (o1.getMillisecond_Date() < o2.getMillisecond_Date())
@@ -257,7 +267,7 @@ public class ContentManagerModel {
     }
 
     @SuppressWarnings("unchecked")
-    private static void sort(List<Model> data, Comparator<Model>... comparators) {
+    protected static void sort(List<Model> data, Comparator<Model>... comparators) {
         Log.i(TAG, "ModelMain::sort - start");
         for (int i = 0; i < data.size(); i++) {
             Log.i(TAG, "Input -- " + data.get(i).getName());
@@ -273,17 +283,20 @@ public class ContentManagerModel {
             //recurse
             int leftPosition = 0;
             for (int i = 1; i < data.size(); i++) {
-                if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0 || i == data.size() - 1) {
-                    if (i - leftPosition > 2) {
+                if (comparators[0].compare(data.get(leftPosition), data.get(i)) != 0) {
+                    if (i - leftPosition >= 2) {
                         Comparator<Model>[] otherWithoutZero = new Comparator[comparators.length - 1];
                         System.arraycopy(comparators, 1, otherWithoutZero, 0, comparators.length - 1);
                         List<Model> part = data.subList(leftPosition, i);
                         sort(part, otherWithoutZero);
-                        for (int j = 0; j < part.size(); j++) {
-                            data.set(j + leftPosition, part.get(j));
-                        }
                     }
                     leftPosition = i;
+                }
+                if (i == data.size() - 1 && data.size() - leftPosition >= 2) {
+                    Comparator<Model>[] otherWithoutZero = new Comparator[comparators.length - 1];
+                    System.arraycopy(comparators, 1, otherWithoutZero, 0, comparators.length - 1);
+                    List<Model> part = data.subList(leftPosition, i + 1);
+                    sort(part, otherWithoutZero);
                 }
             }
         }
