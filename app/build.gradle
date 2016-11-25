@@ -9,8 +9,8 @@ android {
         applicationId "com.modelingbrain.home"
         minSdkVersion 11
         targetSdkVersion 25
-        versionCode 501
-        versionName "5.0.1"
+        versionCode 502
+        versionName "5.0.2"
 //        multiDexEnabled true
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

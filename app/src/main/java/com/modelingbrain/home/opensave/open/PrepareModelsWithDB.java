@@ -30,13 +30,13 @@ public class PrepareModelsWithDB extends PrepareModels {
             dbHelperModel.close();
         }
         ArrayList<CompareModel> compareModels = new ArrayList<>();
-        for (int i = 0; i < modelsDB.size(); i++) {
-            CompareModel temp = new CompareModel(modelsDB.get(i));
+        for (Model modelDB : modelsDB) {
+            CompareModel temp = new CompareModel(modelDB);
             temp.insideDB = true;
             compareModels.add(temp);
         }
-        for (int i = 0; i < models.size(); i++) {
-            compareModels.add(new CompareModel(models.get(i)));
+        for (Model model : models) {
+            compareModels.add(new CompareModel(model));
         }
 
         createListDeleteSame(compareModels);

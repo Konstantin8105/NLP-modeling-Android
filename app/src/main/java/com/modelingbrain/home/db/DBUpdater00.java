@@ -24,16 +24,16 @@ public class DBUpdater00 implements IDBUpdater {
             return new ArrayList<>();
         }
         List<Model> models = new ArrayList<>();
-        for (int i = 0; i < tables.size(); i++) {
-            List<Model> tableModels = analyzeTable(context, db, tables.get(i));
+        for (ModelID table : tables) {
+            List<Model> tableModels = analyzeTable(context, db, table);
             if (tableModels != null) {
                 models.addAll(tableModels);
             }
         }
         {
             //drop tables
-            for (int i = 0; i < tables.size(); i++) {
-                db.execSQL("DROP TABLE IF EXISTS " + prefixTable + tables.get(i).toString());
+            for (ModelID table : tables) {
+                db.execSQL("DROP TABLE IF EXISTS " + prefixTable + table.toString());
             }
         }
         //LOG: models.addAll(logModels);
@@ -112,8 +112,8 @@ public class DBUpdater00 implements IDBUpdater {
                     model.setName(name);
                     model.setMillisecond_Date(time);
                     StringBuilder out = new StringBuilder();
-                    for (int i = 0; i < listRight.size(); i++) {
-                        out.append(listRight.get(i));
+                    for (String right : listRight) {
+                        out.append(right);
                         out.append("\n");
                     }
                     model.setAnswer(0, out.toString());

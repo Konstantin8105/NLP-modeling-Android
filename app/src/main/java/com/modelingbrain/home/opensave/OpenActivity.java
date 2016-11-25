@@ -124,12 +124,12 @@ public class OpenActivity extends SaveOpenActivity {
                     Log.i(TAG, "doInBackground - value : " + ValuesIO.Formats.values()[i]);
                     List<String> files = new ArrayList<>();
                     findAllFiles(files, ValuesIO.Formats.values()[i].getFormat());
-                    for (int j = 0; j < files.size(); j++) {
-                        Log.i(TAG, "doInBackground - file : " + files.get(j));
+                    for (String file : files) {
+                        Log.i(TAG, "doInBackground - file : " + file);
                         try {
-                            publishProgress(getResources().getString(R.string.task_filename) + files.get(j));
+                            publishProgress(getResources().getString(R.string.task_filename) + file);
                             publishProgress(getResources().getString(R.string.task_start_opening));
-                            ReaderAmount readerAmount = new ReaderAmount(this, activity, files.get(j), ValuesIO.Formats.values()[i]);
+                            ReaderAmount readerAmount = new ReaderAmount(this, activity, file, ValuesIO.Formats.values()[i]);
                             readerAmount.reading();
                             int amountModels = readerAmount.getAmount();
                             readerAmount.close();
@@ -138,7 +138,7 @@ public class OpenActivity extends SaveOpenActivity {
 
                             publishProgress(getResources().getQuantityString(R.plurals.task_amount_models, amountModels, amountModels));
                             publishProgress(getResources().getString(R.string.task_analyzing));
-                            ReaderModels readerModels = new ReaderModels(this, activity, files.get(j), amountModels, ValuesIO.Formats.values()[i]);
+                            ReaderModels readerModels = new ReaderModels(this, activity, file, amountModels, ValuesIO.Formats.values()[i]);
                             readerModels.reading();
                             List<Model> modelReader = readerModels.getModels();
                             readerModels.close();

@@ -92,12 +92,11 @@ public class ShareModels {
 
     private JSONArray createJson() {
         JSONArray jsonArrayGlobal = new JSONArray();
-        for (int i = 0; i < models.size(); i++) {
-            Model model = models.get(i);
+        for (Model model : models) {
             if (ContentManagerModel.isIgnore(context, model.getModelID()))
                 continue;
             JSONObject obj = ModelToJson.convertModelToJson(model);
-            if(obj != null){
+            if (obj != null) {
                 jsonArrayGlobal.put(obj);
             }
         }

@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_menu_archive"
         android:orderInCategory="100"
         android:title="@string/to_archive"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
 
     <item
         android:id="@+id/menu_share"
@@ -20,6 +20,6 @@
         android:icon="@drawable/ic_menu_delete"
         android:orderInCategory="100"
         android:title="@string/delete_models"
-        app:showAsAction="never" />
+        app:showAsAction="ifRoom" />
 
 </menu>

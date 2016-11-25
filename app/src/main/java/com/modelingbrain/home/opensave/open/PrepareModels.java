@@ -78,9 +78,9 @@ public class PrepareModels {
 
     List<Model> convertModels(List<CompareModel> compareModels) {
         ArrayList<Model> output = new ArrayList<>();
-        for (int i = 0; i < compareModels.size(); i++) {
-            if (!compareModels.get(i).delete && !compareModels.get(i).insideDB) {
-                output.add(compareModels.get(i).model);
+        for (CompareModel compareModel : compareModels) {
+            if (!compareModel.delete && !compareModel.insideDB) {
+                output.add(compareModel.model);
             }
         }
         return output;

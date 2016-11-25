@@ -54,9 +54,9 @@ class ActionModeCallbackArchive implements ActionMode.Callback  {
             }
             case R.id.menu_to_unarchive: {
                 DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
-                List<Integer> list = fragment.getAdapter().getSelectedItems();
-                for(int i=0;i<list.size();i++){
-                    dbHelperModel.normalModel(fragment.getAdapter().get(list.get(i)).getID());
+                List<Integer> positionSelectionItems = fragment.getAdapter().getSelectedItems();
+                for (Integer positionSelectionItem : positionSelectionItems) {
+                    dbHelperModel.normalModel(fragment.getAdapter().get(positionSelectionItem).getID());
                 }
                 int count = fragment.getAdapter().getSelectedItems().size();
                 if(count > 0){

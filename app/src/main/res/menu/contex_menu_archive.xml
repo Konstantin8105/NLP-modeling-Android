@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_menu_unarchive"
         android:orderInCategory="100"
         android:title="@string/menu_unarchive"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="always" />
     <item
         android:id="@+id/menu_share"
         android:icon="@drawable/ic_menu_share"

@@ -48,9 +48,9 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
             case R.id.menu_remove: {
                 Log.i(TAG, "menu_remove");
                 DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
-                List<Integer> list = fragment.getAdapter().getSelectedItems();
-                for (int i = 0; i < list.size(); i++) {
-                    dbHelperModel.deleteModel(fragment.getAdapter().get(list.get(i)).getID());
+                List<Integer> positionsSelectionItems = fragment.getAdapter().getSelectedItems();
+                for (Integer positionSelectionItem : positionsSelectionItems) {
+                    dbHelperModel.deleteModel(fragment.getAdapter().get(positionSelectionItem).getID());
                 }
                 dbHelperModel.close();
                 int count = fragment.getAdapter().getSelectedItems().size();
@@ -75,9 +75,9 @@ class ActionModeCallbackFolder implements ActionMode.Callback  {
             }
             case R.id.menu_to_archive: {
                 DBHelperModel dbHelperModel = new DBHelperModel(fragment.getFragmentContext());
-                List<Integer> list = fragment.getAdapter().getSelectedItems();
-                for(int i=0;i<list.size();i++){
-                    dbHelperModel.archiveModel(fragment.getAdapter().get(list.get(i)).getID());
+                List<Integer> positionSelectionItems = fragment.getAdapter().getSelectedItems();
+                for (Integer positionSelectionItem : positionSelectionItems) {
+                    dbHelperModel.archiveModel(fragment.getAdapter().get(positionSelectionItem).getID());
                 }
                 dbHelperModel.close();
                 int count = fragment.getAdapter().getSelectedItems().size();

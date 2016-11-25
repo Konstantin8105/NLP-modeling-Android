@@ -21,8 +21,8 @@ public class PrepareModelsToDB extends PrepareModels {
         Log.i(TAG, "prepare - start");
 
         ArrayList<CompareModel> compareModels = new ArrayList<>();
-        for (int i = 0; i < models.size(); i++) {
-            compareModels.add(new CompareModel(models.get(i)));
+        for (Model model : models) {
+            compareModels.add(new CompareModel(model));
         }
         createListDeleteSame(compareModels);
         models = convertModels(compareModels);

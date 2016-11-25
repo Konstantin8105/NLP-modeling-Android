@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity
                         Environment.DIRECTORY_DOWNLOADS
                                 + File.separator
                                 + ValuesIO.OUTPUT_FILENAME_JSON,
-                        Toast.LENGTH_LONG);
+                        Toast.LENGTH_SHORT).show();
                 break;
             }
             case (R.id.action_open_models): {

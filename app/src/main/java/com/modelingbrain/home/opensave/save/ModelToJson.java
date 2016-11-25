@@ -38,7 +38,8 @@ public class ModelToJson {
             File sdPath = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
             String full_path = sdPath.getAbsolutePath() + File.separator + ValuesIO.OUTPUT_FILENAME_JSON;
             if (!sdPath.exists())
-                sdPath.mkdirs();
+                if(!sdPath.mkdirs())
+                    return;
             file = new FileWriter(full_path);
             file.write(string);
             file.flush();
