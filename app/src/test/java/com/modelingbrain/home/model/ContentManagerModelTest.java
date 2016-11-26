@@ -7,6 +7,7 @@ import java.util.List;
 
 import static junit.framework.Assert.assertTrue;
 
+@SuppressWarnings("unchecked")
 public class ContentManagerModelTest {
 
     @Test
