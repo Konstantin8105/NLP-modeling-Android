@@ -9,8 +9,8 @@ android {
         applicationId "com.modelingbrain.home"
         minSdkVersion 11
         targetSdkVersion 25
-        versionCode 502
-        versionName "5.0.2"
+        versionCode 503
+        versionName "5.0.3"
 //        multiDexEnabled true
 //        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
@@ -43,28 +43,6 @@ android {
 //    }
 }
 
-
-// TODO convert base icon to png
-// TODO https://developer.android.com/guide/practices/ui_guidelines/icon_design_launcher.html#size
-/*
-Size and Format
-Launcher icons should be 32-bit PNGs with an alpha channel for transparency. The finished
-launcher icon dimensions corresponding to a given generalized screen density are shown
-in the table below.
-
-Table 1. Summary of finished launcher icon dimensions for each generalized screen density.
-ldpi (120 dpi)
-(Low density screen)	mdpi (160 dpi)
-(Medium density screen)	hdpi (240 dpi)
-(High density screen)	xhdpi (320 dpi)
-(Extra-high density screen)
-Launcher Icon Size	36 x 36 px	48 x 48 px	72 x 72 px	96 x 96 px
-You can also include a few pixels of padding in launcher icons to maintain a consistent
-visual weight with adjacent icons. For example, a 96 x 96 pixel xhdpi launcher icon can
-contain a 88 x 88 pixel shape with 4 pixels on each side for padding. This padding can
-also be used to make room for a subtle drop shadow, which can help ensure that launcher
-icons are legible across on any background color
- */
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')

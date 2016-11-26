@@ -77,4 +77,9 @@
     <string name="menu_popup_name_date_invert">nach Datum(Inversion)</string>
 
     <string name="google_plus">Google+</string>
+
+
+    <string name="dialog_remove">Sind Sie sicher entfernen?</string>
+    <string name="answer_yes">Ja</string>
+    <string name="answer_no">No</string>
 </resources>
