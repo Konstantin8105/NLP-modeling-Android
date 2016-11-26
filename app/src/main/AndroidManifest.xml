@@ -54,8 +54,6 @@
                 android:label="@string/title_activity_save"
                 android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".AboutDeveloperActivity">
-        </activity>
     </application>
 
 </manifest>
