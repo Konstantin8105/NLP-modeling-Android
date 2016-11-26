@@ -13,6 +13,12 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ModelToJson {
 
     public static JSONObject convertModelToJson(Model model) {

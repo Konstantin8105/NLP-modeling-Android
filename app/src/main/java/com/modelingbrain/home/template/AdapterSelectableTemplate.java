@@ -15,6 +15,12 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectableTemplate.ViewHolder> {
 
     @SuppressWarnings("unused")

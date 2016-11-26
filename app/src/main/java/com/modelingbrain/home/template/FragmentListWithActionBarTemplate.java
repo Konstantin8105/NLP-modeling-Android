@@ -4,6 +4,12 @@ import android.util.Log;
 import android.view.ActionMode;
 import android.view.View;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 abstract public class FragmentListWithActionBarTemplate extends FragmentListTemplate {
 
     @SuppressWarnings("unused")

@@ -4,6 +4,12 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class GlobalFunction {
     public static void pause() {
         try {

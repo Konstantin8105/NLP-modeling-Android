@@ -5,6 +5,12 @@ import org.json.JSONException;
 
 import java.util.Arrays;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class Model {
 
     // DataBase id

@@ -12,6 +12,12 @@ import com.modelingbrain.home.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class AdapterAbout extends RecyclerView.Adapter<AdapterAbout.ViewHolder>{
 
     @SuppressWarnings("unused")

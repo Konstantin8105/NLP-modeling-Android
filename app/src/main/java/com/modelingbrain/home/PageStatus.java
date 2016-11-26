@@ -10,6 +10,12 @@ import com.modelingbrain.home.folderModel.FragmentFolder;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class PageStatus {
 
     public enum PageStatusType {

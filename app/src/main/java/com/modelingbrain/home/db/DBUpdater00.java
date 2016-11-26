@@ -12,6 +12,12 @@ import com.modelingbrain.home.model.ModelState;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class DBUpdater00 implements IDBUpdater {
 
     private static final String prefixTable = "TABLE" + "OF" + "MODEL";

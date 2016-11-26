@@ -12,6 +12,12 @@ import com.modelingbrain.home.R;
 
 import java.util.ArrayList;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ActivityAbout extends AppCompatActivity implements
         AdapterAbout.ViewHolder.ClickListener {
 

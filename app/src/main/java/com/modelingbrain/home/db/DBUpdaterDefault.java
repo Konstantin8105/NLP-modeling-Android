@@ -12,6 +12,12 @@ import java.util.List;
 
 import static com.modelingbrain.home.db.DBHelperModel.DB_DATE;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class DBUpdaterDefault implements IDBUpdater {
 
     @Override

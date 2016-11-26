@@ -19,6 +19,12 @@ import org.json.JSONException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class DBHelperModel extends SQLiteOpenHelper {
 
     @SuppressWarnings("unused")

@@ -2,6 +2,12 @@ package com.modelingbrain.home.model;
 
 import com.modelingbrain.home.R;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public enum ModelID {
     ID_Science(0),
     ID_SCORE(10),

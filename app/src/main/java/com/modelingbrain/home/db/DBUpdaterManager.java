@@ -10,6 +10,12 @@ import com.modelingbrain.home.model.Model;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 class DBUpdaterManager {
 
     @SuppressWarnings("unused")

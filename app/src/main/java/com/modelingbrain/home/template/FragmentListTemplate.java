@@ -19,6 +19,12 @@ import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 abstract public class FragmentListTemplate extends Fragment implements
         AdapterSelectableTemplate.ViewHolder.ClickListener {
 

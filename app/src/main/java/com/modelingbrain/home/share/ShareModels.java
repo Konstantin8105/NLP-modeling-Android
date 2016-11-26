@@ -20,6 +20,12 @@ import org.json.JSONObject;
 import java.io.File;
 import java.util.ArrayList;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ShareModels {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();

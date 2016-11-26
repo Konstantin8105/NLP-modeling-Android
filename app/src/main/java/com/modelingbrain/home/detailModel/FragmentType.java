@@ -14,6 +14,12 @@ import com.modelingbrain.home.detailModel.fragments.StageFragmentView;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class FragmentType {
     public enum Type {
         STATE_VIEW_WRITE,

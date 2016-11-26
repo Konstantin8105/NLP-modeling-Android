@@ -1,5 +1,11 @@
 package com.modelingbrain.home.template;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ElementList {
     private final int resourceImage;
     private final String title;

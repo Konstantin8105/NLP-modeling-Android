@@ -11,6 +11,12 @@ import com.modelingbrain.home.template.ElementList;
 
 import java.util.*;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ContentManagerModel {
     static private final String TAG = " ContentManager ";
 

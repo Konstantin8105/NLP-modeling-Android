@@ -1,5 +1,11 @@
 package com.modelingbrain.home.model;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public enum ModelState {
     NORMAL (1), ARCHIVE (500), DELETE (1525);
     private final int value;

@@ -12,6 +12,12 @@ import android.widget.TextView;
 
 import com.modelingbrain.home.R;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 abstract public class SaveOpenActivity extends AppCompatActivity {
 
     @SuppressWarnings("unused")

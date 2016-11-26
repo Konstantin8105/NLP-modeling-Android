@@ -19,6 +19,12 @@ import java.util.ArrayList;
 import static android.app.Activity.RESULT_OK;
 import static com.modelingbrain.home.MainActivity.REQUEST_FRAGMENT;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class FragmentFolder extends FragmentListWithActionBarTemplate implements MainFragment {
 
     @SuppressWarnings("unused")

@@ -16,6 +16,12 @@ import com.modelingbrain.home.db.DBHelperModel;
 import com.modelingbrain.home.detailModel.DetailActivity;
 import com.modelingbrain.home.model.Model;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public abstract class StageFragment extends Fragment {
 
     @SuppressWarnings("unused")

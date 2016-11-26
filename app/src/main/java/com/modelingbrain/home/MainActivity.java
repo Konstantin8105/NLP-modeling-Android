@@ -32,6 +32,12 @@ import com.modelingbrain.home.opensave.ValuesIO;
 
 import java.io.File;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 

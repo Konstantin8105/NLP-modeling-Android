@@ -11,6 +11,12 @@ import android.widget.MultiAutoCompleteTextView;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.model.ModelID;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class StageFragmentEdit extends StageFragment {
 
     private MultiAutoCompleteTextView multiAutoCompleteTextViews[];

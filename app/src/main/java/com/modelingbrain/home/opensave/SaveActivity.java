@@ -13,6 +13,12 @@ import android.view.View;
 import com.modelingbrain.home.R;
 import com.modelingbrain.home.opensave.save.Writer;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class SaveActivity extends SaveOpenActivity {
 
     private static final int REQUEST_WRITE_STORAGE = 1000;

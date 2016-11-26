@@ -6,6 +6,12 @@ import android.util.SparseBooleanArray;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public abstract class SelectableAdapter<VH extends RecyclerView.ViewHolder>
         extends RecyclerView.Adapter<VH> {
     @SuppressWarnings("unused")

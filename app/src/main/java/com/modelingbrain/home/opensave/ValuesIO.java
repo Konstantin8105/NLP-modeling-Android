@@ -1,5 +1,11 @@
 package com.modelingbrain.home.opensave;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 @SuppressWarnings("SpellCheckingInspection")
 public class ValuesIO {
     public static final String OUTPUT_FILENAME_JSON = "NlpModeling.json";

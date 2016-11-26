@@ -9,6 +9,12 @@ import com.modelingbrain.home.opensave.ValuesIO;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class ReaderAmount extends Reader {
 
     private int amount;

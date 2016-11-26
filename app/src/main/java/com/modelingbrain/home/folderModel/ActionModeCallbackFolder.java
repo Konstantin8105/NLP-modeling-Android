@@ -15,6 +15,12 @@ import com.modelingbrain.home.template.FragmentListWithActionBarTemplate;
 
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 class ActionModeCallbackFolder implements ActionMode.Callback {
 
     @SuppressWarnings("unused")

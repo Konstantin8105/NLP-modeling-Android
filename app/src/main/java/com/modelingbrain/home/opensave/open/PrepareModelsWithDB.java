@@ -11,6 +11,12 @@ import com.modelingbrain.home.opensave.SaveOpenActivity;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class PrepareModelsWithDB extends PrepareModels {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();

@@ -17,6 +17,12 @@ import java.util.ArrayList;
 
 import static android.app.Activity.RESULT_OK;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class FragmentArchive extends FragmentListWithActionBarTemplate implements MainFragment {
 
     private ModelSort modelSort;

@@ -16,6 +16,12 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public class Writer {
     @SuppressWarnings("unused")
     private final String TAG = this.getClass().toString();

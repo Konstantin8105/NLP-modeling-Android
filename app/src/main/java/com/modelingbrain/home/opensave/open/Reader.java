@@ -18,6 +18,12 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
+
 public abstract class Reader {
     @SuppressWarnings("unused")
     protected final String TAG = this.getClass().toString();

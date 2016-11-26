@@ -20,6 +20,11 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
+/**
+ * License: LGPL ver.3
+ *
+ * @author Izyumov Konstantin
+ */
 
 public class ActivityChooseModel extends AppCompatActivity implements
 		AdapterTemplate.ViewHolder.ClickListener{
