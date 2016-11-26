@@ -184,6 +184,9 @@ public class MainActivity extends AppCompatActivity
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/u/0/communities/115807576331346688333"));
                 startActivity(browserIntent);
                 break;
+//            case (R.id.developer_page):
+//                //TODO add developer page
+//                break;
             default:
                 return false;
         }

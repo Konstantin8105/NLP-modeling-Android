@@ -91,4 +91,6 @@
     <string name="dialog_remove">Are you sure remove?</string>
     <string name="answer_yes">Yes</string>
     <string name="answer_no">No</string>
+
+    <string name="about_developer">About developer</string>
 </resources>

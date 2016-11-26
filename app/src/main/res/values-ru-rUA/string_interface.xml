@@ -81,4 +81,6 @@
     <string name="dialog_remove">Вы уверены удалить?</string>
     <string name="answer_yes">Да</string>
     <string name="answer_no">Нет</string>
+
+    <string name="about_developer">О разработчике</string>
 </resources>
