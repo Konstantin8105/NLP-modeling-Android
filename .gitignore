@@ -4,3 +4,6 @@
 /.idea/libraries
 /build
 *.apk
+/projectFilesBackup/
+/.idea/deltaUtilsSettings.xml
+/.idea/dictionaries/
