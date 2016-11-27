@@ -53,12 +53,24 @@ public class AdapterTemplate extends RecyclerView.Adapter<AdapterTemplate.ViewHo
     public void onBindViewHolder(ViewHolder holder, int position) {
         Log.i(TAG, "onBindViewHolder - start");
         final ElementList item = items.get(position);
+        Log.i(TAG, "item = "+item);
+        Log.i(TAG, "item.title = "+item.getTitle());
+        Log.i(TAG, "item.getResourceImage = "+item.getResourceImage());
 
+        Log.i(TAG, "bgShape");
         GradientDrawable bgShape = (GradientDrawable) holder.rectangle.getBackground();
         bgShape.setColor(item.getResourceColorRectangle());
 
-        holder.imageView.setImageResource(item.getResourceImage());
+        Log.i(TAG, "holder");
+        Log.i(TAG, "holder.imageView");
+        try {
+            holder.imageView.setImageResource(item.getResourceImage());
+        } catch (Exception e){
+            holder.imageView.setImageResource(R.drawable.ic_launcher);
+        }
+        Log.i(TAG, "holder.title");
         holder.title.setText(item.getTitle());
+        Log.i(TAG, "holder.subTitle");
         holder.subTitle.setText(item.getSubTitle());
         holder.secondSubTitle.setText(item.getSecondSubTitle());
         Log.i(TAG, "onBindViewHolder - finish");

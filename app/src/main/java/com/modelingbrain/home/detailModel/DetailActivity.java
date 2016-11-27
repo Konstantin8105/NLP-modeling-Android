@@ -100,7 +100,15 @@ public class DetailActivity extends AppCompatActivity {
         header.setBackgroundColor(ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor()));
 
         ImageView icon = (ImageView) findViewById(R.id.icon);
-        icon.setImageResource(model.getModelID().getResourceIcon());
+
+
+        //icon.setImageResource(model.getModelID().getResourceIcon());
+
+        try {
+            icon.setImageResource(model.getModelID().getResourceIcon());
+        } catch (Exception e){
+            icon.setImageResource(R.drawable.ic_launcher);
+        }
 
         createView();
         Log.i(TAG, "onCreate - finish");
@@ -146,7 +154,14 @@ public class DetailActivity extends AppCompatActivity {
         }
         transaction.commit();
 
-        fab.setImageResource(FragmentType.getFabIconResource());
+        //fab.setImageResource(FragmentType.getFabIconResource());
+
+
+        try {
+            fab.setImageResource(FragmentType.getFabIconResource());
+        } catch (Exception e){
+            fab.setImageResource(R.drawable.ic_launcher);
+        }
     }
 
     @Override

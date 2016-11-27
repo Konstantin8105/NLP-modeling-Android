@@ -62,7 +62,14 @@ public class AdapterSelectableTemplate extends SelectableAdapter<AdapterSelectab
         GradientDrawable bgShape = (GradientDrawable) holder.rectangle.getBackground();
         bgShape.setColor(item.getResourceColorRectangle());
 
-        holder.imageView.setImageResource(item.getResourceImage());
+        //holder.imageView.setImageResource(item.getResourceImage());
+        try {
+            holder.imageView.setImageResource(item.getResourceImage());
+        } catch (Exception e){
+            holder.imageView.setImageResource(R.drawable.ic_launcher);
+        }
+
+
         holder.title.setText(item.getTitle());
         holder.subTitle.setText(item.getSubTitle());
         holder.secondSubTitle.setText(item.getSecondSubTitle());
