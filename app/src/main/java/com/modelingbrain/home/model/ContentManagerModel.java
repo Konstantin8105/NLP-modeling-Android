@@ -36,16 +36,13 @@ public class ContentManagerModel {
         }
         ArrayList<Model> models = dbHelperModel.openHeader(state);
         dbHelperModel.close();
-        boolean again;
-        do {
-            again = false;
-            for (int i = 0; i < models.size(); i++) {
-                if (isIgnore(context, models.get(i).getModelID()) || models.get(i) == null) {
-                    models.remove(i);
-                    again = true;
-                }
+        Iterator<Model> iterator = models.iterator();
+        while (iterator.hasNext()){
+            Model model = iterator.next();
+            if(isIgnore(context, model.getModelID())){
+                iterator.remove();
             }
-        } while (again);
+        }
         return sort(context, models, modelSort);
     }
 

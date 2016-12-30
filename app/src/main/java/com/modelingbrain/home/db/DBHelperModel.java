@@ -6,13 +6,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
-
 import com.modelingbrain.home.main.GlobalFunction;
 import com.modelingbrain.home.model.ContentManagerModel;
 import com.modelingbrain.home.model.Model;
 import com.modelingbrain.home.model.ModelID;
 import com.modelingbrain.home.model.ModelState;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -46,7 +44,11 @@ public class DBHelperModel extends SQLiteOpenHelper {
         Log.i(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
-            addModel(model);
+            try {
+                addModel(model);
+            } catch (NullPointerException e) {
+                Log.i(TAG, "DBHelperModel : addModelNormal - cannot create model");
+            }
         }
         Log.i(TAG, "DBHelperModel : addModelNormal - finish");
     }
@@ -55,21 +57,33 @@ public class DBHelperModel extends SQLiteOpenHelper {
         Log.i(TAG, "DBHelperModel : addModelNormal - start");
         for (Model model : models) {
             model.setState(ModelState.NORMAL);
-            addModel(sqLiteDatabase, model);
+            try {
+                addModel(sqLiteDatabase, model);
+            } catch (NullPointerException e) {
+                Log.i(TAG, "DBHelperModel : addModelNormal - cannot create model");
+            }
         }
         Log.i(TAG, "DBHelperModel : addModelNormal - finish");
     }
 
-    public int addModel(Model model) {
+    public int addModel(Model model) throws NullPointerException {
         Log.i(TAG, "DBHelperModel : addModel - start");
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
-        int id = addModel(sqLiteDatabase, model);
-        sqLiteDatabase.close();
-        Log.i(TAG, "DBHelperModel : addModel - finish");
-        return id;
+        try {
+            int id = addModel(sqLiteDatabase, model);
+            Log.i(TAG, "DBHelperModel : addModel - finish");
+            return id;
+        } catch (NullPointerException e) {
+            throw new NullPointerException("None");
+        } finally {
+            sqLiteDatabase.close();
+        }
     }
 
-    private int addModel(SQLiteDatabase sqLiteDatabase, Model model) {
+    private int addModel(SQLiteDatabase sqLiteDatabase, Model model) throws NullPointerException {
+        if (ContentManagerModel.isIgnore(context, model.getModelID())) {
+            throw new NullPointerException("That model ignored");
+        }
         Log.i(TAG, "DBHelperModel : addModelWithoutClose - start");
         Log.i(TAG, "DBHelperModel : addModel : modelName = " + model.getName());
         Log.i(TAG, "DBHelperModel : addModel : model = " + model.toString());

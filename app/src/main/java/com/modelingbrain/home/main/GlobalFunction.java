@@ -13,7 +13,7 @@ import java.util.Locale;
 public class GlobalFunction {
     public static void pause() {
         try {
-            Thread.sleep(20);
+            Thread.sleep(5);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

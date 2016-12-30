@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary"      >#00BCD4</color> <!-- 500 -->
-    <color name="colorPrimaryDark"  >#0097A7</color> <!-- 700 -->
-    <color name="colorAccent"       >#FFD740</color> <!-- A200 -->
+    <color name="colorPrimary"      >#212121</color> <!-- 900 -->
+    <color name="colorPrimaryDark"  >#616161</color> <!-- 700 -->
+    <color name="colorAccent"       >#FF3D00</color> <!-- A400 -->
 
     <color name="selected_overlay"  >#28FFD740</color>
 
-    <color name="model_color"         >#B3E5FC</color> <!-- 100 -->
-    <color name="model_color_text"    >#000000</color>
+    <color name="model_color"         >#039BE5</color> <!-- 600 -->
+    <color name="model_color_text"    >#FFFFFF</color>
 
-    <color name="strategy_color"      >#B2DFDB</color> <!-- 100 -->
+    <color name="strategy_color"      >#7CB342</color> <!-- 600 -->
     <color name="strategy_color_text" >#000000</color>
 
-    <color name="dark_color"          >#D7CCC8</color> <!-- 100 -->
-    <color name="dark_color_text"     >#000000</color>
+    <color name="dark_color"          >#757575</color> <!-- 600 -->
+    <color name="dark_color_text"     >#FFFFFF</color>
 
-    <color name="other_color"         >#F0F4C3</color> <!-- 100 -->
+    <color name="other_color"         >#FB8C00</color> <!-- 600 -->
     <color name="other_color_text"    >#000000</color>
 
 </resources>

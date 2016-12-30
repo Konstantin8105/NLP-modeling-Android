@@ -95,6 +95,12 @@ public class DetailActivity extends AppCompatActivity {
 
         TextView modelName = (TextView) findViewById(R.id.model_name);
         modelName.setText(getResources().getTextArray(model.getModelID().getResourceQuestion())[0]);
+        modelName.setTextColor(ContextCompat.getColor(
+                getBaseContext(),
+                model.getModelType().getTextColor()));
+
+
+        Log.i(TAG, "modelName -->" + model.getModelType() + model.getModelType().getTextColor());
 
         DrawerLayout header = (DrawerLayout) findViewById(R.id.drawer_layout);
         header.setBackgroundColor(ContextCompat.getColor(getBaseContext(), model.getModelType().getGeneralColor()));
@@ -106,7 +112,7 @@ public class DetailActivity extends AppCompatActivity {
 
         try {
             icon.setImageResource(model.getModelID().getResourceIcon());
-        } catch (Exception e){
+        } catch (Exception e) {
             icon.setImageResource(R.drawable.ic_launcher);
         }
 
@@ -159,7 +165,7 @@ public class DetailActivity extends AppCompatActivity {
 
         try {
             fab.setImageResource(FragmentType.getFabIconResource());
-        } catch (Exception e){
+        } catch (Exception e) {
             fab.setImageResource(R.drawable.ic_launcher);
         }
     }
